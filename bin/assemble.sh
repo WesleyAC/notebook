@@ -26,6 +26,7 @@ do
 	./bin/process-markdown.sh < ./entries/"$entry" |
 	./bin/pandoc --from=markdown --to=html |
 	./bin/process-html.sh "$ENTRY_DATE" |
+	./bin/fix-sidenote-spacing.sh |
 	sed \
 		-e "s/★PAGE_TITLE★/$BLOG_NAME ᐉ $POST_TITLE/g" \
 		-e "/★PAGE_CONTENT★/{
