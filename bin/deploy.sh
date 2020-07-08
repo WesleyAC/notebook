@@ -20,7 +20,7 @@ git checkout -b gh-pages
 
 ./bin/assemble.sh
 
-find . ! -name 'out' -type f -exec rm -f {} +
+find . -maxdepth 1 ! -name 'out' ! -name '.git' ! -name '.gitignore' -exec rm -rf {} \;
 mv out/* .
 rmdir out/
 
