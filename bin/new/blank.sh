@@ -2,7 +2,7 @@
 
 set -e
 
-cd "$(dirname "$0")"/..
+cd "$(dirname "$0")"/../../
 
 if [ "$#" -ne 1 ]; then
     echo "usage: $0 entry-slug"
