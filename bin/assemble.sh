@@ -32,6 +32,7 @@ do
 		-e "/★PAGE_CONTENT★/{
 			s/★PAGE_CONTENT★//g
 			r /dev/stdin
+			r ./parts/return_home.html
 		}" \
 		./parts/template.html > ./out/"$ENTRY_SLUG"/index.html
 done
