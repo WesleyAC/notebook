@@ -6,6 +6,7 @@ stdenv.mkDerivation {
   buildInputs = [
     pkgs.bc
     pkgs.minify
+    pkgs.entr
   ];
 }
 
