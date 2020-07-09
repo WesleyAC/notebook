@@ -47,7 +47,7 @@ do
 
 	ENTRY_URL="https://notebook.wesleyac.com/$ENTRY_SLUG/"
 
-	ATOM_ENTRIES+=("<entry><id>$ENTRY_URL</id><title>$POST_TITLE</title><updated>$ENTRY_DATE_ATOM</updated><link rel='alternate' href='$ENTRY_URL'/><author>Wesley Aptekar-Cassels</author></entry>")
+	ATOM_ENTRIES+=("<entry><id>$ENTRY_URL</id><title>$POST_TITLE</title><updated>$ENTRY_DATE_ATOM</updated><link rel='alternate' href='$ENTRY_URL'/><author><name>Wesley Aptekar-Cassels</name></author></entry>")
 done
 
 LAST_UPDATED_ATOM=$(date +'%Y-%m-%dT%H:%M:%SZ')
