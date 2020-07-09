@@ -11,6 +11,8 @@ BLOG_NAME="Wesley's Notebook"
 
 cp -r ./static/* ./out/
 
+minify ./parts/tufte-edit.css > ./out/tufte-edit.min.css
+
 ENTRIES=()
 
 for entry in $(ls -1 ./entries | tac)
