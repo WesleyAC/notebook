@@ -25,7 +25,7 @@ for entry in $(ls -1 ./entries | tac)
 do
 	ENTRY_SLUG=$(echo "${entry%.*}" | cut -d- -f2-)
 	ENTRY_DATE=$(date -d @"$(echo "$entry" | cut -d- -f1)" +"%A %B %-d, %Y")
-	ENTRY_DATE_ATOM=$(date -d @"$(echo "$entry" | cut -d- -f1)" --rfc-3339=seconds | sed 's/ /T/' | sed 's/$/Z/')
+	ENTRY_DATE_ATOM=$(date -d @"$(echo "$entry" | cut -d- -f1)" +'%Y-%m-%dT%H:%M:%SZ')
 	mkdir -p ./out/"$ENTRY_SLUG"/
 
 	POST_TITLE=$(head -n1 ./entries/"$entry" | sed 's/^#[ ]*//g')
@@ -47,10 +47,10 @@ do
 
 	ENTRY_URL="https://notebook.wesleyac.com/$ENTRY_SLUG/"
 
-	ATOM_ENTRIES+=("<entry><id>$ENTRY_URL</id><title>$POST_TITLE</title><updated>$ENTRY_DATE_ATOM</updated><link rel='alternate'>$ENTRY_URL</link></entry>")
+	ATOM_ENTRIES+=("<entry><id>$ENTRY_URL</id><title>$POST_TITLE</title><updated>$ENTRY_DATE_ATOM</updated><link rel='alternate' href='$ENTRY_URL'/><author>Wesley Aptekar-Cassels</author></entry>")
 done
 
-LAST_UPDATED_ATOM=$(date --rfc-3339=seconds | sed 's/ /T/' | sed 's/$/Z/')
+LAST_UPDATED_ATOM=$(date +'%Y-%m-%dT%H:%M:%SZ')
 echo "${ATOM_ENTRIES[*]}" |
 sed \
 	-e "s/★PAGE_UPDATED★/$LAST_UPDATED_ATOM/g" \
