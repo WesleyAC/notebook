@@ -2,7 +2,7 @@
 
 Today's cards are [The Hermit](http://learntarot.com/maj09.htm) and [The Magician](http://learntarot.com/maj01.htm).
 
-<input type="checkbox" class="margin-toggle" checked/><span class='marginnote'><a href='http://learntarot.com/maj09.htm'><img style='width:50.00%;' src='/img/tarot/maj09.jpg'></img></a><a href='http://learntarot.com/maj01.htm'><img style='width:50.00%;' src='/img/tarot/maj01.jpg'></img></a></span>
+<input type="checkbox" class="margin-toggle" checked/><span class='marginnote'><a href='http://learntarot.com/maj09.htm'><img style='width:50.00%;' src='/img/tarot/maj09.jpg' alt="The Hermit tarot card"/></a><a href='http://learntarot.com/maj01.htm'><img style='width:50.00%;' src='/img/tarot/maj01.jpg' alt="The Magician tarot card"/></a></span>
 
 The Hermit represents introspection and searching, while The Magician represents conscious action and concentration on a single task. I often find myself oscillating back and forth between these two modes of operation — first searching for interesting ideas, pulling in possibilities and examining them in my own mind, one by one, then, once I've found an idea worthy of pursuit, devoting all of my energy and attention to it.
 

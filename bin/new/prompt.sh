@@ -47,7 +47,8 @@ else
 	for card in $CARDS; do
 		CARD_IMG="/img/tarot/$(echo "$card" | cut -d, -f1).jpg"
 		CARD_URL="http://learntarot.com/$(echo "$card" | cut -d, -f2).htm"
-		printf "<a href='$CARD_URL'><img style='width:$(bc -l <<< "scale=2; 100/$NUM_CARDS")%%;' src='$CARD_IMG'></img></a>" >> "$ENTRY_PATH"
+		CARD_NAME=$(echo "$card" | cut -d, -f3)
+		printf "<a href='$CARD_URL'><img style='width:$(bc -l <<< "scale=2; 100/$NUM_CARDS")%%;' src='$CARD_IMG' alt='$CARD_NAME tarot card'></img></a>" >> "$ENTRY_PATH"
 	done
 	printf "</span>" >> "$ENTRY_PATH"
 fi
