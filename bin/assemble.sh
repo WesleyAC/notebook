@@ -4,6 +4,11 @@ set -e
 
 cd "$(dirname "$0")"/..
 
+if [[ $(ls -1 ./entries/ | cut -d- -f2- | sort | uniq -d) ]]; then
+	echo "duplicate slugs found, exiting..."
+	exit 1
+fi
+
 rm -rf ./out
 mkdir -p ./out
 
