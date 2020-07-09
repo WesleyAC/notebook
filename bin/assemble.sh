@@ -30,7 +30,7 @@ do
 	./bin/process-html.sh "$ENTRY_DATE" |
 	./bin/fix-sidenote-spacing.sh |
 	sed \
-		-e "s/★PAGE_TITLE★/$BLOG_NAME ᐉ $POST_TITLE/g" \
+		-e "s/★PAGE_TITLE★/$POST_TITLE ⁑ $BLOG_NAME/g" \
 		-e "/★PAGE_CONTENT★/{
 			s/★PAGE_CONTENT★//g
 			r /dev/stdin
