@@ -12,14 +12,17 @@ do
 			if [[ "$IN_SECTION" == true ]]; then
 				echo "</section>"
 			fi
-			echo "$line"
-			if [[ $line == *"</h1>"* ]]; then
-				if [[ "$FIRST_HEADING" == true ]]; then
-					echo "<p class='subtitle'>$1</p>"
-					FIRST_HEADING=false
-				fi
+			if [[ $line == *"</h1>"* ]] && [[ "$FIRST_HEADING" == true ]]; then
+				echo "<section>"
+				echo "$line"
+				echo "<p class='subtitle'>$1</p>"
+				echo "</section>"
+				echo "<section>"
+				FIRST_HEADING=false
+			else
+				echo "<section>"
+				echo "$line"
 			fi
-			echo "<section>"
 			IN_SECTION=true
 		;;
 		*)
