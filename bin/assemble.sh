@@ -23,7 +23,7 @@ do
 
 	POST_TITLE=$(head -n1 ./entries/"$entry" | sed 's/^#[ ]*//g')
 
-	ENTRIES+=("<li><a href='/$ENTRY_SLUG/'>$POST_TITLE</a></li>")
+	ENTRIES+=("<a href='/$ENTRY_SLUG/'>$POST_TITLE</a><br>")
 
 	./bin/process-markdown.sh < ./entries/"$entry" |
 	./bin/pandoc --from=markdown --to=html |
