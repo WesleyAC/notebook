@@ -18,17 +18,19 @@ cp -r ./static/* ./out/
 
 minify ./parts/tufte-edit.css > ./out/tufte-edit.min.css
 
-ENTRIES=()
+HTML_ENTRIES=()
+ATOM_ENTRIES=()
 
 for entry in $(ls -1 ./entries | tac)
 do
 	ENTRY_SLUG=$(echo "${entry%.*}" | cut -d- -f2-)
 	ENTRY_DATE=$(date -d @"$(echo "$entry" | cut -d- -f1)" +"%A %B %-d, %Y")
+	ENTRY_DATE_ATOM=$(date -d @"$(echo "$entry" | cut -d- -f1)" --rfc-3339=seconds | sed 's/ /T/' | sed 's/$/Z/')
 	mkdir -p ./out/"$ENTRY_SLUG"/
 
 	POST_TITLE=$(head -n1 ./entries/"$entry" | sed 's/^#[ ]*//g')
 
-	ENTRIES+=("<a href='/$ENTRY_SLUG/'>$POST_TITLE</a><br>")
+	HTML_ENTRIES+=("<a href='/$ENTRY_SLUG/'>$POST_TITLE</a><br>")
 
 	./bin/process-markdown.sh < ./entries/"$entry" |
 	./bin/pandoc --from=markdown --to=html |
@@ -42,7 +44,21 @@ do
 			r ./parts/return_home.html
 		}" \
 		./parts/template.html > ./out/"$ENTRY_SLUG"/index.html
+
+	ENTRY_URL="https://notebook.wesleyac.com/$ENTRY_SLUG/"
+
+	ATOM_ENTRIES+=("<entry><id>$ENTRY_URL</id><title>$POST_TITLE</title><updated>$ENTRY_DATE_ATOM</updated><link rel='alternate'>$ENTRY_URL</link></entry>")
 done
+
+LAST_UPDATED_ATOM=$(date --rfc-3339=seconds | sed 's/ /T/' | sed 's/$/Z/')
+echo "${ATOM_ENTRIES[*]}" |
+sed \
+	-e "s/★PAGE_UPDATED★/$LAST_UPDATED_ATOM/g" \
+	-e "/★PAGE_CONTENT★/{
+		s/★PAGE_CONTENT★//g
+		r /dev/stdin
+	}" \
+	./parts/atom.xml > ./out/atom.xml
 
 # it's really gross that this is two commands. fix.
 sed \
@@ -53,7 +69,7 @@ sed \
 	}" \
 	./parts/template.html < ./parts/index.html > ./out/index.html
 
-echo "${ENTRIES[*]}" |
+echo "${HTML_ENTRIES[*]}" |
 sed -i "/★POST_LIST★/{
 	s/★POST_LIST★//g
 	r /dev/stdin
