@@ -272,7 +272,7 @@ img {
     counter-increment: sidenote-counter; 
 }
 
-@media (hover: hover) and (not(max-width: 1080px)) {
+@media (hover: hover) and (min-width: 1081px) {
     .sidenote-number:hover + .margin-toggle + .sidenote {
         border-left: 2px solid #666;
     }
