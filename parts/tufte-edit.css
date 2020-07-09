@@ -272,8 +272,10 @@ img {
     counter-increment: sidenote-counter; 
 }
 
-.sidenote-number:hover + .margin-toggle + .sidenote {
-	border-left: 2px solid #666;
+@media (hover: hover) {
+    .sidenote-number:hover + .margin-toggle + .sidenote {
+        border-left: 2px solid #666;
+    }
 }
 
 .sidenote-number:after,
