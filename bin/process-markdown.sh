@@ -38,6 +38,16 @@ $MARGINNOTE_TEXT
 MARGINNOTE_HTML
 			MARGINNOTE_NUM=$((SIDENOTE_NUM+1))
 		;;
+		@marginnote-mobileshow:*)
+			MARGINNOTE_TEXT=$(echo "$line" | cut -d: -f 2-)
+			cat <<MARGINNOTE_HTML
+<input type="checkbox" id="mn-$MARGINNOTE_NUM" class="margin-toggle" checked/>
+<span class="marginnote">
+$MARGINNOTE_TEXT
+</span>
+MARGINNOTE_HTML
+			MARGINNOTE_NUM=$((SIDENOTE_NUM+1))
+		;;
 		*)
 			echo "$line"
 		;;
