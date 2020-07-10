@@ -15,6 +15,6 @@ I'm reminded of a conversation with a friend who quit her tech job to work as a 
 @marginnote-mobilehide: <img src="/img/post/keep-pedaling/manhattan.jpg" alt="A photo of a walkway with a railing, next to a river. On the oppisite bank of the river is a city skyline. It's early in the morning, before the sun has fully risen, and streetlights provide much of the illumination in the photo."/> *A recent early morning ride up the west side of Manhattan.*
 I frequently find myself feeling the same way — when goals are unclear, or work is "creative," it's easy to get stuck in a quagmire of indecision. But when you have to pedal, you pedal.
 
-There's a metaphor here, if you want there to be, about how to structure your life to make things easy on yourself. Starting a bike tour is a hard decision, but once your on a bike, pedaling is all you can do. If you want to be able to do things that are hard, structure them so that the difficult choices are made up front, and the automatic action to take moves you towards your goal.
+There's a metaphor here, if you want there to be, about how to structure your life to make things easy on yourself. Starting a bike tour is a hard decision, but once you're on a bike, pedaling is all you can do. If you want to be able to do things that are hard, structure them so that the difficult choices are made up front, and the automatic action to take moves you towards your goal.
 
 Figuring out how to apply this lesson to your life is left as an exercise for the reader :)
