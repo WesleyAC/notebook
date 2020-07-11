@@ -13,6 +13,7 @@ rm -rf ./out
 mkdir -p ./out
 
 BLOG_NAME="Wesley's Notebook"
+BLOG_URL="https://notebook.wesleyac.com"
 
 cp -r ./static/* ./out/
 
@@ -38,6 +39,8 @@ do
 	./bin/fix-sidenote-spacing.sh |
 	sed \
 		-e "s/★PAGE_TITLE★/$POST_TITLE ⁑ $BLOG_NAME/g" \
+		-e "s/★OG_TITLE★/$POST_TITLE/g" \
+		-e "s/★OG_TYPE★/article/g" \
 		-e "/★PAGE_CONTENT★/{
 			s/★PAGE_CONTENT★//g
 			r /dev/stdin
@@ -45,7 +48,30 @@ do
 		}" \
 		./parts/template.html > ./out/"$ENTRY_SLUG"/index.html
 
-	ENTRY_URL="https://notebook.wesleyac.com/$ENTRY_SLUG/"
+	# TODO: quoting, single quotes, ugh...
+	OG_IMG=$(grep -o "<img src=\"[^\"]\+\"\( alt=\"[^\"]\+\)\?" out/$ENTRY_SLUG/index.html | cut -d\" -f2 | head -n1)
+	OG_ALT=$(grep -o "<img src=\"[^\"]\+\"\( alt=\"[^\"]\+\)\?" out/$ENTRY_SLUG/index.html | cut -d\" -f4 | head -n1)
+
+	if [[ $OG_IMG == /* ]]; then
+		OG_IMG=$BLOG_URL$OG_IMG
+	fi
+
+	if [ -n "$OG_IMG" ]; then
+		sed -i \
+			-e "/★EXTRA_TAGS★/{
+				i <meta property=\"og:image\" content=\"$OG_IMG\"/>
+			}" \
+			./out/"$ENTRY_SLUG"/index.html
+		if [ -n "$OG_ALT" ]; then
+			sed -i \
+				-e "/★EXTRA_TAGS★/{
+					i <meta property=\"og:image:alt\" content=\"$OG_ALT\"/>
+				}" \
+				./out/"$ENTRY_SLUG"/index.html
+		fi
+	fi
+
+	ENTRY_URL="$BLOG_URL/$ENTRY_SLUG/"
 
 	ATOM_ENTRIES+=("<entry><id>$ENTRY_URL</id><title>$POST_TITLE</title><updated>$ENTRY_DATE_ATOM</updated><link rel='alternate' href='$ENTRY_URL'/><author><name>Wesley Aptekar-Cassels</name></author></entry>")
 done
@@ -63,6 +89,8 @@ sed \
 # it's really gross that this is two commands. fix.
 sed \
 	-e "s/★PAGE_TITLE★/$BLOG_NAME/g" \
+	-e "s/★OG_TITLE★/$BLOG_NAME/g" \
+	-e "s/★OG_TYPE★/website/g" \
 	-e "/★PAGE_CONTENT★/{
 		s/★PAGE_CONTENT★//g
 		r /dev/stdin
