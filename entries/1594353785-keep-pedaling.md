@@ -1,6 +1,6 @@
 # Keep Pedaling
 
-One of the last things I did while the world was still normal was biking about 120 miles, mostly along the coast of California. It was extremely beautiful and calming, and I'm glad that I took the time to do it. I've enjoyed biking for a while, but it took this ride for the reason why to really click for me: once you've a few miles in, you don't really have the option of stopping — all you can do is keep pedaling.
+One of the last things I did while the world was still normal was biking about 120 miles, mostly along the coast of California. It was extremely beautiful and calming, and I'm glad that I took the time to do it. I've enjoyed biking for a while, but it took this ride for the reason why to really click for me: once you're a few miles in, you don't really have the option of stopping — all you can do is keep pedaling.
 
 @marginnote-mobilehide: <img src="/img/post/keep-pedaling/coast.jpg" alt="A photo of a beach taken from the top of a clif. The image is shrouded in fog, but some small waves can be seen."/> *The coast of California, doing its thing.*
 
