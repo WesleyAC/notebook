@@ -1,7 +1,7 @@
 # Vexations and Meaning
 
 @marginnote-mobileshow: <img src="/img/post/vexations-meaning/vexations.jpg" alt="A faded sheet of sheet music, written in a strange looking and difficult to make out notation"/>
-I recently discovered the musical piece *Vexations* by Erik Satie — a half page of sheet music, written in an idiosyncratic notation — the only hint of its purpose scrawled on the sheet music:
+I recently discovered the musical piece *Vexations* by Erik Satie — a half page of sheet music, written in an idiosyncratic notation — the only hint of its purpose a cryptic note scrawled next to the music:
 
 > Pour se jouer 840 fois de suite ce motif, il sera bon de se préparer au préalable, et dans le plus grand silence, par des immobilités sérieuses
 
