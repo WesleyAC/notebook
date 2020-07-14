@@ -111,7 +111,7 @@ sed \
 	}" \
 	./parts/template.html < ./parts/index.html > ./out/index.html
 
-echo "${HTML_ENTRIES[*]}" |
+printf '%s\n' "${HTML_ENTRIES[@]}" |
 sed -i "/★POST_LIST★/{
 	s/★POST_LIST★//g
 	r /dev/stdin
