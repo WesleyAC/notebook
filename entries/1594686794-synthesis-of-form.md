@@ -3,10 +3,10 @@
 *Notes on the Synthesis of Form* (1964) is a book by architect Christopher Alexander,
 @sidenote: Who is better known in the software world for being one of the authors of *A Pattern Language*, from which the "Patterns" in "Design Patterns" comes.
 attempting to lay out a mathematical foundation for the process of design. While the book fails to construct a compelling mathematical foundation for design,
-@sidenote: This is not just my analyses, but also appears to be Alexander's as well — in 1971, he wrote "I would say forget it, forget the whole thing" of the entire field of "design methods" — a field which he pioneered with *Notes on the Synthesis of Form*.
+@sidenote: This is not just my analysis, but also appears to be Alexander's as well — in 1971, he wrote "I would say forget it, forget the whole thing" of the entire field of "design methods" — a field which he pioneered with *Notes on the Synthesis of Form*.
 the non-mathematical parts of the book provide some interesting lenses on what the process of design is, and how design should be thought about. The book defines "design" as:
 
-> The ultimate object of design is form. […] every design problem begins with an effort the achieve fitness between two entities: the form in question and its context. The form is the solution to the problem; the context defines the problem.
+> The ultimate object of design is form. […] every design problem begins with an effort to achieve fitness between two entities: the form in question and its context. The form is the solution to the problem; the context defines the problem.
 
 @marginnote-mobilehide: <img src="/img/post/synthesis-of-form/book.jpg" alt="The cover of the book 'Notes on the Synthesis of Form' — it is solid black except for the name of the title and the author, 'Christopher Alexander', which are written in capital letters in white"/> <br> *The cover of "Notes on the Synthesis of Form"*
 
