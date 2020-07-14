@@ -116,3 +116,5 @@ sed -i "/★POST_LIST★/{
 	s/★POST_LIST★//g
 	r /dev/stdin
 }" ./out/index.html
+
+sed -i "s#”</a>#</a>”#g" ./out/index.html
