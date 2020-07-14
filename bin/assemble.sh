@@ -112,9 +112,8 @@ sed \
 	./parts/template.html < ./parts/index.html > ./out/index.html
 
 printf '%s\n' "${HTML_ENTRIES[@]}" |
+sed "s#<a href='\([^']*\)'>\(.*\)”</a>#<a href='\1'>\2</a><a class='no-tufte-underline' href='\1'>”</a>#" |
 sed -i "/★POST_LIST★/{
 	s/★POST_LIST★//g
 	r /dev/stdin
 }" ./out/index.html
-
-sed -i "s#”</a>#</a>”#g" ./out/index.html
