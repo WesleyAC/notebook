@@ -102,6 +102,9 @@ sed \
 	-e "s/★PAGE_TITLE★/$BLOG_NAME/g" \
 	-e "s/★OG_TITLE★/$BLOG_NAME/g" \
 	-e "s/★OG_TYPE★/website/g" \
+	-e "/★EXTRA_TAGS★/{
+		i <meta property=\"og:image\" content=\"$BLOG_URL/fleuron.png\"/>
+	}" \
 	-e "/★PAGE_CONTENT★/{
 		s/★PAGE_CONTENT★//g
 		r /dev/stdin
