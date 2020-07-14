@@ -29,7 +29,8 @@ do
 	ENTRY_DATE_ATOM=$(date -d @"$(echo "$entry" | cut -d- -f1)" +'%Y-%m-%dT%H:%M:%SZ')
 	mkdir -p ./out/"$ENTRY_SLUG"/
 
-	POST_TITLE=$(head -n1 ./entries/"$entry" | sed 's/^#[ ]*//g')
+	POST_TITLE=$(head -n1 ./entries/"$entry" | sed 's/^#[ ]*//g' | ./bin/pandoc --from=markdown --to=html | sed -e 's#<p>##g' -e 's#</p>##g')
+	POST_TITLE_NOHTML=$(echo $POST_TITLE | sed 's/<[^>]*>//g')
 
 	HTML_ENTRIES+=("<a href='/$ENTRY_SLUG/'>$POST_TITLE</a><br>")
 
@@ -38,8 +39,8 @@ do
 	./bin/process-html.sh "$ENTRY_DATE" |
 	./bin/fix-sidenote-spacing.sh |
 	sed \
-		-e "s/★PAGE_TITLE★/$POST_TITLE ⁑ $BLOG_NAME/g" \
-		-e "s/★OG_TITLE★/$POST_TITLE/g" \
+		-e "s/★PAGE_TITLE★/$POST_TITLE_NOHTML ⁑ $BLOG_NAME/g" \
+		-e "s/★OG_TITLE★/$POST_TITLE_NOHTML/g" \
 		-e "s/★OG_TYPE★/article/g" \
 		-e "/★PAGE_CONTENT★/{
 			s/★PAGE_CONTENT★//g
@@ -73,7 +74,7 @@ do
 
 	ENTRY_URL="$BLOG_URL/$ENTRY_SLUG/"
 
-	ATOM_ENTRIES+=("<entry><id>$ENTRY_URL</id><title>$POST_TITLE</title><updated>$ENTRY_DATE_ATOM</updated><link rel='alternate' href='$ENTRY_URL'/><author><name>Wesley Aptekar-Cassels</name></author></entry>")
+	ATOM_ENTRIES+=("<entry><id>$ENTRY_URL</id><title>$POST_TITLE_NOHTML</title><updated>$ENTRY_DATE_ATOM</updated><link rel='alternate' href='$ENTRY_URL'/><author><name>Wesley Aptekar-Cassels</name></author></entry>")
 done
 
 LAST_UPDATED_ATOM=$(date +'%Y-%m-%dT%H:%M:%SZ')
