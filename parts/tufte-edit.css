@@ -200,7 +200,7 @@ figcaption {
 }
 
 figure.fullwidth figcaption {
-    margin-right: 24%; 
+	max-width: 35%;
 }
 
 /* Links: replicate underline that clears descenders */
