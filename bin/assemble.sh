@@ -12,7 +12,7 @@ fi
 rm -rf ./out
 mkdir -p ./out
 
-BLOG_NAME="Wesley's Notebook"
+BLOG_NAME="Wesley’s Notebook"
 BLOG_URL="https://notebook.wesleyac.com"
 
 cp -r ./static/* ./out/
