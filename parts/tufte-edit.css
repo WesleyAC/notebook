@@ -232,7 +232,8 @@ a:link, .tufte-underline, .hover-tufte-underline:hover {
     }
 }
 
-a:link::selection {
+a:link::selection,
+a:link ::selection {
     text-shadow: 0.03em 0 highlight, -0.03em 0 highlight, 0 0.03em highlight, 0 -0.03em highlight, 0.06em 0 highlight, -0.06em 0 highlight, 0.09em 0 highlight, -0.09em 0 highlight, 0.12em 0 highlight, -0.12em 0 highlight, 0.15em 0 highlight, -0.15em 0 highlight;
     background-color: highlight;
     color: highlighttext;
