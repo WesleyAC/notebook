@@ -19,7 +19,7 @@ I think that there's a huge amount of untapped potential in using word2vec embed
 
 The key word here is "tools" — **I'm not interested in automating writing, I'm interested in building a better thesaurus.**
 
-This idea took root in my brain after seeing <a href="https://p.migdal.pl/2017/01/06/king-man-woman-queen-why.html">classic "king − man + woman = queen" demo</a>. That example is too simple to be useful, but the idea stuck with me: if I want to find a word that's like the one I have, but has slightly different connotations, can word2vec or similar tools help me?
+This idea took root in my brain after seeing the <a href="https://p.migdal.pl/2017/01/06/king-man-woman-queen-why.html">classic "king − man + woman = queen" demo</a>. That example is too simple to be useful, but the idea stuck with me: if I want to find a word that's like the one I have, but has slightly different connotations, can word2vec or similar tools help me?
 
 @marginnote-mobilehide: <img src="/img/post/computer-writing/metaphoria.png" alt="A screenshot of Metaphoria displaying possible metaphors relating the concept of love to windows"/> *[Metaphoria: An Algorithmic Companion for Metaphor Creation](http://language-play.com/metaphoria/)*
 
