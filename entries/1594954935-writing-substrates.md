@@ -49,9 +49,9 @@ I started a mailing list a while ago. I wrote the software myself so it's very c
 
 ### [Recurse Center Zulip](https://www.recurse.com/blog/112-how-rc-uses-zulip)
 
-The Recurse Centers Zulip chat instance has lots of stream that I like, but I have a particular affinity for `#consciousness`,
+The Recurse Centers Zulip chat instance has lots of streams that I like, but I have a particular affinity for `#consciousness`,
 @sidenote: The "stream of consciousness," get it? It's very funny :)
-where every person has their own thread for talking about whatever's on their mind. There's a sort of community, where people will respond to each others posts, but the community is small and nice enough that feels good.
+where every person has their own thread for talking about whatever's on their mind. There's a sort of community, where people will respond to each other's posts, but the community is small and nice enough that feels good.
 
 </section>
 <section>
