@@ -3,7 +3,7 @@
 SIDENOTE_NUM=1
 MARGINNOTE_NUM=1
 
-while read -r line
+while IFS='' read -r line
 do
 	case "$line" in 
 		@sidenote:*)
