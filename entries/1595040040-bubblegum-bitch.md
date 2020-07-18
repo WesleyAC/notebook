@@ -35,7 +35,7 @@ Over the course of the album, we see the main character slowly growing and learn
 >
 > Maybe, yeah just maybe, they just want to get to know you
 
-This is amusing to me, because one the most remembered songs from this album is *Bubblegum Bitch*.
+This is amusing to me, because one of the most remembered songs from this album is *Bubblegum Bitch*.
 @sidenote: According to Spotify, the only song from the main album that's more popular than *Bubblegum Bitch* is [*Primadonna*](https://www.youtube.com/watch?v=voFGDHKnGUE), which is the second song on the album, and is also clearly designed to show of how bad the main character is. [*How to Be a Heartbreaker*](https://www.youtube.com/watch?v=vKNcuTWzTVw), which doesn't make the "standard edition" but is in several other versions of the album shows up just before *Bubblegum Bitch*, is similarly designed to to paint the main character in a negative light.
 It's catchy as hell and no one listens to albums anymore, so the entire story arc and character progression is ignored in favor of the song that's designed specifically to show how bad the main character is.
 @sidenote: Marina calls Electra Heart (the character, not the album) "[the antithesis of everything that I stand for](https://www.popjustice.com/articles/an-interview-with-marina-the-diamonds/)."
