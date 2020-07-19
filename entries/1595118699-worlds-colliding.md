@@ -8,7 +8,7 @@ I spend a lot of time thinking about the ways that expectations around "professi
 @sidenote: This isn't to say that forcing people to hide things about their lives is something that inherently makes everyone comfortable — quite the opposite, most of the things people are forced to hide in the name of "professionalism" disproportionately affect more marginalized people, almost definitionally. But I also think that it's true that in a world where people are coerced into interacting with all of their coworkers, there are advantages to having touchy subjects be off-limits — I'd honestly rather not know which of my coworkers are bigots, as long as they're not actively causing problems for anyone.
  — but I can't help but be sad that there are parts of myself that I hide for the sake of "professionalism."
 
-I feel a similar way about the Recurse Center — it's a space that clearly feels "professional," but deeply social at the same time. It feels wrong, on some level, to date someone you meet at RC, because the closest thing that feels like is dating a coworker.
+I feel a similar way about the Recurse Center — it's a space that clearly feels "professional," but deeply social at the same time. It feels wrong, on some level, to date someone you meet at RC, because the closest thing that that feels like is dating a coworker.
 @sidenote: I'm aware that plenty of people don't think that dating coworkers is weird — if that's you, alright, but you'd better be thinking pretty carefully about what power dynamics you're stumbling into...
 But lots of people do it anyways, because RC is a space that is incredibly conducive to creating close connections.
 
