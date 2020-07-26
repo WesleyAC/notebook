@@ -2,7 +2,7 @@
 
 I've been feeling lonely and disconnected lately. Maybe you could tell? I've been away for a little while.
 
-One of the things that makes me happier in these moods is lazily perusing through the unimaginably vast catalogue of human emotion and creativity that is the internet. This has been made more and more difficult as the years crawl by — scrolling through Twitter and Instagram and Reddit feels monotonous and boring, stuck in a rut. Tumblr is maybe a little better — the aesthetics that are cultivated there are not the corporate-friendly bright colors and washed out emotions variety, but even that is slowly dying.
+One of the things that makes me happier in these moods is lazily perusing the unimaginably vast catalogue of human emotion and creativity that is the internet. This has been made more and more difficult as the years crawl by — scrolling through Twitter and Instagram and Reddit feels monotonous and boring, stuck in a rut. Tumblr is maybe a little better — the aesthetics that are cultivated there are not the corporate-friendly bright colors and washed out emotions variety, but even that is slowly dying.
 
 So where to turn to, as one by one every good place is slowly eaten from the inside?
 
