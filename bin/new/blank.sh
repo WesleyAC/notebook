@@ -4,12 +4,13 @@ set -e
 
 cd "$(dirname "$0")"/../../
 
+ENTRY_SLUG="$1"
+
 if [ "$#" -ne 1 ]; then
-    echo "usage: $0 entry-slug"
-    exit 1
+	ENTRY_SLUG=$(date +"%m-%d-%Y")
 fi
 
-ENTRY_PATH=./entries/$(date +'%s')-$1.md
+ENTRY_PATH=./entries/$(date +'%s')-$ENTRY_SLUG.md
 
 cat <<ENTRY_START_TEXT > "$ENTRY_PATH"
 # 
