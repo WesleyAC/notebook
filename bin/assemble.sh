@@ -30,7 +30,7 @@ do
 	mkdir -p ./out/"$ENTRY_SLUG"/
 
 	POST_TITLE=$(head -n1 ./entries/"$entry" | sed 's/^#[ ]*//g' | ./bin/pandoc --from=markdown --to=html | sed -e 's#<p>##g' -e 's#</p>##g')
-	POST_TITLE_NOHTML=$(echo $POST_TITLE | sed 's/<[^>]*>//g')
+	POST_TITLE_NOHTML=$(echo $POST_TITLE | sed -e 's/<[^>]*>//g' -e 's/\&/\\\&/g')
 
 	HTML_ENTRIES+=("<a href='/$ENTRY_SLUG/'>$POST_TITLE</a><br>")
 
