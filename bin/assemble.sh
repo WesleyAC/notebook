@@ -30,7 +30,8 @@ do
 	mkdir -p ./out/"$ENTRY_SLUG"/
 
 	POST_TITLE=$(head -n1 ./entries/"$entry" | sed 's/^#[ ]*//g' | ./bin/pandoc --from=markdown --to=html | sed -e 's#<p>##g' -e 's#</p>##g')
-	POST_TITLE_NOHTML=$(echo $POST_TITLE | sed -e 's/<[^>]*>//g' -e 's/\&/\\\&/g')
+	POST_TITLE_NOHTML=$(echo $POST_TITLE | sed 's/<[^>]*>//g')
+	POST_TITLE_NOHTML_SEDESCAPE=$(echo $POST_TITLE_NOHTML | sed 's/\&/\\\&/g')
 
 	HTML_ENTRIES+=("<a href='/$ENTRY_SLUG/'>$POST_TITLE</a><br>")
 
@@ -39,8 +40,8 @@ do
 	./bin/process-html.sh "$ENTRY_DATE" |
 	./bin/fix-sidenote-spacing.sh |
 	sed \
-		-e "s/★PAGE_TITLE★/$POST_TITLE_NOHTML ⁑ $BLOG_NAME/g" \
-		-e "s/★OG_TITLE★/$POST_TITLE_NOHTML/g" \
+		-e "s/★PAGE_TITLE★/$POST_TITLE_NOHTML_SEDESCAPE ⁑ $BLOG_NAME/g" \
+		-e "s/★OG_TITLE★/$POST_TITLE_NOHTML_SEDESCAPE/g" \
 		-e "s/★OG_TYPE★/article/g" \
 		-e "/★PAGE_CONTENT★/{
 			s/★PAGE_CONTENT★//g
