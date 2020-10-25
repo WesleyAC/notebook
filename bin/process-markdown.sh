@@ -8,13 +8,7 @@ do
 	case "$line" in 
 		@sidenote:*)
 			SIDENOTE_TEXT=$(echo "$line" | cut -d: -f 2-)
-			cat <<SIDENOTE_HTML
-<label for="sn-$SIDENOTE_NUM" class="margin-toggle sidenote-number"></label>
-<input type="checkbox" id="sn-$SIDENOTE_NUM" class="margin-toggle"/>
-<span class="sidenote">
-$SIDENOTE_TEXT
-</span>
-SIDENOTE_HTML
+			echo "<label for='sn-$SIDENOTE_NUM' class='margin-toggle sidenote-number'></label><input type='checkbox' id='sn-$SIDENOTE_NUM' class='margin-toggle'/><span class='sidenote'>$SIDENOTE_TEXT</span>"
 			SIDENOTE_NUM=$((SIDENOTE_NUM+1))
 		;;
 		@marginnote:*)
