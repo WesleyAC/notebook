@@ -39,7 +39,7 @@ Note that the start date (and thus the end date) of your Gold Card is determined
 
 If you have any problems during this process, you can find a person to call for assistance on [this contact page](https://foreigntalentact.ndc.gov.tw/en/cp.aspx?n=D927ED39BDAE7478&s=DA2F7BC919B77E24). Dialing Taiwan phone numbers from the United States can be tricky, but the thing that worked for me was dialing +886, then the area code with the leading zero omitted, then the rest of the number. Dialing 011 before the number or leaving on the zero in the area code would cause the call to fail for me, but your carrier may be different.
 
-You might also want to check out the [official website](https://foreigntalentact.ndc.gov.tw/en/Content_List.aspx?n=6501F7D3D7CCA8A0), [official FAQ](https://foreigntalentact.ndc.gov.tw/en/cp.aspx?n=AC68F9FBABA3F294&s=4D07D9F9F687B542), [thread on the forumosa forum](https://tw.forumosa.com/t/employment-gold-card-for-some-foreigners/159653), or the [unofficial FAQ](https://taiwangoldcard.com/application-faq/).
+You might also want to check out the [official website](https://foreigntalentact.ndc.gov.tw/en/Content_List.aspx?n=6501F7D3D7CCA8A0), [official FAQ](https://foreigntalentact.ndc.gov.tw/en/cp.aspx?n=AC68F9FBABA3F294&s=4D07D9F9F687B542), [thread on the forumosa forum](https://tw.forumosa.com/t/employment-gold-card-for-some-foreigners/159653), the [unofficial FAQ](https://taiwangoldcard.com/application-faq/), or [Tom Fifieldt's blog post](http://blog.tomfifield.net/2018/05/how-to-apply-for-taiwans-immigration.html).
 
 Enjoy Taiwan!
 
