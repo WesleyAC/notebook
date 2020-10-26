@@ -22,8 +22,9 @@ Once you've submitted your application, you'll need to wait a few weeks for it t
 
 Once you get to the passport submission stage, it can be a bit unclear what to do — you can't visit in person in most places due to COVID-19
 @sidenote: in the United States, at least.
-, and the SF TECO at least does not answer phone calls or emails.
+, and the SF TECO at least does not answer phone calls or emails
 @sidenote: While the main SF TECO phone number goes unanswered, if you have Gold Card questions, you can call Angela at (415) 364-5632 and she should be able to help. The line is often busy, but if you leave a message she'll get back to you.
+(although other TECOs may be better, you should at least try calling your local TECO).
 What you need to do is pretty simple, however: just mail in the passport submission notice PDF that you can download on the application website (Download → Download Passport Submission Notice), your passport or a notarized copy of your passport, and a self-addressed USPS priority mail return envelope.
 
 If like me, you don't want to send in your physical passport, getting a notarized copy is pretty easy.
