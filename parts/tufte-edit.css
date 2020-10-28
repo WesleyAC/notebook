@@ -283,6 +283,15 @@ img {
     left: 0.1rem; 
 }
 
+.sidenote-number:before {
+	content:'';
+	height: 40px;
+	width: 40px;
+	position: absolute;
+	margin-left: calc(-20px + 0.4rem);
+	margin-top: calc(-20px + 0.6rem);
+}
+
 .sidenote:before {
     content: counter(sidenote-counter) " ";
     font-size: 1rem;
