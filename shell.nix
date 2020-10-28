@@ -11,6 +11,7 @@ stdenv.mkDerivation {
     html5validator
   ];
   shellHook = ''
+    npm ci
     export PATH="$PWD/node_modules/.bin/:$PATH"
   '';
 }
