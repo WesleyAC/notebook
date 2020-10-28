@@ -19,6 +19,7 @@ fi
 git checkout -b gh-pages
 
 ./bin/assemble.sh
+./bin/validate.sh
 
 find . -maxdepth 1 ! -name 'out' ! -name '.git' ! -name '.gitignore' -exec rm -rf {} \;
 mv out/* .

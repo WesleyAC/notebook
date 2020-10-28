@@ -8,6 +8,7 @@ stdenv.mkDerivation {
     minify
     entr
     nodejs
+    html5validator
   ];
   shellHook = ''
     export PATH="$PWD/node_modules/.bin/:$PATH"

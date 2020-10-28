@@ -1,6 +1,6 @@
 # Nuclear Waste & Optimism
 
-@marginnote-mobileshow: <a class="no-tufte-underline" href="/img/post/nuclear-waste-optimism/1.png"><img src="/img/post/nuclear-waste-optimism/1.png"/></a>
+@marginnote-mobileshow: <a class="no-tufte-underline" href="/img/post/nuclear-waste-optimism/1.png"><img src="/img/post/nuclear-waste-optimism/1.png" alt="A drawing titled 'Forbidding Blocks' showing a grid of misshapen cubes with spikes on the edges."/></a>
 
 > This place is a message … <br>
 > and part of a system of messages … <br>
@@ -15,7 +15,7 @@
 
 The *[Expert Judgment on Markers to Deter Inadvertent Human Intrusion into the Waste Isolation Pilot Plant](https://digital.library.unt.edu/ark:/67531/metadc1279277/m2/1/high_res_d/10117359.pdf)* document is best know for the inadvertently humorous message quoted above, but it's an interesting document in its own right — even if only for the now rather quaint idea that one can and should make efforts ensure that earth will be livable for whoever remains on it in 10,000 years. It's interesting to flip through, but also so long that I can't necessarily recommend that one read it all the way through, so I'll pull out some interesting snippets and things that I think can be learned from them here.
 
-@marginnote-mobileshow: <a class="no-tufte-underline" href="/img/post/nuclear-waste-optimism/2.png"><img src="/img/post/nuclear-waste-optimism/2.png"/></a>
+@marginnote-mobileshow: <a class="no-tufte-underline" href="/img/post/nuclear-waste-optimism/2.png"><img src="/img/post/nuclear-waste-optimism/2.png" alt="A drawing titled 'Landscape of Thorns' showing a field of thorn-like spikes."/></a>
 
 <hr>
 
@@ -23,13 +23,13 @@ The *[Expert Judgment on Markers to Deter Inadvertent Human Intrusion into the W
 
 This is just a small footnote in the report, but it hits extremely hard, being simultaneously true, obvious, and shocking. You can substitute "land" and "toxic material" for lots of other things and still have this general principle remain true. We often look to governments as custodians of long term records that must last for many generations, but how those records are handled very much depends on the incentive structures at play: cadastral maps tend to be quite well kept, while no copies remain of many of the treaties that the United States government signed with indigenous people. Archival is inherently political, and we ought to think carefully about what things we rely on the government to track.
 
-@marginnote-mobileshow: <a class="no-tufte-underline" href="/img/post/nuclear-waste-optimism/3.png"><img src="/img/post/nuclear-waste-optimism/3.png"/></a>
+@marginnote-mobileshow: <a class="no-tufte-underline" href="/img/post/nuclear-waste-optimism/3.png"><img src="/img/post/nuclear-waste-optimism/3.png" alt="A drawing titled 'Message Kiosk' showing a wall with a message written on it, which is protected from the wind by a second, larger wall."/></a>
 
 <hr>
 
 One interesting coincidence is that the chosen 10,000 year timeline is the same number that was chosen for the [Clock of the Long Now](http://www.10000yearclock.net/), a project funded with $42 million from Jeff Bezos, while the actual Waste Isolation Pilot Plant fights for funding in the Senate [year](https://www.currentargus.com/story/news/local/2019/09/14/senate-bill-could-provide-403-million-wipp/2311997001/) after [year](https://www.currentargus.com/story/news/local/2020/06/16/wipp-new-mexico-national-labs-see-increased-funding-senate-bill/3193955001/). Philanthropists are happy to fund art projects to "inspire people to think in the long term," but when it actually comes to operating their businesses in a way that is consistent with that, it's of course too costly to even consider.
 
-@marginnote-mobileshow: <a class="no-tufte-underline" href="/img/post/nuclear-waste-optimism/4.png"><img src="/img/post/nuclear-waste-optimism/4.png"/></a>
+@marginnote-mobileshow: <a class="no-tufte-underline" href="/img/post/nuclear-waste-optimism/4.png"><img src="/img/post/nuclear-waste-optimism/4.png" alt="A drawing titled 'Leaning Stone Spikes' showing spikes made of several pieces of stone joined together, leaning at odd angles."/></a>
 
 <hr>
 
@@ -39,7 +39,7 @@ My first tech job was working on a system that was almost as old as I was. One o
 
 Computing is a young field, and before long, it may be that more people than not work on systems that were started before they were born, and which will likely continue to exist after they die. When working on these systems, it's important to think about how knowledge is passed along - docs will fall out of date or get lost, VCS history may disappear. But that doesn't mean that we can't leave warnings in the structure of the code itself. What is the programming equivalent of embedding thermit into the ground to warn potential drillers of danger?
 
-@marginnote-mobileshow: <a class="no-tufte-underline" href="/img/post/nuclear-waste-optimism/5.png"><img src="/img/post/nuclear-waste-optimism/5.png"/></a>
+@marginnote-mobileshow: <a class="no-tufte-underline" href="/img/post/nuclear-waste-optimism/5.png"><img src="/img/post/nuclear-waste-optimism/5.png" alt="A drawing titled 'Buried Room' showing an underground room with messages written in it."/></a>
 
 <hr>
 
