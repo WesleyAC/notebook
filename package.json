@@ -1,0 +1,12 @@
+{
+  "name": "wesley-notebook",
+  "version": "1.0.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WesleyAC/notebook.git"
+  },
+  "dependencies": {
+    "html-minifier": "^4.0.0"
+  }
+}

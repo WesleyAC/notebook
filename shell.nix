@@ -4,9 +4,13 @@ stdenv.mkDerivation {
   name = "wesley-notebook";
 
   buildInputs = [
-    pkgs.bc
-    pkgs.minify
-    pkgs.entr
+    bc
+    minify
+    entr
+    nodejs
   ];
+  shellHook = ''
+    export PATH="$PWD/node_modules/.bin/:$PATH"
+  '';
 }
 

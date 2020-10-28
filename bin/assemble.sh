@@ -118,3 +118,18 @@ sed -i "/★POST_LIST★/{
 	s/★POST_LIST★//g
 	r /dev/stdin
 }" ./out/index.html
+
+html-minifier \
+	--collapse-boolean-attributes \
+	--collapse-whitespace \
+	--minify-css true \
+	--minify-js true \
+	--remove-comments \
+	--remove-empty-attributes \
+	--remove-optional-tags \
+	--remove-redundant-attributes \
+	--sort-attributes \
+	--sort-class-name \
+	--input-dir ./out/ \
+	--output-dir ./out/ \
+	--file-ext html
