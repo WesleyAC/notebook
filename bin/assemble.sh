@@ -18,6 +18,7 @@ BLOG_URL="https://notebook.wesleyac.com"
 cp -r ./static/* ./out/
 
 minify ./parts/tufte-edit.css > ./out/tufte-edit.min.css
+babel --presets=env ./parts/sideline.js | uglifyjs --compress --mangle > ./out/sideline.min.js
 
 HTML_ENTRIES=()
 ATOM_ENTRIES=()
