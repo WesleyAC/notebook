@@ -2,7 +2,7 @@
 
 set -e
 
-if ! [ -z "$(git status --porcelain)" ]; then 
+if [ -n "$(git status --porcelain)" ]; then
 	echo "working directory not clean, exiting." 
 	exit 1
 fi
@@ -12,7 +12,7 @@ if ! git diff --exit-code > /dev/null; then
 	exit 1
 fi
 
-if [ `git branch | grep gh-pages` ]
+if git branch | grep -q gh-pages
 then
 	git branch -D gh-pages
 fi

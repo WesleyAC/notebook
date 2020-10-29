@@ -4,7 +4,7 @@ set -e
 
 cd "$(dirname "$0")"/..
 
-if [[ $(ls -1 ./entries/ | cut -d- -f2- | sort | uniq -d) ]]; then
+if [[ $(find ./entries/ -maxdepth 1 -type f | cut -d- -f2- | sort | uniq -d) ]]; then
 	echo "duplicate slugs found, exiting..."
 	exit 1
 fi
@@ -22,7 +22,7 @@ minify ./parts/tufte-edit.css > ./out/tufte-edit.min.css
 HTML_ENTRIES=()
 ATOM_ENTRIES=()
 
-for entry in $(ls -1 ./entries | tac)
+for entry in $(cd ./entries && find . -maxdepth 1 -type f | cut -c3- | sort | tac)
 do
 	ENTRY_SLUG=$(echo "${entry%.*}" | cut -d- -f2-)
 	ENTRY_DATE=$(date -d @"$(echo "$entry" | cut -d- -f1)" +"%A %B %-d, %Y")
@@ -30,8 +30,10 @@ do
 	mkdir -p ./out/"$ENTRY_SLUG"/
 
 	POST_TITLE=$(head -n1 ./entries/"$entry" | sed 's/^#[ ]*//g' | ./bin/pandoc --from=markdown --to=html | sed -e 's#<p>##g' -e 's#</p>##g')
-	POST_TITLE_NOHTML=$(echo $POST_TITLE | sed 's/<[^>]*>//g')
-	POST_TITLE_NOHTML_SEDESCAPE=$(echo $POST_TITLE_NOHTML | sed 's/\&/\\\&/g')
+	# shellcheck disable=SC2001
+	POST_TITLE_NOHTML=$(echo "$POST_TITLE" | sed 's/<[^>]*>//g')
+	# shellcheck disable=SC2001
+	POST_TITLE_NOHTML_SEDESCAPE=$(echo "$POST_TITLE_NOHTML" | sed 's/\&/\\\&/g')
 
 	HTML_ENTRIES+=("<a href='/$ENTRY_SLUG/'>$POST_TITLE</a><br>")
 
@@ -51,8 +53,8 @@ do
 		./parts/template.html > ./out/"$ENTRY_SLUG"/index.html
 
 	# TODO: quoting, single quotes, ugh...
-	OG_IMG=$(grep -o "<img src=\"[^\"]\+\"\( alt=\"[^\"]\+\)\?" out/$ENTRY_SLUG/index.html | cut -d\" -f2 | head -n1)
-	OG_ALT=$(grep -o "<img src=\"[^\"]\+\"\( alt=\"[^\"]\+\)\?" out/$ENTRY_SLUG/index.html | cut -d\" -f4 | head -n1)
+	OG_IMG=$(grep -o "<img src=\"[^\"]\+\"\( alt=\"[^\"]\+\)\?" "out/$ENTRY_SLUG/index.html" | cut -d\" -f2 | head -n1)
+	OG_ALT=$(grep -o "<img src=\"[^\"]\+\"\( alt=\"[^\"]\+\)\?" "out/$ENTRY_SLUG/index.html" | cut -d\" -f4 | head -n1)
 
 	if [[ $OG_IMG == /* ]]; then
 		OG_IMG=$BLOG_URL$OG_IMG
@@ -112,6 +114,7 @@ sed \
 	}" \
 	./parts/template.html < ./parts/index.html > ./out/index.html
 
+# shellcheck disable=SC1111
 printf '%s\n' "${HTML_ENTRIES[@]}" |
 sed "s#<a href='\([^']*\)'>\(.*\)”</a>#<a href='\1'>\2</a><a class='no-tufte-underline' href='\1'>”</a>#" |
 sed -i "/★POST_LIST★/{

@@ -9,6 +9,9 @@ stdenv.mkDerivation {
     entr
     nodejs
     html5validator
+    xidel
+    curl
+    shellcheck
   ];
   shellHook = ''
     npm ci

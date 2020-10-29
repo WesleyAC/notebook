@@ -19,12 +19,12 @@ else
 	N=1
 	NUM_CARDS=${1:-2}
 	IFS=$'\n'
-	CARDS=$(shuf -n $NUM_CARDS ./bin/tarot_data.csv)
+	CARDS=$(shuf -n "$NUM_CARDS" ./bin/tarot_data.csv)
 	for card in $CARDS; do
 		CARD_IMG="/img/tarot/$(echo "$card" | cut -d, -f1).jpg"
 		CARD_URL="http://learntarot.com/$(echo "$card" | cut -d, -f2).htm"
 		CARD_NAME=$(echo "$card" | cut -d, -f3)
-		printf "[$CARD_NAME]($CARD_URL)" >> "$ENTRY_PATH"
+		printf "[%s](%s)" "$CARD_NAME" "$CARD_URL" >> "$ENTRY_PATH"
 		case $N in
 			$((NUM_CARDS-1)))
 				if [[ $NUM_CARDS == 2 ]]; then
@@ -33,7 +33,7 @@ else
 					printf ", and " >> "$ENTRY_PATH"
 				fi
 			;;
-			$NUM_CARDS)
+			"$NUM_CARDS")
 				printf "." >> "$ENTRY_PATH"
 			;;
 			*)
