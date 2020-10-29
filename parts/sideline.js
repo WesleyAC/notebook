@@ -50,9 +50,12 @@ function setup_sideline() {
 		svg_line3.setAttribute("y1", note_offset.top);
 		svg_line3.setAttribute("x2", note_offset.left-1);
 		svg_line3.setAttribute("y2", note_offset.top + note_offset.height);
-		note.parentNode.insertBefore(svg_container, note.nextSibling);
+
+		note.parentNode.insertBefore(svg_container, note.nextSibling); // might break if sidenote is last element in parent?
 	}
 }
 
-document.fonts.ready.then(setup_sideline);
-window.addEventListener('resize', setup_sideline);
+if (matchMedia('(hover:hover),(any-hover:hover)').matches) {
+	document.fonts.ready.then(setup_sideline);
+	window.addEventListener('resize', setup_sideline);
+}
