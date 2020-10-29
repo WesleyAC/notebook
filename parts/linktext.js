@@ -1,96 +1,95 @@
 // https://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript
 const cyrb53 = function(str, seed = 0) {
-    let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
-    for (let i = 0, ch; i < str.length; i++) {
-        ch = str.charCodeAt(i);
-        h1 = Math.imul(h1 ^ ch, 2654435761);
-        h2 = Math.imul(h2 ^ ch, 1597334677);
-    }
-    h1 = Math.imul(h1 ^ (h1>>>16), 2246822507) ^ Math.imul(h2 ^ (h2>>>13), 3266489909);
-    h2 = Math.imul(h2 ^ (h2>>>16), 2246822507) ^ Math.imul(h1 ^ (h1>>>13), 3266489909);
-    return 4294967296 * (2097151 & h2) + (h1>>>0);
+	let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
+	for (let i = 0, ch; i < str.length; i++) {
+		ch = str.charCodeAt(i);
+		h1 = Math.imul(h1 ^ ch, 2654435761);
+		h2 = Math.imul(h2 ^ ch, 1597334677);
+	}
+	h1 = Math.imul(h1 ^ (h1>>>16), 2246822507) ^ Math.imul(h2 ^ (h2>>>13), 3266489909);
+	h2 = Math.imul(h2 ^ (h2>>>16), 2246822507) ^ Math.imul(h1 ^ (h1>>>13), 3266489909);
+	return 4294967296 * (2097151 & h2) + (h1>>>0);
 };
 
 // https://stackoverflow.com/questions/7781963/js-get-array-of-all-selected-nodes-in-contenteditable-div/7784176
 function nextNode(node) {
-    if (node.hasChildNodes()) {
-        return node.firstChild;
-    } else {
-        while (node && !node.nextSibling) {
-            node = node.parentNode;
-        }
-        if (!node) {
-            return null;
-        }
-        return node.nextSibling;
-    }
+	if (node.hasChildNodes()) {
+		return node.firstChild;
+	} else {
+		while (node && !node.nextSibling) {
+			node = node.parentNode;
+		}
+		if (!node) {
+			return null;
+		}
+		return node.nextSibling;
+	}
 }
 
 function getRangeSelectedNodes(range) {
-    var node = range.startContainer;
-    var endNode = range.endContainer;
+	var node = range.startContainer;
+	var endNode = range.endContainer;
 
-    // Special case for a range that is contained within a single node
-    if (node == endNode) {
-        return [node];
-    }
+	// Special case for a range that is contained within a single node
+	if (node == endNode) {
+		return [node];
+	}
 
-    // Iterate nodes until we hit the end container
-    var rangeNodes = [];
-    while (node && node != endNode) {
-        rangeNodes.push( node = nextNode(node) );
-    }
+	// Iterate nodes until we hit the end container
+	var rangeNodes = [];
+	while (node && node != endNode) {
+		rangeNodes.push( node = nextNode(node) );
+	}
 
-    // Add partially selected nodes at the start of the range
-    node = range.startContainer;
-    while (node && node != range.commonAncestorContainer) {
-        rangeNodes.unshift(node);
-        node = node.parentNode;
-    }
+	// Add partially selected nodes at the start of the range
+	node = range.startContainer;
+	while (node && node != range.commonAncestorContainer) {
+		rangeNodes.unshift(node);
+		node = node.parentNode;
+	}
 
-    return rangeNodes;
+	return rangeNodes;
 }
 
 // https://stackoverflow.com/questions/6213227/fastest-way-to-convert-a-number-to-radix-64-in-javascript
 const Base64 = {
-    _Rixits: "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_",
+	_Rixits: "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_",
 
-    // This cannot handle negative numbers and only works on the 
-    //     integer part, discarding the fractional part.
-    // Doing better means deciding on whether you're just representing
-    // the subset of javascript numbers of twos-complement 32-bit integers 
-    // or going with base-64 representations for the bit pattern of the
-    // underlying IEEE floating-point number, or representing the mantissae
-    // and exponents separately, or some other possibility. For now, bail
-    fromNumber: function(number) {
-        if (isNaN(Number(number)) || number === null ||
-            number === Number.POSITIVE_INFINITY)
-            throw "The input is not valid";
-        if (number < 0)
-            throw "Can't represent negative numbers now";
+	// This cannot handle negative numbers and only works on the 
+	//     integer part, discarding the fractional part.
+	// Doing better means deciding on whether you're just representing
+	// the subset of javascript numbers of twos-complement 32-bit integers 
+	// or going with base-64 representations for the bit pattern of the
+	// underlying IEEE floating-point number, or representing the mantissae
+	// and exponents separately, or some other possibility. For now, bail
+	fromNumber: function(number) {
+		if (isNaN(Number(number)) || number === null ||
+			number === Number.POSITIVE_INFINITY)
+			throw "The input is not valid";
+		if (number < 0)
+			throw "Can't represent negative numbers now";
 
-        var rixit; // like 'digit', only in some non-decimal radix 
-        var residual = Math.floor(number);
-        var result = '';
-        while (true) {
-            rixit = residual % 64
-            result = this._Rixits.charAt(rixit) + result;
-            residual = Math.floor(residual / 64);
+		var rixit; // like 'digit', only in some non-decimal radix 
+		var residual = Math.floor(number);
+		var result = '';
+		for (;;) {
+			rixit = residual % 64
+			result = this._Rixits.charAt(rixit) + result;
+			residual = Math.floor(residual / 64);
 
-            if (residual == 0)
-                break;
-            }
-        return result;
-    },
+			if (residual == 0) { break; }
+		}
+		return result;
+	},
 
-    toNumber: function(rixits) {
-        var result = 0;
-        rixits = rixits.split('');
-        for (var e = 0; e < rixits.length; e++) {
-            result = (result * 64) + this._Rixits.indexOf(rixits[e]);
-        }
-        return result;
-    }
+	toNumber: function(rixits) {
+		var result = 0;
+		rixits = rixits.split('');
+		for (var e = 0; e < rixits.length; e++) {
+			result = (result * 64) + this._Rixits.indexOf(rixits[e]);
+		}
+		return result;
+	}
 }
 
 function hashnode(n) {
@@ -135,7 +134,7 @@ if (!!(window.history && history.replaceState) && typeof(Range) != "undefined") 
 			let [start_hash, start_offset] = start_hash_full.split(":");
 			let [end_hash, end_offset] = end_hash_full.split(":");
 			let n, walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
-			while (n = walk.nextNode()) {
+			while (n = walk.nextNode()) { // eslint-disable-line no-cond-assign
 				const h = hashnode(n);
 				if (h == start_hash) { range.setStart(n, start_offset); }
 				if (h == end_hash) { range.setEnd(n, end_offset); }
