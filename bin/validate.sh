@@ -14,7 +14,7 @@ find . -name "*.sh" -exec shellcheck {} + || FAIL=2
 
 echo "running eslint..."
 
-find . -name "*.js" -exec eslint {} + || FAIL=5
+find . -name "*.js" -not -path "./out/*" -not -path "./node_modules/*" -exec eslint {} + || FAIL=5
 
 echo "checking broken links..."
 
