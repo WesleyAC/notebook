@@ -111,7 +111,6 @@ if (!!(window.history && history.replaceState) && typeof(Range) != "undefined") 
 			anchor_offsets.set(hashnode(selection.anchorNode), [selection.anchorOffset]);
 			anchor_offsets.set(hashnode(selection.focusNode), [selection.focusOffset]);
 			if (anchor_offsets.size == 1) { anchor_offsets.set(hashnode(selection.anchorNode), [selection.anchorOffset, selection.focusOffset].sort()); }
-			console.log(anchor_offsets);
 
 			if (hashes.length > 0) {
 				const version = "1";
@@ -139,7 +138,6 @@ if (!!(window.history && history.replaceState) && typeof(Range) != "undefined") 
 				if (h == start_hash) { range.setStart(n, start_offset); }
 				if (h == end_hash) { range.setEnd(n, end_offset); }
 			}
-			console.log(range);
 			document.getSelection().removeAllRanges();
 			document.getSelection().addRange(range);
 			range.startContainer.parentElement.scrollIntoView();
