@@ -19,7 +19,7 @@ else
 	N=1
 	NUM_CARDS=${1:-2}
 	IFS=$'\n'
-	CARDS=$(shuf -n "$NUM_CARDS" ./bin/tarot_data.csv)
+	CARDS=$(shuf -n "$NUM_CARDS" ./data/tarot_data.csv)
 	for card in $CARDS; do
 		CARD_IMG="/img/tarot/$(echo "$card" | cut -d, -f1).jpg"
 		CARD_URL="http://learntarot.com/$(echo "$card" | cut -d, -f2).htm"

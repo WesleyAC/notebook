@@ -21,24 +21,30 @@ do
     do
         case "$URL" in
             https://*|http://*)
-            echo "$URL" | grep -E -f ./bin/ignore_broken_links.txt > /dev/null 2>&1 && continue
+                URL_HASH=$(echo "$URL" | b3sum | cut -d" " -f1)
+                if [ ! -f "./data/archive/$URL_HASH" ]
+                then
+                    echo "url not archived: $URL"
+                    FAIL=3
+                fi
+                echo "$URL" | grep -E -f ./data/ignore_broken_links.txt > /dev/null 2>&1 && continue
                 if ! curl -A "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/81.0" --max-time 5 --fail --head "$URL" > /dev/null 2>&1
                 then
-                    curl -A "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/81.0" --max-time 30 --fail "$URL" > /dev/null 2>&1 || (echo "broken link: $FILE:$URL"; FAIL=3)
+                    curl -A "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/81.0" --max-time 30 --fail "$URL" > /dev/null 2>&1 || (echo "broken link: $FILE:$URL"; FAIL=4)
                 fi
                 ;;
             /*)
-                test -f "./out$URL" || test -f "./out$URL/index.html" || (echo "broken link: $FILE:$URL"; FAIL=3)
+                test -f "./out$URL" || test -f "./out$URL/index.html" || (echo "broken link: $FILE:$URL"; FAIL=4)
                 ;;
             mailto://*)
                 echo "mailto links should not have //: $FILE:$URL"
-                FAIL=3
+                FAIL=4
                 ;;
             mailto:*)
                 ;;
             *)
                 echo "unknown url type: $FILE:$URL"
-                FAIL=3
+                FAIL=4
         esac
     done
 done
