@@ -12,12 +12,13 @@ if ! git diff --exit-code > /dev/null; then
 	exit 1
 fi
 
+echo "switching to gh-pages branch..."
 if git branch | grep -q gh-pages
 then
-	git branch -D gh-pages
+	git branch -D gh-pages &> /dev/null
 fi
-git checkout -b gh-pages
-trap "git checkout -" EXIT
+git checkout -b gh-pages &> /dev/null
+trap "git checkout - &> /dev/null" EXIT
 
 ./bin/assemble.sh
 ./bin/validate.sh
@@ -26,10 +27,10 @@ find . -maxdepth 1 ! -name '.' ! -name 'out' ! -name '.git' ! -name '.gitignore'
 mv out/* .
 rmdir out/
 
-git add -A
-git commit --allow-empty -m "$(git log -1 --pretty=%B)"
-git push -f -q origin gh-pages
+echo "committing compiled site..."
+git add -A > /dev/null
+git commit --allow-empty -m "$(git log -1 --pretty=%B)" > /dev/null
+echo "pushing compiled site..."
+git push -f -q origin gh-pages > /dev/null
 
 echo "deployed <3"
-
-exit 0

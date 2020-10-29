@@ -29,11 +29,13 @@ in stdenv.mkDerivation {
     archivenow
     b3sum
     pandoc
+    pngcrush
+    optipng
+    jpegoptim
+    libwebp
   ];
   shellHook = ''
     npm ci
     export PATH="$PWD/node_modules/.bin/:$PATH"
   '';
 }
-
-

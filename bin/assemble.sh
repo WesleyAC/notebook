@@ -15,14 +15,20 @@ mkdir -p ./out
 BLOG_NAME="Wesley’s Notebook"
 BLOG_URL="https://notebook.wesleyac.com"
 
+echo "copying static files..."
+
 cp -r ./static/* ./out/
 
+echo "minifying css..."
 minify ./parts/tufte-edit.css > ./out/tufte-edit.min.css
+
+echo "minifying javascript..."
 babel --presets=env ./parts/sideline.js | uglifyjs --compress --mangle --toplevel > ./out/sideline.min.js
 
 HTML_ENTRIES=()
 ATOM_ENTRIES=()
 
+echo "processing posts..."
 for entry in $(cd ./entries && find . -maxdepth 1 -type f | cut -c3- | sort | tac)
 do
 	ENTRY_SLUG=$(echo "${entry%.*}" | cut -d- -f2-)
@@ -89,6 +95,7 @@ do
 	ATOM_ENTRIES+=("<entry><id>$ENTRY_URL</id><title>$POST_TITLE_NOHTML</title><updated>$ENTRY_DATE_ATOM</updated><link rel='alternate' href='$ENTRY_URL'/><author><name>Wesley Aptekar-Cassels</name></author></entry>")
 done
 
+echo "making atom feed..."
 LAST_UPDATED_ATOM=$(date +'%Y-%m-%dT%H:%M:%SZ')
 echo "${ATOM_ENTRIES[*]}" |
 sed \
@@ -99,6 +106,7 @@ sed \
 	}" \
 	./parts/atom.xml > ./out/atom.xml
 
+echo "making 404 page..."
 sed \
 	-e "s/★PAGE_TITLE★/404 Error ⁑ $BLOG_NAME/g" \
 	-e "s/★OG_TITLE★/404 Error/g" \
@@ -109,6 +117,7 @@ sed \
 	}" \
 	./parts/template.html < ./parts/404.html > ./out/404.html
 
+echo "making index page..."
 # it's really gross that this is two commands. fix.
 sed \
 	-e "s/★PAGE_TITLE★/$BLOG_NAME/g" \
@@ -132,6 +141,7 @@ sed -i "/★POST_LIST★/{
 	r /dev/stdin
 }" ./out/index.html
 
+echo "minifying html..."
 html-minifier \
 	--collapse-boolean-attributes \
 	--collapse-whitespace \
@@ -146,3 +156,13 @@ html-minifier \
 	--input-dir ./out/ \
 	--output-dir ./out/ \
 	--file-ext html
+
+echo "compressing pngs..."
+find ./out/ -type f -name "*.png" -exec optipng -quiet -o7 {} \;
+find ./out/ -type f -name "*.png" -exec pngcrush -s -reduce -brute -ow {} \;
+echo "compressing jpegs..."
+find ./out/ -type f \( -name "*.jpg" -o -name "*.jpeg" \) -exec jpegoptim --quiet --strip-all {} \;
+echo "converting pngs to webp..."
+find ./out/ -type f -name "*.png" | while read -r f ; do cwebp -quiet -z 9 "$f" -o "${f%.*}.webp"; done
+echo "converting jpegs to webp..."
+find ./out/ -type f \( -name "*.jpg" -o -name "*.jpeg" \) | while read -r f ; do cwebp -quiet -q 50 "$f" -o "${f%.*}.webp" ; done
