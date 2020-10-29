@@ -218,8 +218,6 @@ a:link, .tufte-underline, .hover-tufte-underline:hover {
     text-decoration: none;
     background: -webkit-linear-gradient(#f9f5ff, #f9f5ff), -webkit-linear-gradient(#f9f5ff, #f9f5ff), -webkit-linear-gradient(currentColor, currentColor);
     background: linear-gradient(#f9f5ff, #f9f5ff), linear-gradient(#f9f5ff, #f9f5ff), linear-gradient(currentColor, currentColor);
-    -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
-    -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
     background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
     background-repeat: no-repeat, no-repeat, repeat-x;
     text-shadow: 0.03em 0 #f9f5ff, -0.03em 0 #f9f5ff, 0 0.03em #f9f5ff, 0 -0.03em #f9f5ff, 0.06em 0 #f9f5ff, -0.06em 0 #f9f5ff, 0.09em 0 #f9f5ff, -0.09em 0 #f9f5ff, 0.12em 0 #f9f5ff, -0.12em 0 #f9f5ff, 0.15em 0 #f9f5ff, -0.15em 0 #f9f5ff;
