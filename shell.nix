@@ -28,6 +28,7 @@ in stdenv.mkDerivation {
     shellcheck
     archivenow
     b3sum
+    pandoc
   ];
   shellHook = ''
     npm ci

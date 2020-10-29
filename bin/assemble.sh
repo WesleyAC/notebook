@@ -30,7 +30,7 @@ do
 	ENTRY_DATE_ATOM=$(date -d @"$(echo "$entry" | cut -d- -f1)" +'%Y-%m-%dT%H:%M:%SZ')
 	mkdir -p ./out/"$ENTRY_SLUG"/
 
-	POST_TITLE=$(head -n1 ./entries/"$entry" | sed 's/^#[ ]*//g' | ./bin/pandoc --from=markdown --to=html | sed -e 's#<p>##g' -e 's#</p>##g')
+	POST_TITLE=$(head -n1 ./entries/"$entry" | sed 's/^#[ ]*//g' | pandoc --from=markdown --to=html | sed -e 's#<p>##g' -e 's#</p>##g')
 	# shellcheck disable=SC2001
 	POST_TITLE_NOHTML=$(echo "$POST_TITLE" | sed 's/<[^>]*>//g')
 	# shellcheck disable=SC2001
@@ -39,7 +39,7 @@ do
 	HTML_ENTRIES+=("<a href='/$ENTRY_SLUG/'>$POST_TITLE</a><br>")
 
 	./bin/process-markdown.sh < ./entries/"$entry" |
-	./bin/pandoc --from=markdown --to=html |
+	pandoc --from=markdown --to=html |
 	./bin/process-html.sh "$ENTRY_DATE" |
 	./bin/fix-sidenote-spacing.sh |
 	sed \
