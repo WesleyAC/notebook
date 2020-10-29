@@ -260,6 +260,7 @@ img {
 	position: absolute;
 	margin-left: calc(-20px + 0.4rem);
 	margin-top: calc(-20px + 0.6rem);
+	pointer-events: none;
 }
 
 .sidenote:before {
