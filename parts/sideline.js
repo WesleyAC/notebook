@@ -64,5 +64,6 @@ function setup_sideline() {
 
 if (matchMedia('(hover:hover),(any-hover:hover)').matches) {
 	document.fonts.ready.then(setup_sideline);
+	window.addEventListener('load', setup_sideline);
 	window.addEventListener('resize', setup_sideline);
 }
