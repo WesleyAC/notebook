@@ -1,0 +1,20 @@
+<style>
+.sideline {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	display: none;
+}
+
+@media (hover: hover) and (min-width: 1081px) {
+    .sidenote:hover + .sideline {
+	    display: block;
+    }
+    .sidenote-number:hover + .margin-toggle + .sidenote + .sideline {
+	    display: block;
+    }
+}
+</style>
+<script src="/sideline.js"></script>

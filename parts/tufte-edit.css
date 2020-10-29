@@ -235,7 +235,7 @@ img {
 
 @media (hover: hover) and (min-width: 1081px) {
     .sidenote-number:hover + .margin-toggle + .sidenote {
-        border-left: 2px solid #666;
+        border-left: 2px solid #555;
     }
 }
 
