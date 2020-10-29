@@ -21,7 +21,6 @@ function setup_sideline() {
 
 		const label_offset = offset(label);
 		const note_offset = offset(note);
-		const paragraph_offset = offset(label.parentNode);
 
 		let svg_line1 = document.createElementNS("http://www.w3.org/2000/svg", "line");
 		svg_container.appendChild(svg_line1);

@@ -12,6 +12,10 @@ echo "running shellcheck..."
 
 find . -name "*.sh" -exec shellcheck {} + || FAIL=2
 
+echo "running eslint..."
+
+find . -name "*.js" -exec eslint {} + || FAIL=5
+
 echo "checking broken links..."
 
 # shellcheck disable=SC2044
