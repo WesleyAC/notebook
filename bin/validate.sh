@@ -24,17 +24,24 @@ do
                 URL_HASH=$(echo "$URL" | b3sum | cut -d" " -f1)
                 if [ ! -f "./data/archive/$URL_HASH" ]
                 then
-                    echo "url not archived: $URL"
-                    FAIL=3
+                    if ! echo "$URL" | grep -E -q "^https://web.archive.org/web/"; then
+                        echo "url not archived: $URL"
+                        FAIL=3
+                    fi
                 fi
                 echo "$URL" | grep -E -f ./data/ignore_broken_links.txt > /dev/null 2>&1 && continue
-                if ! curl -A "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/81.0" --max-time 5 --fail --head "$URL" > /dev/null 2>&1
-                then
-                    curl -A "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/81.0" --max-time 30 --fail "$URL" > /dev/null 2>&1 || (echo "broken link: $FILE:$URL"; FAIL=4)
+                if ! curl -A "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/81.0" --max-time 5 --fail --head "$URL" > /dev/null 2>&1; then
+                    if ! curl -A "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/81.0" --max-time 30 --fail "$URL" > /dev/null 2>&1; then
+                        echo "broken link: $FILE:$URL"
+                        FAIL=4
+                    fi
                 fi
                 ;;
             /*)
-                test -f "./out$URL" || test -f "./out$URL/index.html" || (echo "broken link: $FILE:$URL"; FAIL=4)
+                if ! { test -f "./out$URL" || test -f "./out$URL/index.html"; }; then
+                    echo "broken link: $FILE:$URL"
+                    FAIL=4
+                fi
                 ;;
             mailto://*)
                 echo "mailto links should not have //: $FILE:$URL"

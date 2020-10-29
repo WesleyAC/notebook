@@ -16,12 +16,12 @@ if git branch | grep -q gh-pages
 then
 	git branch -D gh-pages
 fi
-git checkout -b gh-pages
+git checkout -b gh-pages && trap "git checkout -" EXIT
 
 ./bin/assemble.sh
 ./bin/validate.sh
 
-find . -maxdepth 1 ! -name 'out' ! -name '.git' ! -name '.gitignore' ! -name 'node_modules' -exec rm -rf {} \;
+find . -maxdepth 1 ! -name '.' ! -name 'out' ! -name '.git' ! -name '.gitignore' ! -name 'node_modules' -exec rm -rf {} \;
 mv out/* .
 rmdir out/
 
