@@ -52,11 +52,14 @@ do
 			r ./parts/return_home.html
 		}" \
 		./parts/template.html > ./out/"$ENTRY_SLUG"/index.html
-	sed -i \
-		-e "/★EXTRA_TAGS★/{
-			r ./parts/sidenote_script.html
-		}" \
-		./out/"$ENTRY_SLUG"/index.html
+
+	if grep -E -q '^@sidenote:' "./entries/$entry"; then
+		sed -i \
+			-e "/★EXTRA_TAGS★/{
+				r ./parts/sidenote_script.html
+			}" \
+			./out/"$ENTRY_SLUG"/index.html
+	fi
 
 	# TODO: quoting, single quotes, ugh...
 	OG_IMG=$(grep -o "<img src=\"[^\"]\+\"\( alt=\"[^\"]\+\)\?" "out/$ENTRY_SLUG/index.html" | cut -d\" -f2 | head -n1)
