@@ -107,6 +107,12 @@ if (!!(window.history && history.replaceState) && typeof(Range) != "undefined") 
 				return hashnode(n);
 			});
 
+			// TODO: make selecting block elements work
+			if (hashes.length == 0) {
+				history.replaceState(null, null, window.location.pathname);
+				return;
+			}
+
 			let anchor_offsets = new Map();
 			anchor_offsets.set(hashnode(selection.anchorNode), [selection.anchorOffset]);
 			anchor_offsets.set(hashnode(selection.focusNode), [selection.focusOffset]);
