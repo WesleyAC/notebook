@@ -16,7 +16,8 @@ if git branch | grep -q gh-pages
 then
 	git branch -D gh-pages
 fi
-git checkout -b gh-pages && trap "git checkout -" EXIT
+git checkout -b gh-pages
+trap "git checkout -" EXIT
 
 ./bin/assemble.sh
 ./bin/validate.sh
@@ -28,8 +29,6 @@ rmdir out/
 git add -A
 git commit --allow-empty -m "$(git log -1 --pretty=%B)"
 git push -f -q origin gh-pages
-
-git checkout -
 
 echo "deployed <3"
 
