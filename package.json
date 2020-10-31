@@ -6,15 +6,12 @@
     "type": "git",
     "url": "git+https://github.com/WesleyAC/notebook.git"
   },
-  "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "html-minifier": "^4.0.0",
-    "uglify-js": "^3.11.4"
-  },
   "devDependencies": {
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
-    "eslint": "^7.12.1"
+    "@babel/preset-env": "^7.12.1",
+    "eslint": "^7.12.1",
+    "html-minifier": "^4.0.0",
+    "uglify-js": "^3.11.4"
   }
 }

@@ -38,7 +38,7 @@ rule minify-html
               $in
 
 rule minify-js
-  command = babel --presets=env $in | uglifyjs --compress --mangle > $out
+  command = babel --presets=@babel/env $in | uglifyjs --compress --mangle > $out
 
 rule minify-css
   command = minify $in > $out
