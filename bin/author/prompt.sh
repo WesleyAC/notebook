@@ -11,7 +11,7 @@ cat <<ENTRY_START_TEXT > "$ENTRY_PATH"
 
 ENTRY_START_TEXT
 
-if ! ./bin/full-moon.sh; then
+if ! ./bin/author/full-moon.sh; then
 	echo "Tonight is a full moon. What has changed in your life since the last full moon?" >> "$ENTRY_PATH"
 else
 	printf "Today's cards are " >> "$ENTRY_PATH"

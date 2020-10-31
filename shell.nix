@@ -33,6 +33,7 @@ in stdenv.mkDerivation {
     optipng
     jpegoptim
     libwebp
+    ninja
   ];
   shellHook = ''
     npm ci

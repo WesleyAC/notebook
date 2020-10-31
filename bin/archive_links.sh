@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # shellcheck disable=SC2044
-for FILE in $(find ./out/ -name "*.html")
+for FILE in $(find ./out/site/ -name "*.html")
 do
     for URL in $(xidel --silent --extract "//a/@href" "$FILE")
     do

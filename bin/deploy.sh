@@ -20,11 +20,13 @@ fi
 git checkout -b gh-pages &> /dev/null
 trap "git checkout - &> /dev/null" EXIT
 
-./bin/assemble.sh
+echo "building site..."
+./bin/build/build.py
+echo "validating site..."
 ./bin/validate.sh
 
 find . -maxdepth 1 ! -name '.' ! -name 'out' ! -name '.git' ! -name '.gitignore' ! -name 'node_modules' -exec rm -rf {} \;
-cp -r out/* .
+cp -r out/site/* .
 
 echo "committing compiled site..."
 git add -A > /dev/null

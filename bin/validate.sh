@@ -6,7 +6,7 @@ FAIL=0
 
 echo "validating html..."
 
-find ./out -name "*.html" -exec html5validator {} + || FAIL=1
+find ./out/site/ -name "*.html" -exec html5validator {} + || FAIL=1
 
 echo "running shellcheck..."
 
@@ -19,7 +19,7 @@ find . -name "*.js" -not -path "./out/*" -not -path "./node_modules/*" -exec esl
 echo "checking broken links..."
 
 # shellcheck disable=SC2044
-for FILE in $(find ./out/ -name "*.html")
+for FILE in $(find ./out/site/ -name "*.html")
 do
     for URL in $(xidel --silent --extract "//a/@href" "$FILE")
     do
@@ -42,7 +42,7 @@ do
                 fi
                 ;;
             /*)
-                if ! { test -f "./out$URL" || test -f "./out$URL/index.html"; }; then
+                if ! { test -f "./out/site$URL" || test -f "./out/site$URL/index.html"; }; then
                     echo "broken link: $FILE:$URL"
                     FAIL=4
                 fi
