@@ -25,6 +25,7 @@ minify ./parts/tufte-edit.css > ./out/tufte-edit.min.css
 echo "minifying javascript..."
 babel --presets=env ./parts/sideline.js | uglifyjs --compress --mangle > ./out/sideline.min.js
 babel --presets=env ./parts/linktext.js | uglifyjs --compress --mangle > ./out/linktext.min.js
+babel --presets=env ./parts/instantpage.js | uglifyjs --compress --mangle > ./out/instantpage.min.js
 
 HTML_ENTRIES=()
 ATOM_ENTRIES=()
