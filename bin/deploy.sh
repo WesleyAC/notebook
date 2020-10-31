@@ -24,8 +24,7 @@ trap "git checkout - &> /dev/null" EXIT
 ./bin/validate.sh
 
 find . -maxdepth 1 ! -name '.' ! -name 'out' ! -name '.git' ! -name '.gitignore' ! -name 'node_modules' -exec rm -rf {} \;
-mv out/* .
-rmdir out/
+cp -r out/* .
 
 echo "committing compiled site..."
 git add -A > /dev/null
