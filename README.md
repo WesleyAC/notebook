@@ -14,6 +14,10 @@ There is some [additional javascript](/parts/linktext.js) to create deep links t
 
 I make extensive use of sidenotes. The implementation is based on [tufte-css](https://edwardtufte.github.io/tufte-css/), but there is [additional javascript](/parts/sideline.js) used to draw lines connecting sidenote labels to sidenotes on hover.
 
+## Image compression
+
+Images are automatically compressed with [`pngcrush`](https://pmt.sourceforge.io/pngcrush/), [`optipng`](http://optipng.sourceforge.net/), and [`jpegoptim`](https://github.com/tjko/jpegoptim), and converted to webp. `<img>` tags are replaced with `<picture>` tags that have both the webp version and the original image.
+
 ## Link Prefecthing
 
 [Instantpage](https://instant.page/) is used to prefetch links on hover, making loading extremely fast (on supported browsers).

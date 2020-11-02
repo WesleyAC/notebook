@@ -26,7 +26,8 @@ sed \
 		r /dev/stdin
 		r ./parts/return_home.html
 	}" \
-	./parts/template.html > "$OUT_FILE"
+	./parts/template.html |
+./bin/build/rewrite-imgs.sh > "$OUT_FILE"
 
 if grep -E -q '^@sidenote:' "$ENTRY_PATH"; then
 	sed -i \
