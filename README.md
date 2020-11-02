@@ -1,0 +1,27 @@
+# Wesley's Notebook
+
+This is the source code for my [notebook blog](https://notebook.wesleyac.com/), where I initially [wrote daily](https://notebook.drmaciver.com/posts/2020-06-08-10:11.html), and now write occasionally. It is built with a set of shell scripts primarily using [sed](https://www.gnu.org/software/sed/manual/sed.html), [ninja](https://ninja-build.org/), and [pandoc](https://pandoc.org/). I think it's pretty nice.
+
+## Archival and Broken Links
+
+The deploy script checks if any outwards links are broken (returning HTTP error codes), and does not allow a deploy if they are (unless the link has been explicitly added to a bypass list). Additionally, before deploying, all outgoing links are submitted to [archive.org](https://web.archive.org) to preserve a copy of the link at the time the post was written. This allows easy switching to archived copies of linked websites should they go offline in the future.
+
+## Deep Links
+
+There is some [additional javascript](/parts/linktext.js) to create deep links to any text selection. It is fairly lightweight, and the code should work on most websites. This will eventually be moved into its own library, most likely.
+
+## Sidenotes
+
+I make extensive use of sidenotes. The implementation is based on [tufte-css](https://edwardtufte.github.io/tufte-css/), but there is [additional javascript](/parts/sideline.js) used to draw lines connecting sidenote labels to sidenotes on hover.
+
+## Link Prefecthing
+
+[Instantpage](https://instant.page/) is used to prefetch links on hover, making loading extremely fast (on supported browsers).
+
+## Fonts
+
+If you want to build this blog yourself, you should note that the fonts are not included in the git repo due to [licensing restrictions](https://okaytype.com/info/eula). The validation script checks that the fonts exist locally and have the correct hashes before deploying — if you have access to the correct fonts, you can build it after you copy the fonts into your local checkout, otherwise you can replace them with your own fonts.
+
+## Post Template Generator
+
+There is a [script](/bin/author/prompt.sh) to generate a writing prompt, either by [tarot pull](https://notebook.wesleyac.com/hermit-magician/) or [moon phase](/bin/author/full-moon.sh), as well as a script to generate a [blank post template](/bin/author/blank.sh).
