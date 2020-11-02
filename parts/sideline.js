@@ -27,16 +27,16 @@ function setup_sideline() {
 		svg_line1.setAttribute("stroke-width", "2px");
 		svg_line1.setAttribute("stroke", "#666");
 		svg_line1.setAttribute("x1", label_offset.left);
-		svg_line1.setAttribute("y1", label_offset.top + label_offset.height + 1);
+		svg_line1.setAttribute("y1", label_offset.top + label_offset.height + 3);
 		svg_line1.setAttribute("x2", note_offset.left);
-		svg_line1.setAttribute("y2", label_offset.top + label_offset.height + 1);
+		svg_line1.setAttribute("y2", label_offset.top + label_offset.height + 3);
 
 		let svg_line2 = document.createElementNS("http://www.w3.org/2000/svg", "line");
 		svg_container.appendChild(svg_line2);
 		svg_line2.setAttribute("stroke-width", "2px");
 		svg_line2.setAttribute("stroke", "#666");
 		svg_line2.setAttribute("x1", note_offset.left - 1);
-		svg_line2.setAttribute("y1", Math.min(label_offset.top + label_offset.height + 1, note_offset.top - 6));
+		svg_line2.setAttribute("y1", Math.min(label_offset.top + label_offset.height + 3, note_offset.top - 6));
 		svg_line2.setAttribute("x2", note_offset.left - 1);
 		svg_line2.setAttribute("y2", note_offset.top + note_offset.height + 6);
 
