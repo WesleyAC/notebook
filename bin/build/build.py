@@ -40,6 +40,9 @@ rule minify-html
 rule minify-js
   command = babel --presets=@babel/env $in | uglifyjs --compress --mangle > $out
 
+rule minify-js-toplevel
+  command = babel --presets=@babel/env $in | uglifyjs --compress --mangle --toplevel > $out
+
 rule minify-css
   command = minify $in > $out
 
@@ -78,8 +81,9 @@ try:
                 else:
                     build_ninja.write(f"build out/site/{out_file}: copy-file {in_file}\n")
 
-        for js_file in ["sideline", "linktext", "instantpage"]:
-            build_ninja.write(f"build out/site/{js_file}.min.js: minify-js parts/{js_file}.js\n")
+        build_ninja.write("build out/site/sideline.min.js: minify-js parts/sideline.js\n")
+        build_ninja.write("build out/site/linktext.min.js: minify-js parts/linktext.js\n")
+        build_ninja.write("build out/site/instantpage.min.js: minify-js-toplevel parts/instantpage.js\n")
         build_ninja.write("build out/site/notebook.min.css: minify-css parts/notebook.css\n")
 
         entry_files = sorted(os.listdir("entries"), reverse=True)
