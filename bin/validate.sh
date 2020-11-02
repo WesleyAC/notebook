@@ -1,8 +1,15 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 cd "$(dirname "$0")"/.. || exit
 
 FAIL=0
+
+echo "checking fonts..."
+
+if ! diff ./data/font_hashes.txt <(cd ./out/site/fonts && sha256sum ./*); then
+	echo "font hashes differ"
+	FAIL=6
+fi
 
 echo "validating html..."
 

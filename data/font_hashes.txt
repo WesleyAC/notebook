@@ -1,0 +1,10 @@
+077dcd639f1648aec283e4ac1374a4f45eb90fcd50a2283260241f49f7cd12cf  ./Harriet-v2-Display-Bold-latin1.woff
+f344ee0556d570ec1a9417a799779e37bc8c872c55e33dfdfcc6445c3e4513fa  ./Harriet-v2-Display-Bold-latin1.woff2
+890cfece3ca979105471212f8bb3c8e82264c76e986350362fa18c7cf0ff8621  ./Harriet-v2-Display-Regular-latin1.woff
+9eff4fe60816c103afab9e36a3986fabfd1e84dd13d6a13cbd774de8e77be6d2  ./Harriet-v2-Display-Regular-latin1.woff2
+ddab5561cca0f8ecb3b431dfec46ef09ace25cafeb4c59e1b9d3e54c16f37755  ./Harriet-v2-Text-Bold-latin1.woff
+f3d83c8da0d4718e601c8c0c939d3913396e3fff067827a14e32b9d8bd9e2676  ./Harriet-v2-Text-Bold-latin1.woff2
+aff7a1c13de5f570d3284be439687d78755651ef46f61b5bbc29869b54a1c9f7  ./Harriet-v2-Text-Regular-Italic-latin1.woff
+da947a62faa982d4fb4a586740cebf3cf56d85429b813f5e258f88ee340362fe  ./Harriet-v2-Text-Regular-Italic-latin1.woff2
+a575eb5fe31fdf4493d4fb945c4c588624f55fe569761a2a9e26d54df080b61b  ./Harriet-v2-Text-Regular-latin1.woff
+132a3c2c19759f2f9dbb1199c5107721f33e92f258b9e245ccfb8d44872c1cc0  ./Harriet-v2-Text-Regular-latin1.woff2
