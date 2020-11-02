@@ -1,0 +1,9 @@
+Wesley's Notebook
+~~~
+by Wesley Aptekar-Cassels
+inspired by David R. MacIver's notebook
+with CSS based on tufte-css by Dave Liepmann
+and fonts by Jackson Showalter-Cavanaugh
+additional thanks to Evy Kassirer for writing review and inspiration
+
+<3
