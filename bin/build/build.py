@@ -80,7 +80,7 @@ try:
 
         for js_file in ["sideline", "linktext", "instantpage"]:
             build_ninja.write(f"build out/site/{js_file}.min.js: minify-js parts/{js_file}.js\n")
-        build_ninja.write("build out/site/tufte-edit.min.css: minify-css parts/tufte-edit.css\n")
+        build_ninja.write("build out/site/notebook.min.css: minify-css parts/notebook.css\n")
 
         entry_files = sorted(os.listdir("entries"), reverse=True)
         for entry in entry_files:
