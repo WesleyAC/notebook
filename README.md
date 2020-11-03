@@ -29,3 +29,7 @@ If you want to build this blog yourself, you should note that the fonts are not 
 ## Post Template Generator
 
 There is a [script](/bin/author/prompt.sh) to generate a writing prompt, either by [tarot pull](https://notebook.wesleyac.com/hermit-magician/) or [moon phase](/bin/author/full-moon.sh), as well as a script to generate a [blank post template](/bin/author/blank.sh).
+
+## License
+
+Except where otherwise noted, all code in this repository is licensed under the terms of the [MIT license](https://mit-license.org/). All prose is licensed under the terms of the [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) license.
