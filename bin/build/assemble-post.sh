@@ -22,9 +22,11 @@ sed \
 	-e "s/★OG_TITLE★/$POST_TITLE_NOHTML_SEDESCAPE/g" \
 	-e "s/★OG_TYPE★/article/g" \
 	-e "/★PAGE_CONTENT★/{
+		a <article>
 		s/★PAGE_CONTENT★//g
 		r /dev/stdin
 		r ./parts/return_home.html
+		a </article>
 	}" \
 	./parts/template.html |
 ./bin/build/rewrite-imgs.sh > "$OUT_FILE"

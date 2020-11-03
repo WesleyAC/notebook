@@ -16,6 +16,9 @@ rule compress-pngcrush
 rule compress-jpg
   command = cp $in $out && jpegoptim --quiet --strip-all $out
 
+rule compress-svgo
+  command = svgo --quiet --multipass -i $in -o $out
+
 rule make-webp-png
   command = cwebp -quiet -z 9 $in -o $out
 
@@ -78,6 +81,8 @@ try:
                 elif filename.endswith("jpg") or filename.endswith("jpeg"):
                     build_ninja.write(f"build out/site/{out_file}: compress-jpg {in_file}\n")
                     build_ninja.write(f"build out/site/{os.path.splitext(out_file)[0]+'.webp'}: make-webp-jpg out/site/{out_file}\n")
+                elif filename.endswith("svg"):
+                    build_ninja.write(f"build out/site/{out_file}: compress-svgo {in_file}\n")
                 else:
                     build_ninja.write(f"build out/site/{out_file}: copy-file {in_file}\n")
 

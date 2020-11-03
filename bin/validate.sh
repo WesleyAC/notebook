@@ -17,7 +17,7 @@ find ./out/site/ -name "*.html" -exec html5validator {} + || FAIL=1
 
 echo "running shellcheck..."
 
-find . -name "*.sh" -exec shellcheck {} + || FAIL=2
+find . -name "*.sh" -not -path "./node_modules/*" -exec shellcheck {} + || FAIL=2
 
 echo "running eslint..."
 
