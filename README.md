@@ -22,6 +22,10 @@ Images are automatically compressed with [`pngcrush`](https://pmt.sourceforge.io
 
 [Instantpage](https://instant.page/) is used to prefetch links on hover, making loading extremely fast (on supported browsers).
 
+## 404 Page
+
+My [404 page](https://notebook.wesleyac.com/404) allows you to write what you think should be there, and share it with others should you so wish. It's inspired by [The Creative Independent's](https://thecreativeindependent.com/) 404 page.
+
 ## Fonts
 
 If you want to build this blog yourself, you should note that the fonts are not included in the git repo due to [licensing restrictions](https://okaytype.com/info/eula). The validation script checks that the fonts exist locally and have the correct hashes before deploying — if you have access to the correct fonts, you can build it after you copy the fonts into your local checkout, otherwise you can replace them with your own fonts.
