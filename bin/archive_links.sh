@@ -1,5 +1,7 @@
 #!/bin/sh
 
+cd "$(dirname "$0")"/.. || exit
+
 # shellcheck disable=SC2044
 for FILE in $(find ./out/site/ -name "*.html")
 do

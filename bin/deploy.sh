@@ -2,6 +2,8 @@
 
 set -e
 
+cd "$(dirname "$0")"/.. || exit
+
 if [ -n "$(git status --porcelain)" ]; then
 	echo "working directory not clean, exiting." 
 	exit 1
