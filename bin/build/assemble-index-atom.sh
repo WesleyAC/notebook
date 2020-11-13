@@ -36,7 +36,9 @@ sed \
 
 # shellcheck disable=SC1111
 printf '%s\n' "${HTML_ENTRIES[@]}" |
-sed "s#<a href='\([^']*\)'>\(.*\)”</a>#<a href='\1'>\2</a><a class='no-tufte-underline' href='\1'>”</a>#" |
+sed \
+	-e "s#<a href='\([^']*\)'>\(.*\)”</a>#<a href='\1'>\2</a><a class='no-tufte-underline' href='\1'>”</a>#" \
+	-e "s#<a href='\([^']*\)'>“\(.*\)</a>#<a class='no-tufte-underline' href='\1'>“</a><a href='\1'>\2</a>#" |
 sed -i "/★POST_LIST★/{
 	s/★POST_LIST★//g
 	r /dev/stdin
