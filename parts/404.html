@@ -1,8 +1,58 @@
-<article>
-	<h1>Page Not Found</h1>
-	<p class="subtitle">uh oh...</p>
+<article id="editable" contenteditable="true" style="outline: 0px solid transparent;">
+	<h1 id="page_title">This entry does not exist</h1>
+	<p class="subtitle">perhaps you want to write it?</p>
 
 	<section>
-		<p>If you followed a link here, please <a href="mailto:me@wesleyac.com">email me</a> and let me know &lt;3</p>
+		<p id="cursorhere">&nbsp;</p>
 	</section>
 </article>
+
+<script>
+function b64encode(str) {
+	return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g,
+		function toSolidBytes(match, p1) {
+			return String.fromCharCode('0x' + p1);
+		}));
+}
+
+function b64decode(str) {
+	return decodeURIComponent(atob(str).split('').map(function(c) {
+		return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+	}).join(''));
+}
+
+const saved = localStorage.getItem("404-" + document.location.pathname);
+
+if (document.location.hash != "") {
+	let text = b64decode(document.location.hash.slice(1));
+	document.getElementById("editable").innerHTML = text;
+} else if (!!saved) {
+	document.getElementById("editable").innerHTML = saved;
+	document.location.hash = "#" + b64encode(saved);
+}
+
+let el = document.getElementById("cursorhere");
+let range = document.createRange();
+let sel = window.getSelection();
+range.setStart(el.childNodes[0], 0);
+range.collapse(true);
+sel.removeAllRanges();
+sel.addRange(range);
+
+function setChangeListener (div, listener) {
+	div.addEventListener("blur", listener);
+	div.addEventListener("keyup", listener);
+	div.addEventListener("paste", listener);
+	div.addEventListener("copy", listener);
+	div.addEventListener("cut", listener);
+	div.addEventListener("delete", listener);
+	div.addEventListener("mouseup", listener);
+}
+
+setChangeListener(document.getElementById("editable"), function(event){
+	let text = document.getElementById("editable").innerHTML;
+	window.localStorage.setItem("404-" + document.location.pathname, text);
+	document.title = document.getElementById("page_title").innerHTML + " ⁑" + document.title.split("⁑")[1];
+	document.location.hash = "#" + b64encode(text);
+});
+</script>
