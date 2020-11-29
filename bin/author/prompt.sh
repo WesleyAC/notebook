@@ -4,7 +4,7 @@ set -e
 
 cd "$(dirname "$0")"/../../
 
-ENTRY_PATH=./entries/$(date +'%s')-$(date +'%m-%d-%Y').md
+ENTRY_PATH=./entries/$(date +'%s')-$(date +%Z)-$(date +'%m-%d-%Y').md
 
 cat <<ENTRY_START_TEXT > "$ENTRY_PATH"
 # 

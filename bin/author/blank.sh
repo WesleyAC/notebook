@@ -10,7 +10,7 @@ if [ "$#" -ne 1 ]; then
 	ENTRY_SLUG=$(date +"%m-%d-%Y")
 fi
 
-ENTRY_PATH=./entries/$(date +'%s')-$ENTRY_SLUG.md
+ENTRY_PATH=./entries/$(date +'%s')-$(date +%Z)-$ENTRY_SLUG.md
 
 cat <<ENTRY_START_TEXT > "$ENTRY_PATH"
 # 

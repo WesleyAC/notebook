@@ -7,7 +7,7 @@ source ./bin/build/vars.sh
 ENTRY_PATH="$1"
 OUT_FILE="$2"
 ENTRY_NAME=$(basename "$ENTRY_PATH")
-ENTRY_DATE=$(date -d @"$(echo "$ENTRY_NAME" | cut -d- -f1)" +"%A %B %-d, %Y")
+ENTRY_DATE=$(TZ=$(echo "$ENTRY_NAME" | cut -d- -f2) date -d @"$(echo "$ENTRY_NAME" | cut -d- -f1)" +"%A %B %-d, %Y")
 
 mkdir -p "$(dirname "$OUT_FILE")"
 

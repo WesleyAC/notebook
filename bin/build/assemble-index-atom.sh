@@ -9,12 +9,12 @@ ATOM_ENTRIES=()
 
 while (( $# > 2 ))
 do
-	ENTRY_SLUG=$(basename "$1" | cut -d- -f2- | rev | cut -d. -f2- | rev)
+	ENTRY_SLUG=$(basename "$1" | cut -d- -f3- | rev | cut -d. -f2- | rev)
 	ENTRY_TITLE_HTML=$(./bin/build/get-entry-title.sh --html "$1")
 	HTML_ENTRIES+=("<a href='/$ENTRY_SLUG/'>$ENTRY_TITLE_HTML</a><br>")
 	ENTRY_URL="$BLOG_URL/$ENTRY_SLUG/"
 	ENTRY_TITLE_NOHTML=$(./bin/build/get-entry-title.sh --nohtml "$1")
-	ENTRY_DATE_ATOM=$(date -d @"$(basename "$1" | cut -d- -f1)" +'%Y-%m-%dT%H:%M:%SZ')
+	ENTRY_DATE_ATOM=$(TZ=$(basename "$1" | cut -d- -f2) date -d @"$(basename "$1" | cut -d- -f1)" +'%Y-%m-%dT%H:%M:%SZ')
 	ATOM_ENTRIES+=("<entry><id>$ENTRY_URL</id><title>$ENTRY_TITLE_NOHTML</title><updated>$ENTRY_DATE_ATOM</updated><link rel='alternate' href='$ENTRY_URL'/><author><name>Wesley Aptekar-Cassels</name></author></entry>")
 	shift
 done
@@ -44,7 +44,7 @@ sed -i "/★POST_LIST★/{
 	r /dev/stdin
 }" "$1"
 
-LAST_UPDATED_ATOM=$(date +'%Y-%m-%dT%H:%M:%SZ')
+LAST_UPDATED_ATOM=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
 echo "${ATOM_ENTRIES[*]}" |
 sed \
 	-e "s/★PAGE_UPDATED★/$LAST_UPDATED_ATOM/g" \

@@ -93,7 +93,7 @@ try:
 
         entry_files = sorted(os.listdir("entries"), reverse=True)
         for entry in entry_files:
-            out_file = entry.split("-", 1)[1][:-3]
+            out_file = entry.split("-", 2)[2][:-3]
             build_ninja.write(f"build out/tmp/{out_file}/index.html: assemble-post entries/{entry} | bin/build/assemble-post.sh bin/build/process-markdown.sh bin/build/rewrite-imgs.sh bin/build/process-html.sh bin/build/fix-sidenote-spacing.sh bin/build/vars.sh parts/template.html parts/return_home.html parts/sidenote_script.html\n")
             build_ninja.write(f"build out/site/{out_file}/index.html: minify-html out/tmp/{out_file}/index.html\n")
 
