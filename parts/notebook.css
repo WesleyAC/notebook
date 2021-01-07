@@ -24,9 +24,9 @@
 }
 
 @font-face {
-    font-family: 'harriet-display';
-    src: url('fonts/Harriet-v2-Display-Regular-latin1.woff2') format('woff2'),
-         url('fonts/Harriet-v2-Display-Regular-latin1.woff') format('woff');
+    font-family: 'ascentis';
+    src: url('fonts/Ascentis-Regular.woff2') format('woff2'),
+         url('fonts/Ascentis-Regular.woff') format('woff');
     font-weight: normal;
     font-display: swap;
 }
@@ -49,7 +49,7 @@ body {
 }
 
 h1 {
-    font-family: harriet-display;
+    font-family: ascentis;
     font-weight: 400;
     margin-top: 4rem;
     margin-bottom: 1.5rem;
@@ -93,6 +93,11 @@ p.subtitle {
     display: block;
     line-height: 1;
 }
+
+#dateline {
+	font-style: normal;
+}
+
 
 article {
     padding: 0rem 0rem 5rem;

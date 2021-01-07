@@ -1,3 +1,5 @@
+0db9426059e52524e811f208107db08602af6be1f61bbd4aa8e717b6b463f5e9  ./Ascentis-Regular.woff
+42dd1c71a782f23f8821ec2604d61de9a1791d98744d8eab8ad072c2cd0ef9d2  ./Ascentis-Regular.woff2
 077dcd639f1648aec283e4ac1374a4f45eb90fcd50a2283260241f49f7cd12cf  ./Harriet-v2-Display-Bold-latin1.woff
 f344ee0556d570ec1a9417a799779e37bc8c872c55e33dfdfcc6445c3e4513fa  ./Harriet-v2-Display-Bold-latin1.woff2
 890cfece3ca979105471212f8bb3c8e82264c76e986350362fa18c7cf0ff8621  ./Harriet-v2-Display-Regular-latin1.woff

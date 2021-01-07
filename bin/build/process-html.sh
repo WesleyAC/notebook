@@ -15,7 +15,7 @@ do
 			if [[ $line == *"</h1>"* ]] && [[ "$FIRST_HEADING" == true ]]; then
 				echo "<section>"
 				echo "$line"
-				echo "<p class='subtitle'>$1</p>"
+				echo "<p class='subtitle' id='dateline'>$1</p>"
 				echo "</section>"
 				echo "<section>"
 				FIRST_HEADING=false
