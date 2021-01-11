@@ -23,5 +23,18 @@
 	</head>
 	<body>
 ★PAGE_CONTENT★
+		<script>
+			function title_resize() {
+				for (let e of document.getElementsByTagName("h1")) {
+					if (e.scrollWidth != e.clientWidth) {
+						const fontSize = parseFloat(window.getComputedStyle(e)["font-size"].split("px")[0]);
+						e.style.fontSize = (fontSize * e.clientWidth / e.scrollWidth) + 'px';
+					}
+				}
+			};
+
+			document.fonts.ready.then(title_resize);
+			window.addEventListener('orientationchange', title_resize, false);
+		</script>
 	</body>
 </html>
