@@ -41,10 +41,10 @@ rule minify-html
               $in
 
 rule minify-js
-  command = babel --presets=@babel/env $in | uglifyjs --compress --mangle > $out
+  command = terser --compress --mangle -- $in > $out
 
 rule minify-js-toplevel
-  command = babel --presets=@babel/env $in | uglifyjs --compress --mangle --toplevel > $out
+  command = terser --compress --mangle --toplevel -- $in > $out
 
 rule minify-css
   command = minify $in > $out
