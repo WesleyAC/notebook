@@ -88,6 +88,7 @@ try:
 
         build_ninja.write("build out/site/sideline.min.js: minify-js parts/sideline.js\n")
         build_ninja.write("build out/site/linktext.min.js: minify-js parts/linktext.js\n")
+        build_ninja.write("build out/site/titleresize.min.js: minify-js parts/titleresize.js\n")
         build_ninja.write("build out/site/instantpage.min.js: minify-js-toplevel parts/instantpage.js\n")
         build_ninja.write("build out/site/notebook.min.css: minify-css parts/notebook.css\n")
 

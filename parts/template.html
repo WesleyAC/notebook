@@ -11,6 +11,7 @@
 		<link rel="preload" href="/fonts/Harriet-v2-Text-Bold-latin1.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 		<title>★PAGE_TITLE★</title>
 		<link rel="alternate" type="application/atom+xml" title="Atom Feed for Wesley’s Notebook" href="/atom.xml"/>
+		<script defer src="/titleresize.min.js"></script>
 		<script defer src="/linktext.min.js"></script>
 		<script src="/instantpage.min.js" type="module"></script>
 		<link rel="icon" sizes="192x192" href="/android-chrome-192x192.png">
@@ -23,18 +24,5 @@
 	</head>
 	<body>
 ★PAGE_CONTENT★
-		<script>
-			function title_resize() {
-				for (let e of document.getElementsByTagName("h1")) {
-					if (e.scrollWidth != e.clientWidth) {
-						const fontSize = parseFloat(window.getComputedStyle(e)["font-size"].split("px")[0]);
-						e.style.fontSize = (fontSize * e.clientWidth / e.scrollWidth) + 'px';
-					}
-				}
-			};
-
-			document.fonts.ready.then(title_resize);
-			window.addEventListener('orientationchange', title_resize, false);
-		</script>
 	</body>
 </html>
