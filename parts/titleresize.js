@@ -5,7 +5,7 @@ function tr() {
 			e.style.fontSize = (fontSize * e.clientWidth / e.scrollWidth) + 'px';
 		}
 	}
-};
+}
 
 document.fonts.ready.then(tr);
 window.addEventListener('orientationchange', tr, false);
