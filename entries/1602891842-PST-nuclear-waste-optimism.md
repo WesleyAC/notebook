@@ -13,7 +13,7 @@
 > no highly esteemed deed is commemorated here … <br>
 > nothing valued is here.
 
-The *[Expert Judgment on Markers to Deter Inadvertent Human Intrusion into the Waste Isolation Pilot Plant](https://digital.library.unt.edu/ark:/67531/metadc1279277/m2/1/high_res_d/10117359.pdf)* document is best know for the inadvertently humorous message quoted above, but it's an interesting document in its own right — even if only for the now rather quaint idea that one can and should make efforts ensure that earth will be livable for whoever remains on it in 10,000 years. It's interesting to flip through, but also so long that I can't necessarily recommend that one read it all the way through, so I'll pull out some interesting snippets and things that I think can be learned from them here.
+The *[Expert Judgment on Markers to Deter Inadvertent Human Intrusion into the Waste Isolation Pilot Plant](/files/10117359.pdf)* document is best know for the inadvertently humorous message quoted above, but it's an interesting document in its own right — even if only for the now rather quaint idea that one can and should make efforts ensure that earth will be livable for whoever remains on it in 10,000 years. It's interesting to flip through, but also so long that I can't necessarily recommend that one read it all the way through, so I'll pull out some interesting snippets and things that I think can be learned from them here.
 
 @marginnote-mobileshow: <a class="no-tufte-underline" href="/img/post/nuclear-waste-optimism/2.png"><img src="/img/post/nuclear-waste-optimism/2.png" alt="A drawing titled 'Landscape of Thorns' showing a field of thorn-like spikes."/></a>
 
