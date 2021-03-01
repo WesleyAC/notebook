@@ -1,6 +1,6 @@
 # Pandora's Box and Collapse
 
-A pretty standard way that people think of technology is as a sort of [Pandora's Box](https://en.wikipedia.org/wiki/Pandora%27s_box): once you've invented something, you can't un-invent it, so you need to deal wit whatever consequences you've created. Maybe you stop using something if you see it's causing something bad, but you also need to convince everyone else to stop using it as well if you want to have any effect, which is extremely hard: if a piece of technology gives its user power, then unscrupulous people are sure to use it regardless of the externalities. It's only by collectively banning the technology and enforcing punishments for its use that we can actually stop that harm.
+A pretty standard way that people think of technology is as a sort of [Pandora's Box](https://en.wikipedia.org/wiki/Pandora%27s_box): once you've invented something, you can't un-invent it, so you need to deal with whatever consequences you've created. Maybe you stop using something if you see it's causing something bad, but you also need to convince everyone else to stop using it as well if you want to have any effect, which is extremely hard: if a piece of technology gives its user power, then unscrupulous people are sure to use it regardless of the externalities. It's only by collectively banning the technology and enforcing punishments for its use that we can actually stop that harm.
 
 That's why it's interesting to me to come across a different model: [Ran Prieur](http://ranprieur.com/) talks a lot about "collapse," recently writing:
 
