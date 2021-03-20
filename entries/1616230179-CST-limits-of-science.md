@@ -1,7 +1,5 @@
 # The Limits of Science
 
-As Science becomes one of the dominant religions of our age, it's useful to take inventory of the kinds of questions it is fundamentally unable to answer.
-
 ## Consciousness and Subjective Experience
 
 I believe that it is fundamentally impossible to conclusively answer questions about the nature of consciousness and subjective experience
