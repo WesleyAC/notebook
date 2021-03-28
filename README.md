@@ -10,6 +10,10 @@ The deploy script checks if any outwards links are broken (returning HTTP error 
 
 There is some [additional javascript](/parts/linktext.js) to create deep links to any text selection. It is fairly lightweight, and the code should work on most websites. This will eventually be moved into its own library, most likely.
 
+## Changelogs
+
+Whenever I update a post, a changelog is generated from the git history and embedded into the post, allowing people to quickly see how the post has changed over time, including links to diffs.
+
 ## Sidenotes
 
 I make extensive use of sidenotes. The implementation is based on [tufte-css](https://edwardtufte.github.io/tufte-css/), but there is [additional javascript](/parts/sideline.js) used to draw lines connecting sidenote labels to sidenotes on hover.
