@@ -2,6 +2,8 @@
 
 set -e
 
+START_TIME=$SECONDS
+
 cd "$(dirname "$0")"/.. || exit
 
 if [ -n "$(git status --porcelain)" ]; then
@@ -38,3 +40,7 @@ echo "pushing compiled site..."
 git push -f -q origin gh-pages > /dev/null
 
 echo "deployed <3"
+
+ELAPSED_TIME=$(($SECONDS - $START_TIME))
+echo "$(($ELAPSED_TIME/60)) min $(($ELAPSED_TIME%60)) sec"    
+
