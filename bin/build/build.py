@@ -95,7 +95,7 @@ try:
         entry_files = sorted(os.listdir("entries"), reverse=True)
         for entry in entry_files:
             out_file = entry.split("-", 2)[2][:-3]
-            build_ninja.write(f"build out/tmp/{out_file}/index.html: assemble-post entries/{entry} | bin/build/assemble-post.sh bin/build/process-markdown.sh bin/build/rewrite-imgs.sh bin/build/process-html.sh bin/build/fix-sidenote-spacing.sh bin/build/vars.sh parts/template.html parts/return_home.html parts/sidenote_script.html\n")
+            build_ninja.write(f"build out/tmp/{out_file}/index.html: assemble-post entries/{entry} | bin/build/assemble-post.sh bin/build/process-markdown.sh bin/build/rewrite-imgs.sh bin/build/process-html.sh bin/build/fix-sidenote-spacing.sh bin/build/vars.sh parts/template.html parts/return_home.html parts/sidenote_script.html parts/changelog.html\n")
             build_ninja.write(f"build out/site/{out_file}/index.html: minify-html out/tmp/{out_file}/index.html\n")
 
         build_ninja.write(f"build out/tmp/index.html out/site/atom.xml: assemble-index-atom entries/{' entries/'.join(entry_files)} | bin/build/assemble-index-atom.sh bin/build/vars.sh parts/template.html parts/index.html parts/atom.xml\n")

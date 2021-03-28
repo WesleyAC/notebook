@@ -327,6 +327,24 @@ label.margin-toggle:not(.sidenote-number) {
     display: none;
 }
 
+.changelog {
+    position: absolute;
+    top: 0.3rem;
+    left: 0.3rem;
+    width: 18%;
+}
+
+.summarytoggle {
+    display: block;
+    width: max-content;
+    cursor: pointer;
+}
+
+.summarytoggle > picture > img {
+    width: 2rem;
+    height: 2rem;
+}
+
 @media (max-width: 1080px) {
     body {
         width: 84%;
@@ -406,5 +424,10 @@ label.margin-toggle:not(.sidenote-number) {
 
     img {
         width: 100%;
+    }
+
+    .changelog {
+        position: static;
+        width: auto;
     }
 }

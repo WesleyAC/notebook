@@ -13,6 +13,22 @@ mkdir -p "$(dirname "$OUT_FILE")"
 
 POST_TITLE_NOHTML_SEDESCAPE=$(./bin/build/get-entry-title.sh --nohtml-escaped "$ENTRY_PATH")
 
+
+CHANGELOG_TEMPLATE=""
+CHANGELOG_ENTRIES=""
+
+if [[ $(git log --oneline "$ENTRY_PATH" | wc -l) -ge 2 ]]; then
+	CHANGELOG_TEMPLATE="$(tr --delete '\n' < ./parts/changelog.html)"
+	CHANGELOG_ENTRIES="$(
+		TZ=UTC git log \
+		--date=format:'%d %b %Y' \
+		--pretty="format:<div><time datetime='%ai'>%ad</time>: <a href='$GIT_WEB_URL%H'>%s</a></div>" "$ENTRY_PATH" |
+		tac |
+		tr --delete '\n'
+	)"
+fi
+
+# shellcheck disable=SC2001
 ./bin/build/process-markdown.sh < "$ENTRY_PATH" |
 pandoc --from=markdown --to=html |
 ./bin/build/process-html.sh "$ENTRY_DATE" |
@@ -26,9 +42,12 @@ sed \
 		s/★PAGE_CONTENT★//g
 		r /dev/stdin
 		r ./parts/return_home.html
+		a $CHANGELOG_TEMPLATE
 		a </article>
 	}" \
 	./parts/template.html |
+sed -e "s/★CHANGELOG_CONTENT★/$(echo "$CHANGELOG_ENTRIES" | sed "s#/#\\\\/#g")/g" |
+./bin/build/rewrite-time-format.sh |
 ./bin/build/rewrite-imgs.sh > "$OUT_FILE"
 
 if grep -E -q '^@sidenote:' "$ENTRY_PATH"; then
