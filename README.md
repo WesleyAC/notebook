@@ -51,7 +51,8 @@ In the future, I'd like to make a few improvements to my setup:
 * Fix build caching after deploying site.
 * Serve javascript/css/fonts from cachebusting filenames.
 * Subset fonts (likely via [glyphhanger](https://github.com/zachleat/glyphhanger)).
-* Generate changelog diffs locally.
+* Generate changelog diffs locally, instead of linking to GitHub.
+* Add search (via [stork](https://stork-search.net/) or [tinysearch](https://endler.dev/2019/tinysearch/)).
 
 ## License
 
