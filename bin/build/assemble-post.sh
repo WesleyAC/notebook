@@ -21,6 +21,7 @@ if [[ $(git log --oneline "$ENTRY_PATH" | wc -l) -ge 2 ]]; then
 	CHANGELOG_TEMPLATE="$(tr --delete '\n' < ./parts/changelog.html)"
 	CHANGELOG_ENTRIES="$(
 		TZ=UTC git log \
+		--follow \
 		--date=format:'%d %b %Y' \
 		--pretty="format:<div><time datetime='%ai'>%ad</time>: <a href='$GIT_WEB_URL%H'>%s</a></div>" "$ENTRY_PATH" |
 		tac |
