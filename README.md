@@ -50,7 +50,7 @@ In the future, I'd like to make a few improvements to my setup:
 * Parallelize broken-link checking.
 * Fix build caching after deploying site.
 * Serve javascript/css/fonts from cachebusting filenames.
-* Subset fonts (likely via [glyphhanger](https://github.com/zachleat/glyphhanger).
+* Subset fonts (likely via [glyphhanger](https://github.com/zachleat/glyphhanger)).
 
 ## License
 
