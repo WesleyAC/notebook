@@ -38,6 +38,20 @@ If you want to build this blog yourself, you should note that the fonts are not 
 
 There is a [script](/bin/author/prompt.sh) to generate a writing prompt, either by [tarot pull](https://notebook.wesleyac.com/hermit-magician/) or [moon phase](/bin/author/full-moon.sh), as well as a script to generate a [blank post template](/bin/author/blank.sh).
 
+## Future Work
+
+In the future, I'd like to make a few improvements to my setup:
+
+* Save archived versions of sites locally using [archivebox](https://github.com/pirate/ArchiveBox/) or similar software.
+* Show archived versions of links, in a similar way to [Robust Links](https://robustlinks.mementoweb.org/).
+* Implement outgoing [Webmentions](https://webmention.net/).
+* Implement incoming [Webmentions](https://webmention.net/).
+* Fix timezone-handling bugs.
+* Parallelize broken-link checking.
+* Fix build caching after deploying site.
+* Serve javascript/css/fonts from cachebusting filenames.
+* Subset fonts (likely via [glyphhanger](https://github.com/zachleat/glyphhanger).
+
 ## License
 
 Except where otherwise noted, all code in this repository is licensed under the terms of the [MIT license](https://mit-license.org/). All prose is licensed under the terms of the [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) license.
