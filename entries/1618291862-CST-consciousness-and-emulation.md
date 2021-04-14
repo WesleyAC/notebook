@@ -2,7 +2,7 @@
 
 There's a somewhat common fascination with the question of whether the reality we experience is a simulation, or actual "reality." However, the question of whether we're living in a simulation is not actually a well-formed question, and I think distracts from more interesting and important questions.
 
-There are two fundamental problems with the question of "whether we are living in a simulation". The first is that it presumes that [physicalism](https://en.wikipedia.org/wiki/Physicalism) is correct, but that's [fundamnetally unprovable](/limits-of-science/). But let's gloss over that for a second, and take physicalism being correct as a given.
+There are two fundamental problems with the question of "whether we are living in a simulation". The first is that it presumes that [physicalism](https://en.wikipedia.org/wiki/Physicalism) is correct, but that's [fundamentally unprovable](/limits-of-science/). But let's gloss over that for a second, and take physicalism being correct as a given.
 
 There's a second problem here: what a "simulation" is is rather ill-defined. When looking at computers, we have a relatively easy way of talking about simulation and emulation. A virtual machine can emulate x86 only because there is a detailed x86 specification for it to emulate. Since there is a externally defined specification of what x86 is, we can look at the holistic system of a physical computer running a virtual machine and make statements about which things are happening "in the virtual machine" vs "in the host system". But with physics, we don't have anything like that. We still don't have a holistic model of physics, so we don't have an easy line that we can draw to say that particular things are "inside" or "outside" a simulation.
 
