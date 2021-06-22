@@ -9,7 +9,7 @@ First, though, let's look at some decisionmaking systems that have problems:
 ## Org Chart
 
 A typical way decisions get made at companies is that people do things, and if there's a disagreement between two people, the person on the org chart who manages both people makes the call. This has the very good property that you don't end up in standstills, and it's always obvious who needs to be convinced in order to make something happen. However, this requires the person at the top of the org chart to fundamentally have all the power
-@sidenote: And don't give that shit about the CEO being accountable to the board — that's true, but those people are just playing a completely different game, and when it comes down to it oligarchy isn't much better than monarchy.
+@sidenote: And don't give me that shit about the CEO being accountable to the board — that's true, but those people are just playing a completely different game, and when it comes down to it oligarchy isn't much better than monarchy.
 , which is in almost all cases more power than any individual should have.
 
 ## Direct Democracy
