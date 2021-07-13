@@ -25,14 +25,6 @@ if ! git diff --exit-code > /dev/null; then
 	exit 1
 fi
 
-echo "switching to gh-pages branch..."
-if git branch | grep -q gh-pages
-then
-	git branch -D gh-pages &> /dev/null
-fi
-git checkout -b gh-pages &> /dev/null
-trap "git checkout - &> /dev/null" EXIT
-
 echo "building site..."
 ./bin/build/build.py
 if [[ "$YOLO_MODE" ]]; then
@@ -41,6 +33,19 @@ else
     echo "validating site..."
     ./bin/validate.sh
 fi
+
+TMPDIR=$(mktemp -d 2>/dev/null || mktemp -d -t 'notebooktmp')
+trap 'rm -rf $TMPDIR' EXIT
+
+cp --recursive . "$TMPDIR"
+cd "$TMPDIR"
+
+echo "switching to gh-pages branch..."
+if git branch | grep -q gh-pages
+then
+	git branch -D gh-pages &> /dev/null
+fi
+git checkout -b gh-pages &> /dev/null
 
 find . -maxdepth 1 ! -name '.' ! -name 'out' ! -name '.git' ! -name '.gitignore' ! -name 'node_modules' ! -name 'static' -exec rm -rf {} \;
 find ./static -maxdepth 1 ! -wholename './static' ! -name 'fonts' -exec rm -rf {} \;
