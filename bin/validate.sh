@@ -37,7 +37,7 @@ do
                 if [ ! -f "./data/archive/$URL_HASH" ]
                 then
                     if ! echo "$URL" | grep -E -q "^https://web.archive.org/web/"; then
-                        echo "url not archived: $URL"
+                        echo "url not archived: $URL ($URL_HASH)"
                         FAIL=3
                     fi
                 fi
