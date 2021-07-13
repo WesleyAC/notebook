@@ -4,6 +4,17 @@ set -e
 
 START_TIME=$SECONDS
 
+while test $# != 0
+do
+    case "$1" in
+    --yolo) YOLO_MODE=t ;;
+    *) exit 1 ;;
+    esac
+    shift
+done
+
+
+
 cd "$(dirname "$0")"/.. || exit
 
 if [ -n "$(git status --porcelain)" ]; then
@@ -26,8 +37,10 @@ trap "git checkout - &> /dev/null" EXIT
 
 echo "building site..."
 ./bin/build/build.py
-echo "validating site..."
-./bin/validate.sh
+if [ -n "$YOLO_MODE" ]; then
+    echo "validating site..."
+    ./bin/validate.sh
+fi
 
 find . -maxdepth 1 ! -name '.' ! -name 'out' ! -name '.git' ! -name '.gitignore' ! -name 'node_modules' ! -name 'static' -exec rm -rf {} \;
 find ./static -maxdepth 1 ! -wholename './static' ! -name 'fonts' -exec rm -rf {} \;
