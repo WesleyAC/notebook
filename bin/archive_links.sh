@@ -9,6 +9,7 @@ do
     do
         case "$URL" in
             https://*|http://*)
+                echo "$URL" | grep -E -f ./data/ignore_unarchived_links.txt > /dev/null 2>&1 && continue
                 URL_HASH=$(echo "$URL" | b3sum | cut -d" " -f1)
                 if [ ! -f "./data/archive/$URL_HASH" ]
                 then
