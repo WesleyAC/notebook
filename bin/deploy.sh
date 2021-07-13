@@ -13,8 +13,6 @@ do
     shift
 done
 
-
-
 cd "$(dirname "$0")"/.. || exit
 
 if [ -n "$(git status --porcelain)" ]; then
@@ -37,7 +35,9 @@ trap "git checkout - &> /dev/null" EXIT
 
 echo "building site..."
 ./bin/build/build.py
-if [ -n "$YOLO_MODE" ]; then
+if [[ "$YOLO_MODE" ]]; then
+    echo "skipping validation..."
+else
     echo "validating site..."
     ./bin/validate.sh
 fi
