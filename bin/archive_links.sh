@@ -18,7 +18,12 @@ do
                     if (archivenow --ia "$URL" > "$TMPFILE"); then
                         if grep -E -q '^https://web.archive.org/' "$TMPFILE"; then
                             mv "$TMPFILE" "./data/archive/$URL_HASH"
+                            echo "archived $URL ($URL_HASH)"
+                        else
+                            echo "failed to archive $URL (incorrect link)"
                         fi
+                    else
+                        echo "failed to archive $URL (archivenow failure)"
                     fi
                 fi
                 ;;
