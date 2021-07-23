@@ -92,6 +92,10 @@ try:
         build_ninja.write("build out/site/instantpage.min.js: minify-js-toplevel parts/instantpage.js\n")
         build_ninja.write("build out/site/notebook.min.css: minify-css parts/notebook.css\n")
 
+        for style_file in os.listdir("parts/customstyles/"):
+            entry_name = style_file.rsplit(".", 1)[0]
+            build_ninja.write(f"build out/tmp/{entry_name}/custom.css: minify-css parts/customstyles/{style_file}\n")
+
         entry_files = sorted(os.listdir("entries"), reverse=True)
         for entry in entry_files:
             out_file = entry.split("-", 2)[2][:-3]

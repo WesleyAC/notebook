@@ -58,6 +58,17 @@ if grep -E -q '^@sidenote:' "$ENTRY_PATH"; then
 		}" "$OUT_FILE"
 fi
 
+CUSTOM_CSS_FILE=${OUT_FILE//index.html/custom.css}
+if [[ -f $CUSTOM_CSS_FILE ]]; then
+	sed -i \
+		-e "/★EXTRA_TAGS★/{
+			a <style>
+			r $CUSTOM_CSS_FILE
+			a </style>
+		}" "$OUT_FILE"
+
+fi
+
 # TODO: quoting, single quotes, ugh...
 OG_IMG=$(grep -o "<img src=\"[^\"]\+\"\( alt=\"[^\"]\+\)\?" "$OUT_FILE" | cut -d\" -f2 | head -n1)
 OG_ALT=$(grep -o "<img src=\"[^\"]\+\"\( alt=\"[^\"]\+\)\?" "$OUT_FILE" | cut -d\" -f4 | head -n1)
