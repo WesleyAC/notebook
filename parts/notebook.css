@@ -60,8 +60,8 @@ h1 {
 h2 {
     font-style: italic;
     font-weight: 400;
-    margin-top: 2.1rem;
-    margin-bottom: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 0;
     font-size: 2.2rem;
     line-height: 1;
 }
@@ -70,8 +70,8 @@ h3 {
     font-style: italic;
     font-weight: 400;
     font-size: 1.7rem;
-    margin-top: 2rem;
-    margin-bottom: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 0;
     line-height: 1;
 }
 
