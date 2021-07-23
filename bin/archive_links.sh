@@ -13,6 +13,7 @@ do
                 URL_HASH=$(echo "$URL" | b3sum | cut -d" " -f1)
                 if [ ! -f "./data/archive/$URL_HASH" ]
                 then
+                    echo "archiving $URL"
                     TMPFILE=$(mktemp -t "archive_$URL_HASH.XXXXXXXXXX")
                     if (archivenow --ia "$URL" > "$TMPFILE"); then
                         if grep -E -q '^https://web.archive.org/' "$TMPFILE"; then
