@@ -16,8 +16,6 @@ do
 				echo "<section>"
 				echo "$line"
 				echo "<p class='subtitle' id='dateline'>$1</p>"
-				echo "</section>"
-				echo "<section>"
 				FIRST_HEADING=false
 			else
 				echo "<section>"
