@@ -1,6 +1,6 @@
 # How to Pirate Ebooks
 
-I've been reading a lot of book lately, mostly on my [Remarkable](https://remarkable.com/). I'd usually get books from the library, but getting ebooks from the library means running some annoying and fiddly adobe DRM software in WINE, so I've been pirating instead. For a long time, I didn't know very good ways to get ebooks, so I figured a little guide would be useful for other people who were in that situation.
+I've been reading a lot of books lately, mostly on my [Remarkable](https://remarkable.com/). I'd usually get books from the library, but getting ebooks from the library means running some annoying and fiddly adobe DRM software in WINE, so I've been pirating instead. For a long time, I didn't know very good ways to get ebooks, so I figured a little guide would be useful for other people who were in that situation.
 
 There are a few different places you can go for ebooks, in the order of how useful I find them:
 
@@ -32,4 +32,4 @@ As an example, here are the [search results](http://libgen.rs/search.php?req=ste
 
 ## Your Local Library
 
-If you can't find a book elsewhere, you can try searching in library catalogs for it. It's a little annoying to get ebooks in useful formats from libraries, and annoying to strip them of DRM, but it can be a good way to get books that aren't accessible elsewhere. The particular process is different for every library, but usually not to hard to figure out. If you just want to read books on your phone or Android/iOS tablet, and don't care about removing the DRM that time-limits how long you can read a book for, I recommend the [open-source](https://github.com/NYPL-Simplified/) app [SimplyE](https://www.nypl.org/books-music-movies/ebookcentral/simplye). You can also collect library cards as you travel (NYPL and SFPL are both quite easy to get), which will give you access to a larger collection.
+If you can't find a book elsewhere, you can try searching in library catalogs for it. It's a little annoying to get ebooks in useful formats from libraries, and annoying to strip them of DRM, but it can be a good way to get books that aren't accessible elsewhere. The particular process is different for every library, but usually not to hard too figure out. If you just want to read books on your phone or Android/iOS tablet, and don't care about removing the DRM that time-limits how long you can read a book for, I recommend the [open-source](https://github.com/NYPL-Simplified/) app [SimplyE](https://www.nypl.org/books-music-movies/ebookcentral/simplye). You can also collect library cards as you travel (NYPL and SFPL are both quite easy to get), which will give you access to a larger collection.
