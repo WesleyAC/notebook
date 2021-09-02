@@ -2,7 +2,7 @@
 
 ## Blocking Twitter
 
-I recently wrote a [browser extension](https://addons.mozilla.org/en-US/firefox/addon/bad-screen/) to block websites on a schedule. Currently, I have it set up to block Twitter (and a couple other distracting websites) except from 7pm — 10pm each day. There's a small escape hatch as well: I can unblock a website temporarily, after a delay — I can click a button to unblock Twitter, for instance, then wait 5 minutes to be able to look at Twitter for 10 minutes.
+I recently wrote a [browser extension](https://github.com/wesleyac/badscreen/) to block websites on a schedule. Currently, I have it set up to block Twitter (and a couple other distracting websites) except from 7pm — 10pm each day. There's a small escape hatch as well: I can unblock a website temporarily, after a delay — I can click a button to unblock Twitter, for instance, then wait 5 minutes to be able to look at Twitter for 10 minutes.
 @sidenote: What usually actually happens is that I forget that I clicked the button, and I don't look at Twitter at all, which is an excellent outcome.
 
 I started tracking my mood a while ago, and the number one thing that correlated with not feeling bad was blocking Twitter. But I kept unblocking it to look at tweets people sent me, or to tweet things, and then getting sucked back in. Now that I use this extension, I don't have much desire to look at Twitter anymore, and I'm much happier for it.
