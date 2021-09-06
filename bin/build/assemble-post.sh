@@ -7,6 +7,7 @@ source ./bin/build/vars.sh
 ENTRY_PATH="$1"
 OUT_FILE="$2"
 ENTRY_NAME=$(basename "$ENTRY_PATH")
+ENTRY_SLUG=$(echo "$ENTRY_NAME" | cut -d- -f3- | rev | cut -d. -f2- | rev)
 ENTRY_DATE=$(TZ=$(echo "$ENTRY_NAME" | cut -d- -f2) date -d @"$(echo "$ENTRY_NAME" | cut -d- -f1)" +"%A %B %-d, %Y")
 
 mkdir -p "$(dirname "$OUT_FILE")"
@@ -50,6 +51,10 @@ sed \
 sed -e "s/★CHANGELOG_CONTENT★/$(echo "$CHANGELOG_ENTRIES" | sed "s#/#\\\\/#g")/g" |
 ./bin/build/rewrite-time-format.sh |
 ./bin/build/rewrite-imgs.sh > "$OUT_FILE"
+
+sed -i -e "/★EXTRA_TAGS★/{
+	a <link rel='alternate' type='text/markdown' href='$ENTRY_SLUG.md' title='Markdown version.'/>
+}" "$OUT_FILE"
 
 if grep -E -q '^@sidenote:' "$ENTRY_PATH"; then
 	sed -i \
