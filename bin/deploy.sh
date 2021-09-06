@@ -25,6 +25,8 @@ if ! git diff --exit-code > /dev/null; then
 	exit 1
 fi
 
+echo "removing old site files..."
+rm -rf ./out/site/
 echo "building site..."
 ./bin/build/build.py
 if [[ "$YOLO_MODE" ]]; then
