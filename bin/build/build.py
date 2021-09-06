@@ -74,15 +74,21 @@ try:
             for filename in files:
                 in_file = os.path.join(root, filename)
                 out_file = os.path.join(root[7:], filename)
+                out_file_webp = os.path.splitext(out_file)[0]+'.webp'
                 if filename.endswith("png"):
                     build_ninja.write(f"build out/tmp/{out_file}.optipng: compress-optipng {in_file}\n")
-                    build_ninja.write(f"build out/site/{out_file}: compress-pngcrush out/tmp/{out_file}.optipng\n")
-                    build_ninja.write(f"build out/site/{os.path.splitext(out_file)[0]+'.webp'}: make-webp-png out/site/{out_file}\n")
+                    build_ninja.write(f"build out/tmp/{out_file}: compress-pngcrush out/tmp/{out_file}.optipng\n")
+                    build_ninja.write(f"build out/tmp/{out_file_webp}: make-webp-png out/tmp/{out_file}\n")
+                    build_ninja.write(f"build out/site/{out_file}: copy-file out/tmp/{out_file}\n")
+                    build_ninja.write(f"build out/site/{out_file_webp}: copy-file out/tmp/{out_file_webp}\n")
                 elif filename.endswith("jpg") or filename.endswith("jpeg"):
-                    build_ninja.write(f"build out/site/{out_file}: compress-jpg {in_file}\n")
-                    build_ninja.write(f"build out/site/{os.path.splitext(out_file)[0]+'.webp'}: make-webp-jpg out/site/{out_file}\n")
+                    build_ninja.write(f"build out/tmp/{out_file}: compress-jpg {in_file}\n")
+                    build_ninja.write(f"build out/tmp/{out_file_webp}: make-webp-jpg out/tmp/{out_file}\n")
+                    build_ninja.write(f"build out/site/{out_file}: copy-file out/tmp/{out_file}\n")
+                    build_ninja.write(f"build out/site/{out_file_webp}: copy-file out/tmp/{out_file_webp}\n")
                 elif filename.endswith("svg"):
-                    build_ninja.write(f"build out/site/{out_file}: compress-svgo {in_file}\n")
+                    build_ninja.write(f"build out/tmp/{out_file}: compress-svgo {in_file}\n")
+                    build_ninja.write(f"build out/site/{out_file}: copy-file out/tmp/{out_file}\n")
                 else:
                     build_ninja.write(f"build out/site/{out_file}: copy-file {in_file}\n")
 
