@@ -107,14 +107,17 @@ try:
             out_file = entry.split("-", 2)[2][:-3]
             custom_css_file = f"out/tmp/{out_file}/custom.css" if os.path.isfile(f"parts/customstyles/{out_file}.css") else ""
             build_ninja.write(f"build out/tmp/{out_file}/index.html: assemble-post entries/{entry} | bin/build/assemble-post.sh bin/build/process-markdown.sh bin/build/rewrite-imgs.sh bin/build/process-html.sh bin/build/fix-sidenote-spacing.sh bin/build/vars.sh parts/template.html parts/return_home.html parts/sidenote_script.html parts/changelog.html {custom_css_file}\n")
-            build_ninja.write(f"build out/site/{out_file}/index.html: minify-html out/tmp/{out_file}/index.html\n")
+            build_ninja.write(f"build out/tmp/{out_file}/index.min.html: minify-html out/tmp/{out_file}/index.html\n")
+            build_ninja.write(f"build out/site/{out_file}/index.html: copy-file out/tmp/{out_file}/index.min.html\n")
             build_ninja.write(f"build out/site/{out_file}/{out_file}.md: copy-file entries/{entry}\n")
 
         build_ninja.write(f"build out/tmp/index.html out/site/atom.xml: assemble-index-atom entries/{' entries/'.join(entry_files)} | bin/build/assemble-index-atom.sh bin/build/vars.sh parts/template.html parts/index.html parts/atom.xml\n")
-        build_ninja.write("build out/site/index.html: minify-html out/tmp/index.html\n")
+        build_ninja.write("build out/tmp/index.min.html: minify-html out/tmp/index.html\n")
+        build_ninja.write("build out/site/index.html: copy-file out/tmp/index.min.html\n")
 
         build_ninja.write("build out/tmp/404.html: assemble-404 | bin/build/assemble-404.sh bin/build/vars.sh parts/template.html parts/404.html\n")
-        build_ninja.write("build out/site/404.html: minify-html out/tmp/404.html\n")
+        build_ninja.write("build out/tmp/404.min.html: minify-html out/tmp/404.html\n")
+        build_ninja.write("build out/site/404.html: copy-file out/tmp/404.min.html\n")
 
     process.wait()
 finally:
