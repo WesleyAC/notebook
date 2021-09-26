@@ -1,4 +1,8 @@
-with import <nixpkgs> {};
+with import (builtins.fetchTarball {
+  name = "nixos-nixpkgs-3d85bb08106a3d32350df2786fda62aa7fd49cd8";
+  url = "https://github.com/nixos/nixpkgs/archive/3d85bb08106a3d32350df2786fda62aa7fd49cd8.tar.gz";
+  sha256 = "0g5yg292ixbv4lilc11fr754ym702a2h833am9hxi3ir5flwb3ah";
+}) {};
 
 let archivenow = (
   let archivenow = python38.pkgs.buildPythonPackage rec {
