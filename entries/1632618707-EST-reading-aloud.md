@@ -1,6 +1,6 @@
 # Reading Aloud
 
-*This post contains spoilers for* [The Husband Stitch](https://granta.com/The-Husband-Stitch/) *by Carmen Maria Machado, which I highly recommend. I would suggest reading it before you read this post, if you intent to read it.*
+*This post contains spoilers for* [The Husband Stitch](https://granta.com/The-Husband-Stitch/) *by Carmen Maria Machado, which I highly recommend. I would suggest reading it before you read this post, if you intend to read it.*
 
 <br>
 
