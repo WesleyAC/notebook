@@ -17,11 +17,11 @@ find ./out/site/ -name "*.html" -exec html5validator {} + || FAIL=1
 
 echo "running shellcheck..."
 
-find . -name "*.sh" -not -path "./node_modules/*" -exec shellcheck {} + || FAIL=2
+find . -name "*.sh" -not -path "*/node_modules/*" -exec shellcheck {} + || FAIL=2
 
 echo "running eslint..."
 
-find . -name "*.js" -not -path "./out/*" -not -path "./node_modules/*" -exec eslint {} + || FAIL=5
+find . -name "*.js" -not -path "./out/*" -not -path "*/node_modules/*" -not -path "./data/archivebox/archive/*" -exec eslint {} + || FAIL=5
 
 echo "checking broken links..."
 
@@ -33,11 +33,10 @@ do
         case "$URL" in
             https://*|http://*)
                 echo "$URL" | grep -E -f ./data/ignore_unarchived_links.txt > /dev/null 2>&1 && continue
-                URL_HASH=$(echo "$URL" | b3sum | cut -d" " -f1)
-                if [ ! -f "./data/archive/$URL_HASH" ]
+                if ! echo "SELECT url FROM core_snapshot" | sqlite3 data/archivebox/index.sqlite3 | grep -q "^$URL$"
                 then
                     if ! echo "$URL" | grep -E -q "^https://web.archive.org/web/"; then
-                        echo "url not archived: $URL ($URL_HASH)"
+                        echo "url not archived: $URL"
                         FAIL=3
                     fi
                 fi

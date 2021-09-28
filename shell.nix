@@ -4,21 +4,7 @@ with import (builtins.fetchTarball {
   sha256 = "0g5yg292ixbv4lilc11fr754ym702a2h833am9hxi3ir5flwb3ah";
 }) {};
 
-let archivenow = (
-  let archivenow = python38.pkgs.buildPythonPackage rec {
-    pname = "archivenow";
-    version = "2020.7.18.12.19.44";
-
-    src = python38.pkgs.fetchPypi {
-      inherit pname version;
-      sha256 = "0d9hzd3dgspqhdadxhpaj5ym6dnih57kdns2i167796a9nr41kbj";
-    };
-
-    propagatedBuildInputs = [ python38Packages.requests python38Packages.flask ];
-  };
-  in python38.withPackages (ps: [ archivenow ])
-);
-in stdenv.mkDerivation {
+stdenv.mkDerivation {
   name = "wesley-notebook";
 
   buildInputs = [
@@ -30,8 +16,6 @@ in stdenv.mkDerivation {
     xidel
     curl
     shellcheck
-    archivenow
-    b3sum
     pandoc
     pngcrush
     optipng
@@ -39,6 +23,8 @@ in stdenv.mkDerivation {
     libwebp
     ninja
     python3
+    archivebox
+    sqlite
   ];
   shellHook = ''
     npm ci

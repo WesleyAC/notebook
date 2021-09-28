@@ -4,7 +4,7 @@ This is the source code for my [notebook blog](https://notebook.wesleyac.com/), 
 
 ## Archival and Broken Links
 
-The deploy script checks if any outwards links are broken (returning HTTP error codes), and does not allow a deploy if they are (unless the link has been explicitly added to a bypass list). Additionally, before deploying, all outgoing links are submitted to [archive.org](https://web.archive.org) to preserve a copy of the link at the time the post was written. This allows easy switching to archived copies of linked websites should they go offline in the future.
+The deploy script checks if any outwards links are broken (returning HTTP error codes), and does not allow a deploy if they are (unless the link has been explicitly added to a bypass list). Additionally, before deploying, all outgoing links are archived via [ArchiveBox](https://archivebox.io) to preserve a copy of the link at the time the post was written. This allows easy switching to archived copies of linked websites should they go offline in the future.
 
 ## Deep Links
 
@@ -42,7 +42,6 @@ There is a [script](/bin/author/prompt.sh) to generate a writing prompt, either 
 
 In the future, I'd like to make a few improvements to my setup:
 
-* Save archived versions of sites locally using [archivebox](https://github.com/pirate/ArchiveBox/) or similar software.
 * Show archived versions of links, in a similar way to [Robust Links](https://robustlinks.mementoweb.org/).
 * Implement outgoing [Webmentions](https://webmention.net/).
 * Implement incoming [Webmentions](https://webmention.net/).
