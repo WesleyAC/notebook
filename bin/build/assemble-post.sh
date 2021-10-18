@@ -83,7 +83,7 @@ TWITTER_CARD_TYPE="summary"
 
 if [[ $OG_IMG == /* && $OG_IMG != "/icons/history.svg" ]]; then
 	OG_IMG=$BLOG_URL$OG_IMG
-	TWITTER_CARD_TYPE="summary_image_large"
+	TWITTER_CARD_TYPE="summary_large_image"
 fi
 
 sed -i -e "s/★TWITTER_CARD_TYPE★/$TWITTER_CARD_TYPE/g" "$OUT_FILE"
