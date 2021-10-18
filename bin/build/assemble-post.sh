@@ -30,6 +30,8 @@ if [[ $(git log --oneline "$ENTRY_PATH" | wc -l) -ge 2 ]]; then
 	)"
 fi
 
+# Note that the changelog template must be at the bottom, in order for it to
+# not fuck up opengraph images.
 # shellcheck disable=SC2001
 ./bin/build/process-markdown.sh < "$ENTRY_PATH" |
 pandoc --from=markdown --to=html |
@@ -77,10 +79,14 @@ fi
 # TODO: quoting, single quotes, ugh...
 OG_IMG=$(grep -o "<img src=\"[^\"]\+\"\( alt=\"[^\"]\+\)\?" "$OUT_FILE" | cut -d\" -f2 | head -n1)
 OG_ALT=$(grep -o "<img src=\"[^\"]\+\"\( alt=\"[^\"]\+\)\?" "$OUT_FILE" | cut -d\" -f4 | head -n1)
+TWITTER_CARD_TYPE="summary"
 
-if [[ $OG_IMG == /* ]]; then
+if [[ $OG_IMG == /* && $OG_IMG != "/icons/history.svg" ]]; then
 	OG_IMG=$BLOG_URL$OG_IMG
+	TWITTER_CARD_TYPE="summary_image_large"
 fi
+
+sed -i -e "s/★TWITTER_CARD_TYPE★/$TWITTER_CARD_TYPE/g" "$OUT_FILE"
 
 if [ -n "$OG_IMG" ]; then
 	sed -i \

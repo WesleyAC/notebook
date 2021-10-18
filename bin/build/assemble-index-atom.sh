@@ -24,6 +24,7 @@ sed \
 	-e "s/★PAGE_TITLE★/$BLOG_NAME/g" \
 	-e "s/★OG_TITLE★/$BLOG_NAME/g" \
 	-e "s/★OG_TYPE★/website/g" \
+	-e "s/★TWITTER_CARD_TYPE★/summary/g" \
 	-e "/★EXTRA_TAGS★/{
 		i <meta property=\"og:image\" content=\"$BLOG_URL/fleuron.png\"/>
 		i <meta name=\"description\" content=\"Wesley's notebook\"/>
