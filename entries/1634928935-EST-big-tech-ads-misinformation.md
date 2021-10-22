@@ -34,7 +34,7 @@ It's not just the ad platforms that realize this either — Uber recently realiz
 
 If omnipotence isn't the problem with Facebook, what is? Kevin Drum
 @sidenote: I can't generally recommend Kevin Drum — I think that a lot of his thinking is sloppy, and he seems to have the typical pundit brainworms. But in this particular case, I think there's a lot of merit to his idea.
-[somewhat-convincingly argues](https://www.motherjones.com/politics/2021/07/american-anger-polarization-fox-news/) that we have Fox News to blame:
+[somewhat-convincingly argues](https://www.motherjones.com/politics/2021/07/american-anger-polarization-fox-news/) that we have Fox News to blame for many of our misinformation problems:
 
 > As we all know, trust in government [plummeted](https://news.gallup.com/poll/1669/general-mood-country.aspx) during the ’60s and ’70s thanks to Vietnam and Watergate, and then flattened out for the next few decades.
 >
