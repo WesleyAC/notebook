@@ -55,6 +55,7 @@ sed -e "s/★CHANGELOG_CONTENT★/$(echo "$CHANGELOG_ENTRIES" | sed "s#/#\\\\/#g
 ./bin/build/rewrite-imgs.sh > "$OUT_FILE"
 
 sed -i -e "/★EXTRA_TAGS★/{
+  a <script defer src='/titleresize.min.js'></script>
 	a <link rel='alternate' type='text/markdown' href='$ENTRY_SLUG.md' title='Markdown version.'/>
 }" "$OUT_FILE"
 
