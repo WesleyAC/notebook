@@ -77,9 +77,15 @@ if [[ -f $CUSTOM_CSS_FILE ]]; then
 
 fi
 
-# TODO: quoting, single quotes, ugh...
-OG_IMG=$(grep -o "<img src=\"[^\"]\+\"\( alt=\"[^\"]\+\)\?" "$OUT_FILE" | cut -d\" -f2 | head -n1)
-OG_ALT=$(grep -o "<img src=\"[^\"]\+\"\( alt=\"[^\"]\+\)\?" "$OUT_FILE" | cut -d\" -f4 | head -n1)
+MAYBE_OG_IMG=$(compgen -G "static/img/post/$ENTRY_SLUG/og_image.*" | head -n1)
+if [ "$MAYBE_OG_IMG" = "" ]; then
+	# TODO: quoting, single quotes, ugh...
+	OG_IMG=$(grep -o "<img src=\"[^\"]\+\"\( alt=\"[^\"]\+\)\?" "$OUT_FILE" | cut -d\" -f2 | head -n1)
+	OG_ALT=$(grep -o "<img src=\"[^\"]\+\"\( alt=\"[^\"]\+\)\?" "$OUT_FILE" | cut -d\" -f4 | head -n1)
+else
+	OG_IMG=${MAYBE_OG_IMG#static}
+	OG_ALT=$(cat "static/img/post/$ENTRY_SLUG/og_image_alt.txt") # TODO warn if doesn't exist?
+fi
 TWITTER_CARD_TYPE="summary"
 
 if [[ $OG_IMG == /* && $OG_IMG != "/icons/history.svg" ]]; then
