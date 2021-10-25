@@ -11,7 +11,7 @@ while (( $# > 2 ))
 do
 	ENTRY_SLUG=$(basename "$1" | cut -d- -f3- | rev | cut -d. -f2- | rev)
 	ENTRY_TITLE_HTML=$(./bin/build/get-entry-title.sh --html "$1")
-	HTML_ENTRIES+=("<a href='/$ENTRY_SLUG/'>$ENTRY_TITLE_HTML</a><br>")
+	HTML_ENTRIES+=("<li><a href='/$ENTRY_SLUG/'>$ENTRY_TITLE_HTML</a></li>")
 	ENTRY_URL="$BLOG_URL/$ENTRY_SLUG/"
 	ENTRY_TITLE_NOHTML=$(./bin/build/get-entry-title.sh --nohtml "$1")
 	ENTRY_DATE_ATOM=$(TZ=$(basename "$1" | cut -d- -f2) date -d @"$(basename "$1" | cut -d- -f1)" +'%Y-%m-%dT%H:%M:%SZ')

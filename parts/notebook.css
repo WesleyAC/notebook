@@ -102,6 +102,15 @@ p.subtitle {
 	margin-bottom: 3.5rem;
 }
 
+#postlist {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#postlist > li {
+    line-height: 1.2rem;
+    margin: 0.6rem 0;
+}
 
 article {
     padding: 0rem 0rem 5rem;
