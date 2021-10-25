@@ -105,6 +105,7 @@ p.subtitle {
 #postlist {
     list-style-type: none;
     padding-left: 0;
+    width: 100%;
 }
 
 #postlist > li {
