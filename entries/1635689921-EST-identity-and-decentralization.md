@@ -22,6 +22,6 @@ There are systems that don't have this conflation, but they tend to have other p
 A problem with Scuttlebutt, though, is that it eschews the concept of having distinct communities altogether — there is essentially one global system that all messages are replicated across.
 @sidenote: Pedants will point out that you can have different communities by not sending your messages to the global instance, but instead setting up your own closed system of federation. If you were going to say that — have you tried it? The tools are very, very obviously not built for it.
 
-It's sad to me that the DAO bros have essentially stumbled upon a more philosophically sound model of identity and community essentially by accident — since most DAOs are built on Etherium
+It's sad to me that the DAO bros have essentially stumbled upon a more philosophically sound model of identity and community essentially by accident — since most DAOs are built on Ethereum
 @sidenote: Which is fundamentally a pretty dumb choice, but that's a post for another day.
 they get cryptographic-keys-as-identity for free, and then built communities on top of that. There's no fundamental reason why we can't do that with existing internet and web infrastructure, though — it's easy to imagine a world where servers provide hosting and UI, ad-hoc communities (which are not encoded in any technically-delimited way) perform moderation, and individuals own their identity via cryptographic keys.
