@@ -18,13 +18,16 @@ POST_TITLE_NOHTML_SEDESCAPE=$(./bin/build/get-entry-title.sh --nohtml-escaped "$
 CHANGELOG_TEMPLATE=""
 CHANGELOG_ENTRIES=""
 
-if [[ $(git log --oneline "$ENTRY_PATH" | wc -l) -ge 2 ]]; then
+IGNORE_CHANGELOG_ENTRIES="(dafb92ca9368ffbe3dfb6c573262a3090e6ff52d)|(bd624d82f96a37c1f83c815591d5151bf740a885)|(175c73f195c98b89e345fcc51ee3b32f3db94675)|(79b0710cd48e7bdd299c6d0dc78a1eb9c43d50a0)|(2cbde19c88df42af2c108773dd711f88a1c08dd4)|(87177f142895e4f4d0dbde5c6655ef85cee5f8df)|(396d37942db46f21cf254ad261ee4c86269205da)|(0741abcd9b56a131703b8d6bd9fd095e8db67d88)"
+
+if [[ $(git log --follow --pretty="format:%H" "$ENTRY_PATH" | egrep -v "$IGNORE_CHANGELOG_ENTRIES" | wc -l) -ge 2 ]]; then
 	CHANGELOG_TEMPLATE="$(tr --delete '\n' < ./parts/changelog.html)"
 	CHANGELOG_ENTRIES="$(
 		TZ=UTC git log \
 		--follow \
 		--date=format:'%d %b %Y' \
 		--pretty="format:<div><time datetime='%ai'>%ad</time>: <a href='$GIT_WEB_URL%H'>%s</a></div>" "$ENTRY_PATH" |
+		egrep -v "$IGNORE_CHANGELOG_ENTRIES" |
 		tac |
 		tr --delete '\n'
 	)"
@@ -50,7 +53,7 @@ sed \
 		a </article>
 	}" \
 	./parts/template.html |
-sed -e "s/★CHANGELOG_CONTENT★/$(echo "$CHANGELOG_ENTRIES" | sed "s#/#\\\\/#g")/g" |
+sed -e "s/★CHANGELOG_CONTENT★/$(echo "$CHANGELOG_ENTRIES" | sed "s#/#\\\\/#g" | sed "s#&#\\\\&#g")/g" |
 ./bin/build/rewrite-time-format.sh |
 ./bin/build/rewrite-imgs.sh > "$OUT_FILE"
 
