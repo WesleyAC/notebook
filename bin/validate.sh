@@ -23,6 +23,13 @@ echo "running eslint..."
 
 find . -name "*.js" -not -path "./out/*" -not -path "*/node_modules/*" -not -path "./data/archivebox/archive/*" -exec eslint {} + || FAIL=5
 
+echo "checking timezones..."
+
+if [[ $(find ./entries -mindepth 1 | cut -d- -f2 | grep -E -v -c "(EST)|(PST)|(PDT)|(ROC)") -gt 0 ]]; then
+	echo "invalid timezone found :("
+	FAIL=7
+fi
+
 echo "checking broken links..."
 
 # shellcheck disable=SC2044
