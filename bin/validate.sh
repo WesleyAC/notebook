@@ -56,7 +56,7 @@ do
                 fi
                 ;;
             /*)
-                if ! { test -f "./out/site$URL" || test -f "./out/site$URL/index.html"; }; then
+                if ! { test -f "./out/site${URL%#*}" || test -f "./out/site${URL%#*}/index.html"; }; then
                     echo "broken link: $FILE:$URL"
                     FAIL=4
                 fi
