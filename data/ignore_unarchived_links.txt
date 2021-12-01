@@ -13,3 +13,4 @@ https://www.youtube.com/
 https://youtube.com/
 https://youtu.be/
 https://recurse.zulipchat.com/
+https://github.com/WesleyAC/notebook/blob/c967f3fe6c3c0581015cf68f701fee6a43e7f678/parts/linktext.js
