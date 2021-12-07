@@ -92,7 +92,7 @@ try:
                 else:
                     build_ninja.write(f"build out/site/{out_file}: copy-file {in_file}\n")
 
-        for js_file in ["sideline", "linktext", "titleresize", "instantpage"]:
+        for js_file in ["sideline", "titleresize", "instantpage"]:
             build_ninja.write(f"build out/tmp/{js_file}.min.js: minify-js parts/{js_file}.js\n")
             build_ninja.write(f"build out/site/{js_file}.min.js: copy-file out/tmp/{js_file}.min.js\n")
 

@@ -8,7 +8,7 @@ The deploy script checks if any outwards links are broken (returning HTTP error 
 
 ## Deep Links
 
-There is some [additional javascript](/parts/linktext.js) to create deep links to any text selection. It is fairly lightweight, and the code should work on most websites. This will eventually be moved into its own library, most likely.
+There is some javascript allowing users to create deep links to any text selection. It is fairly lightweight, and the code should work on most websites. This will be moved into its own library quite soon.
 
 ## Changelogs
 

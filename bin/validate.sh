@@ -21,7 +21,7 @@ find . -name "*.sh" -not -path "*/node_modules/*" -exec shellcheck {} + || FAIL=
 
 echo "running eslint..."
 
-find . -name "*.js" -not -path "./out/*" -not -path "*/node_modules/*" -not -path "./data/archivebox/archive/*" -exec eslint {} + || FAIL=5
+find . -name "*.js" -not -path "./out/*" -not -path "*/node_modules/*" -not -path "./data/archivebox/archive/*" -not -path "./static/deeplinks/*" -exec eslint {} + || FAIL=5
 
 echo "checking timezones..."
 
