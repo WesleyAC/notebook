@@ -8,7 +8,7 @@ There are a few different places you can go for ebooks, in the order of how usef
 
 [Z-Library](http://z-lib.org/) is probably the easiest website to use to download ebooks. Click on the "Books" link on that page, which will take you to the domain for your region. Then type a book name, author name, ISBN, or something else. Books have the format displayed in the search results (usually EPUB, MOBI, or PDF). Click on the result you want, and there'll be a "download" link. You can download 5 books per day, or 10 if you make a free account. You can pay for an account that will allow you to download more.
 
-As an example, here are the [search results](https://1lib.us/s/steal%20this%20book) and [book page](https://1lib.us/book/1618565/ad695c).
+As an example, here are the [search results](https://book4you.org/s/steal%20this%20book) and [book page](https://book4you.org/book/1618565/ad695c).
 
 ## Library Genesis (libgen)
 
