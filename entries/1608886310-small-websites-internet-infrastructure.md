@@ -1,7 +1,7 @@
 ---
 {
 	"timezone": "ROC",
-	"location": ""
+	"location": "Taipei, Taiwan"
 }
 ---
 # Small Websites & Internet Infrastructure

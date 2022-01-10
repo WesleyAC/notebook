@@ -1,7 +1,7 @@
 ---
 {
 	"timezone": "EST",
-	"location": ""
+	"location": "Upper Jay, New York"
 }
 ---
 # Friendships, Online and In Person

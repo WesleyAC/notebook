@@ -1,7 +1,7 @@
 ---
 {
 	"timezone": "EST",
-	"location": ""
+	"location": "Brooklyn, New York"
 }
 ---
 # IndieWeb Thoughts: POSSE

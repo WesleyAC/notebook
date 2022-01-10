@@ -1,7 +1,7 @@
 ---
 {
 	"timezone": "ROC",
-	"location": ""
+	"location": "Taipei, Taiwan"
 }
 ---
 # The Limits of Science

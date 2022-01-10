@@ -1,7 +1,7 @@
 ---
 {
 	"timezone": "EST",
-	"location": ""
+	"location": "Upper Jay, New York"
 }
 ---
 # Art and Engineering

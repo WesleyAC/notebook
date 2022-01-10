@@ -1,7 +1,7 @@
 ---
 {
 	"timezone": "PST",
-	"location": ""
+	"location": "San Francisco, California"
 }
 ---
 # What Hypertext Could Be

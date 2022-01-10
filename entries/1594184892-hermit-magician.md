@@ -1,7 +1,7 @@
 ---
 {
 	"timezone": "EST",
-	"location": ""
+	"location": "Brooklyn, New York"
 }
 ---
 # The Hermit and The Magician

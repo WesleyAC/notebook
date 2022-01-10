@@ -1,7 +1,7 @@
 ---
 {
 	"timezone": "EST",
-	"location": ""
+	"location": "Brooklyn, New York"
 }
 ---
 # Learning How to Ride a Bike

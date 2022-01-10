@@ -1,7 +1,7 @@
 ---
 {
 	"timezone": "EST",
-	"location": ""
+	"location": "Upper Jay, New York"
 }
 ---
 # Everyone loves collecting data, nobody loves analyzing it later

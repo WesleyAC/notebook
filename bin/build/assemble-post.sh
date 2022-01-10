@@ -9,6 +9,7 @@ OUT_FILE="$2"
 ENTRY_NAME=$(basename "$ENTRY_PATH")
 ENTRY_SLUG=$(echo "$ENTRY_NAME" | cut -d- -f2- | rev | cut -d. -f2- | rev)
 ENTRY_FRONT_MATTER=$(sed -n '2,/^---$/{ /^---$/d; p; }' "$ENTRY_PATH")
+ENTRY_LOCATION=$(echo "$ENTRY_FRONT_MATTER" | jq -r .location)
 ENTRY_DATE=$(TZ=$(echo "$ENTRY_FRONT_MATTER" | jq -r .timezone) date -d @"$(echo "$ENTRY_NAME" | cut -d- -f1)" +"%A %B %-d, %Y")
 
 mkdir -p "$(dirname "$OUT_FILE")"
@@ -40,7 +41,7 @@ fi
 ./bin/build/strip-front-matter.sh "$ENTRY_PATH" |
 ./bin/build/process-markdown.sh |
 pandoc --from=markdown --to=html |
-./bin/build/process-html.sh "$ENTRY_DATE" |
+./bin/build/process-html.sh "$ENTRY_DATE — $ENTRY_LOCATION" |
 ./bin/build/fix-sidenote-spacing.sh |
 sed \
 	-e "s/★PAGE_TITLE★/$POST_TITLE_NOHTML_SEDESCAPE ⁑ $BLOG_NAME/g" \

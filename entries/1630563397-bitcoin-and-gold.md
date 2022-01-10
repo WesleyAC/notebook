@@ -1,7 +1,7 @@
 ---
 {
 	"timezone": "PDT",
-	"location": ""
+	"location": "San Francisco, California"
 }
 ---
 # Bitcoin and Gold

@@ -1,7 +1,7 @@
 ---
 {
 	"timezone": "ROC",
-	"location": ""
+	"location": "Taipei, Taiwan"
 }
 ---
 # Pandora's Box and Collapse
