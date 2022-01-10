@@ -7,8 +7,9 @@ source ./bin/build/vars.sh
 ENTRY_PATH="$1"
 OUT_FILE="$2"
 ENTRY_NAME=$(basename "$ENTRY_PATH")
-ENTRY_SLUG=$(echo "$ENTRY_NAME" | cut -d- -f3- | rev | cut -d. -f2- | rev)
-ENTRY_DATE=$(TZ=$(echo "$ENTRY_NAME" | cut -d- -f2) date -d @"$(echo "$ENTRY_NAME" | cut -d- -f1)" +"%A %B %-d, %Y")
+ENTRY_SLUG=$(echo "$ENTRY_NAME" | cut -d- -f2- | rev | cut -d. -f2- | rev)
+ENTRY_FRONT_MATTER=$(sed -n '2,/^---$/{ /^---$/d; p; }' "$ENTRY_PATH")
+ENTRY_DATE=$(TZ=$(echo "$ENTRY_FRONT_MATTER" | jq -r .timezone) date -d @"$(echo "$ENTRY_NAME" | cut -d- -f1)" +"%A %B %-d, %Y")
 
 mkdir -p "$(dirname "$OUT_FILE")"
 
@@ -36,7 +37,8 @@ fi
 # Note that the changelog template must be at the bottom, in order for it to
 # not fuck up opengraph images.
 # shellcheck disable=SC2001
-./bin/build/process-markdown.sh < "$ENTRY_PATH" |
+./bin/build/strip-front-matter.sh "$ENTRY_PATH" |
+./bin/build/process-markdown.sh |
 pandoc --from=markdown --to=html |
 ./bin/build/process-html.sh "$ENTRY_DATE" |
 ./bin/build/fix-sidenote-spacing.sh |

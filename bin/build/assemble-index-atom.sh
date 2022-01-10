@@ -9,12 +9,15 @@ ATOM_ENTRIES=()
 
 while (( $# > 2 ))
 do
-	ENTRY_SLUG=$(basename "$1" | cut -d- -f3- | rev | cut -d. -f2- | rev)
+	ENTRY_SLUG=$(basename "$1" | cut -d- -f2- | rev | cut -d. -f2- | rev)
 	ENTRY_TITLE_HTML=$(./bin/build/get-entry-title.sh --html "$1")
 	HTML_ENTRIES+=("<li><a href='/$ENTRY_SLUG/'>$ENTRY_TITLE_HTML</a></li>")
 	ENTRY_URL="$BLOG_URL/$ENTRY_SLUG/"
 	ENTRY_TITLE_NOHTML=$(./bin/build/get-entry-title.sh --nohtml "$1")
-	ENTRY_DATE_ATOM=$(TZ=$(basename "$1" | cut -d- -f2) date -d @"$(basename "$1" | cut -d- -f1)" +'%Y-%m-%dT%H:%M:%SZ')
+	ENTRY_FRONT_MATTER=$(sed -n '2,/^---$/{ /^---$/d; p; }' "$1")
+	ENTRY_TIMEZONE=$(echo "$ENTRY_FRONT_MATTER" | jq -r .timezone)
+	ENTRY_TIMESTAMP=$(basename "$1" | cut -d- -f1)
+	ENTRY_DATE_ATOM=$(TZ=$ENTRY_TIMEZONE date -d @"$ENTRY_TIMESTAMP" +'%Y-%m-%dT%H:%M:%SZ')
 	ATOM_ENTRIES+=("<entry><id>$ENTRY_URL</id><title>$ENTRY_TITLE_NOHTML</title><updated>$ENTRY_DATE_ATOM</updated><link rel='alternate' href='$ENTRY_URL'/><author><name>Wesley Aptekar-Cassels</name></author></entry>")
 	shift
 done

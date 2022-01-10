@@ -2,7 +2,7 @@
 
 set -e
 
-POST_TITLE=$(head -n1 "$2" | sed 's/^#[ ]*//g' | pandoc --from=markdown --to=html | sed -e 's#<p>##g' -e 's#</p>##g')
+POST_TITLE=$(sed -n -e '/^---$/{n;p}' "$2" | sed -n -e '2p' | sed 's/^#[ ]*//g' | pandoc --from=markdown --to=html | sed -e 's#<p>##g' -e 's#</p>##g')
 # shellcheck disable=SC2001
 POST_TITLE_NOHTML=$(echo "$POST_TITLE" | sed 's/<[^>]*>//g')
 # shellcheck disable=SC2001
