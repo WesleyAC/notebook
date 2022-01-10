@@ -1,7 +1,7 @@
 ---
 {
 	"timezone": "EST",
-	"location": "Brooklyn, New York"
+	"location": "Manhattan, New York"
 }
 ---
 # Reading Aloud
