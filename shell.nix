@@ -25,6 +25,7 @@ stdenv.mkDerivation {
     python3
     archivebox
     sqlite
+    jq
   ];
   shellHook = ''
     npm ci
