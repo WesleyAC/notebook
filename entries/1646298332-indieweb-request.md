@@ -21,3 +21,5 @@ One of the IndieWeb principles is [plurality](https://indieweb.org/principles#Pl
 Webmentions solve a huge problem with the web today, and it makes me sad to see them locked behind the technical hurdles of either implementing them oneself or setting up IndieAuth. Please give me a easy way to use them without having to jump over a bunch of technical hurdles!
 
 If you're working on fixing this, or know of a easy way to use webmentions without IndieAuth today, please do [email me](mailto:me@wesleyac.com), since, uh, I'm not gonna see your webmentions at the moment.
+
+*Update: I decided to stop being lazy and put together the thing I want to see: [webmention.wesleyac.com](https://webmention.wesleyac.com) ([source](https://github.com/wesleyac/webmention-receiver)). The broader point still stands, though: I can't, for instance, link to this on the IndieWeb wiki without implementing IndieAuth, nor can I use most of the webmention testing tools, which also generally require IndieAuth.*
