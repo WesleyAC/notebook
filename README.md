@@ -44,7 +44,6 @@ In the future, I'd like to make a few improvements to my setup:
 
 * Show archived versions of links, in a similar way to [Robust Links](https://robustlinks.mementoweb.org/).
 * Implement outgoing [Webmentions](https://webmention.net/).
-* Implement incoming [Webmentions](https://webmention.net/).
 * Parallelize broken-link checking.
 * Serve javascript/css/fonts from cachebusting filenames.
 * Subset fonts (likely via [glyphhanger](https://github.com/zachleat/glyphhanger)).
