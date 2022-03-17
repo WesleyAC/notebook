@@ -1,15 +1,13 @@
 @font-face {
     font-family: 'harriet';
-    src: url('fonts/Harriet-v2-Text-Regular-latin1.woff2') format('woff2'),
-         url('fonts/Harriet-v2-Text-Regular-latin1.woff') format('woff');
+    src: url('fonts/Harriet-v2-Text-Regular-latin1.woff2') format('woff2');
     font-weight: normal;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'harriet';
-    src: url('fonts/Harriet-v2-Text-Regular-Italic-latin1.woff2') format('woff2'),
-         url('fonts/Harriet-v2-Text-Regular-Italic-latin1.woff') format('woff');
+    src: url('fonts/Harriet-v2-Text-Regular-Italic-latin1.woff2') format('woff2');
     font-weight: normal;
     font-style: italic;
     font-display: swap;
@@ -17,16 +15,14 @@
 
 @font-face {
     font-family: 'harriet';
-    src: url('fonts/Harriet-v2-Text-Bold-latin1.woff2') format('woff2'),
-         url('fonts/Harriet-v2-Text-Bold-latin1.woff') format('woff');
+    src: url('fonts/Harriet-v2-Text-Bold-latin1.woff2') format('woff2');
     font-weight: bold;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'ascentis';
-    src: url('fonts/Ascentis-Regular.woff2') format('woff2'),
-         url('fonts/Ascentis-Regular.woff') format('woff');
+    src: url('fonts/Ascentis-Regular.woff2') format('woff2');
     font-weight: normal;
     font-display: swap;
 }
