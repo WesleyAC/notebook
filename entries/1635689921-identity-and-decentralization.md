@@ -8,7 +8,7 @@
 
 Continuing my thoughts and complaints about [identity and the future of the web](/indieweb-thoughts-posse), let's turn today to the most successful modern decentralized web system: ActivityPub, the system behind [Mastodon](https://joinmastodon.org/) (a decentralized Twitter alternative).
 
-Mastodon's decentralization model is pretty simple, from a technical perspective. There are servers, which anyone can run. Those servers are identified by their domain name, just like any other website, and the can "federate" — share data with each other via a (semi)-standardized HTTP/JSON API. A "user" is an object on a particular server, identified in a email-esque way (<a href="https://interlace.space/wesleyac">@wesleyac@interlace.space</a>, for instance).
+Mastodon's decentralization model is pretty simple, from a technical perspective. There are servers, which anyone can run. Those servers are identified by their domain name, just like any other website, and the can "federate" — share data with each other via a (semi)-standardized HTTP/JSON API. A "user" is an object on a particular server, identified in a email-esque way (<a href="https://interlace.space/@wesleyac">@wesleyac@interlace.space</a>, for instance).
 
 There's a sort of obvious problem here, though — there's a conflation of the technical aspects of running a server with the social aspects of running a community. [Darius](https://tinysubversions.com/) talks about this in [runyourown.social](https://runyourown.social/):
 

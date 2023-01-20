@@ -28,7 +28,7 @@ A lot of people are unable to look this beast directly in the eyes, and turn awa
 
 Some people look the beast directly in the eyes, take in the scope and meaning of it, and become paralyzed. We are, in the end, all just doing our best under capitalism. We all have to work to survive, and sometimes that means you put your values aside, just to be allowed to exist in this world. This is true and comforting, but it largely falls flat in the tech industry. If you are making more money than 95% of the people in the US, you have a huge amount of freedom to choose where and how you work. Pretending that work being mandatory absolves you is just a way of beating down the discomfort of making hard decisions about the morality of your actions.
 
-Others choose to divest, [walking away](https://learning.hccs.edu/faculty/emily.klotz/engl1302-6/readings/the-ones-who-walk-away-from-omelas-ursula-le-guin/pdf_view) from the industry entirely. I have respect for this — it's a principled decision, and a brave one. For me, though, it's insufficient.
+Others choose to divest, [walking away](/files/omelas.pdf) from the industry entirely. I have respect for this — it's a principled decision, and a brave one. For me, though, it's insufficient.
 
 I got into computing for the joy of play and discovery and understanding, but that's not why I stayed. I stayed because I saw the power of it. As Penelope Scott [wrote](https://www.youtube.com/watch?v=LpxT9TLGoLI) about the californian ideology: the real tragedy is half of it was true.
 
