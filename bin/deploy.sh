@@ -8,6 +8,7 @@ while test $# != 0
 do
     case "$1" in
     --yolo) YOLO_MODE=t ;;
+    --pages) PAGES=t ;;
     *) exit 1 ;;
     esac
     shift
@@ -36,28 +37,32 @@ else
     ./bin/validate.sh
 fi
 
-TMPDIR=$(mktemp -d 2>/dev/null || mktemp -d -t 'notebooktmp')
-trap 'rm -rf $TMPDIR' EXIT
+if [[ "$PAGES" ]]; then
+	TMPDIR=$(mktemp -d 2>/dev/null || mktemp -d -t 'notebooktmp')
+	trap 'rm -rf $TMPDIR' EXIT
 
-cp --recursive . "$TMPDIR"
-cd "$TMPDIR"
+	cp --recursive . "$TMPDIR"
+	cd "$TMPDIR"
 
-echo "switching to gh-pages branch..."
-if git branch | grep -q gh-pages
-then
-	git branch -D gh-pages &> /dev/null
+	echo "switching to gh-pages branch..."
+	if git branch | grep -q gh-pages
+	then
+		git branch -D gh-pages &> /dev/null
+	fi
+	git checkout -b gh-pages &> /dev/null
+
+	find . -maxdepth 1 ! -name '.' ! -name 'out' ! -name '.git' ! -name '.gitignore' ! -name 'node_modules' ! -name 'static' -exec rm -rf {} \;
+	find ./static -maxdepth 1 ! -wholename './static' ! -name 'fonts' -exec rm -rf {} \;
+	cp -r out/site/* .
+
+	echo "committing compiled site..."
+	git add -A > /dev/null
+	git commit --allow-empty -m "$(git log -1 --pretty=%B)" > /dev/null
+	echo "pushing compiled site..."
+	git push -f -q origin gh-pages > /dev/null
+else
+	rsync -rtp out/site/ hack.wesleyac.com:/var/www/notebook.wesleyac.com/
 fi
-git checkout -b gh-pages &> /dev/null
-
-find . -maxdepth 1 ! -name '.' ! -name 'out' ! -name '.git' ! -name '.gitignore' ! -name 'node_modules' ! -name 'static' -exec rm -rf {} \;
-find ./static -maxdepth 1 ! -wholename './static' ! -name 'fonts' -exec rm -rf {} \;
-cp -r out/site/* .
-
-echo "committing compiled site..."
-git add -A > /dev/null
-git commit --allow-empty -m "$(git log -1 --pretty=%B)" > /dev/null
-echo "pushing compiled site..."
-git push -f -q origin gh-pages > /dev/null
 
 echo "deployed <3"
 
