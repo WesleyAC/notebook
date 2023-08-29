@@ -1,9 +1,0 @@
-{
-    "Status-Code": 200,
-    "Content-Type": "text/html; charset=UTF-8",
-    "Connection": "keep-alive",
-    "Keep-Alive": "timeout=15",
-    "Date": "Sun, 26 Sep 2021 19:33:20 GMT",
-    "Server": "Apache",
-    "Content-Encoding": "gzip"
-}

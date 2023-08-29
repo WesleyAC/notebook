@@ -1,9 +1,0 @@
-{
-    "Status-Code": 200,
-    "Server": "nginx/1.14.1",
-    "Date": "Wed, 01 Dec 2021 03:03:00 GMT",
-    "Content-Type": "text/html; charset=UTF-8",
-    "Connection": "keep-alive",
-    "X-Powered-By": "PHP/7.2.24",
-    "Link": "<https://www.interfluidity.com/wp-json/>; rel=\"https://api.w.org/\", <https://www.interfluidity.com/wp-json/wp/v2/posts/7629>; rel=\"alternate\"; type=\"application/json\", <https://www.interfluidity.com/?p=7629>; rel=shortlink"
-}

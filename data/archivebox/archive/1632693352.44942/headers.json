@@ -1,9 +1,0 @@
-{
-    "Status-Code": 200,
-    "Connection": "keep-alive",
-    "Server": "gunicorn/20.0.4",
-    "Date": "Sun, 26 Sep 2021 21:55:58 GMT",
-    "Content-Type": "text/html; charset=utf-8",
-    "Content-Length": "1987",
-    "Via": "1.1 vegur"
-}

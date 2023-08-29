@@ -1,9 +1,0 @@
-{
-    "Status-Code": 200,
-    "Server": "nginx",
-    "Date": "Sun, 26 Sep 2021 19:45:15 GMT",
-    "Content-Type": "text/html; charset=UTF-8",
-    "Connection": "keep-alive",
-    "Set-Cookie": "language=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0; path=/; secure; SameSite=None, language=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0; path=/; domain=z-lib.org; secure; SameSite=None",
-    "Content-Encoding": "gzip"
-}

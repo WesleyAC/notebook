@@ -1,4 +1,0 @@
-42dd1c71a782f23f8821ec2604d61de9a1791d98744d8eab8ad072c2cd0ef9d2  ./Ascentis-Regular.woff2
-f3d83c8da0d4718e601c8c0c939d3913396e3fff067827a14e32b9d8bd9e2676  ./Harriet-v2-Text-Bold-latin1.woff2
-da947a62faa982d4fb4a586740cebf3cf56d85429b813f5e258f88ee340362fe  ./Harriet-v2-Text-Regular-Italic-latin1.woff2
-132a3c2c19759f2f9dbb1199c5107721f33e92f258b9e245ccfb8d44872c1cc0  ./Harriet-v2-Text-Regular-latin1.woff2
