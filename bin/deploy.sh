@@ -55,6 +55,8 @@ if [[ "$PAGES" ]]; then
 	find ./static -maxdepth 1 ! -wholename './static' ! -name 'fonts' -exec rm -rf {} \;
 	cp -r out/site/* .
 
+	bash
+
 	echo "committing compiled site..."
 	git add -A > /dev/null
 	git commit --allow-empty -m "$(git log -1 --pretty=%B)" > /dev/null
