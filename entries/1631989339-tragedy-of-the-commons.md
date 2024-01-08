@@ -6,7 +6,7 @@
 ---
 # Tragedy of the Commons
 
-I was taught about the tragedy of the commons in my high school environmental science class. The day opened up with what is apparently a "classic" [classroom activity](https://www.mercerislandschools.org/cms/lib/WA01001855/Centricity/Domain/651/TRAGEDY%20OF%20Common%20Goldfish-14.pdf) for teaching this, involving goldfish crackers and straws:
+I was taught about the tragedy of the commons in my high school environmental science class. The day opened up with what is apparently a "classic" [classroom activity](https://web.archive.org/web/20220630034324/https://www.mercerislandschools.org/cms/lib/WA01001855/Centricity/Domain/651/TRAGEDY%20OF%20Common%20Goldfish-14.pdf) for teaching this, involving goldfish crackers and straws:
 
 > Divide into groups of 4. Each group should sit in a circle around the "lake". The goal of this activity is to see how each of you will behave when resources are not privately owned.
 > 

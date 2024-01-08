@@ -6,7 +6,7 @@
 ---
 # Small Websites & Internet Infrastructure
 
-The technical circles I'm tend to care a lot about making small, fast, efficient websites. We've got [clubs](https://1mb.club/) on [clubs](https://250kb.club/) on [clubs](https://10kbclub.com/) preaching the gospel of small websites. I get this — if you have a slow connection [most of the web is unusable](https://danluu.com/web-bloat/), and there's a sort of preposterous exuberance in using megabytes of data to present a few paragraphs of text. I'm sympathetic to this cause.
+The technical circles I'm tend to care a lot about making small, fast, efficient websites. We've got [clubs](https://1mb.club/) on [clubs](https://250kb.club/) on [clubs](https://web.archive.org/web/20231208000921/https://10kbclub.com/) preaching the gospel of small websites. I get this — if you have a slow connection [most of the web is unusable](https://danluu.com/web-bloat/), and there's a sort of preposterous exuberance in using megabytes of data to present a few paragraphs of text. I'm sympathetic to this cause.
 
 But at the same I can't help but wonder if the focus on bundle sizes is missing the forest for the trees. Most of the web is unusable on a slow connection, but why are connections so slow in the first place? I signed up for a cell plan in [Taiwan](/taiwan/) a few days ago — it provides me with unlimited data, 50-75Mbps down
 @sidenote: As measured by [fast.com](https://fast.com)
