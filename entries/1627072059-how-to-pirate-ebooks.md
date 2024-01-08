@@ -10,13 +10,15 @@ I've been reading a lot of books lately, mostly on my [Remarkable](https://remar
 
 There are a few different places you can go for ebooks, in the order of how useful I find them:
 
+## Anna's Archive
+
+[Anna's Archive](https://annas-archive.org/) is a very useful source for ebooks. Simply [type in the name of the book you want](https://annas-archive.org/search?q=steal+this+book), [pick the right result](https://annas-archive.org/md5/01874771cf362b30dd574714312a9255), and download if from one of their mirrors (pick the "Slow & external" downloads, unless you donate to Anna's Archive to get access to the faster results).
+
 ## Z-Library
 
-**Update:** Z-Library has sadly been shut down — I think [Anna's Archive](https://annas-archive.org/) is the next best thing at the moment.
+[Z-Library](https://zlibrary-global.se/) is probably the easiest website to use to download ebooks. Click on the "Books" link on that page, which will take you to the domain for your region. Then type a book name, author name, ISBN, or something else. Books have the format displayed in the search results (usually EPUB, MOBI, or PDF). Click on the result you want, and there'll be a "download" link. You can download 5 books per day, or 10 if you make a free account. You can pay for an account that will allow you to download more.
 
-[Z-Library](http://z-lib.org/) is probably the easiest website to use to download ebooks. Click on the "Books" link on that page, which will take you to the domain for your region. Then type a book name, author name, ISBN, or something else. Books have the format displayed in the search results (usually EPUB, MOBI, or PDF). Click on the result you want, and there'll be a "download" link. You can download 5 books per day, or 10 if you make a free account. You can pay for an account that will allow you to download more.
-
-As an example, here are the [search results](https://book4you.org/s/steal%20this%20book) and [book page](https://book4you.org/book/1618565/ad695c).
+As an example, here are the [search results](https://zlibrary-global.se/s/steal%20this%20book) and [book page](https://zlibrary-global.se/book/1618565/72e563/steal-this-book.html).
 
 ## Library Genesis (libgen)
 
