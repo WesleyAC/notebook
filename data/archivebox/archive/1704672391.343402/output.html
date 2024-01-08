@@ -1,0 +1,4155 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <title>Wesley Aptekar-Cassels - BookWyrm</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://bookwyrm-social.sfo3.digitaloceanspaces.com/static/css/themes/bookwyrm-light.css" rel="stylesheet" type="text/css">
+
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="BookWyrm search">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/logos/886fa857d5f6b7e9.png">
+    <link rel="apple-touch-icon" href="https://bookwyrm-social.sfo3.digitaloceanspaces.com/static/images/logo.png">
+    <link rel="manifest" href="/manifest.json">
+
+    
+    
+
+
+    <meta name="twitter:card" content="summary_large_image">
+    
+        <meta name="twitter:image" content="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/previews/logos/1-d66e8519-390f-4ad7-899d-f23c23e2b53a.jpg">
+        <meta name="og:image" content="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/previews/logos/1-d66e8519-390f-4ad7-899d-f23c23e2b53a.jpg">
+    
+
+
+<meta name="twitter:image:alt" content="BookWyrm Logo">
+
+<meta name="twitter:title" content="BookWyrm">
+<meta name="og:title" content="BookWyrm">
+
+<meta name="twitter:description" content="Social Reading and Reviewing">
+<meta name="og:description" content="Social Reading and Reviewing">
+
+
+
+    
+    <link rel="alternate" type="application/rss+xml" href="/user/wesleyac/rss" title="Wesley Aptekar-Cassels - BookWyrm">
+
+</head>
+<body>
+
+<nav class="navbar" aria-label="main navigation">
+    <div class="container">
+        
+        
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img class="image logo" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/static/images/logo-small.png" alt="BookWyrm home page" loading="lazy" decoding="async">
+            </a>
+            <form class="navbar-item column is-align-items-start pt-5" action="/search">
+                <div class="field has-addons">
+                    <div class="control">
+                        
+                            
+                        
+                        <input aria-label="Search for a book" id="tour-search" class="input" type="text" name="q" placeholder="Search for a book" value="" spellcheck="false">
+                    </div>
+                    <div class="control">
+                        <button class="button" type="submit">
+                            <span class="icon icon-search" title="Search">
+                                <span class="is-sr-only">Search</span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="control">
+                        <button class="button" type="button" data-modal-open="barcode-scanner-modal">
+                            <span class="icon icon-barcode" title="Scan Barcode" id="tour-barcode">
+                                <span class="is-sr-only">Scan Barcode</span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            
+
+<div class="modal " id="barcode-scanner-modal">
+    <div class="modal-background" data-modal-close=""></div>
+    <div class="modal-card" role="dialog" aria-modal="true" tabindex="-1" aria-described-by="barcode-scanner-modal_header">
+        <header class="modal-card-head">
+            <h2 class="modal-card-title mb-0" id="barcode-scanner-modal_header">
+                
+    
+        Scan Barcode
+    
+
+            </h2>
+            <button type="button" class="delete" aria-label="Close" data-modal-close=""></button>
+        </header>
+
+        
+        <section class="modal-card-body">
+            
+    <div class="block">
+        <div id="barcode-scanner"></div>
+    </div>
+
+    <div id="barcode-camera-list" class="select is-small">
+        <select>
+        </select>
+    </div>
+    <template id="barcode-grant-access">
+        <span class="icon icon-lock"></span>
+        <span class="is-size-5">Requesting camera...</span><br>
+        <span>Grant access to the camera to scan a book's barcode.</span>
+    </template>
+    <template id="barcode-access-denied">
+        <span class="icon icon-warning"></span>
+        <span class="is-size-5">Access denied</span><br>
+        <span>Could not access camera</span>
+    </template>
+    <template id="barcode-scanning">
+        <span class="icon icon-barcode"></span>
+        <span class="is-size-5">Scanning...</span><br>
+        <span>Align your book's barcode with the camera.</span><span class="isbn"></span>
+    </template>
+    <template id="barcode-found">
+        <span class="icon icon-check"></span>
+        <span class="is-size-5">ISBN scanned</span><br>
+        Searching for book: <span class="isbn"></span>...
+    </template>
+    <div id="barcode-status" class="block"></div>
+
+        </section>
+        <footer class="modal-card-foot">
+            
+    <button class="button" type="button" data-modal-close="">Cancel</button>
+
+        </footer>
+        
+    </div>
+    <button type="button" class="modal-close is-large" aria-label="Close" data-modal-close=""></button>
+</div>
+
+
+            <button type="button" tabindex="0" class="navbar-burger pulldown-menu my-4 is-flex-touch is-align-items-center is-justify-content-center" data-controls="main_nav" aria-expanded="false" aria-label="Main navigation menu">
+                <i class="icon-dots-three-vertical" aria-hidden="true"></i>
+
+                <strong class="is-hidden  tag is-small px-1" data-poll-wrapper="">
+                    <span class="is-sr-only">Notifications</span>
+                    <strong data-poll="notifications" class="has-text-white">
+                        
+                    </strong>
+                </strong>
+            </button>
+        </div>
+        <div class="navbar-menu" id="main_nav">
+            <div class="navbar-start" id="tour-navbar-start">
+                
+            </div>
+
+            <div class="navbar-end">
+            
+                <div class="navbar-item pt-5 pb-0">
+                    
+                    <div class="columns">
+                        <div class="column">
+                            <form name="login" method="post" action="/login?next=/user/wesleyac">
+                                <input type="hidden" name="csrfmiddlewaretoken" value="lQ1bFsfsJKRRq19qom4NFCM5lTe60bpJoh27vQ0592RDtTw3c7EEF59OwCi6g8Go">
+                                <div class="columns is-variable is-1">
+                                    <div class="column">
+                                        <label class="is-sr-only" for="id_localname">Username:</label>
+                                        <input type="text" name="localname" maxlength="150" class="input" required="" id="id_localname" placeholder="username">
+                                    </div>
+                                    <div class="column">
+                                        <label class="is-sr-only" for="id_password">Password:</label>
+                                        <div class="control has-icons-right">
+                                            <input type="password" name="password" maxlength="128" class="input" required="" id="id_password" placeholder="password">
+                                            <span data-password-icon="" data-for="id_password" class="icon is-right is-clickable">
+                                                <button type="button" aria-controls="id_password" class="icon-eye-blocked" title="Show/Hide password"></button>
+                                            </span>
+                                        </div>
+                                        <p class="help"><a href="/password-reset">Forgot your password?</a></p>
+                                    </div>
+                                    <div class="column is-narrow">
+                                        <button class="button is-primary" type="submit">Log in</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="column is-narrow">
+                            <a href="/" class="button is-link">
+                                Join
+                            </a>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </div>
+</nav>
+
+
+
+<main class="section is-flex-grow-1">
+    <div class="container">
+        
+            
+            
+            
+<header class="block">
+    
+<div class="columns is-mobile">
+    <div class="column">
+        <h1 class="title">User Profile</h1>
+    </div>
+    
+</div>
+
+</header>
+
+
+
+
+<div class="block">
+    <div class="columns">
+        <div class="column is-two-fifths">
+            
+                
+
+
+
+
+<div class="media block">
+    <div class="media-left">
+        <a href="/user/wesleyac">
+        
+
+<img class="avatar image is-96x96" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg" alt="avatar for wesleyac" loading="lazy" decoding="async">
+
+        </a>
+    </div>
+    <div class="media-content">
+        <p>
+            Wesley Aptekar-Cassels
+            
+            <span class="icon icon-lock is-size-7" title="Locked account">
+                <span class="is-sr-only">Locked account</span>
+            </span>
+            
+        </p>
+        <p><a href="https://bookwyrm.social/user/wesleyac">wesleyac@bookwyrm.social</a></p>
+        <p>Joined 11&nbsp;months, 3&nbsp;weeks ago</p>
+        <p>
+            
+        </p>
+    </div>
+</div>
+
+
+            
+        </div>
+
+        
+        <div class="column box has-background-tertiary content preserve-whitespace"><p><a href="https://wesleyac.com">wesleyac.com</a> · bookwyrm.social sysadmin</p><p>feel free to request to follow if you have a filled-out profile, i just have things locked down since i don't want everything i read to be completely public.</p></div>
+        
+    </div>
+    <div>
+    
+        
+        
+        
+
+
+<div class="field mb-0">
+    <div class="control">
+        <a class="button is-small is-link" href="/remote_follow?user=wesleyac@bookwyrm.social" target="_blank" rel="nofollow noopener noreferrer" onclick="BookWyrm.displayPopUp(`/remote_follow?user=wesleyac@bookwyrm.social`, `remoteFollow`); return false;" aria-describedby="remote_follow_warning">
+            Follow on Fediverse
+        </a>
+    </div>
+    <p id="remote_follow_warning" class="mt-1 is-size-7 has-text-weight-light">
+        This link opens in a pop-up window
+    </p>
+</div>
+
+
+        
+
+        
+    
+    </div>
+    
+    
+    
+    <nav class="tabs">
+        <ul>
+            
+            <li class="is-active">
+                <a href="/user/wesleyac">Activity</a>
+            </li>
+            
+            <li>
+                <a href="/user/wesleyac/reviews-comments">Reviews and Comments</a>
+            </li>
+            
+            
+            
+            
+            <li id="tour-lists-tab">
+                <a href="/user/wesleyac/lists">Lists</a>
+            </li>
+            
+            
+            
+            <li id="tour-shelves-tab">
+                <a href="/user/wesleyac/books">Books</a>
+            </li>
+            
+        </ul>
+    </nav>
+    
+    
+    
+</div>
+
+    
+    
+
+<div class="block">
+    <h2 class="title">
+        
+
+    Wesley Aptekar-Cassels's books
+
+
+    </h2>
+    <div class="columns is-mobile scroll-x">
+        
+        <p class="column">
+            <em>No books found.</em>
+        </p>
+        
+    </div>
+    
+</div>
+
+
+
+
+<div>
+    <div class="columns is-mobile">
+        <h2 class="title column">User Activity</h2>
+        
+        <div class="column is-narrow">
+            <details class="dropdown">
+                <summary class="is-relative pulldown-menu dropdown-trigger" aria-label="Show RSS Options" role="button" aria-haspopup="menu">
+                    <span class="">
+                        <span class="icon icon-rss" aria-hidden="true"></span>
+                        <span class="">RSS feed</span>
+                    </span>
+                    <span class="icon icon-arrow-down is-hidden-mobile" aria-hidden="true"></span>
+                    <span class="summary-on-open">
+                        <span class="icon icon-arrow-left is-small" aria-hidden="true"></span>
+                        Back
+                    </span>
+                </summary>
+
+                <div class="dropdown-menu">
+                    <ul class="dropdown-content" role="menu">
+                        <li role="menuitem">
+                            <a target="_blank" href="/user/wesleyac/rss" class="navbar-item" rel="nofollow noopener noreferrer">
+                                Complete feed
+                            </a>
+                        </li>
+                        <li role="menuitem">
+                            <a target="_blank" href="/user/wesleyac/rss-reviews" class="navbar-item" rel="nofollow noopener noreferrer">
+                                Reviews only
+                            </a>
+                        </li>
+                        <li role="menuitem">
+                            <a target="_blank" href="/user/wesleyac/rss-quotes" class="navbar-item" rel="nofollow noopener noreferrer">
+                                Quotes only
+                            </a>
+                        </li>
+                        <li role="menuitem">
+                            <a target="_blank" href="/user/wesleyac/rss-comments" class="navbar-item" rel="nofollow noopener noreferrer">
+                                Comments only
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+        
+    </div>
+
+    
+    <div class="block" id="feed_3011807">
+        
+
+
+
+    
+        <article class="card">
+    <header class="card-header">
+        
+<div class="card-header-title has-background-secondary is-block">
+    
+
+
+
+
+<div class="media">
+    <figure class="media-left" aria-hidden="true">
+        <a class="image is-48x48" href="/user/wesleyac" tabindex="-1">
+            
+
+<img class="avatar image is-48x48" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg" aria-hidden="true" alt="avatar for wesleyac" loading="lazy" decoding="async">
+
+        </a>
+    </figure>
+
+    <div class="media-content">
+        <h3 class="has-text-weight-bold">
+            <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+                
+                    <meta itemprop="image" content="/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg">
+                
+
+                <a href="/user/wesleyac" itemprop="url">
+                    <span itemprop="name">Wesley Aptekar-Cassels</span>
+                </a>
+            </span>
+
+            stopped reading <a href="/book/1450493/s/colonization-and-the-wampanoag-story">Colonization and the Wampanoag Story</a> by <a href="/author/263031/s/linda-coombs">Linda Coombs</a>
+
+        </h3>
+        <div class="breadcrumb has-dot-separator is-small">
+            <ul class="is-flex is-align-items-center">
+                <li>
+                    <a href="https://bookwyrm.social/user/wesleyac/comment/3011807#anchor-3011807">
+                        Nov 10
+                    </a>
+                </li>
+
+                
+
+                
+
+                <li>
+                
+
+<span class="icon icon-globe" title="Public">
+    <span class="is-sr-only">Public</span>
+</span>
+
+
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+
+    </header>
+
+    
+    <section class="card-content">
+        
+
+
+
+    
+
+
+
+
+
+
+
+    <div class="columns is-gapless">
+        
+            
+                
+                    <div class="column is-cover">
+                        <div class="columns is-mobile is-gapless">
+                            <div class="column is-cover">
+                                <a href="/book/1450493/s/colonization-and-the-wampanoag-story"><picture class="cover-container is-w-s-mobile is-h-l-tablet"><img alt="Linda Coombs: Colonization and the Wampanoag Story (2023, Random House Children's Books)" class="book-cover" itemprop="thumbnailUrl" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/covers/d196ba02-9f8e-4d2c-aefc-b42ade7fbf1c.jpeg"></picture>
+</a>
+
+                                <span class="stars"><span class="no-rating">No rating</span></span>
+
+
+                                
+
+
+
+
+                            </div>
+
+                            <div class="column ml-3-mobile is-hidden-tablet">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        
+
+        <article class="column ml-3-tablet my-3-mobile is-clipped">
+            
+
+            
+
+            <div>
+                
+
+                
+                    
+                        
+
+
+
+
+
+    
+        
+            
+                
+                    <div class="content">
+                        <div dir="auto" class="preserve-whitespace" itemprop="reviewBody">
+                            <p>This book seems to have a fair amount of good information in it, and I appreciate how it's structured, but it's just too much of a kids books for me to want to read, unfortunately. Will peruse the bibliography to try to find other good books on the topic instead.</p>
+                        </div>
+                    </div>
+                
+            
+        
+    
+
+
+                    
+                
+
+                
+
+                
+            </div>
+        </article>
+    </div>
+
+
+
+
+
+
+
+    </section>
+    
+
+    <footer class="card-footer has-background-tertiary">
+        
+
+
+    <div class="card-footer-item">
+        <a href="/login">
+            <span class="icon icon-comment is-small" title="Reply">
+                <span class="is-sr-only">Reply</span>
+            </span>
+
+            <span class="icon icon-boost is-small ml-4" title="Boost status">
+                <span class="is-sr-only">Boost status</span>
+            </span>
+
+            <span class="icon icon-heart is-small ml-4" title="Like status">
+                <span class="is-sr-only">Like status</span>
+            </span>
+        </a>
+    </div>
+
+
+
+    </footer>
+
+    
+
+
+</article>
+
+    
+
+
+    </div>
+    
+    <div class="block" id="feed_2960719">
+        
+
+
+
+    
+        <article class="card">
+    <header class="card-header">
+        
+<div class="card-header-title has-background-secondary is-block">
+    
+
+
+
+
+<div class="media">
+    <figure class="media-left" aria-hidden="true">
+        <a class="image is-48x48" href="/user/wesleyac" tabindex="-1">
+            
+
+<img class="avatar image is-48x48" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg" aria-hidden="true" alt="avatar for wesleyac" loading="lazy" decoding="async">
+
+        </a>
+    </figure>
+
+    <div class="media-content">
+        <h3 class="has-text-weight-bold">
+            <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+                
+                    <meta itemprop="image" content="/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg">
+                
+
+                <a href="/user/wesleyac" itemprop="url">
+                    <span itemprop="name">Wesley Aptekar-Cassels</span>
+                </a>
+            </span>
+
+            reviewed <a href="/book/773954/s/woman-on-the-edge-of-time">Woman on the Edge of Time</a> by <a href="/author/5803/s/marge-piercy">Marge Piercy</a>
+
+        </h3>
+        <div class="breadcrumb has-dot-separator is-small">
+            <ul class="is-flex is-align-items-center">
+                <li>
+                    <a href="https://bookwyrm.social/user/wesleyac/review/2960719#anchor-2960719">
+                        Nov 4
+                    </a>
+                </li>
+
+                
+
+                
+
+                <li>
+                
+
+<span class="icon icon-globe" title="Public">
+    <span class="is-sr-only">Public</span>
+</span>
+
+
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+
+    </header>
+
+    
+    <section class="card-content">
+        
+
+
+
+    
+
+
+
+
+
+
+
+    <div class="columns is-gapless">
+        
+            
+                
+                    <div class="column is-cover">
+                        <div class="columns is-mobile is-gapless">
+                            <div class="column is-cover">
+                                <a href="/book/773954/s/woman-on-the-edge-of-time"><picture class="cover-container is-w-s-mobile is-h-l-tablet"><img alt="Marge Piercy: Woman on the Edge of Time" class="book-cover" itemprop="thumbnailUrl" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/covers/4dc73912-f861-4605-85e7-e648e249744c.jpeg"></picture>
+</a>
+
+                                <span class="stars"><span class="is-sr-only">
+            3 stars
+        </span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-half
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span></span>
+
+
+                                
+
+
+
+
+                            </div>
+
+                            <div class="column ml-3-mobile is-hidden-tablet">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        
+
+        <article class="column ml-3-tablet my-3-mobile is-clipped">
+            
+            <header class="mb-2">
+                <h3 class="title is-5 has-subtitle" dir="auto" itemprop="name">
+                    Woman on the Edge of Time
+                </h3>
+
+                <h4 class="subtitle is-6">
+                    <span class="is-hidden" itemprop="reviewRating" itemscope="" itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="2.5">
+                    </span>
+                    <span class="stars"><span class="is-sr-only">
+            3 stars
+        </span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-half
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span></span>
+
+                </h4>
+            </header>
+            
+
+            
+
+            <div>
+                
+
+                
+                    
+                        
+
+
+
+
+
+    
+        
+            
+                
+                    <div id="hide_full_062c7e17c-5c33-4244-a541-db9bffe549cf">
+                        <div class="content" id="trimmed_062c7e17c-5c33-4244-a541-db9bffe549cf">
+                            <div dir="auto" class="preserve-whitespace"><p>I'll start off this review by saying that I'm probably being harsher on this book than I should be due to my general distaste for second-wave feminism and 60s and 70s era environmentalism, which are the two main traditions this book seems to come from. Perhaps in a book aligned more with my politics, I would have forgiven more of my frustrations with the characters, dialog, and worldbuilding. But as it was, I disliked this book.</p>
+<p>The narrator/protagonist is a Connie, a Mexican-American woman (written by a white author), and the book opens up with her living in a slum, talking about the drugs and crime there, and interacting with her niece, who is a sex worker, something the protagonist clearly feels disgust about — disgust that feels like it comes straight from the author, since there doesn't seem to be much of any attempt to subvert that or make …</p></div>
+
+                            <div>
+                            
+                                
+                                
+
+<button type="button" class="button is-small hide-active" data-controls="full_062c7e17c-5c33-4244-a541-db9bffe549cf" aria-pressed="false">
+
+    
+    <span>Show more</span>
+    
+</button>
+
+
+
+                            
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="full_062c7e17c-5c33-4244-a541-db9bffe549cf" class="is-hidden">
+                        <div class="content">
+                            <div dir="auto" class="preserve-whitespace" itemprop="reviewBody">
+                                <p>I'll start off this review by saying that I'm probably being harsher on this book than I should be due to my general distaste for second-wave feminism and 60s and 70s era environmentalism, which are the two main traditions this book seems to come from. Perhaps in a book aligned more with my politics, I would have forgiven more of my frustrations with the characters, dialog, and worldbuilding. But as it was, I disliked this book.</p>
+<p>The narrator/protagonist is a Connie, a Mexican-American woman (written by a white author), and the book opens up with her living in a slum, talking about the drugs and crime there, and interacting with her niece, who is a sex worker, something the protagonist clearly feels disgust about — disgust that feels like it comes straight from the author, since there doesn't seem to be much of any attempt to subvert that or make any real point about it.</p>
+<p>Connie is wrongfully and maliciously checked into a mental institution in the first chapter. The book's criticism of institutionalization and dehumanization of people with mental illnesses is where it's at its best, I think, although that point is perhaps undercut by focusing on a character who does not seem to have any real mental health problems, or at least if she does, they're not the ones she's checked in for.</p>
+<p>Connie is contacted by Luciente, a person from the future, who assists her in astrally projecting (it's not called that, but that is the kind of thing it is) into the future, so that they can show her their utopian society, where all the goals of feminists and environmentalists in the 70s have been enacted.</p>
+<p>In order for the book to be able to explain everything to the reader extremely directly and with no subtlety at all, Connie is written as a complete bumbling idiot who can't understand anything in the future being different from the way it was in the past. There are probably at least a hundred instances of dialog where someone from the future says something that like. Might be a little but surprising but really isn't hard to wrap one's head around, and Connie just expresses complete shock and disbelief, prompting them to explain in more detail — I was nearly shouting "show, don't tell!" to myself by the end of the book.</p>
+<p>The actual world seems either not well thought through, not well explained, or maybe both. There is a mix of return-to-the-land style agrarian aesthetics and high-tech gene-editing, voice-recognizing smartwatches, holographic projectors, etc that would nowadays probably be recognized as solarpunk, but without any real analysis of how these technologies exist in a society structured as they are. I'm not sure exactly how much I can blame the author for this — I have both a deeper understanding of technology and nearly 50 years more history of the technology industry to draw on, but it seems like it should have been pretty obvious by the late 70s that you don't end up with high-tech devices without a society that is geared around technology — this book seems to exhibit a sort of magical thinking around technology that you can simply pick and choose the good bits of technology without worrying at all about the systems that create that technology. Unfortunately, this is disastrously wrongheaded and this very ideology remains a looming and destructive force today.</p>
+<p>Another place where the book seems to not really be thinking carefully is around race. One of the first things that we learn about the future society is that all babies are grown in-vitro — this, I believe, comes from extremely second-wave-feminist ideas about reproduction being the fundamental difference between men and women — thus, eliminating that difference is a prerequisite for equality between the sexes. In the same chapter that this is explained, one of the characters casually mentions that "decisions were made forty years back to breed a high proportion of darker-skinned people and to mix the genes well through the population" — this is the first of two instance that the book just casually mentions eugenics without calling it as such, assuming that you'll be on board with it because it seems progressive and nice, but it immediately raises a lot of questions for me. How did racial minorities feel about the idea of destroying the concept of race, for instance? What did the breakdown of how people voted on that look like by race?</p>
+<p>In this same conversation — the same quote, even — a character mentions that they still have "separate cultural identities", and that "Wamponaug Indians are the source of our culture" in the particular community that Luciente is from. As far as I can tell, this does not have any actual meaning — I read a fair amount about the Wampanoag after reading this book to try to figure out if this referred to any actual concrete thing, and I couldn't find anything in the book that seems to actually be related to any real Wampanoag traditions.</p>
+<p>This idea that different communities retain their separate cultures also seems to kind of fundamentally misunderstand what a culture is, seeming to see it as a purely aesthetic thing that can just be draped over any society without really changing anything fundamental.</p>
+<p>I was very excited to see this explored more when Connie briefly ran into a Ashkenazi character — immediately that brought up some extremely interesting questions — does Judaism still exist? How does religion fit into society, given the huge changes in power structures? If Judaism no longer exists, what meaning does Ashkenazi culture have? I was hoping that some of these questions would be answered — and it would probably answer some of my other questions as well, since apparently the Ashkenazi community is the one that manufactures the smartwatch-computer things — but instead it's simply a strange aside that raises so many more questions than it answers.</p>
+<p>The gender politics of this book seemed to come from a extremely cis perspective. There is complete equality between sexes, and gendered pronouns have been eradicated (using instead "per" and "person", a odd choice when "they" has been a non-gendered singular pronoun in English for centuries, but I guess that's always confused boomers). While elective procedures to modify appearance are explicitly mentioned in the book — they talk about using some kind of gene-editing technology to change hair colors — the idea that someone might want to change their sexual characteristics is completely absent, except that hormone therapy is specifically mentioned but for the sole purpose of allowing men to breastfeed babies. I guess it's fine — I am someone who wants to abolish gender, so what's described in this book is actually very close to something I want, just not quite — I take bodily autonomy as a fundamental value, but it seems like that's not so important for the author, given that giving birth "naturally" seems forbidden? Unsurprisingly, the author seems to be a TERF, which is unfortunate, since abolishing gender and making hormone therapy widely available is what a lot of trans people actually want, and seems quite in line with feminist goals.</p>
+<p>The book goes a little bit into how decisions are made, but not to nearly the extent I'd like — since I think that's one of the most important things in evaluating a society. It seems like there's some combination of a relatively anarchistic way of making local decisions, with various levels of councils with members selected by lot among interested parties for larger decisions, but no real details are established. It sounds like this way of life is essentially worldwide — there is a unspecified enemy who has bases in Antarctic and on space platforms (how do they get any resources? this question is, of course, not answered), but other than that, everyone on Earth seems bought into this way of life. How many people is that, and how aligned are we? We're left to wonder, although apparently this worldwide consortium sets limits on the number of births and is in the process of reducing the population. I don't feel like I should need to point out that the necessity of reducing the population is a ecofascist talking point, but it's interesting to see the history of it.</p>
+<p>I think this book actually does a really interesting job of summarizing my feelings about second-wave feminism, the environmentalism movement, and the hippies — a lot of the concrete things, they got right, but they didn't have the perspective or conceptual tools needed to really understand the systems they were operating in. As such, many of the concrete things in this book do indeed seem utopian, but nothing fits together quite right, and everything has to be held together with a combination of magical thinking, not looking too closely at the details, and ignoring the minor little bits of eugenics, coercion, and ecofascism that are apparently necessary for everything to run smoothly.</p>
+                            </div>
+
+                            <div>
+                                
+                                
+
+<button type="button" class="button is-small hide-inactive" data-controls="full_062c7e17c-5c33-4244-a541-db9bffe549cf" aria-pressed="false">
+
+    
+    <span>Show less</span>
+    
+</button>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                
+            
+        
+    
+
+
+                    
+                
+
+                
+
+                
+            </div>
+        </article>
+    </div>
+
+
+
+
+
+
+
+    </section>
+    
+
+    <footer class="card-footer has-background-tertiary">
+        
+
+
+    <div class="card-footer-item">
+        <a href="/login">
+            <span class="icon icon-comment is-small" title="Reply">
+                <span class="is-sr-only">Reply</span>
+            </span>
+
+            <span class="icon icon-boost is-small ml-4" title="Boost status">
+                <span class="is-sr-only">Boost status</span>
+            </span>
+
+            <span class="icon icon-heart is-small ml-4" title="Like status">
+                <span class="is-sr-only">Like status</span>
+            </span>
+        </a>
+    </div>
+
+
+
+    </footer>
+
+    
+
+
+</article>
+
+    
+
+
+    </div>
+    
+    <div class="block" id="feed_2938293">
+        
+
+
+
+    
+        <article class="card">
+    <header class="card-header">
+        
+<div class="card-header-title has-background-secondary is-block">
+    
+
+
+
+
+<div class="media">
+    <figure class="media-left" aria-hidden="true">
+        <a class="image is-48x48" href="/user/wesleyac" tabindex="-1">
+            
+
+<img class="avatar image is-48x48" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg" aria-hidden="true" alt="avatar for wesleyac" loading="lazy" decoding="async">
+
+        </a>
+    </figure>
+
+    <div class="media-content">
+        <h3 class="has-text-weight-bold">
+            <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+                
+                    <meta itemprop="image" content="/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg">
+                
+
+                <a href="/user/wesleyac" itemprop="url">
+                    <span itemprop="name">Wesley Aptekar-Cassels</span>
+                </a>
+            </span>
+
+            reviewed <a href="/book/1442774/s/the-children-of-the-morning-light">The Children of the Morning Light</a> by <a href="/author/261557/s/medicine-story">Medicine Story.</a>
+
+        </h3>
+        <div class="breadcrumb has-dot-separator is-small">
+            <ul class="is-flex is-align-items-center">
+                <li>
+                    <a href="https://bookwyrm.social/user/wesleyac/review/2938293#anchor-2938293">
+                        Nov 2
+                    </a>
+                </li>
+
+                
+
+                
+
+                <li>
+                
+
+<span class="icon icon-globe" title="Public">
+    <span class="is-sr-only">Public</span>
+</span>
+
+
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+
+    </header>
+
+    
+    <section class="card-content">
+        
+
+
+
+    
+
+
+
+
+
+
+
+    <div class="columns is-gapless">
+        
+            
+                
+                    <div class="column is-cover">
+                        <div class="columns is-mobile is-gapless">
+                            <div class="column is-cover">
+                                <a href="/book/1442774/s/the-children-of-the-morning-light"><picture class="cover-container is-w-s-mobile is-h-l-tablet"><img alt="Medicine Story.: The Children of the Morning Light (1994, Macmillan, Maxwell Macmillan Canada, Maxwell Macmillan International)" class="book-cover" itemprop="thumbnailUrl" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/covers/e31d8630-2238-4f96-ab3d-4a16e16d738f.jpeg"></picture>
+</a>
+
+                                <span class="stars"><span class="is-sr-only">
+            4 stars
+        </span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-half
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span></span>
+
+
+                                
+
+
+
+
+                            </div>
+
+                            <div class="column ml-3-mobile is-hidden-tablet">
+                                <p></p><p>A collection of traditional stories that describe the creation of the world and the early …</p><p></p>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        
+
+        <article class="column ml-3-tablet my-3-mobile is-clipped">
+            
+            <header class="mb-2">
+                <h3 class="title is-5 has-subtitle" dir="auto" itemprop="name">
+                    The Children of the Morning Light
+                </h3>
+
+                <h4 class="subtitle is-6">
+                    <span class="is-hidden" itemprop="reviewRating" itemscope="" itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="3.5">
+                    </span>
+                    <span class="stars"><span class="is-sr-only">
+            4 stars
+        </span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-half
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span></span>
+
+                </h4>
+            </header>
+            
+
+            
+
+            <div>
+                
+
+                
+                    
+                        
+
+
+
+
+
+    
+        
+            
+                
+                    <div class="content">
+                        <div dir="auto" class="preserve-whitespace" itemprop="reviewBody">
+                            <p>I'm surprised at how similar so many creation stories are. I wonder how much of that is a result of folk stories subtly changing to fit with the pressures of Christian missionaries — probably some, but I suspect there is also a inherent sameness in many creation stories.</p>
+<p>I quite liked the story of Grandfather Sun spending less and less time in the sky because people weren't friendly or grateful with him, that will definitely stick in my memory.</p>
+<p>I am grateful for this book, but I do wish it included more stories and talked a little more about the history of the stories. I can understand why it doesn't, though.</p>
+                        </div>
+                    </div>
+                
+            
+        
+    
+
+
+                    
+                
+
+                
+
+                
+            </div>
+        </article>
+    </div>
+
+
+
+
+
+
+
+    </section>
+    
+
+    <footer class="card-footer has-background-tertiary">
+        
+
+
+    <div class="card-footer-item">
+        <a href="/login">
+            <span class="icon icon-comment is-small" title="Reply">
+                <span class="is-sr-only">Reply</span>
+            </span>
+
+            <span class="icon icon-boost is-small ml-4" title="Boost status">
+                <span class="is-sr-only">Boost status</span>
+            </span>
+
+            <span class="icon icon-heart is-small ml-4" title="Like status">
+                <span class="is-sr-only">Like status</span>
+            </span>
+        </a>
+    </div>
+
+
+
+    </footer>
+
+    
+
+
+</article>
+
+    
+
+
+    </div>
+    
+    <div class="block" id="feed_2936836">
+        
+
+
+
+    
+        <article class="card">
+    <header class="card-header">
+        
+<div class="card-header-title has-background-secondary is-block">
+    
+
+
+
+
+<div class="media">
+    <figure class="media-left" aria-hidden="true">
+        <a class="image is-48x48" href="/user/wesleyac" tabindex="-1">
+            
+
+<img class="avatar image is-48x48" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg" aria-hidden="true" alt="avatar for wesleyac" loading="lazy" decoding="async">
+
+        </a>
+    </figure>
+
+    <div class="media-content">
+        <h3 class="has-text-weight-bold">
+            <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+                
+                    <meta itemprop="image" content="/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg">
+                
+
+                <a href="/user/wesleyac" itemprop="url">
+                    <span itemprop="name">Wesley Aptekar-Cassels</span>
+                </a>
+            </span>
+
+            replied to <a href="/user/wesleyac">Wesley Aptekar-Cassels</a>'s <a href="/user/wesleyac/comment/2834980">status</a>
+
+        </h3>
+        <div class="breadcrumb has-dot-separator is-small">
+            <ul class="is-flex is-align-items-center">
+                <li>
+                    <a href="https://bookwyrm.social/user/wesleyac/status/2936836#anchor-2936836">
+                        Nov 2
+                    </a>
+                </li>
+
+                
+
+                
+
+                <li>
+                
+
+<span class="icon icon-globe" title="Public">
+    <span class="is-sr-only">Public</span>
+</span>
+
+
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+
+    </header>
+
+    
+    <section class="card-content">
+        
+
+
+
+    
+
+
+
+
+
+
+
+    <div class="columns is-gapless">
+        
+            
+                
+            
+        
+
+        <article class="column ml-3-tablet my-3-mobile is-clipped">
+            
+
+            
+                <div class="notification p-2 is-clearfix is-warning is-light">
+                    <p class="is-pulled-left is-flex">
+                        
+                        <span class="icon icon-warning" title="Content warning">
+                            <span class="is-sr-only">Content warning</span>
+                        </span>
+                        eugenics
+                    </p>
+
+                    
+
+                    
+                        
+
+<button type="button" class="button is-small is-pulled-right hide-active" data-controls="show_status_cw_2936836" aria-pressed="false">
+
+    
+    <span class="icon icon-arrow-down m-0-mobile" title="Show status"></span>
+    <span class="is-sr-only-mobile">Show status</span>
+    
+</button>
+
+
+
+                    
+                </div>
+            
+
+            <div id="show_status_cw_2936836" class="is-hidden">
+                
+
+                
+                    
+                        
+
+
+
+
+
+    
+        
+            
+                
+                    <div class="content">
+                        <div dir="auto" class="preserve-whitespace" itemprop="reviewBody">
+                            <p>It truly boggles my mind how this book just casually describes eugenics in a way where you're clearly supposed to feel like it's nice and good. This is nominally a utopia! Please think a little bit about what you are describing!!!</p>
+<p>It's also remarkable because like. Apparently whether they should do genetic engineering or not is like, a hotly debated political topic in the utopian society, but they literally do that they just don't think of it in those terms I guess? Which is maybe realistic, people put blinders on considering all kinds of things "genetically engineering" that clearly are, but I think the author doesn't realize that the things she's describing are eugenics.</p>
+                        </div>
+                    </div>
+                
+            
+        
+    
+
+
+                    
+                
+
+                
+
+                
+                    
+
+                    
+                        
+
+<button type="button" class="button is-small hide-inactive" data-controls="show_status_cw_2936836" aria-pressed="false">
+
+    
+    <span class="icon icon-arrow-up m-0-mobile" title="Hide status"></span>
+    <span class="is-sr-only-mobile">Hide status</span>
+    
+</button>
+
+
+
+                    
+                
+            </div>
+        </article>
+    </div>
+
+
+
+
+
+
+
+    </section>
+    
+
+    <footer class="card-footer has-background-tertiary">
+        
+
+
+    <div class="card-footer-item">
+        <a href="/login">
+            <span class="icon icon-comment is-small" title="Reply">
+                <span class="is-sr-only">Reply</span>
+            </span>
+
+            <span class="icon icon-boost is-small ml-4" title="Boost status">
+                <span class="is-sr-only">Boost status</span>
+            </span>
+
+            <span class="icon icon-heart is-small ml-4" title="Like status">
+                <span class="is-sr-only">Like status</span>
+            </span>
+        </a>
+    </div>
+
+
+
+    </footer>
+
+    
+
+
+</article>
+
+    
+
+
+    </div>
+    
+    <div class="block" id="feed_2834980">
+        
+
+
+
+    
+        <article class="card">
+    <header class="card-header">
+        
+<div class="card-header-title has-background-secondary is-block">
+    
+
+
+
+
+<div class="media">
+    <figure class="media-left" aria-hidden="true">
+        <a class="image is-48x48" href="/user/wesleyac" tabindex="-1">
+            
+
+<img class="avatar image is-48x48" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg" aria-hidden="true" alt="avatar for wesleyac" loading="lazy" decoding="async">
+
+        </a>
+    </figure>
+
+    <div class="media-content">
+        <h3 class="has-text-weight-bold">
+            <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+                
+                    <meta itemprop="image" content="/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg">
+                
+
+                <a href="/user/wesleyac" itemprop="url">
+                    <span itemprop="name">Wesley Aptekar-Cassels</span>
+                </a>
+            </span>
+
+            started reading <a href="/book/773954/s/woman-on-the-edge-of-time">Woman on the Edge of Time</a> by <a href="/author/5803/s/marge-piercy">Marge Piercy</a>
+
+        </h3>
+        <div class="breadcrumb has-dot-separator is-small">
+            <ul class="is-flex is-align-items-center">
+                <li>
+                    <a href="https://bookwyrm.social/user/wesleyac/comment/2834980#anchor-2834980">
+                        Oct 20
+                    </a>
+                </li>
+
+                
+
+                
+
+                <li>
+                
+
+<span class="icon icon-globe" title="Public">
+    <span class="is-sr-only">Public</span>
+</span>
+
+
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+
+    </header>
+
+    
+    <section class="card-content">
+        
+
+
+
+    
+
+
+
+
+
+
+
+    <div class="columns is-gapless">
+        
+            
+                
+                    <div class="column is-cover">
+                        <div class="columns is-mobile is-gapless">
+                            <div class="column is-cover">
+                                <a href="/book/773954/s/woman-on-the-edge-of-time"><picture class="cover-container is-w-s-mobile is-h-l-tablet"><img alt="Marge Piercy: Woman on the Edge of Time" class="book-cover" itemprop="thumbnailUrl" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/covers/4dc73912-f861-4605-85e7-e648e249744c.jpeg"></picture>
+</a>
+
+                                <span class="stars"><span class="is-sr-only">
+            3 stars
+        </span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-half
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span></span>
+
+
+                                
+
+
+
+
+                            </div>
+
+                            <div class="column ml-3-mobile is-hidden-tablet">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        
+
+        <article class="column ml-3-tablet my-3-mobile is-clipped">
+            
+
+            
+                <div class="notification p-2 is-clearfix is-warning is-light">
+                    <p class="is-pulled-left is-flex">
+                        
+                        <span class="icon icon-warning" title="Content warning">
+                            <span class="is-sr-only">Content warning</span>
+                        </span>
+                        TERF stuff / racism / eugenics / anti-sex-work / spoilers
+                    </p>
+
+                    
+
+                    
+                        
+
+<button type="button" class="button is-small is-pulled-right hide-active" data-controls="show_status_cw_2834980" aria-pressed="false">
+
+    
+    <span class="icon icon-arrow-down m-0-mobile" title="Show status"></span>
+    <span class="is-sr-only-mobile">Show status</span>
+    
+</button>
+
+
+
+                    
+                </div>
+            
+
+            <div id="show_status_cw_2834980" class="is-hidden">
+                
+
+                
+                    
+                        
+
+
+
+
+
+    
+        
+            
+                
+                    <div class="content">
+                        <div dir="auto" class="preserve-whitespace" itemprop="reviewBody">
+                            <p>Started reading this as part of a book club with my mom, and I'm not a fan of it. Very anti-sex-work kinda stuff going on in the first chapter, and the choice for a white author to write a Mexican protagonist as not really understanding what's going on in the utopian future, stuck in a community with drugs and prostitution, etc is… not good. There's also some appropriation of Native American aesthetics — one of the characters in the future-utopia says that "Wamponaug Indians are the source of our culture" but as far as I can tell the author doesn't really mean anything specific by this, and the only thing it seems like she could really be referring to is a extremely generic description of a rite of passage that is definitely meant to evoke a sort of native-exoticism, but seems like something that was written from memories of stories that you heard from some guy at a party some time about some rite of passage of some tribe somewhere.</p>
+<p>It also seems to be a extremely played-straight utopia. I'm crossing my fingers that there will be <em>some kind</em> of subversion of that but from what I've heard that's not likely.</p>
+<p>Since it seems to be a played-straight utopia, that forces me to consider how I feel about the society it describes, and while there are undeniably good things about it, it seems more drawn from aesthetic ideas that environmentalists and feminists in the 60's had about what a good society might look like than from real consideration of the forces that shape the world — we're supposed to accept advanced technology when it's needed for the aesthetics (all babies being grown in-vitro, since that's a necessary prerequisite for equality between the sexes in the branch of feminism that Piercy comes from), without worrying about where that technology comes from in a society without large cities (necessary for the return-to-earth kind of environmentalism that Piercy advocates).</p>
+<p>I guess I should also talk about the eugenics part of it — apparently in order to make this utopia, where all the babies are grown in-vitro, it was necessary to "mix the genes well through the population" to eliminate racial differences, or something? But don't worry, I guess we're supposed to think it's the good kind of eugenics, because they decided to "breed a high proportion of darker-skinned people" so it's anti-racist or something?</p>
+<p>There's also a heavy focus on gender so far, and for a supposedly utopian book that focuses on gender, it sure stands out that there's no mention of transness at all. This could be kind of reasonable — I personally think that a egalitarian, largely agender society would be pretty utopian. But for me that falls flat when the author goes out of her way to talk about how they use some kind of gene-editing technology ()? to change their hair color at will — it stands out to me that there's no mention at all of ways of changing sex characteristics, especially given that that technology existed already when this book was written. It didn't surprise me much to learn that the author signed a TERF manifesto in 2013.</p>
+<p>There's other stuff that bothers me too — there seems to be no real thought put into linguistics for a book that loves inventing new words — a common problem, to be sure, but I guess I was spoiled by reading The Dispossessed recently.</p>
+<p>Anyway, not good, but I'm gonna finish it for this book club, I guess. "Excited" to see what else I'll find in here.</p>
+                        </div>
+                    </div>
+                
+            
+        
+    
+
+
+                    
+                
+
+                
+
+                
+                    
+
+                    
+                        
+
+<button type="button" class="button is-small hide-inactive" data-controls="show_status_cw_2834980" aria-pressed="false">
+
+    
+    <span class="icon icon-arrow-up m-0-mobile" title="Hide status"></span>
+    <span class="is-sr-only-mobile">Hide status</span>
+    
+</button>
+
+
+
+                    
+                
+            </div>
+        </article>
+    </div>
+
+
+
+
+
+
+
+    </section>
+    
+
+    <footer class="card-footer has-background-tertiary">
+        
+
+
+    <div class="card-footer-item">
+        <a href="/login">
+            <span class="icon icon-comment is-small" title="Reply">
+                <span class="is-sr-only">Reply</span>
+            </span>
+
+            <span class="icon icon-boost is-small ml-4" title="Boost status">
+                <span class="is-sr-only">Boost status</span>
+            </span>
+
+            <span class="icon icon-heart is-small ml-4" title="Like status">
+                <span class="is-sr-only">Like status</span>
+            </span>
+        </a>
+    </div>
+
+
+
+    </footer>
+
+    
+
+
+</article>
+
+    
+
+
+    </div>
+    
+    <div class="block" id="feed_2834522">
+        
+
+
+
+    
+        <article class="card">
+    <header class="card-header">
+        
+<div class="card-header-title has-background-secondary is-block">
+    
+
+
+
+
+<div class="media">
+    <figure class="media-left" aria-hidden="true">
+        <a class="image is-48x48" href="/user/wesleyac" tabindex="-1">
+            
+
+<img class="avatar image is-48x48" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg" aria-hidden="true" alt="avatar for wesleyac" loading="lazy" decoding="async">
+
+        </a>
+    </figure>
+
+    <div class="media-content">
+        <h3 class="has-text-weight-bold">
+            <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+                
+                    <meta itemprop="image" content="/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg">
+                
+
+                <a href="/user/wesleyac" itemprop="url">
+                    <span itemprop="name">Wesley Aptekar-Cassels</span>
+                </a>
+            </span>
+
+            reviewed <a href="/book/34251/s/zen-and-the-art-of-motorcycle-maintenance">Zen and the Art of Motorcycle Maintenance</a> by <a href="/author/4269/s/robert-m-pirsig">Robert M. Pirsig</a>
+
+        </h3>
+        <div class="breadcrumb has-dot-separator is-small">
+            <ul class="is-flex is-align-items-center">
+                <li>
+                    <a href="https://bookwyrm.social/user/wesleyac/review/2834522#anchor-2834522">
+                        Oct 20
+                    </a>
+                </li>
+
+                
+
+                
+
+                <li>
+                
+
+<span class="icon icon-globe" title="Public">
+    <span class="is-sr-only">Public</span>
+</span>
+
+
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+
+    </header>
+
+    
+    <section class="card-content">
+        
+
+
+
+    
+
+
+
+
+
+
+
+    <div class="columns is-gapless">
+        
+            
+                
+                    <div class="column is-cover">
+                        <div class="columns is-mobile is-gapless">
+                            <div class="column is-cover">
+                                <a href="/book/34251/s/zen-and-the-art-of-motorcycle-maintenance"><picture class="cover-container is-w-s-mobile is-h-l-tablet"><img alt="Robert M. Pirsig: Zen and the Art of Motorcycle Maintenance (Paperback, 2005, Harper Perennial Modern Classics)" class="book-cover" itemprop="thumbnailUrl" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/covers/530f30e8-06b0-4887-aa4d-4efb42d989eb.jpeg"></picture>
+</a>
+
+                                <span class="stars"><span class="is-sr-only">
+            4 stars
+        </span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-half
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span></span>
+
+
+                                
+
+
+
+
+                            </div>
+
+                            <div class="column ml-3-mobile is-hidden-tablet">
+                                <p></p><p>"The real cycle you're working on is a cycle called 'yourself.'"One of the most important …</p><p></p>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        
+
+        <article class="column ml-3-tablet my-3-mobile is-clipped">
+            
+            <header class="mb-2">
+                <h3 class="title is-5 has-subtitle" dir="auto" itemprop="name">
+                    Zen and the Art of Motorcycle Maintenance (3rd re-read)
+                </h3>
+
+                <h4 class="subtitle is-6">
+                    <span class="is-hidden" itemprop="reviewRating" itemscope="" itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="3.5">
+                    </span>
+                    <span class="stars"><span class="is-sr-only">
+            4 stars
+        </span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-half
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span></span>
+
+                </h4>
+            </header>
+            
+
+            
+
+            <div>
+                
+
+                
+                    
+                        
+
+
+
+
+
+    
+        
+            
+                
+                    <div id="hide_full_097d22238-34d6-498c-a31e-bce14206c95a">
+                        <div class="content" id="trimmed_097d22238-34d6-498c-a31e-bce14206c95a">
+                            <div dir="auto" class="preserve-whitespace"><p>This is the third time I've re-read this book, and I liked it the least this time. This book has a few important points, some of which I haven't found other books that talk about — in particular, the ideas about the tautological nature of "rationality" and "science" are important and unique, and the ideas about the nuances of what about the relationship of people to technology causes unhappiness and strife is well-considered. Unfortunately, much of the book is discussion of the novel philosophical concept that the author calls "Quality", a concept which I think is ill-considered and ill-argued. Frustrating, since the disagreements the author assumes a reader might have with his arguments are not the ones that I have.</p>
+<p>I still do love this book, and I certainly would still recommend it in many circumstances, but I was sad to return to it and find it not quite as …</p></div>
+
+                            <div>
+                            
+                                
+                                
+
+<button type="button" class="button is-small hide-active" data-controls="full_097d22238-34d6-498c-a31e-bce14206c95a" aria-pressed="false">
+
+    
+    <span>Show more</span>
+    
+</button>
+
+
+
+                            
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="full_097d22238-34d6-498c-a31e-bce14206c95a" class="is-hidden">
+                        <div class="content">
+                            <div dir="auto" class="preserve-whitespace" itemprop="reviewBody">
+                                <p>This is the third time I've re-read this book, and I liked it the least this time. This book has a few important points, some of which I haven't found other books that talk about — in particular, the ideas about the tautological nature of "rationality" and "science" are important and unique, and the ideas about the nuances of what about the relationship of people to technology causes unhappiness and strife is well-considered. Unfortunately, much of the book is discussion of the novel philosophical concept that the author calls "Quality", a concept which I think is ill-considered and ill-argued. Frustrating, since the disagreements the author assumes a reader might have with his arguments are not the ones that I have.</p>
+<p>I still do love this book, and I certainly would still recommend it in many circumstances, but I was sad to return to it and find it not quite as lovely as I'd remembered. Then again, this book has somewhat of a reputation as being a book that's attractive to younger people, so perhaps that's natural.</p>
+                            </div>
+
+                            <div>
+                                
+                                
+
+<button type="button" class="button is-small hide-inactive" data-controls="full_097d22238-34d6-498c-a31e-bce14206c95a" aria-pressed="false">
+
+    
+    <span>Show less</span>
+    
+</button>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                
+            
+        
+    
+
+
+                    
+                
+
+                
+
+                
+            </div>
+        </article>
+    </div>
+
+
+
+
+
+
+
+    </section>
+    
+
+    <footer class="card-footer has-background-tertiary">
+        
+
+
+    <div class="card-footer-item">
+        <a href="/login">
+            <span class="icon icon-comment is-small" title="Reply">
+                <span class="is-sr-only">Reply</span>
+            </span>
+
+            <span class="icon icon-boost is-small ml-4" title="Boost status">
+                <span class="is-sr-only">Boost status</span>
+            </span>
+
+            <span class="icon icon-heart is-small ml-4" title="Like status">
+                <span class="is-sr-only">Like status</span>
+            </span>
+        </a>
+    </div>
+
+
+
+    </footer>
+
+    
+
+
+</article>
+
+    
+
+
+    </div>
+    
+    <div class="block" id="feed_2727255">
+        
+
+
+
+    
+        <article class="card">
+    <header class="card-header">
+        
+<div class="card-header-title has-background-secondary is-block">
+    
+
+
+
+
+<div class="media">
+    <figure class="media-left" aria-hidden="true">
+        <a class="image is-48x48" href="/user/wesleyac" tabindex="-1">
+            
+
+<img class="avatar image is-48x48" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg" aria-hidden="true" alt="avatar for wesleyac" loading="lazy" decoding="async">
+
+        </a>
+    </figure>
+
+    <div class="media-content">
+        <h3 class="has-text-weight-bold">
+            <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+                
+                    <meta itemprop="image" content="/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg">
+                
+
+                <a href="/user/wesleyac" itemprop="url">
+                    <span itemprop="name">Wesley Aptekar-Cassels</span>
+                </a>
+            </span>
+
+            reviewed <a href="/book/8421/s/dont-let-me-be-lonely">Don't Let Me Be Lonely</a> by <a href="/author/674/s/claudia-rankine">Claudia Rankine</a>
+
+        </h3>
+        <div class="breadcrumb has-dot-separator is-small">
+            <ul class="is-flex is-align-items-center">
+                <li>
+                    <a href="https://bookwyrm.social/user/wesleyac/review/2727255#anchor-2727255">
+                        Oct 6
+                    </a>
+                </li>
+
+                
+
+                
+
+                <li>
+                
+
+<span class="icon icon-globe" title="Public">
+    <span class="is-sr-only">Public</span>
+</span>
+
+
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+
+    </header>
+
+    
+    <section class="card-content">
+        
+
+
+
+    
+
+
+
+
+
+
+
+    <div class="columns is-gapless">
+        
+            
+                
+                    <div class="column is-cover">
+                        <div class="columns is-mobile is-gapless">
+                            <div class="column is-cover">
+                                <a href="/book/8421/s/dont-let-me-be-lonely"><picture class="cover-container is-w-s-mobile is-h-l-tablet"><img alt="Claudia Rankine: Don't Let Me Be Lonely (2004, Graywolf Press)" class="book-cover" itemprop="thumbnailUrl" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/covers/776544-M_1mmIJCF.jpg"></picture>
+</a>
+
+                                <span class="stars"><span class="is-sr-only">
+            4 stars
+        </span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-half
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span></span>
+
+
+                                
+
+
+
+
+                            </div>
+
+                            <div class="column ml-3-mobile is-hidden-tablet">
+                                <p></p><p>Winner of an Academy of American Poets fellowship, Rankine's work Don't Let Me Be Lonely …</p><p></p>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        
+
+        <article class="column ml-3-tablet my-3-mobile is-clipped">
+            
+            <header class="mb-2">
+                <h3 class="title is-5 has-subtitle" dir="auto" itemprop="name">
+                    Don't Let Me Be Lonely
+                </h3>
+
+                <h4 class="subtitle is-6">
+                    <span class="is-hidden" itemprop="reviewRating" itemscope="" itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="4.5">
+                    </span>
+                    <span class="stars"><span class="is-sr-only">
+            5 stars
+        </span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-half
+                " aria-hidden="true"></span></span>
+
+                </h4>
+            </header>
+            
+
+            
+
+            <div>
+                
+
+                
+                    
+                        
+
+
+
+
+
+    
+        
+            
+                
+                    <div class="content">
+                        <div dir="auto" class="preserve-whitespace" itemprop="reviewBody">
+                            <p>Wonderful, meandering poetry. It shows its age, coming up on two decades old, but that isn't exactly bad.</p>
+                        </div>
+                    </div>
+                
+            
+        
+    
+
+
+                    
+                
+
+                
+
+                
+            </div>
+        </article>
+    </div>
+
+
+
+
+
+
+
+    </section>
+    
+
+    <footer class="card-footer has-background-tertiary">
+        
+
+
+    <div class="card-footer-item">
+        <a href="/login">
+            <span class="icon icon-comment is-small" title="Reply">
+                <span class="is-sr-only">Reply</span>
+            </span>
+
+            <span class="icon icon-boost is-small ml-4" title="Boost status">
+                <span class="is-sr-only">Boost status</span>
+            </span>
+
+            <span class="icon icon-heart is-small ml-4" title="Like status">
+                <span class="is-sr-only">Like status</span>
+            </span>
+        </a>
+    </div>
+
+
+
+    </footer>
+
+    
+
+
+</article>
+
+    
+
+
+    </div>
+    
+    <div class="block" id="feed_2523189">
+        
+
+
+
+    
+        <article class="card">
+    <header class="card-header">
+        
+<div class="card-header-title has-background-secondary is-block">
+    
+
+
+
+
+<div class="media">
+    <figure class="media-left" aria-hidden="true">
+        <a class="image is-48x48" href="/user/wesleyac" tabindex="-1">
+            
+
+<img class="avatar image is-48x48" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg" aria-hidden="true" alt="avatar for wesleyac" loading="lazy" decoding="async">
+
+        </a>
+    </figure>
+
+    <div class="media-content">
+        <h3 class="has-text-weight-bold">
+            <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+                
+                    <meta itemprop="image" content="/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg">
+                
+
+                <a href="/user/wesleyac" itemprop="url">
+                    <span itemprop="name">Wesley Aptekar-Cassels</span>
+                </a>
+            </span>
+
+            commented on <a href="/book/243312/s/when-we-cease-to-understand-the-world">When We Cease to Understand the World</a> by <a href="/author/36120/s/benjamin-labatut">Benjamín Labatut</a>
+
+        </h3>
+        <div class="breadcrumb has-dot-separator is-small">
+            <ul class="is-flex is-align-items-center">
+                <li>
+                    <a href="https://bookwyrm.social/user/wesleyac/comment/2523189#anchor-2523189">
+                        Sep 13
+                    </a>
+                </li>
+
+                
+
+                
+
+                <li>
+                
+
+<span class="icon icon-globe" title="Public">
+    <span class="is-sr-only">Public</span>
+</span>
+
+
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+
+    </header>
+
+    
+    <section class="card-content">
+        
+
+
+
+    
+
+
+
+
+
+
+
+    <div class="columns is-gapless">
+        
+            
+                
+                    <div class="column is-cover">
+                        <div class="columns is-mobile is-gapless">
+                            <div class="column is-cover">
+                                <a href="/book/243312/s/when-we-cease-to-understand-the-world"><picture class="cover-container is-w-s-mobile is-h-l-tablet"><img alt="Benjamín Labatut, Adrian Nathan West: When We Cease to Understand the World (Paperback, 2021, New York Review Books)" class="book-cover" itemprop="thumbnailUrl" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/covers/ca789d08-598d-47a1-8fae-9bf61eed0104.jpeg"></picture>
+</a>
+
+                                <span class="stars"><span class="is-sr-only">
+            4 stars
+        </span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-half
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span></span>
+
+
+                                
+
+
+
+
+                            </div>
+
+                            <div class="column ml-3-mobile is-hidden-tablet">
+                                <p></p><p>A fast-paced, mind-expanding literary work about scientific discovery, ethics and the unsettled distinction between genius …</p><p></p>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        
+
+        <article class="column ml-3-tablet my-3-mobile is-clipped">
+            
+
+            
+
+            <div>
+                
+
+                
+                    
+                        
+
+
+
+
+
+    
+        
+            
+                
+                    <div class="content">
+                        <div dir="auto" class="preserve-whitespace" itemprop="reviewBody">
+                            <p>Important to realize that this book is substantially fiction going into it and that is part of the point, rather than being me and getting embarrassingly far into it before thinking "there's no way this is true" and looking up the most basic of information about it</p>
+                        </div>
+                    </div>
+                
+            
+        
+    
+
+
+                    
+                
+
+                
+
+                
+            </div>
+        </article>
+    </div>
+
+
+
+
+
+
+
+    </section>
+    
+
+    <footer class="card-footer has-background-tertiary">
+        
+
+
+    <div class="card-footer-item">
+        <a href="/login">
+            <span class="icon icon-comment is-small" title="Reply">
+                <span class="is-sr-only">Reply</span>
+            </span>
+
+            <span class="icon icon-boost is-small ml-4" title="Boost status">
+                <span class="is-sr-only">Boost status</span>
+            </span>
+
+            <span class="icon icon-heart is-small ml-4" title="Like status">
+                <span class="is-sr-only">Like status</span>
+            </span>
+        </a>
+    </div>
+
+
+
+    </footer>
+
+    
+
+
+</article>
+
+    
+
+
+    </div>
+    
+    <div class="block" id="feed_2453160">
+        
+
+
+
+    
+        <article class="card">
+    <header class="card-header">
+        
+<div class="card-header-title has-background-secondary is-block">
+    
+
+
+
+
+<div class="media">
+    <figure class="media-left" aria-hidden="true">
+        <a class="image is-48x48" href="/user/wesleyac" tabindex="-1">
+            
+
+<img class="avatar image is-48x48" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg" aria-hidden="true" alt="avatar for wesleyac" loading="lazy" decoding="async">
+
+        </a>
+    </figure>
+
+    <div class="media-content">
+        <h3 class="has-text-weight-bold">
+            <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+                
+                    <meta itemprop="image" content="/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg">
+                
+
+                <a href="/user/wesleyac" itemprop="url">
+                    <span itemprop="name">Wesley Aptekar-Cassels</span>
+                </a>
+            </span>
+
+            reviewed <a href="/book/956377/s/word-for-world-is-forest">Word for World Is Forest</a> by <a href="/author/19/s/ursula-k-le-guin">Ursula K. Le Guin</a>
+
+        </h3>
+        <div class="breadcrumb has-dot-separator is-small">
+            <ul class="is-flex is-align-items-center">
+                <li>
+                    <a href="https://bookwyrm.social/user/wesleyac/review/2453160#anchor-2453160">
+                        Sep 4
+                    </a>
+                </li>
+
+                
+
+                
+
+                <li>
+                
+
+<span class="icon icon-globe" title="Public">
+    <span class="is-sr-only">Public</span>
+</span>
+
+
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+
+    </header>
+
+    
+    <section class="card-content">
+        
+
+
+
+    
+
+
+
+
+
+
+
+    <div class="columns is-gapless">
+        
+            
+                
+                    <div class="column is-cover">
+                        <div class="columns is-mobile is-gapless">
+                            <div class="column is-cover">
+                                <a href="/book/956377/s/word-for-world-is-forest"><picture class="cover-container is-w-s-mobile is-h-l-tablet"><img alt="Ursula K. Le Guin: Word for World Is Forest (2022, Orion Publishing Group, Limited)" class="book-cover" itemprop="thumbnailUrl" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/covers/IMG_0153.jpeg"></picture>
+</a>
+
+                                <span class="stars"><span class="is-sr-only">
+            4 stars
+        </span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span></span>
+
+
+                                
+
+
+
+
+                            </div>
+
+                            <div class="column ml-3-mobile is-hidden-tablet">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        
+
+        <article class="column ml-3-tablet my-3-mobile is-clipped">
+            
+            <header class="mb-2">
+                <h3 class="title is-5 has-subtitle" dir="auto" itemprop="name">
+                    The Word for World is Forest
+                </h3>
+
+                <h4 class="subtitle is-6">
+                    <span class="is-hidden" itemprop="reviewRating" itemscope="" itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="3.5">
+                    </span>
+                    <span class="stars"><span class="is-sr-only">
+            4 stars
+        </span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-half
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span></span>
+
+                </h4>
+            </header>
+            
+
+            
+
+            <div>
+                
+
+                
+                    
+                        
+
+
+
+
+
+    
+        
+            
+                
+                    <div class="content">
+                        <div dir="auto" class="preserve-whitespace" itemprop="reviewBody">
+                            <p>This book is good on the whole, but quite heavy-handed, and I feel that sci-fi depictions of colonialism run the risk of distracting from understandings of real-world colonialism, rather than elucidating anything. Not my favorite from Le Guin, but I'm happy to have read it.</p>
+                        </div>
+                    </div>
+                
+            
+        
+    
+
+
+                    
+                
+
+                
+
+                
+            </div>
+        </article>
+    </div>
+
+
+
+
+
+
+
+    </section>
+    
+
+    <footer class="card-footer has-background-tertiary">
+        
+
+
+    <div class="card-footer-item">
+        <a href="/login">
+            <span class="icon icon-comment is-small" title="Reply">
+                <span class="is-sr-only">Reply</span>
+            </span>
+
+            <span class="icon icon-boost is-small ml-4" title="Boost status">
+                <span class="is-sr-only">Boost status</span>
+            </span>
+
+            <span class="icon icon-heart is-small ml-4" title="Like status">
+                <span class="is-sr-only">Like status</span>
+            </span>
+        </a>
+    </div>
+
+
+
+    </footer>
+
+    
+
+
+</article>
+
+    
+
+
+    </div>
+    
+    <div class="block" id="feed_2090516">
+        
+
+
+
+    
+        <article class="card">
+    <header class="card-header">
+        
+<div class="card-header-title has-background-secondary is-block">
+    
+
+
+
+
+<div class="media">
+    <figure class="media-left" aria-hidden="true">
+        <a class="image is-48x48" href="/user/wesleyac" tabindex="-1">
+            
+
+<img class="avatar image is-48x48" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg" aria-hidden="true" alt="avatar for wesleyac" loading="lazy" decoding="async">
+
+        </a>
+    </figure>
+
+    <div class="media-content">
+        <h3 class="has-text-weight-bold">
+            <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+                
+                    <meta itemprop="image" content="/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg">
+                
+
+                <a href="/user/wesleyac" itemprop="url">
+                    <span itemprop="name">Wesley Aptekar-Cassels</span>
+                </a>
+            </span>
+
+            reviewed <a href="/book/1269326/s/casual-takes">Casual Takes</a> by <a href="/author/229038/s/jessica-obrien">Jessica O'Brien</a>
+
+        </h3>
+        <div class="breadcrumb has-dot-separator is-small">
+            <ul class="is-flex is-align-items-center">
+                <li>
+                    <a href="https://bookwyrm.social/user/wesleyac/review/2090516#anchor-2090516">
+                        Jul 20
+                    </a>
+                </li>
+
+                
+
+                
+
+                <li>
+                
+
+<span class="icon icon-globe" title="Public">
+    <span class="is-sr-only">Public</span>
+</span>
+
+
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+
+    </header>
+
+    
+    <section class="card-content">
+        
+
+
+
+    
+
+
+
+
+
+
+
+    <div class="columns is-gapless">
+        
+            
+                
+                    <div class="column is-cover">
+                        <div class="columns is-mobile is-gapless">
+                            <div class="column is-cover">
+                                <a href="/book/1269326/s/casual-takes"><picture class="cover-container is-w-s-mobile is-h-l-tablet"><img alt="Jessica O'Brien: Casual Takes (2022, Lulu Press, Inc.)" class="book-cover" itemprop="thumbnailUrl" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/covers/51S-DOQtuBL.jpg"></picture>
+</a>
+
+                                <span class="stars"><span class="is-sr-only">
+            3 stars
+        </span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-half
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span></span>
+
+
+                                
+
+
+
+
+                            </div>
+
+                            <div class="column ml-3-mobile is-hidden-tablet">
+                                <p></p><p>A collection of thoughts that may or may not be of interest to you.</p>
+<p>Casual …</p><p></p>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        
+
+        <article class="column ml-3-tablet my-3-mobile is-clipped">
+            
+            <header class="mb-2">
+                <h3 class="title is-5 has-subtitle" dir="auto" itemprop="name">
+                    Casual Takes
+                </h3>
+
+                <h4 class="subtitle is-6">
+                    <span class="is-hidden" itemprop="reviewRating" itemscope="" itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="2.5">
+                    </span>
+                    <span class="stars"><span class="is-sr-only">
+            3 stars
+        </span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-half
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span></span>
+
+                </h4>
+            </header>
+            
+
+            
+
+            <div>
+                
+
+                
+                    
+                        
+
+
+
+
+
+    
+        
+            
+                
+                    <div class="content">
+                        <div dir="auto" class="preserve-whitespace" itemprop="reviewBody">
+                            <p>There are a few interesting snippets in here, but on the whole it give a uncomfortable feeling, I believe without really meaning to.</p>
+                        </div>
+                    </div>
+                
+            
+        
+    
+
+
+                    
+                
+
+                
+
+                
+            </div>
+        </article>
+    </div>
+
+
+
+
+
+
+
+    </section>
+    
+
+    <footer class="card-footer has-background-tertiary">
+        
+
+
+    <div class="card-footer-item">
+        <a href="/login">
+            <span class="icon icon-comment is-small" title="Reply">
+                <span class="is-sr-only">Reply</span>
+            </span>
+
+            <span class="icon icon-boost is-small ml-4" title="Boost status">
+                <span class="is-sr-only">Boost status</span>
+            </span>
+
+            <span class="icon icon-heart is-small ml-4" title="Like status">
+                <span class="is-sr-only">Like status</span>
+            </span>
+        </a>
+    </div>
+
+
+
+    </footer>
+
+    
+
+
+</article>
+
+    
+
+
+    </div>
+    
+    <div class="block" id="feed_2067332">
+        
+
+
+
+    
+        <article class="card">
+    <header class="card-header">
+        
+<div class="card-header-title has-background-secondary is-block">
+    
+
+
+
+
+<div class="media">
+    <figure class="media-left" aria-hidden="true">
+        <a class="image is-48x48" href="/user/wesleyac" tabindex="-1">
+            
+
+<img class="avatar image is-48x48" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg" aria-hidden="true" alt="avatar for wesleyac" loading="lazy" decoding="async">
+
+        </a>
+    </figure>
+
+    <div class="media-content">
+        <h3 class="has-text-weight-bold">
+            <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+                
+                    <meta itemprop="image" content="/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg">
+                
+
+                <a href="/user/wesleyac" itemprop="url">
+                    <span itemprop="name">Wesley Aptekar-Cassels</span>
+                </a>
+            </span>
+
+            reviewed <a href="/book/525851/s/palo-alto">Palo Alto</a> by <a href="/author/89923/s/malcolm-harris">Malcolm Harris</a>
+
+        </h3>
+        <div class="breadcrumb has-dot-separator is-small">
+            <ul class="is-flex is-align-items-center">
+                <li>
+                    <a href="https://bookwyrm.social/user/wesleyac/review/2067332#anchor-2067332">
+                        Jul 19
+                    </a>
+                </li>
+
+                
+                <li>
+                    <span>
+                    edited Jul 19
+                    </span>
+                </li>
+                
+
+                
+
+                <li>
+                
+
+<span class="icon icon-globe" title="Public">
+    <span class="is-sr-only">Public</span>
+</span>
+
+
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+
+    </header>
+
+    
+    <section class="card-content">
+        
+
+
+
+    
+
+
+
+
+
+
+
+    <div class="columns is-gapless">
+        
+            
+                
+                    <div class="column is-cover">
+                        <div class="columns is-mobile is-gapless">
+                            <div class="column is-cover">
+                                <a href="/book/525851/s/palo-alto"><picture class="cover-container is-w-s-mobile is-h-l-tablet"><img alt="Malcolm Harris: Palo Alto (2023, Little Brown &amp; Company)" class="book-cover" itemprop="thumbnailUrl" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/covers/8558dac8-22f7-4691-88e5-062daf120dd1.jpeg"></picture>
+</a>
+
+                                <span class="stars"><span class="is-sr-only">
+            4 stars
+        </span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-half
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span></span>
+
+
+                                
+
+
+
+
+                            </div>
+
+                            <div class="column ml-3-mobile is-hidden-tablet">
+                                <p></p><p>Palo Alto’s weather is temperate, its people are educated and enterprising, its corporations are spiritually …</p><p></p>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        
+
+        <article class="column ml-3-tablet my-3-mobile is-clipped">
+            
+            <header class="mb-2">
+                <h3 class="title is-5 has-subtitle" dir="auto" itemprop="name">
+                    Palo Alto
+                </h3>
+
+                <h4 class="subtitle is-6">
+                    <span class="is-hidden" itemprop="reviewRating" itemscope="" itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="4">
+                    </span>
+                    <span class="stars"><span class="is-sr-only">
+            4 stars
+        </span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span></span>
+
+                </h4>
+            </header>
+            
+
+            
+
+            <div>
+                
+
+                
+                    
+                        
+
+
+
+
+
+    
+        
+            
+                
+                    <div class="content">
+                        <div dir="auto" class="preserve-whitespace" itemprop="reviewBody">
+                            <p>Very good on the whole, although a bit of a slog. I especially appreciated the early history of California, which was much better than the whitewashed version I got in school. The bits on Stanford and Palo Alto history were enlightening as well. By the time it got to silicon valley, it was mostly stuff I was already aware of, but still historically accurate and worthwhile criticism.</p>
+                        </div>
+                    </div>
+                
+            
+        
+    
+
+
+                    
+                
+
+                
+
+                
+            </div>
+        </article>
+    </div>
+
+
+
+
+
+
+
+    </section>
+    
+
+    <footer class="card-footer has-background-tertiary">
+        
+
+
+    <div class="card-footer-item">
+        <a href="/login">
+            <span class="icon icon-comment is-small" title="Reply">
+                <span class="is-sr-only">Reply</span>
+            </span>
+
+            <span class="icon icon-boost is-small ml-4" title="Boost status">
+                <span class="is-sr-only">Boost status</span>
+            </span>
+
+            <span class="icon icon-heart is-small ml-4" title="Like status">
+                <span class="is-sr-only">Like status</span>
+            </span>
+        </a>
+    </div>
+
+
+
+    </footer>
+
+    
+
+
+</article>
+
+    
+
+
+    </div>
+    
+    <div class="block" id="feed_2049959">
+        
+
+
+
+    
+        <article class="card">
+    <header class="card-header">
+        
+<div class="card-header-title has-background-secondary is-block">
+    
+
+
+
+
+<div class="media">
+    <figure class="media-left" aria-hidden="true">
+        <a class="image is-48x48" href="/user/wesleyac" tabindex="-1">
+            
+
+<img class="avatar image is-48x48" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg" aria-hidden="true" alt="avatar for wesleyac" loading="lazy" decoding="async">
+
+        </a>
+    </figure>
+
+    <div class="media-content">
+        <h3 class="has-text-weight-bold">
+            <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+                
+                    <meta itemprop="image" content="/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg">
+                
+
+                <a href="/user/wesleyac" itemprop="url">
+                    <span itemprop="name">Wesley Aptekar-Cassels</span>
+                </a>
+            </span>
+
+            replied to <a href="/user/lucasrizoli">Lucas</a>'s <a href="/user/lucasrizoli/status/2045983">status</a>
+
+        </h3>
+        <div class="breadcrumb has-dot-separator is-small">
+            <ul class="is-flex is-align-items-center">
+                <li>
+                    <a href="https://bookwyrm.social/user/wesleyac/status/2049959#anchor-2049959">
+                        Jul 17
+                    </a>
+                </li>
+
+                
+
+                
+
+                <li>
+                
+
+<span class="icon icon-unlock" title="Unlisted">
+    <span class="is-sr-only">Unlisted</span>
+</span>
+
+
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+
+    </header>
+
+    
+    <section class="card-content">
+        
+
+
+
+    
+
+
+
+
+
+
+
+    <div class="columns is-gapless">
+        
+            
+                
+            
+        
+
+        <article class="column ml-3-tablet my-3-mobile is-clipped">
+            
+
+            
+
+            <div>
+                
+
+                
+                    
+                        
+
+
+
+
+
+    
+        
+            
+                
+                    <div class="content">
+                        <div dir="auto" class="preserve-whitespace" itemprop="reviewBody">
+                            <p><a href="https://bookwyrm.social/user/lucasrizoli">@lucasrizoli</a> I haven't, but I may check it out, this is the first I've heard of it :)</p>
+                        </div>
+                    </div>
+                
+            
+        
+    
+
+
+                    
+                
+
+                
+
+                
+            </div>
+        </article>
+    </div>
+
+
+
+
+
+
+
+    </section>
+    
+
+    <footer class="card-footer has-background-tertiary">
+        
+
+
+    <div class="card-footer-item">
+        <a href="/login">
+            <span class="icon icon-comment is-small" title="Reply">
+                <span class="is-sr-only">Reply</span>
+            </span>
+
+            <span class="icon icon-boost is-small ml-4" title="Boost status">
+                <span class="is-sr-only">Boost status</span>
+            </span>
+
+            <span class="icon icon-heart is-small ml-4" title="Like status">
+                <span class="is-sr-only">Like status</span>
+            </span>
+        </a>
+    </div>
+
+
+
+    </footer>
+
+    
+
+
+</article>
+
+    
+
+
+    </div>
+    
+    <div class="block" id="feed_2031912">
+        
+
+
+
+    
+        <article class="card">
+    <header class="card-header">
+        
+<div class="card-header-title has-background-secondary is-block">
+    
+
+
+
+
+<div class="media">
+    <figure class="media-left" aria-hidden="true">
+        <a class="image is-48x48" href="/user/wesleyac" tabindex="-1">
+            
+
+<img class="avatar image is-48x48" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg" aria-hidden="true" alt="avatar for wesleyac" loading="lazy" decoding="async">
+
+        </a>
+    </figure>
+
+    <div class="media-content">
+        <h3 class="has-text-weight-bold">
+            <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+                
+                    <meta itemprop="image" content="/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg">
+                
+
+                <a href="/user/wesleyac" itemprop="url">
+                    <span itemprop="name">Wesley Aptekar-Cassels</span>
+                </a>
+            </span>
+
+            reviewed <a href="/book/231996/s/witches-midwives-and-nurses">Witches, Midwives, and Nurses</a> by <a href="/author/347/s/barbara-ehrenreich">Barbara Ehrenreich</a>
+
+        </h3>
+        <div class="breadcrumb has-dot-separator is-small">
+            <ul class="is-flex is-align-items-center">
+                <li>
+                    <a href="https://bookwyrm.social/user/wesleyac/review/2031912#anchor-2031912">
+                        Jul 16
+                    </a>
+                </li>
+
+                
+
+                
+
+                <li>
+                
+
+<span class="icon icon-globe" title="Public">
+    <span class="is-sr-only">Public</span>
+</span>
+
+
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+
+    </header>
+
+    
+    <section class="card-content">
+        
+
+
+
+    
+
+
+
+
+
+
+
+    <div class="columns is-gapless">
+        
+            
+                
+                    <div class="column is-cover">
+                        <div class="columns is-mobile is-gapless">
+                            <div class="column is-cover">
+                                <a href="/book/231996/s/witches-midwives-and-nurses"><picture class="cover-container is-w-s-mobile is-h-l-tablet"><img alt="Barbara Ehrenreich, Deirdre English: Witches, Midwives, and Nurses (2010, Feminist Press at the City University of New York)" class="book-cover" itemprop="thumbnailUrl" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/covers/51yBHiYkqzL.jpg"></picture>
+</a>
+
+                                <span class="stars"><span class="is-sr-only">
+            4 stars
+        </span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span></span>
+
+
+                                
+
+
+
+
+                            </div>
+
+                            <div class="column ml-3-mobile is-hidden-tablet">
+                                <p></p><p>Witches, Midwives, and Nurses examines how women-led healing was delegitimized to make way for patriarchy, …</p><p></p>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        
+
+        <article class="column ml-3-tablet my-3-mobile is-clipped">
+            
+            <header class="mb-2">
+                <h3 class="title is-5 has-subtitle" dir="auto" itemprop="name">
+                    Witches, Midwives, and Nurses
+                </h3>
+
+                <h4 class="subtitle is-6">
+                    <span class="is-hidden" itemprop="reviewRating" itemscope="" itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="4.5">
+                    </span>
+                    <span class="stars"><span class="is-sr-only">
+            5 stars
+        </span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-half
+                " aria-hidden="true"></span></span>
+
+                </h4>
+            </header>
+            
+
+            
+
+            <div>
+                
+
+                
+                    
+                        
+
+
+
+
+
+    
+        
+            
+                
+                    <div class="content">
+                        <div dir="auto" class="preserve-whitespace" itemprop="reviewBody">
+                            <p>Astonishingly good, avoiding all of the traps that feminist writing of this era tends to fall into, and providing a excellent history of the "professionalization" (masculinization) of medicine in the United States.</p>
+<p>This book does a excellent job of looking at the interlocking systems of gender, class, and race, and provides a essentially anarchist view of what "professionalization" means and how it operates — focusing on the medical context, but much more broadly applicable. The discussion of Nightingale nursing in particular was excellent — laying bare the class implications of it is a very different history than what I'm used to.</p>
+<p>I wish there were more historical sources for some of the claims about witches in particular — while everything they say seems plausible, I would prefer to know thier primary sources.</p>
+<p>Highly recommended.</p>
+                        </div>
+                    </div>
+                
+            
+        
+    
+
+
+                    
+                
+
+                
+
+                
+            </div>
+        </article>
+    </div>
+
+
+
+
+
+
+
+    </section>
+    
+
+    <footer class="card-footer has-background-tertiary">
+        
+
+
+    <div class="card-footer-item">
+        <a href="/login">
+            <span class="icon icon-comment is-small" title="Reply">
+                <span class="is-sr-only">Reply</span>
+            </span>
+
+            <span class="icon icon-boost is-small ml-4" title="Boost status">
+                <span class="is-sr-only">Boost status</span>
+            </span>
+
+            <span class="icon icon-heart is-small ml-4" title="Like status">
+                <span class="is-sr-only">Like status</span>
+            </span>
+        </a>
+    </div>
+
+
+
+    </footer>
+
+    
+
+
+</article>
+
+    
+
+
+    </div>
+    
+    <div class="block" id="feed_1896904">
+        
+
+
+
+    
+        <article class="card">
+    <header class="card-header">
+        
+<div class="card-header-title has-background-secondary is-block">
+    
+
+
+
+
+<div class="media">
+    <figure class="media-left" aria-hidden="true">
+        <a class="image is-48x48" href="/user/wesleyac" tabindex="-1">
+            
+
+<img class="avatar image is-48x48" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg" aria-hidden="true" alt="avatar for wesleyac" loading="lazy" decoding="async">
+
+        </a>
+    </figure>
+
+    <div class="media-content">
+        <h3 class="has-text-weight-bold">
+            <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+                
+                    <meta itemprop="image" content="/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg">
+                
+
+                <a href="/user/wesleyac" itemprop="url">
+                    <span itemprop="name">Wesley Aptekar-Cassels</span>
+                </a>
+            </span>
+
+            reviewed <a href="/book/827661/s/stone-by-stone">Stone by Stone</a> by <a href="/author/162152/s/robert-thorson">Robert Thorson</a>
+
+        </h3>
+        <div class="breadcrumb has-dot-separator is-small">
+            <ul class="is-flex is-align-items-center">
+                <li>
+                    <a href="https://bookwyrm.social/user/wesleyac/review/1896904#anchor-1896904">
+                        Jul 2
+                    </a>
+                </li>
+
+                
+
+                
+
+                <li>
+                
+
+<span class="icon icon-globe" title="Public">
+    <span class="is-sr-only">Public</span>
+</span>
+
+
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+
+    </header>
+
+    
+    <section class="card-content">
+        
+
+
+
+    
+
+
+
+
+
+
+
+    <div class="columns is-gapless">
+        
+            
+                
+                    <div class="column is-cover">
+                        <div class="columns is-mobile is-gapless">
+                            <div class="column is-cover">
+                                <a href="/book/827661/s/stone-by-stone"><picture class="cover-container is-w-s-mobile is-h-l-tablet"><img alt="Robert Thorson: Stone by Stone (Paperback, 2004, Walker &amp; Company)" class="book-cover" itemprop="thumbnailUrl" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/covers/9d7571b1-020d-4f56-988d-1f37b1291b7c.jpeg"></picture>
+</a>
+
+                                <span class="stars"><span class="is-sr-only">
+            3 stars
+        </span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-half
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span></span>
+
+
+                                
+
+
+
+
+                            </div>
+
+                            <div class="column ml-3-mobile is-hidden-tablet">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        
+
+        <article class="column ml-3-tablet my-3-mobile is-clipped">
+            
+            <header class="mb-2">
+                <h3 class="title is-5 has-subtitle" dir="auto" itemprop="name">
+                    Stone by Stone
+                </h3>
+
+                <h4 class="subtitle is-6">
+                    <span class="is-hidden" itemprop="reviewRating" itemscope="" itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="2.5">
+                    </span>
+                    <span class="stars"><span class="is-sr-only">
+            3 stars
+        </span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-half
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span></span>
+
+                </h4>
+            </header>
+            
+
+            
+                <div class="notification p-2 is-clearfix is-warning is-light">
+                    <p class="is-pulled-left is-flex">
+                        
+                        <span class="icon icon-warning" title="Content warning">
+                            <span class="is-sr-only">Content warning</span>
+                        </span>
+                        CW: discussion of misleading historical accounts of the colonization of America
+                    </p>
+
+                    
+
+                    
+                        
+
+<button type="button" class="button is-small is-pulled-right hide-active" data-controls="show_status_cw_1896904" aria-pressed="false">
+
+    
+    <span class="icon icon-arrow-down m-0-mobile" title="Show status"></span>
+    <span class="is-sr-only-mobile">Show status</span>
+    
+</button>
+
+
+
+                    
+                </div>
+            
+
+            <div id="show_status_cw_1896904" class="is-hidden">
+                
+
+                
+                    
+                        
+
+
+
+
+
+    
+        
+            
+                
+                    <div class="content">
+                        <div dir="auto" class="preserve-whitespace" itemprop="reviewBody">
+                            <p>Mixed feelings about this book. It answered a lot of questions I had about the old stone walls in New England, but it has some problems as well.</p>
+<p>The main problem is that the author seems to have an extremely rosy picture of the colonization of America. This is something you can ignore at first — the book is about the stone walls, which were built by the colonizers after all — but becomes worryingly apparent further through the book. Even ignoring some linguistic choices that are quite horrific to anyone actually familiar with the history (describing "tensions" between colonizers and natives, choose to use the term ""tame" Indian" and thinking it's a fine description because you put the word "tame" in quotes), it's extremely strange to write a book that talks so much about the ecological destruction involved in bringing European-style agriculture to America while only mentioning in passing once that there already were native agriculture systems, that looked quite different from the European ones.</p>
+<p>Other than that, my main complaint is that this book is longer than it needs to be, something that particularly annoys me in short books, apparently. This could have been an incredible 100 page book, but instead there's a lot of repetition and asides on things that are quite uninteresting to me.</p>
+<p>I still would recommend this book to someone curious about these walls, with these caveats, but I'm sad I can't recommend it more widely than that. Most people aren't very interested in old stone walls, after all.</p>
+                        </div>
+                    </div>
+                
+            
+        
+    
+
+
+                    
+                
+
+                
+
+                
+                    
+
+                    
+                        
+
+<button type="button" class="button is-small hide-inactive" data-controls="show_status_cw_1896904" aria-pressed="false">
+
+    
+    <span class="icon icon-arrow-up m-0-mobile" title="Hide status"></span>
+    <span class="is-sr-only-mobile">Hide status</span>
+    
+</button>
+
+
+
+                    
+                
+            </div>
+        </article>
+    </div>
+
+
+
+
+
+
+
+    </section>
+    
+
+    <footer class="card-footer has-background-tertiary">
+        
+
+
+    <div class="card-footer-item">
+        <a href="/login">
+            <span class="icon icon-comment is-small" title="Reply">
+                <span class="is-sr-only">Reply</span>
+            </span>
+
+            <span class="icon icon-boost is-small ml-4" title="Boost status">
+                <span class="is-sr-only">Boost status</span>
+            </span>
+
+            <span class="icon icon-heart is-small ml-4" title="Like status">
+                <span class="is-sr-only">Like status</span>
+            </span>
+        </a>
+    </div>
+
+
+
+    </footer>
+
+    
+
+
+</article>
+
+    
+
+
+    </div>
+    
+    <div class="block" id="feed_1853763">
+        
+
+
+
+    
+        <article class="card">
+    <header class="card-header">
+        
+<div class="card-header-title has-background-secondary is-block">
+    
+
+
+
+
+<div class="media">
+    <figure class="media-left" aria-hidden="true">
+        <a class="image is-48x48" href="/user/wesleyac" tabindex="-1">
+            
+
+<img class="avatar image is-48x48" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg" aria-hidden="true" alt="avatar for wesleyac" loading="lazy" decoding="async">
+
+        </a>
+    </figure>
+
+    <div class="media-content">
+        <h3 class="has-text-weight-bold">
+            <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+                
+                    <meta itemprop="image" content="/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg">
+                
+
+                <a href="/user/wesleyac" itemprop="url">
+                    <span itemprop="name">Wesley Aptekar-Cassels</span>
+                </a>
+            </span>
+
+            started reading <a href="/book/827661/s/stone-by-stone">Stone by Stone</a> by <a href="/author/162152/s/robert-thorson">Robert Thorson</a>
+
+        </h3>
+        <div class="breadcrumb has-dot-separator is-small">
+            <ul class="is-flex is-align-items-center">
+                <li>
+                    <a href="https://bookwyrm.social/user/wesleyac/comment/1853763#anchor-1853763">
+                        Jun 27
+                    </a>
+                </li>
+
+                
+
+                
+
+                <li>
+                
+
+<span class="icon icon-globe" title="Public">
+    <span class="is-sr-only">Public</span>
+</span>
+
+
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+
+    </header>
+
+    
+    <section class="card-content">
+        
+
+
+
+    
+
+
+
+
+
+
+
+    <div class="columns is-gapless">
+        
+            
+                
+                    <div class="column is-cover">
+                        <div class="columns is-mobile is-gapless">
+                            <div class="column is-cover">
+                                <a href="/book/827661/s/stone-by-stone"><picture class="cover-container is-w-s-mobile is-h-l-tablet"><img alt="Robert Thorson: Stone by Stone (Paperback, 2004, Walker &amp; Company)" class="book-cover" itemprop="thumbnailUrl" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/covers/9d7571b1-020d-4f56-988d-1f37b1291b7c.jpeg"></picture>
+</a>
+
+                                <span class="stars"><span class="is-sr-only">
+            3 stars
+        </span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-half
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span></span>
+
+
+                                
+
+
+
+
+                            </div>
+
+                            <div class="column ml-3-mobile is-hidden-tablet">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        
+
+        <article class="column ml-3-tablet my-3-mobile is-clipped">
+            
+
+            
+
+            <div>
+                
+
+                
+                    
+                        
+
+
+
+
+
+    
+        
+            
+                
+                    <div class="content">
+                        <div dir="auto" class="preserve-whitespace" itemprop="reviewBody">
+                            <p>Just started this today. I'm a bit dubious about the history here, since it seems extremely focused on colonists (who, to be fair, were the ones building the walls, but like, describing the "lingering hostilities between the colonists and Native Americans [lessening] with the end of the French and Indian wars" is just pretty... bad, and it really glosses over the fact that Native Americans were doing agriculture in the region long before the colonists were), but the geology is interesting so far, and I'm hopeful that I will be able to take some interesting history away from it, even if I need to be alert for erasure of the more horrific parts European colonialism.</p>
+                        </div>
+                    </div>
+                
+            
+        
+    
+
+
+                    
+                
+
+                
+
+                
+            </div>
+        </article>
+    </div>
+
+
+
+
+
+
+
+    </section>
+    
+
+    <footer class="card-footer has-background-tertiary">
+        
+
+
+    <div class="card-footer-item">
+        <a href="/login">
+            <span class="icon icon-comment is-small" title="Reply">
+                <span class="is-sr-only">Reply</span>
+            </span>
+
+            <span class="icon icon-boost is-small ml-4" title="Boost status">
+                <span class="is-sr-only">Boost status</span>
+            </span>
+
+            <span class="icon icon-heart is-small ml-4" title="Like status">
+                <span class="is-sr-only">Like status</span>
+            </span>
+        </a>
+    </div>
+
+
+
+    </footer>
+
+    
+
+
+</article>
+
+    
+
+
+    </div>
+    
+
+    
+<nav class="pagination is-centered" aria-label="pagination">
+    <a class="pagination-previous is-disabled" aria-hidden="true">
+
+        <span class="icon icon-arrow-left" aria-hidden="true"></span>
+        
+        Newer
+        
+    </a>
+
+    <a class="pagination-next " href="/user/wesleyac?page=2#feed">
+
+        
+        Older
+        
+        <span class="icon icon-arrow-right" aria-hidden="true"></span>
+    </a>
+
+    
+</nav>
+
+</div>
+
+
+    
+
+            
+        
+    </div>
+</main>
+
+<div role="region" aria-live="polite" id="live-messages">
+    <p id="status-success-message" class="live-message is-sr-only is-hidden">Successfully posted status</p>
+    <p id="status-error-message" class="live-message notification is-danger p-3 pr-5 pl-5 is-hidden">Error posting status</p>
+</div>
+
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-2">
+                <p>
+                    <a href="/about">About BookWyrm</a>
+                </p>
+                
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Contact site admin</a>
+                </p>
+                
+                <p>
+                    <a href="https://docs.joinbookwyrm.com/">Documentation</a>
+                </p>
+                
+            </div>
+            <div class="column is-2">
+                <p>
+                    <a href="/conduct">Code of Conduct</a>
+                </p>
+                <p>
+                    <a href="/privacy">Privacy Policy</a>
+                </p>
+                
+            </div>
+            <div class="column content">
+                
+                <p>
+                    <span class="icon icon-heart"></span>
+                    Support BookWyrm on <a href="https://www.patreon.com/bookwyrm" target="_blank" rel="nofollow noopener noreferrer">Patreon</a>
+                </p>
+                
+                <p>
+                BookWyrm's source code is freely available. You can contribute or report issues on <a href="https://github.com/bookwyrm-social/bookwyrm" target="_blank" rel="nofollow noopener noreferrer">GitHub</a>.
+                </p>
+            </div>
+            
+            <div class="column is-4">
+                <p>BookWyrm is managed from the unceded ancestral homeland of the <a href="https://www.ramaytush.org/" target="_blank" rel="nofollow noopener noreferrer">Ramaytush Ohlone</a> peoples, the original inhabitants of the San Francisco Peninsula. A portion of the proceeds go towards the <a href="https://www.ramaytush.org/donate.html" target="_blank" rel="nofollow noopener noreferrer"><em> Yunakin</em> land tax</a>.</p>
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+
+<script nonce="">
+    var csrf_token = 'lQ1bFsfsJKRRq19qom4NFCM5lTe60bpJoh27vQ0592RDtTw3c7EEF59OwCi6g8Go';
+</script>
+
+<script src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/static/js/bookwyrm.js?v=8a89cad7"></script>
+<script src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/static/js/localstorage.js?v=8a89cad7"></script>
+<script src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/static/js/status_cache.js?v=8a89cad7"></script>
+<script src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/static/js/vendor/quagga.min.js?v=8a89cad7"></script>
+<script src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/static/js/vendor/shepherd.min.js?v=8a89cad7"></script>
+<script src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/static/js/guided_tour.js?v=8a89cad7"></script>
+
+
+
+
+
+
+
+</body></html>

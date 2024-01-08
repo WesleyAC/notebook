@@ -1,0 +1,226 @@
+{
+    "archive_path": "archive/1704672391.343464",
+    "base_url": "bookwyrm.social/book/78058/s/nomadic-furniture",
+    "basename": "nomadic-furniture",
+    "bookmarked_date": "2024-01-08 00:06",
+    "canonical": {
+        "archive_org_path": "https://web.archive.org/web/bookwyrm.social/book/78058/s/nomadic-furniture",
+        "dom_path": "output.html",
+        "favicon_path": "favicon.ico",
+        "git_path": "git/",
+        "google_favicon_path": "https://www.google.com/s2/favicons?domain=bookwyrm.social",
+        "headers_path": "headers.json",
+        "index_path": "index.html",
+        "media_path": "media/",
+        "mercury_path": "mercury/content.html",
+        "pdf_path": "output.pdf",
+        "readability_path": "readability/content.html",
+        "screenshot_path": "screenshot.png",
+        "singlefile_path": "singlefile.html",
+        "warc_path": "warc/",
+        "wget_path": null
+    },
+    "domain": "bookwyrm.social",
+    "extension": "",
+    "hash": "1SABEYNRYJGX9SZWFB5Y",
+    "history": {
+        "archive_org": [
+            {
+                "cmd": [
+                    "curl",
+                    "--silent",
+                    "--location",
+                    "--compressed",
+                    "--head",
+                    "--max-time",
+                    "90",
+                    "--user-agent",
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/0.6.2 (+https://github.com/ArchiveBox/ArchiveBox/) curl/curl 7.76.1 (x86_64-pc-linux-gnu)",
+                    "https://web.archive.org/save/https://bookwyrm.social/book/78058/s/nomadic-furniture"
+                ],
+                "cmd_version": "curl 7.76.1 (x86_64-pc-linux-gnu)",
+                "end_ts": "2024-01-08T00:07:55.227472+00:00",
+                "index_texts": null,
+                "output": "https://web.archive.org/web/20240108000745/https://bookwyrm.social/book/78058/s/nomadic-furniture",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704672391.343464",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:07:42.341796+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "dom": [
+            {
+                "cmd": [
+                    "chromium-browser",
+                    "--headless",
+                    "--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/{VERSION} (+https://github.com/ArchiveBox/ArchiveBox/)",
+                    "--window-size=1440,2000",
+                    "--timeout=90000",
+                    "--dump-dom",
+                    "https://bookwyrm.social/book/78058/s/nomadic-furniture"
+                ],
+                "cmd_version": "Chromium 120.0.6099.109",
+                "end_ts": "2024-01-08T00:07:42.327043+00:00",
+                "index_texts": null,
+                "output": "output.html",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704672391.343464",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:07:40.113254+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "favicon": [
+            {
+                "cmd": [
+                    "curl",
+                    "--silent",
+                    "--location",
+                    "--compressed",
+                    "--max-time",
+                    "90",
+                    "--output",
+                    "favicon.ico",
+                    "--user-agent",
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/0.6.2 (+https://github.com/ArchiveBox/ArchiveBox/) curl/curl 7.76.1 (x86_64-pc-linux-gnu)",
+                    "https://www.google.com/s2/favicons?domain=bookwyrm.social"
+                ],
+                "cmd_version": "curl 7.76.1 (x86_64-pc-linux-gnu)",
+                "end_ts": "2024-01-08T00:07:23.171366+00:00",
+                "index_texts": null,
+                "output": "favicon.ico",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704672391.343464",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:07:22.913702+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "git": [],
+        "headers": [
+            {
+                "cmd": [
+                    "curl",
+                    "--silent",
+                    "--location",
+                    "--compressed",
+                    "--head",
+                    "--max-time",
+                    "90",
+                    "--user-agent",
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/0.6.2 (+https://github.com/ArchiveBox/ArchiveBox/) curl/curl 7.76.1 (x86_64-pc-linux-gnu)",
+                    "https://bookwyrm.social/book/78058/s/nomadic-furniture"
+                ],
+                "cmd_version": "curl 7.76.1 (x86_64-pc-linux-gnu)",
+                "end_ts": "2024-01-08T00:07:24.674899+00:00",
+                "index_texts": null,
+                "output": "headers.json",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704672391.343464",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:07:23.187607+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "media": [],
+        "mercury": [],
+        "pdf": [],
+        "readability": [],
+        "screenshot": [
+            {
+                "cmd": [
+                    "chromium-browser",
+                    "--headless",
+                    "--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/{VERSION} (+https://github.com/ArchiveBox/ArchiveBox/)",
+                    "--window-size=1440,2000",
+                    "--timeout=90000",
+                    "--screenshot",
+                    "https://bookwyrm.social/book/78058/s/nomadic-furniture"
+                ],
+                "cmd_version": "Chromium 120.0.6099.109",
+                "end_ts": "2024-01-08T00:07:40.098494+00:00",
+                "index_texts": null,
+                "output": "screenshot.png",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704672391.343464",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:07:37.548240+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "singlefile": [
+            {
+                "cmd": [
+                    "/home/wesleyac/code/notebook/data/archivebox/node_modules/single-file/cli/single-file",
+                    "--browser-executable-path=chromium-browser",
+                    "--browser-args=[\"--headless\", \"--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/{VERSION} (+https://github.com/ArchiveBox/ArchiveBox/)\", \"--window-size=1440,2000\"]",
+                    "https://bookwyrm.social/book/78058/s/nomadic-furniture",
+                    "singlefile.html"
+                ],
+                "cmd_version": "0.3.31",
+                "end_ts": "2024-01-08T00:07:37.535213+00:00",
+                "index_texts": null,
+                "output": "singlefile.html",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704672391.343464",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:07:24.709893+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "title": [
+            {
+                "cmd": [
+                    "curl",
+                    "--silent",
+                    "--location",
+                    "--compressed",
+                    "--max-time",
+                    "90",
+                    "--user-agent",
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/0.6.2 (+https://github.com/ArchiveBox/ArchiveBox/) curl/curl 7.76.1 (x86_64-pc-linux-gnu)",
+                    "https://bookwyrm.social/book/78058/s/nomadic-furniture"
+                ],
+                "cmd_version": "curl 7.76.1 (x86_64-pc-linux-gnu)",
+                "end_ts": "2024-01-08T00:07:22.898989+00:00",
+                "index_texts": null,
+                "output": "Nomadic Furniture - BookWyrm",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704672391.343464",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:07:22.402277+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "wget": []
+    },
+    "icons": null,
+    "is_archived": true,
+    "is_static": false,
+    "latest": {
+        "archive_org": "https://web.archive.org/web/20240108000745/https://bookwyrm.social/book/78058/s/nomadic-furniture",
+        "dom": "output.html",
+        "favicon": "favicon.ico",
+        "git": null,
+        "media": null,
+        "pdf": null,
+        "screenshot": "screenshot.png",
+        "singlefile": "singlefile.html",
+        "title": "Nomadic Furniture - BookWyrm",
+        "warc": null,
+        "wget": null
+    },
+    "link_dir": "/home/wesleyac/code/notebook/data/archivebox/archive/1704672391.343464",
+    "newest_archive_date": "2024-01-08T00:07:42.341796+00:00",
+    "num_failures": 0,
+    "num_outputs": 7,
+    "oldest_archive_date": "2024-01-08T00:07:22.402277+00:00",
+    "path": "/book/78058/s/nomadic-furniture",
+    "schema": "Link",
+    "scheme": "https",
+    "snapshot_id": "12e2176c-b18c-4fc1-8ee4-6bbf59514333",
+    "sources": [
+        "/home/wesleyac/code/notebook/data/archivebox/sources/1704672391-import.txt"
+    ],
+    "tags": null,
+    "tags_str": "",
+    "timestamp": "1704672391.343464",
+    "title": "Nomadic Furniture - BookWyrm",
+    "updated": "2024-01-08T00:07:22.400841+00:00",
+    "updated_date": "2024-01-08 00:07",
+    "url": "https://bookwyrm.social/book/78058/s/nomadic-furniture"
+}

@@ -1,0 +1,16 @@
+{
+    "Status-Code": 200,
+    "Server": "nginx/1.25.2",
+    "Date": "Mon, 08 Jan 2024 00:08:31 GMT",
+    "Content-Type": "text/html; charset=utf-8",
+    "Connection": "keep-alive",
+    "X-Frame-Options": "DENY",
+    "Content-Security-Policy": "default-src 'self' bookwyrm-social.sfo3.digitaloceanspaces.com; script-src 'self' bookwyrm-social.sfo3.digitaloceanspaces.com 'nonce-fmnnqXh2U3JQhuIVnxwRPQ=='",
+    "Vary": "Cookie, Accept-Language",
+    "Content-Language": "en-us",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "same-origin",
+    "Set-Cookie": "csrftoken=79Q2AySWPB8TRyMjFPz0TxUoPDIhuBMSkoNU5lS6NKRydtX4mkrxpvWw7fEUVcNn; expires=Mon, 06 Jan 2025 00:08:31 GMT; Max-Age=31449600; Path=/; SameSite=Lax; Secure",
+    "X-Cache-Status": "HIT",
+    "Content-Encoding": "gzip"
+}

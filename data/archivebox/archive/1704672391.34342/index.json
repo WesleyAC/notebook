@@ -1,0 +1,226 @@
+{
+    "archive_path": "archive/1704672391.34342",
+    "base_url": "bookwyrm.social/book/1442774/s/the-children-of-the-morning-light",
+    "basename": "the-children-of-the-morning-light",
+    "bookmarked_date": "2024-01-08 00:06",
+    "canonical": {
+        "archive_org_path": "https://web.archive.org/web/bookwyrm.social/book/1442774/s/the-children-of-the-morning-light",
+        "dom_path": "output.html",
+        "favicon_path": "favicon.ico",
+        "git_path": "git/",
+        "google_favicon_path": "https://www.google.com/s2/favicons?domain=bookwyrm.social",
+        "headers_path": "headers.json",
+        "index_path": "index.html",
+        "media_path": "media/",
+        "mercury_path": "mercury/content.html",
+        "pdf_path": "output.pdf",
+        "readability_path": "readability/content.html",
+        "screenshot_path": "screenshot.png",
+        "singlefile_path": "singlefile.html",
+        "warc_path": "warc/",
+        "wget_path": null
+    },
+    "domain": "bookwyrm.social",
+    "extension": "",
+    "hash": "AGVTJ68DC6DY974A7XVR",
+    "history": {
+        "archive_org": [
+            {
+                "cmd": [
+                    "curl",
+                    "--silent",
+                    "--location",
+                    "--compressed",
+                    "--head",
+                    "--max-time",
+                    "90",
+                    "--user-agent",
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/0.6.2 (+https://github.com/ArchiveBox/ArchiveBox/) curl/curl 7.76.1 (x86_64-pc-linux-gnu)",
+                    "https://web.archive.org/save/https://bookwyrm.social/book/1442774/s/the-children-of-the-morning-light"
+                ],
+                "cmd_version": "curl 7.76.1 (x86_64-pc-linux-gnu)",
+                "end_ts": "2024-01-08T00:08:30.520477+00:00",
+                "index_texts": null,
+                "output": "https://web.archive.org/web/20240108000814/https://bookwyrm.social/book/1442774/s/the-children-of-the-morning-light",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704672391.34342",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:08:11.261825+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "dom": [
+            {
+                "cmd": [
+                    "chromium-browser",
+                    "--headless",
+                    "--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/{VERSION} (+https://github.com/ArchiveBox/ArchiveBox/)",
+                    "--window-size=1440,2000",
+                    "--timeout=90000",
+                    "--dump-dom",
+                    "https://bookwyrm.social/book/1442774/s/the-children-of-the-morning-light"
+                ],
+                "cmd_version": "Chromium 120.0.6099.109",
+                "end_ts": "2024-01-08T00:08:11.238155+00:00",
+                "index_texts": null,
+                "output": "output.html",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704672391.34342",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:08:08.580049+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "favicon": [
+            {
+                "cmd": [
+                    "curl",
+                    "--silent",
+                    "--location",
+                    "--compressed",
+                    "--max-time",
+                    "90",
+                    "--output",
+                    "favicon.ico",
+                    "--user-agent",
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/0.6.2 (+https://github.com/ArchiveBox/ArchiveBox/) curl/curl 7.76.1 (x86_64-pc-linux-gnu)",
+                    "https://www.google.com/s2/favicons?domain=bookwyrm.social"
+                ],
+                "cmd_version": "curl 7.76.1 (x86_64-pc-linux-gnu)",
+                "end_ts": "2024-01-08T00:07:56.282623+00:00",
+                "index_texts": null,
+                "output": "favicon.ico",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704672391.34342",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:07:55.968153+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "git": [],
+        "headers": [
+            {
+                "cmd": [
+                    "curl",
+                    "--silent",
+                    "--location",
+                    "--compressed",
+                    "--head",
+                    "--max-time",
+                    "90",
+                    "--user-agent",
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/0.6.2 (+https://github.com/ArchiveBox/ArchiveBox/) curl/curl 7.76.1 (x86_64-pc-linux-gnu)",
+                    "https://bookwyrm.social/book/1442774/s/the-children-of-the-morning-light"
+                ],
+                "cmd_version": "curl 7.76.1 (x86_64-pc-linux-gnu)",
+                "end_ts": "2024-01-08T00:07:56.688827+00:00",
+                "index_texts": null,
+                "output": "headers.json",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704672391.34342",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:07:56.309013+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "media": [],
+        "mercury": [],
+        "pdf": [],
+        "readability": [],
+        "screenshot": [
+            {
+                "cmd": [
+                    "chromium-browser",
+                    "--headless",
+                    "--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/{VERSION} (+https://github.com/ArchiveBox/ArchiveBox/)",
+                    "--window-size=1440,2000",
+                    "--timeout=90000",
+                    "--screenshot",
+                    "https://bookwyrm.social/book/1442774/s/the-children-of-the-morning-light"
+                ],
+                "cmd_version": "Chromium 120.0.6099.109",
+                "end_ts": "2024-01-08T00:08:08.565593+00:00",
+                "index_texts": null,
+                "output": "screenshot.png",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704672391.34342",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:08:05.655589+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "singlefile": [
+            {
+                "cmd": [
+                    "/home/wesleyac/code/notebook/data/archivebox/node_modules/single-file/cli/single-file",
+                    "--browser-executable-path=chromium-browser",
+                    "--browser-args=[\"--headless\", \"--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/{VERSION} (+https://github.com/ArchiveBox/ArchiveBox/)\", \"--window-size=1440,2000\"]",
+                    "https://bookwyrm.social/book/1442774/s/the-children-of-the-morning-light",
+                    "singlefile.html"
+                ],
+                "cmd_version": "0.3.31",
+                "end_ts": "2024-01-08T00:08:05.640846+00:00",
+                "index_texts": null,
+                "output": "singlefile.html",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704672391.34342",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:07:56.714362+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "title": [
+            {
+                "cmd": [
+                    "curl",
+                    "--silent",
+                    "--location",
+                    "--compressed",
+                    "--max-time",
+                    "90",
+                    "--user-agent",
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/0.6.2 (+https://github.com/ArchiveBox/ArchiveBox/) curl/curl 7.76.1 (x86_64-pc-linux-gnu)",
+                    "https://bookwyrm.social/book/1442774/s/the-children-of-the-morning-light"
+                ],
+                "cmd_version": "curl 7.76.1 (x86_64-pc-linux-gnu)",
+                "end_ts": "2024-01-08T00:07:55.945055+00:00",
+                "index_texts": null,
+                "output": "The Children of the Morning Light - BookWyrm",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704672391.34342",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:07:55.312694+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "wget": []
+    },
+    "icons": null,
+    "is_archived": true,
+    "is_static": false,
+    "latest": {
+        "archive_org": "https://web.archive.org/web/20240108000814/https://bookwyrm.social/book/1442774/s/the-children-of-the-morning-light",
+        "dom": "output.html",
+        "favicon": "favicon.ico",
+        "git": null,
+        "media": null,
+        "pdf": null,
+        "screenshot": "screenshot.png",
+        "singlefile": "singlefile.html",
+        "title": "The Children of the Morning Light - BookWyrm",
+        "warc": null,
+        "wget": null
+    },
+    "link_dir": "/home/wesleyac/code/notebook/data/archivebox/archive/1704672391.34342",
+    "newest_archive_date": "2024-01-08T00:08:11.261825+00:00",
+    "num_failures": 0,
+    "num_outputs": 7,
+    "oldest_archive_date": "2024-01-08T00:07:55.312694+00:00",
+    "path": "/book/1442774/s/the-children-of-the-morning-light",
+    "schema": "Link",
+    "scheme": "https",
+    "snapshot_id": "279f3885-3d63-44d7-9339-9726e02278a5",
+    "sources": [
+        "/home/wesleyac/code/notebook/data/archivebox/sources/1704672391-import.txt"
+    ],
+    "tags": null,
+    "tags_str": "",
+    "timestamp": "1704672391.34342",
+    "title": "The Children of the Morning Light - BookWyrm",
+    "updated": "2024-01-08T00:07:55.310788+00:00",
+    "updated_date": "2024-01-08 00:07",
+    "url": "https://bookwyrm.social/book/1442774/s/the-children-of-the-morning-light"
+}

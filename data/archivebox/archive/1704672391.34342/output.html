@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <title>The Children of the Morning Light - BookWyrm</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://bookwyrm-social.sfo3.digitaloceanspaces.com/static/css/themes/bookwyrm-light.css" rel="stylesheet" type="text/css">
+
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="BookWyrm search">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/logos/886fa857d5f6b7e9.png">
+    <link rel="apple-touch-icon" href="https://bookwyrm-social.sfo3.digitaloceanspaces.com/static/images/logo.png">
+    <link rel="manifest" href="/manifest.json">
+
+    
+    
+
+
+    <meta name="twitter:card" content="summary_large_image">
+    
+        <meta name="twitter:image" content="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/previews/covers/1442774-3e97c015-1e07-4f67-a6c0-4905b96d8dfa_h7EyOd6.jpg">
+        <meta name="og:image" content="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/previews/covers/1442774-3e97c015-1e07-4f67-a6c0-4905b96d8dfa_h7EyOd6.jpg">
+    
+
+
+<meta name="twitter:image:alt" content="BookWyrm Logo">
+
+<meta name="twitter:title" content="The Children of the Morning Light - BookWyrm">
+<meta name="og:title" content="The Children of the Morning Light - BookWyrm">
+
+<meta name="twitter:description" content="A collection of traditional stories that describe the creation of the world and the early history of the Wampanoag Indians in southeastern Massachusetts.">
+<meta name="og:description" content="A collection of traditional stories that describe the creation of the world and the early history of the Wampanoag Indians in southeastern Massachusetts.">
+
+
+
+    
+</head>
+<body>
+
+<nav class="navbar" aria-label="main navigation">
+    <div class="container">
+        
+        
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img class="image logo" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/static/images/logo-small.png" alt="BookWyrm home page" loading="lazy" decoding="async">
+            </a>
+            <form class="navbar-item column is-align-items-start pt-5" action="/search">
+                <div class="field has-addons">
+                    <div class="control">
+                        
+                            
+                        
+                        <input aria-label="Search for a book" id="tour-search" class="input" type="text" name="q" placeholder="Search for a book" value="" spellcheck="false">
+                    </div>
+                    <div class="control">
+                        <button class="button" type="submit">
+                            <span class="icon icon-search" title="Search">
+                                <span class="is-sr-only">Search</span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="control">
+                        <button class="button" type="button" data-modal-open="barcode-scanner-modal">
+                            <span class="icon icon-barcode" title="Scan Barcode" id="tour-barcode">
+                                <span class="is-sr-only">Scan Barcode</span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            
+
+<div class="modal " id="barcode-scanner-modal">
+    <div class="modal-background" data-modal-close=""></div>
+    <div class="modal-card" role="dialog" aria-modal="true" tabindex="-1" aria-described-by="barcode-scanner-modal_header">
+        <header class="modal-card-head">
+            <h2 class="modal-card-title mb-0" id="barcode-scanner-modal_header">
+                
+    
+        Scan Barcode
+    
+
+            </h2>
+            <button type="button" class="delete" aria-label="Close" data-modal-close=""></button>
+        </header>
+
+        
+        <section class="modal-card-body">
+            
+    <div class="block">
+        <div id="barcode-scanner"></div>
+    </div>
+
+    <div id="barcode-camera-list" class="select is-small">
+        <select>
+        </select>
+    </div>
+    <template id="barcode-grant-access">
+        <span class="icon icon-lock"></span>
+        <span class="is-size-5">Requesting camera...</span><br>
+        <span>Grant access to the camera to scan a book's barcode.</span>
+    </template>
+    <template id="barcode-access-denied">
+        <span class="icon icon-warning"></span>
+        <span class="is-size-5">Access denied</span><br>
+        <span>Could not access camera</span>
+    </template>
+    <template id="barcode-scanning">
+        <span class="icon icon-barcode"></span>
+        <span class="is-size-5">Scanning...</span><br>
+        <span>Align your book's barcode with the camera.</span><span class="isbn"></span>
+    </template>
+    <template id="barcode-found">
+        <span class="icon icon-check"></span>
+        <span class="is-size-5">ISBN scanned</span><br>
+        Searching for book: <span class="isbn"></span>...
+    </template>
+    <div id="barcode-status" class="block"></div>
+
+        </section>
+        <footer class="modal-card-foot">
+            
+    <button class="button" type="button" data-modal-close="">Cancel</button>
+
+        </footer>
+        
+    </div>
+    <button type="button" class="modal-close is-large" aria-label="Close" data-modal-close=""></button>
+</div>
+
+
+            <button type="button" tabindex="0" class="navbar-burger pulldown-menu my-4 is-flex-touch is-align-items-center is-justify-content-center" data-controls="main_nav" aria-expanded="false" aria-label="Main navigation menu">
+                <i class="icon-dots-three-vertical" aria-hidden="true"></i>
+
+                <strong class="is-hidden  tag is-small px-1" data-poll-wrapper="">
+                    <span class="is-sr-only">Notifications</span>
+                    <strong data-poll="notifications" class="has-text-white">
+                        
+                    </strong>
+                </strong>
+            </button>
+        </div>
+        <div class="navbar-menu" id="main_nav">
+            <div class="navbar-start" id="tour-navbar-start">
+                
+            </div>
+
+            <div class="navbar-end">
+            
+                <div class="navbar-item pt-5 pb-0">
+                    
+                    <div class="columns">
+                        <div class="column">
+                            <form name="login" method="post" action="/login?next=/book/1442774/s/the-children-of-the-morning-light">
+                                <input type="hidden" name="csrfmiddlewaretoken" value="2Xe0b7QXqBe8DxraxRqx0G5krpEVUw83gcdv1RSuTMYEYWweacqZXbkGufyWPmp4">
+                                <div class="columns is-variable is-1">
+                                    <div class="column">
+                                        <label class="is-sr-only" for="id_localname">Username:</label>
+                                        <input type="text" name="localname" maxlength="150" class="input" required="" id="id_localname" placeholder="username">
+                                    </div>
+                                    <div class="column">
+                                        <label class="is-sr-only" for="id_password">Password:</label>
+                                        <div class="control has-icons-right">
+                                            <input type="password" name="password" maxlength="128" class="input" required="" id="id_password" placeholder="password">
+                                            <span data-password-icon="" data-for="id_password" class="icon is-right is-clickable">
+                                                <button type="button" aria-controls="id_password" class="icon-eye-blocked" title="Show/Hide password"></button>
+                                            </span>
+                                        </div>
+                                        <p class="help"><a href="/password-reset">Forgot your password?</a></p>
+                                    </div>
+                                    <div class="column is-narrow">
+                                        <button class="button is-primary" type="submit">Log in</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="column is-narrow">
+                            <a href="/" class="button is-link">
+                                Join
+                            </a>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </div>
+</nav>
+
+
+
+<main class="section is-flex-grow-1">
+    <div class="container">
+        
+            
+            
+            
+
+
+
+<div class="block" itemscope="" itemtype="https://schema.org/Book">
+    <div class="columns is-mobile">
+        <div class="column">
+            <h1 class="title" itemprop="name" dir="auto">
+                The Children of the Morning Light
+            </h1>
+
+            
+                <p class="subtitle title is-5">
+                    
+                        <meta itemprop="alternativeHeadline" content="Wampanoag tales">
+
+                        <span class="has-text-weight-bold" dir="auto">
+                            Wampanoag tales
+                        </span>
+                    
+
+                    
+                </p>
+            
+
+            
+                <div class="subtitle" dir="auto">
+                    by <a href="/author/261557/s/medicine-story" class="author " itemprop="author" itemscope="" itemtype="https://schema.org/Thing"><span itemprop="name">Medicine Story.</span></a>
+
+                </div>
+            
+        </div>
+
+        
+    </div>
+
+    <div class="columns">
+        <div class="column is-one-fifth">
+            
+
+            
+                <button type="button" data-modal-open="cover_show_modal" class="cover-container is-h-m-mobile is-relative">
+                <picture class="cover-container is-h-m-mobile"><img alt="Medicine Story.: The Children of the Morning Light (1994, Macmillan, Maxwell Macmillan Canada, Maxwell Macmillan International)" class="book-cover" itemprop="thumbnailUrl" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/covers/e31d8630-2238-4f96-ab3d-4a16e16d738f.jpeg"></picture>
+
+                    <span class="button-invisible-overlay has-text-centered">
+                        Click to enlarge
+                    </span>
+                </button>
+                
+
+
+<div class="modal" id="cover_show_modal">
+    <div class="modal-background" data-modal-close=""></div><!-- modal background -->
+    <div class="modal-card is-align-items-center" role="dialog" aria-modal="true" tabindex="-1" aria-label="Book cover preview">
+        <div class="cover-container">
+            <img class="book-cover" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/covers/e31d8630-2238-4f96-ab3d-4a16e16d738f.jpeg" itemprop="thumbnailUrl" alt="" loading="lazy" decoding="async">
+        </div>
+    </div>
+    <button type="button" data-modal-close="" class="modal-close is-large" aria-label="Close"></button>
+</div>
+
+            
+
+            
+
+
+
+
+
+            <div class="mb-3" id="tour-shelve-button">
+                
+
+
+
+
+            </div>
+
+            <section class="is-clipped">
+                
+                    <div class="content">
+                        <meta itemprop="numberOfPages" content="72"><p>
+    
+        72 pages
+    
+</p><meta itemprop="inLanguage" content="English"><p>
+        
+            English language
+        
+    </p><meta itemprop="datePublished" content="1994-11-02"><p><meta itemprop="publisher" content="Macmillan"><meta itemprop="publisher" content="Maxwell Macmillan Canada"><meta itemprop="publisher" content="Maxwell Macmillan International">
+        
+    
+
+    
+    
+        Published Nov. 2, 1994 by Macmillan, Maxwell Macmillan Canada, Maxwell Macmillan International.
+    
+    
+</p>
+
+                    </div>
+
+                    <div class="my-3">
+                        <dl><div class="is-flex is-flex-wrap-wrap"><dt class="mr-1">ISBN:</dt><dd itemprop="isbn" class="mr-1" id="isbn_content">978-0-02-765905-4</dd><div><button class="button is-small" data-copywithtooltip="" data-content-id="isbn_content" data-tooltip-id="isbn_tooltip"><span class="icon icon-copy" title="Copy ISBN"><span class="is-sr-only">Copy ISBN</span></span></button><span class="copy-tooltip" id="isbn_tooltip">Copied ISBN!</span></div></div><div class="is-flex is-flex-wrap-wrap"><dt class="mr-1">OCLC Number:</dt><dd>26766636</dd></div></dl>
+
+                    </div>
+                
+
+                
+                
+                <p>
+                    <a href="https://openlibrary.org/books/OL1728092M" target="_blank" rel="nofollow noopener noreferrer">
+                        View on OpenLibrary
+                    </a>
+                    
+                </p>
+                
+                
+                
+            </section>
+        </div>
+
+        <div class="column is-three-fifths">
+            <div class="block">
+                <div class="field is-grouped" itemprop="aggregateRating" itemscope="" itemtype="https://schema.org/AggregateRating">
+                    <meta itemprop="ratingValue" content="3.5">
+                    <meta itemprop="reviewCount" content="1">
+
+                    <span>
+                        <span class="stars"><span class="is-sr-only">
+            4 stars
+        </span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-half
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span></span>
+
+
+                        (1 review)
+                    </span>
+                </div>
+
+                
+                    
+
+
+
+
+
+    
+        
+            
+                
+                    <div class="content">
+                        <div dir="auto" class="preserve-whitespace" itemprop="abstract">
+                            <p>A collection of traditional stories that describe the creation of the world and the early history of the Wampanoag Indians in southeastern Massachusetts.</p>
+                        </div>
+                    </div>
+                
+            
+        
+    
+
+
+                
+
+                
+
+
+                
+                <p>
+                    <a href="/book/1442773/editions" id="tour-other-editions-link">
+                        1 edition
+                    </a>
+                </p>
+                
+            </div>
+
+            
+            <div class="block">
+                
+                
+            </div>
+
+            
+            <div class="block" id="reviews">
+                
+
+                
+                    <div class="block" itemprop="review" itemscope="" itemtype="https://schema.org/Review">
+                        
+
+
+
+    
+        <article class="card">
+    <header class="card-header">
+        
+<div class="card-header-title has-background-secondary is-block">
+    
+
+
+
+
+<div class="media">
+    <figure class="media-left" aria-hidden="true">
+        <a class="image is-48x48" href="/user/wesleyac" tabindex="-1">
+            
+
+<img class="avatar image is-48x48" src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg" aria-hidden="true" alt="avatar for wesleyac" loading="lazy" decoding="async">
+
+        </a>
+    </figure>
+
+    <div class="media-content">
+        <h3 class="has-text-weight-bold">
+            <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+                
+                    <meta itemprop="image" content="/images/avatars/4038bb3b-fa7e-4be7-b125-69db63d94ebf.jpg">
+                
+
+                <a href="/user/wesleyac" itemprop="url">
+                    <span itemprop="name">Wesley Aptekar-Cassels</span>
+                </a>
+            </span>
+
+            reviewed <a href="/book/1442774/s/the-children-of-the-morning-light">The Children of the Morning Light</a> by <a href="/author/261557/s/medicine-story">Medicine Story.</a>
+
+        </h3>
+        <div class="breadcrumb has-dot-separator is-small">
+            <ul class="is-flex is-align-items-center">
+                <li>
+                    <a href="https://bookwyrm.social/user/wesleyac/review/2938293#anchor-2938293">
+                        Nov 2
+                    </a>
+                </li>
+
+                
+
+                
+
+                <li>
+                
+
+<span class="icon icon-globe" title="Public">
+    <span class="is-sr-only">Public</span>
+</span>
+
+
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+
+    </header>
+
+    
+    <section class="card-content">
+        
+
+
+
+    
+
+
+
+
+
+
+
+    <div class="columns is-gapless">
+        
+
+        <article class="column ml-3-tablet my-3-mobile is-clipped">
+            
+            <header class="mb-2">
+                <h3 class="title is-5 has-subtitle" dir="auto" itemprop="name">
+                    The Children of the Morning Light
+                </h3>
+
+                <h4 class="subtitle is-6">
+                    <span class="is-hidden" itemprop="reviewRating" itemscope="" itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="3.5">
+                    </span>
+                    <span class="stars"><span class="is-sr-only">
+            4 stars
+        </span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-full
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-half
+                " aria-hidden="true"></span><span class="
+                    icon is-small mr-1
+                    icon-star-empty
+                " aria-hidden="true"></span></span>
+
+                </h4>
+            </header>
+            
+
+            
+
+            <div>
+                
+
+                
+                    
+                        
+
+
+
+
+
+    
+        
+            
+                
+                    <div class="content">
+                        <div dir="auto" class="preserve-whitespace" itemprop="reviewBody">
+                            <p>I'm surprised at how similar so many creation stories are. I wonder how much of that is a result of folk stories subtly changing to fit with the pressures of Christian missionaries — probably some, but I suspect there is also a inherent sameness in many creation stories.</p>
+<p>I quite liked the story of Grandfather Sun spending less and less time in the sky because people weren't friendly or grateful with him, that will definitely stick in my memory.</p>
+<p>I am grateful for this book, but I do wish it included more stories and talked a little more about the history of the stories. I can understand why it doesn't, though.</p>
+                        </div>
+                    </div>
+                
+            
+        
+    
+
+
+                    
+                
+
+                
+
+                
+            </div>
+        </article>
+    </div>
+
+
+
+
+
+
+
+    </section>
+    
+
+    <footer class="card-footer has-background-tertiary">
+        
+
+
+    <div class="card-footer-item">
+        <a href="/login">
+            <span class="icon icon-comment is-small" title="Reply">
+                <span class="is-sr-only">Reply</span>
+            </span>
+
+            <span class="icon icon-boost is-small ml-4" title="Boost status">
+                <span class="is-sr-only">Boost status</span>
+            </span>
+
+            <span class="icon icon-heart is-small ml-4" title="Like status">
+                <span class="is-sr-only">Like status</span>
+            </span>
+        </a>
+    </div>
+
+
+
+    </footer>
+
+    
+
+
+</article>
+
+    
+
+
+                    </div>
+                
+
+                
+                <div class="block">
+                    
+<nav class="pagination is-centered" aria-label="pagination">
+    <a class="pagination-previous is-disabled" aria-hidden="true">
+
+        <span class="icon icon-arrow-left" aria-hidden="true"></span>
+        
+        Previous
+        
+    </a>
+
+    <a class="pagination-next is-disabled" aria-hidden="true">
+
+        
+        Next
+        
+        <span class="icon icon-arrow-right" aria-hidden="true"></span>
+    </a>
+
+    
+</nav>
+
+                </div>
+            </div>
+        </div>
+        <div class="column is-one-fifth is-clipped">
+            
+                <section class="content block">
+                    <h2 class="title is-5">Subjects</h2>
+
+                    <ul>
+                        
+                            <li itemprop="about">Wampanoag Indians -- Folklore.</li>
+                        
+                            <li itemprop="about">Wampanoag mythology.</li>
+                        
+                            <li itemprop="about">Wampanoag Indians -- Folklore.</li>
+                        
+                            <li itemprop="about">Indians of North America -- Massachusetts -- Folklore.</li>
+                        
+                            <li itemprop="about">Creation -- Folklore.</li>
+                        
+                    </ul>
+                </section>
+            
+
+            
+
+            
+
+            <section class="content block" id="tour-book-file-links">
+                
+
+
+
+
+
+
+            </section>
+        </div>
+    </div>
+
+</div>
+
+
+            
+        
+    </div>
+</main>
+
+<div role="region" aria-live="polite" id="live-messages">
+    <p id="status-success-message" class="live-message is-sr-only is-hidden">Successfully posted status</p>
+    <p id="status-error-message" class="live-message notification is-danger p-3 pr-5 pl-5 is-hidden">Error posting status</p>
+</div>
+
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-2">
+                <p>
+                    <a href="/about">About BookWyrm</a>
+                </p>
+                
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Contact site admin</a>
+                </p>
+                
+                <p>
+                    <a href="https://docs.joinbookwyrm.com/">Documentation</a>
+                </p>
+                
+            </div>
+            <div class="column is-2">
+                <p>
+                    <a href="/conduct">Code of Conduct</a>
+                </p>
+                <p>
+                    <a href="/privacy">Privacy Policy</a>
+                </p>
+                
+            </div>
+            <div class="column content">
+                
+                <p>
+                    <span class="icon icon-heart"></span>
+                    Support BookWyrm on <a href="https://www.patreon.com/bookwyrm" target="_blank" rel="nofollow noopener noreferrer">Patreon</a>
+                </p>
+                
+                <p>
+                BookWyrm's source code is freely available. You can contribute or report issues on <a href="https://github.com/bookwyrm-social/bookwyrm" target="_blank" rel="nofollow noopener noreferrer">GitHub</a>.
+                </p>
+            </div>
+            
+            <div class="column is-4">
+                <p>BookWyrm is managed from the unceded ancestral homeland of the <a href="https://www.ramaytush.org/" target="_blank" rel="nofollow noopener noreferrer">Ramaytush Ohlone</a> peoples, the original inhabitants of the San Francisco Peninsula. A portion of the proceeds go towards the <a href="https://www.ramaytush.org/donate.html" target="_blank" rel="nofollow noopener noreferrer"><em> Yunakin</em> land tax</a>.</p>
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+
+<script nonce="">
+    var csrf_token = '2Xe0b7QXqBe8DxraxRqx0G5krpEVUw83gcdv1RSuTMYEYWweacqZXbkGufyWPmp4';
+</script>
+
+<script src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/static/js/bookwyrm.js?v=8a89cad7"></script>
+<script src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/static/js/localstorage.js?v=8a89cad7"></script>
+<script src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/static/js/status_cache.js?v=8a89cad7"></script>
+<script src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/static/js/vendor/quagga.min.js?v=8a89cad7"></script>
+<script src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/static/js/vendor/shepherd.min.js?v=8a89cad7"></script>
+<script src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/static/js/guided_tour.js?v=8a89cad7"></script>
+
+
+<script src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/static/js/tabs.js?v=8a89cad7"></script>
+<script src="https://bookwyrm-social.sfo3.digitaloceanspaces.com/static/js/autocomplete.js?v=8a89cad7"></script>
+
+
+
+
+
+</body></html>
