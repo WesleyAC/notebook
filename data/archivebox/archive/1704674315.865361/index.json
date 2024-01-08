@@ -1,0 +1,226 @@
+{
+    "archive_path": "archive/1704674315.865361",
+    "base_url": "www.serendiep.nl/en/ship",
+    "basename": "ship",
+    "bookmarked_date": "2024-01-08 00:38",
+    "canonical": {
+        "archive_org_path": "https://web.archive.org/web/www.serendiep.nl/en/ship",
+        "dom_path": "output.html",
+        "favicon_path": "favicon.ico",
+        "git_path": "git/",
+        "google_favicon_path": "https://www.google.com/s2/favicons?domain=www.serendiep.nl",
+        "headers_path": "headers.json",
+        "index_path": "index.html",
+        "media_path": "media/",
+        "mercury_path": "mercury/content.html",
+        "pdf_path": "output.pdf",
+        "readability_path": "readability/content.html",
+        "screenshot_path": "screenshot.png",
+        "singlefile_path": "singlefile.html",
+        "warc_path": "warc/",
+        "wget_path": null
+    },
+    "domain": "www.serendiep.nl",
+    "extension": "",
+    "hash": "YSB0DC7TM2MAWYDN361M",
+    "history": {
+        "archive_org": [
+            {
+                "cmd": [
+                    "curl",
+                    "--silent",
+                    "--location",
+                    "--compressed",
+                    "--head",
+                    "--max-time",
+                    "90",
+                    "--user-agent",
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/0.6.2 (+https://github.com/ArchiveBox/ArchiveBox/) curl/curl 7.76.1 (x86_64-pc-linux-gnu)",
+                    "https://web.archive.org/save/https://www.serendiep.nl/en/ship"
+                ],
+                "cmd_version": "curl 7.76.1 (x86_64-pc-linux-gnu)",
+                "end_ts": "2024-01-08T00:45:17.549917+00:00",
+                "index_texts": null,
+                "output": "https://web.archive.org/web/20240108004501/https://www.serendiep.nl/en/ship",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704674315.865361",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:43:58.323847+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "dom": [
+            {
+                "cmd": [
+                    "chromium-browser",
+                    "--headless",
+                    "--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/{VERSION} (+https://github.com/ArchiveBox/ArchiveBox/)",
+                    "--window-size=1440,2000",
+                    "--timeout=90000",
+                    "--dump-dom",
+                    "https://www.serendiep.nl/en/ship"
+                ],
+                "cmd_version": "Chromium 120.0.6099.109",
+                "end_ts": "2024-01-08T00:43:58.305435+00:00",
+                "index_texts": null,
+                "output": "output.html",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704674315.865361",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:43:55.803440+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "favicon": [
+            {
+                "cmd": [
+                    "curl",
+                    "--silent",
+                    "--location",
+                    "--compressed",
+                    "--max-time",
+                    "90",
+                    "--output",
+                    "favicon.ico",
+                    "--user-agent",
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/0.6.2 (+https://github.com/ArchiveBox/ArchiveBox/) curl/curl 7.76.1 (x86_64-pc-linux-gnu)",
+                    "https://www.google.com/s2/favicons?domain=www.serendiep.nl"
+                ],
+                "cmd_version": "curl 7.76.1 (x86_64-pc-linux-gnu)",
+                "end_ts": "2024-01-08T00:43:42.490743+00:00",
+                "index_texts": null,
+                "output": "favicon.ico",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704674315.865361",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:43:42.060654+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "git": [],
+        "headers": [
+            {
+                "cmd": [
+                    "curl",
+                    "--silent",
+                    "--location",
+                    "--compressed",
+                    "--head",
+                    "--max-time",
+                    "90",
+                    "--user-agent",
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/0.6.2 (+https://github.com/ArchiveBox/ArchiveBox/) curl/curl 7.76.1 (x86_64-pc-linux-gnu)",
+                    "https://www.serendiep.nl/en/ship"
+                ],
+                "cmd_version": "curl 7.76.1 (x86_64-pc-linux-gnu)",
+                "end_ts": "2024-01-08T00:43:43.524680+00:00",
+                "index_texts": null,
+                "output": "headers.json",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704674315.865361",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:43:42.529935+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "media": [],
+        "mercury": [],
+        "pdf": [],
+        "readability": [],
+        "screenshot": [
+            {
+                "cmd": [
+                    "chromium-browser",
+                    "--headless",
+                    "--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/{VERSION} (+https://github.com/ArchiveBox/ArchiveBox/)",
+                    "--window-size=1440,2000",
+                    "--timeout=90000",
+                    "--screenshot",
+                    "https://www.serendiep.nl/en/ship"
+                ],
+                "cmd_version": "Chromium 120.0.6099.109",
+                "end_ts": "2024-01-08T00:43:55.769473+00:00",
+                "index_texts": null,
+                "output": "screenshot.png",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704674315.865361",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:43:52.696295+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "singlefile": [
+            {
+                "cmd": [
+                    "/home/wesleyac/code/notebook/data/archivebox/node_modules/single-file/cli/single-file",
+                    "--browser-executable-path=chromium-browser",
+                    "--browser-args=[\"--headless\", \"--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/{VERSION} (+https://github.com/ArchiveBox/ArchiveBox/)\", \"--window-size=1440,2000\"]",
+                    "https://www.serendiep.nl/en/ship",
+                    "singlefile.html"
+                ],
+                "cmd_version": "0.3.31",
+                "end_ts": "2024-01-08T00:43:52.678079+00:00",
+                "index_texts": null,
+                "output": "singlefile.html",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704674315.865361",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:43:43.561942+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "title": [
+            {
+                "cmd": [
+                    "curl",
+                    "--silent",
+                    "--location",
+                    "--compressed",
+                    "--max-time",
+                    "90",
+                    "--user-agent",
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/0.6.2 (+https://github.com/ArchiveBox/ArchiveBox/) curl/curl 7.76.1 (x86_64-pc-linux-gnu)",
+                    "https://www.serendiep.nl/en/ship"
+                ],
+                "cmd_version": "curl 7.76.1 (x86_64-pc-linux-gnu)",
+                "end_ts": "2024-01-08T00:43:42.040527+00:00",
+                "index_texts": null,
+                "output": "Serendiep",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704674315.865361",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:43:41.262210+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "wget": []
+    },
+    "icons": null,
+    "is_archived": true,
+    "is_static": false,
+    "latest": {
+        "archive_org": "https://web.archive.org/web/20240108004501/https://www.serendiep.nl/en/ship",
+        "dom": "output.html",
+        "favicon": "favicon.ico",
+        "git": null,
+        "media": null,
+        "pdf": null,
+        "screenshot": "screenshot.png",
+        "singlefile": "singlefile.html",
+        "title": "Serendiep",
+        "warc": null,
+        "wget": null
+    },
+    "link_dir": "/home/wesleyac/code/notebook/data/archivebox/archive/1704674315.865361",
+    "newest_archive_date": "2024-01-08T00:43:58.323847+00:00",
+    "num_failures": 0,
+    "num_outputs": 7,
+    "oldest_archive_date": "2024-01-08T00:43:41.262210+00:00",
+    "path": "/en/ship",
+    "schema": "Link",
+    "scheme": "https",
+    "snapshot_id": "57cd0083-88ef-4357-a8d9-046324c83d4d",
+    "sources": [
+        "/home/wesleyac/code/notebook/data/archivebox/sources/1704674315-import.txt"
+    ],
+    "tags": null,
+    "tags_str": "",
+    "timestamp": "1704674315.865361",
+    "title": "Serendiep",
+    "updated": "2024-01-08T00:43:41.260398+00:00",
+    "updated_date": "2024-01-08 00:43",
+    "url": "https://www.serendiep.nl/en/ship"
+}

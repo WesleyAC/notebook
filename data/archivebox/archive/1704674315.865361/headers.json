@@ -1,0 +1,8 @@
+{
+    "Status-Code": 200,
+    "Date": "Mon, 08 Jan 2024 00:43:43 GMT",
+    "Server": "Apache/2.4.25 (Debian) mod_fcgid/2.3.9 OpenSSL/1.0.2u",
+    "Set-Cookie": "hyphaCsrfTokenSecure=3ccafa57eb2c0d52; path=/; secure; HttpOnly",
+    "Connection": "close",
+    "Content-Type": "text/html; charset=utf-8"
+}

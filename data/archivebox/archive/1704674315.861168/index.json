@@ -1,0 +1,226 @@
+{
+    "archive_path": "archive/1704674315.861168",
+    "base_url": "zlibrary-global.se",
+    "basename": "",
+    "bookmarked_date": "2024-01-08 00:38",
+    "canonical": {
+        "archive_org_path": "https://web.archive.org/web/zlibrary-global.se",
+        "dom_path": "output.html",
+        "favicon_path": "favicon.ico",
+        "git_path": "git/",
+        "google_favicon_path": "https://www.google.com/s2/favicons?domain=zlibrary-global.se",
+        "headers_path": "headers.json",
+        "index_path": "index.html",
+        "media_path": "media/",
+        "mercury_path": "mercury/content.html",
+        "pdf_path": "output.pdf",
+        "readability_path": "readability/content.html",
+        "screenshot_path": "screenshot.png",
+        "singlefile_path": "singlefile.html",
+        "warc_path": "warc/",
+        "wget_path": null
+    },
+    "domain": "zlibrary-global.se",
+    "extension": "",
+    "hash": "DJGX7Q11K0PQMQ5RHM81",
+    "history": {
+        "archive_org": [
+            {
+                "cmd": [
+                    "curl",
+                    "--silent",
+                    "--location",
+                    "--compressed",
+                    "--head",
+                    "--max-time",
+                    "90",
+                    "--user-agent",
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/0.6.2 (+https://github.com/ArchiveBox/ArchiveBox/) curl/curl 7.76.1 (x86_64-pc-linux-gnu)",
+                    "https://web.archive.org/save/https://zlibrary-global.se/"
+                ],
+                "cmd_version": "curl 7.76.1 (x86_64-pc-linux-gnu)",
+                "end_ts": "2024-01-08T00:43:41.154220+00:00",
+                "index_texts": null,
+                "output": "https://web.archive.org/web/20240108004323/https://zlibrary-global.se/",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704674315.861168",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:42:15.962743+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "dom": [
+            {
+                "cmd": [
+                    "chromium-browser",
+                    "--headless",
+                    "--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/{VERSION} (+https://github.com/ArchiveBox/ArchiveBox/)",
+                    "--window-size=1440,2000",
+                    "--timeout=90000",
+                    "--dump-dom",
+                    "https://zlibrary-global.se/"
+                ],
+                "cmd_version": "Chromium 120.0.6099.109",
+                "end_ts": "2024-01-08T00:42:15.948483+00:00",
+                "index_texts": null,
+                "output": "output.html",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704674315.861168",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:42:12.280703+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "favicon": [
+            {
+                "cmd": [
+                    "curl",
+                    "--silent",
+                    "--location",
+                    "--compressed",
+                    "--max-time",
+                    "90",
+                    "--output",
+                    "favicon.ico",
+                    "--user-agent",
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/0.6.2 (+https://github.com/ArchiveBox/ArchiveBox/) curl/curl 7.76.1 (x86_64-pc-linux-gnu)",
+                    "https://www.google.com/s2/favicons?domain=zlibrary-global.se"
+                ],
+                "cmd_version": "curl 7.76.1 (x86_64-pc-linux-gnu)",
+                "end_ts": "2024-01-08T00:41:57.008458+00:00",
+                "index_texts": null,
+                "output": "favicon.ico",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704674315.861168",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:41:56.747397+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "git": [],
+        "headers": [
+            {
+                "cmd": [
+                    "curl",
+                    "--silent",
+                    "--location",
+                    "--compressed",
+                    "--head",
+                    "--max-time",
+                    "90",
+                    "--user-agent",
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/0.6.2 (+https://github.com/ArchiveBox/ArchiveBox/) curl/curl 7.76.1 (x86_64-pc-linux-gnu)",
+                    "https://zlibrary-global.se/"
+                ],
+                "cmd_version": "curl 7.76.1 (x86_64-pc-linux-gnu)",
+                "end_ts": "2024-01-08T00:41:57.384886+00:00",
+                "index_texts": null,
+                "output": "headers.json",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704674315.861168",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:41:57.037412+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "media": [],
+        "mercury": [],
+        "pdf": [],
+        "readability": [],
+        "screenshot": [
+            {
+                "cmd": [
+                    "chromium-browser",
+                    "--headless",
+                    "--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/{VERSION} (+https://github.com/ArchiveBox/ArchiveBox/)",
+                    "--window-size=1440,2000",
+                    "--timeout=90000",
+                    "--screenshot",
+                    "https://zlibrary-global.se/"
+                ],
+                "cmd_version": "Chromium 120.0.6099.109",
+                "end_ts": "2024-01-08T00:42:12.250066+00:00",
+                "index_texts": null,
+                "output": "screenshot.png",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704674315.861168",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:42:07.451231+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "singlefile": [
+            {
+                "cmd": [
+                    "/home/wesleyac/code/notebook/data/archivebox/node_modules/single-file/cli/single-file",
+                    "--browser-executable-path=chromium-browser",
+                    "--browser-args=[\"--headless\", \"--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/{VERSION} (+https://github.com/ArchiveBox/ArchiveBox/)\", \"--window-size=1440,2000\"]",
+                    "https://zlibrary-global.se/",
+                    "singlefile.html"
+                ],
+                "cmd_version": "0.3.31",
+                "end_ts": "2024-01-08T00:42:07.434416+00:00",
+                "index_texts": null,
+                "output": "singlefile.html",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704674315.861168",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:41:57.413709+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "title": [
+            {
+                "cmd": [
+                    "curl",
+                    "--silent",
+                    "--location",
+                    "--compressed",
+                    "--max-time",
+                    "90",
+                    "--user-agent",
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/0.6.2 (+https://github.com/ArchiveBox/ArchiveBox/) curl/curl 7.76.1 (x86_64-pc-linux-gnu)",
+                    "https://zlibrary-global.se/"
+                ],
+                "cmd_version": "curl 7.76.1 (x86_64-pc-linux-gnu)",
+                "end_ts": "2024-01-08T00:41:56.734534+00:00",
+                "index_texts": null,
+                "output": "Z-Library \u2013 the world\u2019s largest e-book library. Your gateway to knowledge and culture.",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704674315.861168",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:41:56.088244+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "wget": []
+    },
+    "icons": null,
+    "is_archived": true,
+    "is_static": false,
+    "latest": {
+        "archive_org": "https://web.archive.org/web/20240108004323/https://zlibrary-global.se/",
+        "dom": "output.html",
+        "favicon": "favicon.ico",
+        "git": null,
+        "media": null,
+        "pdf": null,
+        "screenshot": "screenshot.png",
+        "singlefile": "singlefile.html",
+        "title": "Z-Library \u2013 the world\u2019s largest e-book library. Your gateway to knowledge and culture.",
+        "warc": null,
+        "wget": null
+    },
+    "link_dir": "/home/wesleyac/code/notebook/data/archivebox/archive/1704674315.861168",
+    "newest_archive_date": "2024-01-08T00:42:15.962743+00:00",
+    "num_failures": 0,
+    "num_outputs": 7,
+    "oldest_archive_date": "2024-01-08T00:41:56.088244+00:00",
+    "path": "/",
+    "schema": "Link",
+    "scheme": "https",
+    "snapshot_id": "e6826926-2262-4732-b295-17f29ba0e1fb",
+    "sources": [
+        "/home/wesleyac/code/notebook/data/archivebox/sources/1704674315-import.txt"
+    ],
+    "tags": null,
+    "tags_str": "",
+    "timestamp": "1704674315.861168",
+    "title": "Z-Library \u2013 the world\u2019s largest e-book library. Your gateway to knowledge and culture.",
+    "updated": "2024-01-08T00:41:56.086670+00:00",
+    "updated_date": "2024-01-08 00:41",
+    "url": "https://zlibrary-global.se/"
+}

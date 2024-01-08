@@ -1,0 +1,226 @@
+{
+    "archive_path": "archive/1704674315.865216",
+    "base_url": "www.are.na/laurel-schwulst/fix-my-life-season-1",
+    "basename": "fix-my-life-season-1",
+    "bookmarked_date": "2024-01-08 00:38",
+    "canonical": {
+        "archive_org_path": "https://web.archive.org/web/www.are.na/laurel-schwulst/fix-my-life-season-1",
+        "dom_path": "output.html",
+        "favicon_path": "favicon.ico",
+        "git_path": "git/",
+        "google_favicon_path": "https://www.google.com/s2/favicons?domain=www.are.na",
+        "headers_path": "headers.json",
+        "index_path": "index.html",
+        "media_path": "media/",
+        "mercury_path": "mercury/content.html",
+        "pdf_path": "output.pdf",
+        "readability_path": "readability/content.html",
+        "screenshot_path": "screenshot.png",
+        "singlefile_path": "singlefile.html",
+        "warc_path": "warc/",
+        "wget_path": null
+    },
+    "domain": "www.are.na",
+    "extension": "",
+    "hash": "1FTMBMHQQ7V99TS5X6H9",
+    "history": {
+        "archive_org": [
+            {
+                "cmd": [
+                    "curl",
+                    "--silent",
+                    "--location",
+                    "--compressed",
+                    "--head",
+                    "--max-time",
+                    "90",
+                    "--user-agent",
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/0.6.2 (+https://github.com/ArchiveBox/ArchiveBox/) curl/curl 7.76.1 (x86_64-pc-linux-gnu)",
+                    "https://web.archive.org/save/https://www.are.na/laurel-schwulst/fix-my-life-season-1"
+                ],
+                "cmd_version": "curl 7.76.1 (x86_64-pc-linux-gnu)",
+                "end_ts": "2024-01-08T00:46:04.875527+00:00",
+                "index_texts": null,
+                "output": "https://web.archive.org/web/20240108004544/https://www.are.na/laurel-schwulst/fix-my-life-season-1",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704674315.865216",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:45:33.158540+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "dom": [
+            {
+                "cmd": [
+                    "chromium-browser",
+                    "--headless",
+                    "--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/{VERSION} (+https://github.com/ArchiveBox/ArchiveBox/)",
+                    "--window-size=1440,2000",
+                    "--timeout=90000",
+                    "--dump-dom",
+                    "https://www.are.na/laurel-schwulst/fix-my-life-season-1"
+                ],
+                "cmd_version": "Chromium 120.0.6099.109",
+                "end_ts": "2024-01-08T00:45:33.129900+00:00",
+                "index_texts": null,
+                "output": "output.html",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704674315.865216",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:45:31.753645+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "favicon": [
+            {
+                "cmd": [
+                    "curl",
+                    "--silent",
+                    "--location",
+                    "--compressed",
+                    "--max-time",
+                    "90",
+                    "--output",
+                    "favicon.ico",
+                    "--user-agent",
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/0.6.2 (+https://github.com/ArchiveBox/ArchiveBox/) curl/curl 7.76.1 (x86_64-pc-linux-gnu)",
+                    "https://www.google.com/s2/favicons?domain=www.are.na"
+                ],
+                "cmd_version": "curl 7.76.1 (x86_64-pc-linux-gnu)",
+                "end_ts": "2024-01-08T00:45:18.598225+00:00",
+                "index_texts": null,
+                "output": "favicon.ico",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704674315.865216",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:45:18.228958+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "git": [],
+        "headers": [
+            {
+                "cmd": [
+                    "curl",
+                    "--silent",
+                    "--location",
+                    "--compressed",
+                    "--head",
+                    "--max-time",
+                    "90",
+                    "--user-agent",
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/0.6.2 (+https://github.com/ArchiveBox/ArchiveBox/) curl/curl 7.76.1 (x86_64-pc-linux-gnu)",
+                    "https://www.are.na/laurel-schwulst/fix-my-life-season-1"
+                ],
+                "cmd_version": "curl 7.76.1 (x86_64-pc-linux-gnu)",
+                "end_ts": "2024-01-08T00:45:19.567135+00:00",
+                "index_texts": null,
+                "output": "headers.json",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704674315.865216",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:45:18.615141+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "media": [],
+        "mercury": [],
+        "pdf": [],
+        "readability": [],
+        "screenshot": [
+            {
+                "cmd": [
+                    "chromium-browser",
+                    "--headless",
+                    "--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/{VERSION} (+https://github.com/ArchiveBox/ArchiveBox/)",
+                    "--window-size=1440,2000",
+                    "--timeout=90000",
+                    "--screenshot",
+                    "https://www.are.na/laurel-schwulst/fix-my-life-season-1"
+                ],
+                "cmd_version": "Chromium 120.0.6099.109",
+                "end_ts": "2024-01-08T00:45:31.734967+00:00",
+                "index_texts": null,
+                "output": "screenshot.png",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704674315.865216",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:45:30.121696+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "singlefile": [
+            {
+                "cmd": [
+                    "/home/wesleyac/code/notebook/data/archivebox/node_modules/single-file/cli/single-file",
+                    "--browser-executable-path=chromium-browser",
+                    "--browser-args=[\"--headless\", \"--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/{VERSION} (+https://github.com/ArchiveBox/ArchiveBox/)\", \"--window-size=1440,2000\"]",
+                    "https://www.are.na/laurel-schwulst/fix-my-life-season-1",
+                    "singlefile.html"
+                ],
+                "cmd_version": "0.3.31",
+                "end_ts": "2024-01-08T00:45:30.108042+00:00",
+                "index_texts": null,
+                "output": "singlefile.html",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704674315.865216",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:45:19.608288+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "title": [
+            {
+                "cmd": [
+                    "curl",
+                    "--silent",
+                    "--location",
+                    "--compressed",
+                    "--max-time",
+                    "90",
+                    "--user-agent",
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/0.6.2 (+https://github.com/ArchiveBox/ArchiveBox/) curl/curl 7.76.1 (x86_64-pc-linux-gnu)",
+                    "https://www.are.na/laurel-schwulst/fix-my-life-season-1"
+                ],
+                "cmd_version": "curl 7.76.1 (x86_64-pc-linux-gnu)",
+                "end_ts": "2024-01-08T00:45:18.210034+00:00",
+                "index_texts": null,
+                "output": "Fix My Life Season 1 \u2014 Are.na",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1704674315.865216",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-01-08T00:45:17.666619+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "wget": []
+    },
+    "icons": null,
+    "is_archived": true,
+    "is_static": false,
+    "latest": {
+        "archive_org": "https://web.archive.org/web/20240108004544/https://www.are.na/laurel-schwulst/fix-my-life-season-1",
+        "dom": "output.html",
+        "favicon": "favicon.ico",
+        "git": null,
+        "media": null,
+        "pdf": null,
+        "screenshot": "screenshot.png",
+        "singlefile": "singlefile.html",
+        "title": "Fix My Life Season 1 \u2014 Are.na",
+        "warc": null,
+        "wget": null
+    },
+    "link_dir": "/home/wesleyac/code/notebook/data/archivebox/archive/1704674315.865216",
+    "newest_archive_date": "2024-01-08T00:45:33.158540+00:00",
+    "num_failures": 0,
+    "num_outputs": 7,
+    "oldest_archive_date": "2024-01-08T00:45:17.666619+00:00",
+    "path": "/laurel-schwulst/fix-my-life-season-1",
+    "schema": "Link",
+    "scheme": "https",
+    "snapshot_id": "b364af07-5dcf-4d25-b201-bb825eb72cea",
+    "sources": [
+        "/home/wesleyac/code/notebook/data/archivebox/sources/1704674315-import.txt"
+    ],
+    "tags": null,
+    "tags_str": "",
+    "timestamp": "1704674315.865216",
+    "title": "Fix My Life Season 1 \u2014 Are.na",
+    "updated": "2024-01-08T00:45:17.664076+00:00",
+    "updated_date": "2024-01-08 00:45",
+    "url": "https://www.are.na/laurel-schwulst/fix-my-life-season-1"
+}

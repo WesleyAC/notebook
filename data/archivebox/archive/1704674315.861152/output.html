@@ -1,0 +1,987 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Steal This Book - Anna’s Archive</title>
+    <link rel="stylesheet" href="/css/app.css?hash=689290fb6a36e3b3e54d">
+    <script defer="" src="/js/app.js?hash=3839d9e11d55f359f5ad"></script>
+  <meta name="description" content="Abbie Hofman">
+    <meta name="twitter:card" value="summary">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?hash=d2fa3410fb1ae23ef0ab">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?hash=989ac03e6b8daade6d2d">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?hash=33f085d3acf9176b18df">
+    <link rel="manifest" href="/site.webmanifest?hash=076af9a96b0bfbd668cd">
+    <link rel="search" href="/content-search.xml" type="application/opensearchdescription+xml" title="Search Anna’s Archive">
+    <script>
+      window.globalUpdateAaLoggedIn = function(aa_logged_in) {
+        localStorage['aa_logged_in'] = aa_logged_in;
+        if (localStorage['aa_logged_in'] === '1') {
+          document.documentElement.classList.add("aa-logged-in");
+        } else {
+          document.documentElement.classList.remove("aa-logged-in");
+        }
+      }
+      window.globalUpdateAaLoggedIn(localStorage['aa_logged_in'] || 0);
+
+      // Focus search field when pressing "/".
+      document.addEventListener("keydown", e => {
+        if (e.key !== "/" || e.ctrlKey || e.metaKey || e.altKey) return;
+        if (/^(?:input|textarea|select|button)$/i.test(e.target.tagName)) return;
+        e.preventDefault();
+        const fields = document.querySelectorAll('.js-slash-focus');
+        const field = fields[fields.length - 1];
+        if (field) {
+          field.select();
+          field.scrollIntoView({ block: "center", inline: "center" });
+        }
+      });
+    </script>
+  <style id="plotly.js-style-global"></style></head>
+  <body>
+    <script>
+      (function() {
+        if (location.hostname.includes('localhost')) {
+          location.hostname = location.hostname.replace('localhost', 'localtest.me');
+          return;
+        }
+
+        var langCodes = ["ar", "be", "bg", "bn", "ca", "cs", "de", "el", "en", "eo", "es", "fa", "fr", "gl", "he", "hi", "hu", "id", "it", "ja", "ko", "lt", "ml", "ms", "ne", "nl", "no", "or", "pl", "pt", "ro", "ru", "sk", "sl", "sq", "sr", "sv", "tr", "tw", "uk", "ur", "vi", "zh", ];
+
+        var domainPosition = 0;
+        var potentialSubDomainLangCode = location.hostname.split(".")[0];
+        var subDomainLangCode = 'en';
+        if (langCodes.includes(potentialSubDomainLangCode) || potentialSubDomainLangCode === 'www') {
+          domainPosition = potentialSubDomainLangCode.length + 1;
+          if (potentialSubDomainLangCode !== 'www') {
+            subDomainLangCode = potentialSubDomainLangCode;
+          }
+        }
+
+        window.baseDomain = location.hostname.substring(domainPosition);
+
+        function setLangCookie(langCode) {
+          if (!langCodes.includes(langCode)) {
+            return;
+          }
+          document.cookie = 'selected_lang=' + langCode + ';path=/;expires=Fri, 31 Dec 9999 23:59:59 GMT;domain=' + window.baseDomain;
+        }
+
+        function redirectLang(langCode) {
+          if (!langCodes.includes(langCode)) {
+            return;
+          }
+          var prefix = '';
+          if (langCode != 'en') {
+            prefix = langCode + '.';
+          }
+          location.hostname = prefix + window.baseDomain;
+        }
+
+        window.handleChangeLang = function(event) {
+          const langCode = event.target.value;
+          setLangCookie(langCode);
+          redirectLang(langCode);
+        };
+
+        // Let's also (for now) not set a cookie when getting referred.
+        // {
+        //   // If our referrer was (likely) a different domain of our website (with the same lang code),
+        //   // then behave as if that lang code was set as a cookie all along.
+        //   if (document.referrer.includes("://" + subDomainLangCode + ".")) {
+        //     setLangCookie(subDomainLangCode);
+        //   }
+        // }
+
+        // Browser-based language detection is too unreliable.
+        // Disable for now.
+        // {
+        //   const cookieLangMatch = document.cookie.match(/selected_lang=([^$ ;}]+)/);
+        //   // If there's no cookie yet, let's try to set one.
+        //   if (!cookieLangMatch) {
+        //     // See if the user's browser language is one that we support directly.
+        //     for (const langCode of navigator.languages) {
+        //       let domainLangCode = langCode;
+        //       if (langCode.toLowerCase().includes("-hant") || langCode.toLowerCase().includes("-tw")) {
+        //         domainLangCode = "tw";
+        //       }
+
+        //       // Take the first language that we support.
+        //       if (langCodes.includes(domainLangCode)) {
+        //         setLangCookie(domainLangCode);
+        //         // Bail out so we don't redirect to a suboptimal language.
+        //         break;
+        //       }
+        //     }
+        //   }
+        // }
+
+        {
+          const cookieLangMatch = document.cookie.match(/selected_lang=([^$ ;}]+)/);
+          if (cookieLangMatch) {
+            // Refresh cookie with a new expiry, in case the browser has
+            // restricted it.
+            var explicitlyRequestedLangCode = cookieLangMatch[1];
+            setLangCookie(explicitlyRequestedLangCode);
+
+            // If a cookie is set, that we want to go to the language, so let's redirect.
+            if (explicitlyRequestedLangCode != subDomainLangCode) {
+              redirectLang(explicitlyRequestedLangCode);
+            }
+          }
+        }
+
+        window.submitForm = function(event, url, handler) {
+          event.preventDefault();
+
+          const currentTarget = event.currentTarget;
+          const fieldset = currentTarget.querySelector("fieldset");
+          currentTarget.querySelector(".js-failure").classList.add("hidden");
+
+          // Before disabling the fieldset.
+          fetch(url, { method: "PUT", body: new FormData(currentTarget) })
+            .then(function(response) {
+              if (!response.ok) { throw "error"; }
+              return response.json().then(function(jsonResponse) {
+                fieldset.classList.add("hidden");
+                currentTarget.querySelector(".js-success").classList.remove("hidden");
+                if (handler) {
+                  handler(jsonResponse);
+                }
+              });
+            })
+            .catch(function() {
+              fieldset.removeAttribute("disabled", "disabled");
+              fieldset.style.opacity = 1;
+              currentTarget.querySelector(".js-failure").classList.remove("hidden");
+            })
+            .finally(function() {
+              currentTarget.querySelector(".js-spinner").classList.add("invisible");
+            });
+
+          fieldset.setAttribute("disabled", "disabled");
+          fieldset.style.opacity = 0.5;
+          currentTarget.querySelector(".js-spinner").classList.remove("invisible");
+        };
+      })();
+    </script>
+      <div class="header" role="navigation">
+        <div>
+        <!-- <div class="[html:not(.aa-logged-in)_&]:hidden"> -->
+            <!-- blue -->
+            <!-- <div class="bg-[#0195ff] hidden js-top-banner">
+              <div class="max-w-[1050px] mx-auto px-4 py-2 text-[#fff] flex justify-between">
+                <div>
+                  🎄 <strong>Saving human knowledge: a great holiday gift!</strong> ❄️ Surprise a loved one, give them an account with membership. <a class="custom-a text-[#fff] hover:text-[#ddd] underline" href="/donate">Donate</a>
+                </div>
+                <div>
+                  <a href="#" class="custom-a ml-2 text-[#fff] hover:text-[#ddd] js-top-banner-close">✕</a>
+                </div>
+              </div>
+            </div> -->
+
+
+          <!-- blue -->
+          <!-- <div class="bg-[#0195ff] hidden js-top-banner">  -->
+          <!-- purple -->
+          <!-- <div class="bg-[#7f01ff] hidden js-top-banner">  -->
+          <!-- <div class="hidden js-top-banner text-xs sm:text-base [html:not(.aa-logged-in)_&]:hidden"> -->
+            <!-- <div>
+              We have a new donation method available: <strong>Paypal</strong>. Please consider <a href="/donate" class="custom-a text-[#fff] hover:text-[#ddd] underline">donating</a> — it’s not cheap running this website, and your donation truly makes a difference. Thank you so much.
+            </div> -->
+            <!-- <div>
+              We now have a <a class="custom-a text-[#fff] hover:text-[#ddd] underline" href="https://t.me/annasarchiveorg">Telegram</a> channel. Join us and discuss the future of Anna’s Archive.<br/>You can still also follow us on <a class="custom-a text-[#fff] hover:text-[#ddd] underline" href="https://www.reddit.com/r/Annas_Archive">Reddit</a>.
+            </div> -->
+            <!-- <div class="max-w-[1050px] mx-auto px-4 py-2">
+              <div class="flex justify-between mb-2">
+                <div>We’re running a fundraiser for <a href="https://annas-blog.org/backed-up-the-worlds-largest-comics-shadow-lib.html">backing up</a> the largest comics shadow library in the world. Thanks for your support! <a href="/donate">Donate.</a> If you can’t donate, consider supporting us by telling your friends, and following us on <a href="https://www.reddit.com/r/Annas_Archive">Reddit</a>, or <a href="https://t.me/annasarchiveorg">Telegram</a>.</div>
+                <div><a href="#" class="custom-a text-[#777] hover:text-black js-top-banner-close">✕</a></div>
+              </div>
+              <div style="background: #fff; padding: 8px; border-radius: 8px; box-shadow: 0px 2px 4px 0px #00000020">
+<div style="position: relative; height: 16px; margin-top: 8px;">
+  <div style="position: absolute; left: 0; right: 0; top: 0; bottom: 0; background: white; overflow: hidden; border-radius: 16px; box-shadow: 0px 2px 4px 0px #00000038">
+    <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 34%; background: #2cde1c"></div>
+  </div>
+  <div style="position: absolute; left: 34%; top: 50%; width: 16px; height: 16px; transform: translate(-50%, -50%)">
+    <div style="position: absolute; left: 0; top: 0; width: 16px; height: 16px; background: #2cde1c66; border-radius: 100%; animation: header-ping 1.5s cubic-bezier(0,0,.2,1) infinite"></div>
+    <div style="position: absolute; left: 0; top: 0; width: 16px; height: 16px; background: white; border-radius: 100%; box-shadow: 0 0 3px #00000069;"></div>
+  </div>
+</div>
+<div style="position: relative; padding-bottom: 8px">
+  <div style="width: 14px; height: 14px; border-left: 1px solid gray; border-bottom: 1px solid gray; position: absolute; top: 5px; left: calc(34% - 1px)"></div>
+  <div style="position: relative; left: calc(34% + 20px); width: calc(90% - 20px); top: 8px; font-size: 90%; color: #555">$6,840 / $20,000</div>
+</div>              </div>
+            </div> -->
+            <!-- <div class="max-w-[1050px] mx-auto px-4 py-2 text-[#fff] flex justify-between bg-[#0160a7]">
+              <div>
+                Do you know experts in <strong>anonymous merchant payments</strong>? Can you help us add more convenient ways to donate? PayPal, Alipay, credit cards, gift cards. Please contact us at <a class="custom-a text-[#fff] hover:text-[#ddd] underline break-all" href="mailto:AnnaArchivist@proton.me">AnnaArchivist@proton.me</a>.
+              </div>
+              <div>
+                <a href="#" class="custom-a text-[#fff] hover:text-[#ddd] js-top-banner-close">✕</a>
+              </div>
+            </div> -->
+            <!-- <div class="max-w-[1050px] mx-auto text-[#fff] bg-[#0160a7]">
+              <div class="flex justify-between">
+                <div class="px-4 py-2">
+                  New technical blog post: <a class="custom-a text-[#fff] hover:text-[#ddd] underline" href="https://annas-blog.org/annas-archive-containers.html">Anna’s Archive Containers (AAC): standardizing releases from the world’s largest shadow library</a>
+                </div>
+                <div class="px-4 py-2">
+                  <a href="#" class="custom-a text-[#fff] hover:text-[#ddd] js-top-banner-close">✕</a>
+                </div>
+              </div>
+              <div class="px-4 py-2 bg-green-500">
+                Do you know experts in <strong>anonymous merchant payments</strong>? Can you help us add more convenient ways to donate? PayPal, Alipay, credit cards, gift cards. Please contact us at <a class="custom-a text-[#fff] hover:text-[#ddd] underline break-all" href="mailto:AnnaArchivist@proton.me">AnnaArchivist@proton.me</a>.
+              </div>
+            </div> -->
+          <!-- </div> -->
+          <script>
+            (function() {
+              if (document.querySelector('.js-top-banner')) {
+                var latestTopBannerType = '8';
+                var topBannerMatch = document.cookie.match(/top_banner_hidden=([^$ ;}]+)/);
+                var topBannerType = '';
+                if (topBannerMatch) {
+                  topBannerType = topBannerMatch[1];
+                  // Refresh cookie.
+                  document.cookie = 'top_banner_hidden=' + topBannerType + ';path=/;expires=Fri, 31 Dec 9999 23:59:59 GMT';
+                }
+                if (topBannerType !== latestTopBannerType) {
+                  document.querySelector('.js-top-banner').style.display = 'block';
+                  document.querySelector('.js-top-banner-close').addEventListener('click', function(event) {
+                    document.querySelector('.js-top-banner').style.display = 'none';
+                    document.cookie = 'top_banner_hidden=' + latestTopBannerType + ';path=/;expires=Fri, 31 Dec 9999 23:59:59 GMT';
+                    event.preventDefault();
+                    return false;
+                  });
+                }
+              }
+            })();
+          </script>
+        </div>
+        <div class="header-inner">
+          <div class="header-inner-top">
+            <a href="/" class="custom-a text-black hover:text-[#444]"><h1 class="text-2xl sm:text-4xl">Anna’s Archive</h1></a>
+            <select class="text-lg bg-center icon-[twemoji--globe-with-meridians] py-1 rounded text-gray-500 max-w-[50px] mt-1 ml-2 appearance-none" style="width: 1.8em; height: 1.6em; background-color: white; background-size: 1em;" onchange="handleChangeLang(event)">
+              <option></option>
+                <option value="ar">العربية [ar]</option>
+                <option value="be">беларуская [be]</option>
+                <option value="bg">български [bg]</option>
+                <option value="bn">বাংলা [bn]</option>
+                <option value="ca">català [ca]</option>
+                <option value="cs">čeština [cs]</option>
+                <option value="de">Deutsch [de]</option>
+                <option value="el">Ελληνικά [el]</option>
+                <option value="en">English [en] ☑️</option>
+                <option value="eo">esperanto [eo]</option>
+                <option value="es">español [es]</option>
+                <option value="fa">فارسی [fa]</option>
+                <option value="fr">français [fr]</option>
+                <option value="gl">galego [gl]</option>
+                <option value="he">עברית [he]</option>
+                <option value="hi">हिन्दी [hi]</option>
+                <option value="hu">magyar [hu]</option>
+                <option value="id">Indonesia [id]</option>
+                <option value="it">italiano [it]</option>
+                <option value="ja">日本語 [ja]</option>
+                <option value="ko">한국어 [ko]</option>
+                <option value="lt">lietuvių [lt]</option>
+                <option value="ml">മലയാളം [ml]</option>
+                <option value="ms">Melayu [ms]</option>
+                <option value="ne">नेपाली [ne]</option>
+                <option value="nl">Nederlands [nl]</option>
+                <option value="no">norsk bokmål (Norge) [no]</option>
+                <option value="or">ଓଡ଼ିଆ [or]</option>
+                <option value="pl">polski [pl]</option>
+                <option value="pt">português [pt]</option>
+                <option value="ro">română [ro]</option>
+                <option value="ru">русский [ru]</option>
+                <option value="sk">slovenčina [sk]</option>
+                <option value="sl">slovenščina [sl]</option>
+                <option value="sq">shqip [sq]</option>
+                <option value="sr">српски [sr]</option>
+                <option value="sv">svenska [sv]</option>
+                <option value="tr">Türkçe [tr]</option>
+                <option value="tw">中文 (繁體) [tw]</option>
+                <option value="uk">українська [uk]</option>
+                <option value="ur">اردو [ur]</option>
+                <option value="vi">Tiếng Việt [vi]</option>
+                <option value="zh">中文 [zh]</option>
+            </select>
+          </div>
+
+          <div class="mb-1.5">
+            <div class="max-md:hidden">📚&nbsp;The largest truly open library in human history. ⭐️&nbsp;Mirrors Sci-Hub, LibGen, Z-Lib, and more. <br>📈&nbsp;25,530,302&nbsp;books, 99,425,822&nbsp;papers — preserved forever. <a class="text-xs" href="/about">Learn more…</a></div>
+            <div class="max-sm:hidden md:hidden">📚&nbsp;The largest truly open library in human history. ⭐️&nbsp;Mirrors Sci-Hub, LibGen, Z-Lib, and more. 📈&nbsp;25,530,302&nbsp;books, 99,425,822&nbsp;papers — preserved forever. <a class="text-xs" href="/about">Learn more…</a></div>
+            <div class="sm:hidden text-sm">📚&nbsp;The largest truly open library in human history. <br>⭐️&nbsp;Mirrors Sci-Hub, LibGen, Z-Lib, and more. <a class="text-xs" href="/about">Learn more…</a></div>
+          </div>
+
+          <div class="hidden sm:flex text-xs mb-1" aria-hidden="true">
+            <div class="font-bold shrink-0">Recent downloads:&nbsp;&nbsp;</div>
+            <div class="w-full overflow-hidden flex js-recent-downloads-scroll"><div class="shrink-0 min-w-full" style="animation: scroll 113s linear infinite"><span class="inline-block truncate">&nbsp;•&nbsp;</span><a tabindex="-1" href="/md5/b2e6ad3895577880d5a452b7982bbd48" class="inline-block max-w-[50%] truncate">O cérebro e a inteligência emocional</a><span class="inline-block truncate">&nbsp;•&nbsp;</span><a tabindex="-1" href="/md5/22bef178c2a3a7bd8c1f23061b57235c" class="inline-block max-w-[50%] truncate">A First Time for Pete: Sanderson Brothers Book 3 - A Gay Family Romance Series</a><span class="inline-block truncate">&nbsp;•&nbsp;</span><a tabindex="-1" href="/md5/977690e5e51b345c43cf63ef0c9d45ec" class="inline-block max-w-[50%] truncate">Data Analysis for Social Science: A Friendly And Practical Introduction</a><span class="inline-block truncate">&nbsp;•&nbsp;</span><a tabindex="-1" href="/md5/fefd65119cff9dc06399724b6c3cb8fa" class="inline-block max-w-[50%] truncate">国語・日本語の文法</a><span class="inline-block truncate">&nbsp;•&nbsp;</span><a tabindex="-1" href="/md5/84dca3b34ae09a58472e08b0f9012810" class="inline-block max-w-[50%] truncate">The Complete Book of Butchering, Smoking, Curing, and Sausage Making</a><span class="inline-block truncate">&nbsp;•&nbsp;</span><a tabindex="-1" href="/md5/c47120569283feee8889017a9244631f" class="inline-block max-w-[50%] truncate">Mental Toughness Training: How to be Emotionally Strong, Overcome Adversity and Start Controlling Your Life</a><span class="inline-block truncate">&nbsp;•&nbsp;</span><a tabindex="-1" href="/md5/015f62f7ae946f3d9495c59fe7fccb2a" class="inline-block max-w-[50%] truncate">101 things I learned in advertising school</a><span class="inline-block truncate">&nbsp;•&nbsp;</span><a tabindex="-1" href="/md5/a1d9705974fe0c9e67772c61ec8d92c8" class="inline-block max-w-[50%] truncate">The Lightening Thief</a></div><div class="shrink-0 min-w-full" style="animation: scroll 113s linear infinite"><span class="inline-block truncate">&nbsp;•&nbsp;</span><a tabindex="-1" href="/md5/b2e6ad3895577880d5a452b7982bbd48" class="inline-block max-w-[50%] truncate">O cérebro e a inteligência emocional</a><span class="inline-block truncate">&nbsp;•&nbsp;</span><a tabindex="-1" href="/md5/22bef178c2a3a7bd8c1f23061b57235c" class="inline-block max-w-[50%] truncate">A First Time for Pete: Sanderson Brothers Book 3 - A Gay Family Romance Series</a><span class="inline-block truncate">&nbsp;•&nbsp;</span><a tabindex="-1" href="/md5/977690e5e51b345c43cf63ef0c9d45ec" class="inline-block max-w-[50%] truncate">Data Analysis for Social Science: A Friendly And Practical Introduction</a><span class="inline-block truncate">&nbsp;•&nbsp;</span><a tabindex="-1" href="/md5/fefd65119cff9dc06399724b6c3cb8fa" class="inline-block max-w-[50%] truncate">国語・日本語の文法</a><span class="inline-block truncate">&nbsp;•&nbsp;</span><a tabindex="-1" href="/md5/84dca3b34ae09a58472e08b0f9012810" class="inline-block max-w-[50%] truncate">The Complete Book of Butchering, Smoking, Curing, and Sausage Making</a><span class="inline-block truncate">&nbsp;•&nbsp;</span><a tabindex="-1" href="/md5/c47120569283feee8889017a9244631f" class="inline-block max-w-[50%] truncate">Mental Toughness Training: How to be Emotionally Strong, Overcome Adversity and Start Controlling Your Life</a><span class="inline-block truncate">&nbsp;•&nbsp;</span><a tabindex="-1" href="/md5/015f62f7ae946f3d9495c59fe7fccb2a" class="inline-block max-w-[50%] truncate">101 things I learned in advertising school</a><span class="inline-block truncate">&nbsp;•&nbsp;</span><a tabindex="-1" href="/md5/a1d9705974fe0c9e67772c61ec8d92c8" class="inline-block max-w-[50%] truncate">The Lightening Thief</a></div></div>
+            <script>
+              (function() {
+                function showRecentDownloads(items) {
+                  // Biased towards initial positions, but whatever.
+                  const shuffledItems = [...items].sort(() => Math.random() - 0.5).slice(0, 8);
+
+                  const titlesLength = shuffledItems.map((item) => item.title).join("   ").length;
+                  const scrollHtml = `<div class="shrink-0 min-w-full" style="animation: scroll ${Math.round(titlesLength/4)}s linear infinite">` + shuffledItems.map((item) => `<span class="inline-block truncate">&nbsp;•&nbsp;</span><a tabindex="-1" href="${(item.path[0] == '/' ? '' : '/') + item.path}" class="inline-block max-w-[50%] truncate">${item.title}</a>`).join('') + '</div>';
+                  document.querySelector('.js-recent-downloads-scroll').innerHTML = scrollHtml + scrollHtml;
+                }
+
+                function fetchNewRecentDownloads(cb) {
+                  setTimeout(() => {
+                    fetch("/dyn/recent_downloads/").then((response) => response.json()).then((items) => {
+                      if (localStorage) {
+                        localStorage.recentDownloadsData = JSON.stringify({ items, time: Date.now() });
+                      }
+                      if (cb) {
+                        cb(items);
+                      }
+                    });
+                  }, 100);
+                }
+
+                if (localStorage && localStorage.recentDownloadsData) {
+                  const recentDownloadsData = JSON.parse(localStorage.recentDownloadsData);
+                  // console.log('recentDownloadsData', recentDownloadsData);
+                  showRecentDownloads(recentDownloadsData.items);
+
+                  const timeToRefresh = 65000 /* 65 sec */ - (Date.now() - recentDownloadsData.time);
+                  // Fetch new data for the next page load.
+                  if (timeToRefresh <= 0) {
+                    fetchNewRecentDownloads(undefined);
+                  } else {
+                    setTimeout(() => {
+                      fetchNewRecentDownloads(undefined);
+                    }, timeToRefresh);
+                  }
+                } else {
+                  fetchNewRecentDownloads((items) => {
+                    showRecentDownloads(items);
+                  });
+                }
+              })();
+            </script>
+          </div>
+
+          <script>
+            function topMenuToggle(event, className) {
+              const el = document.querySelector("." + className);
+              if (el.style.display === "block") {
+                el.style.display = "none";
+                el.setAttribute('aria-expanded', "false");
+              } else {
+                el.style.display = "block";
+                el.setAttribute('aria-expanded', "true");
+                function clickOutside(innerEvent) {
+                  if (!el.contains(innerEvent.target)) {
+                    el.style.display = "none";
+                    el.setAttribute('aria-expanded', "false")
+                    document.removeEventListener('click', clickOutside);
+                    innerEvent.preventDefault();
+                    return false;
+                  }
+                }
+                setTimeout(function() {
+                  document.addEventListener('click', clickOutside);
+                }, 0);
+              }
+              event.preventDefault();
+              return false;
+            }
+          </script>
+          <div class="header-bar">
+            <div class="header-links relative z-20">
+              <a href="#" aria-expanded="false" onclick="topMenuToggle(event, 'js-top-menu-home')" class="header-link-first header-link-active" style="margin-right: 24px;">
+                <span class="header-link-normal">
+Search
+                  <span class="icon-[material-symbols--arrow-drop-down] absolute text-lg mt-[3px] -ml-px"></span>
+                </span>
+                <span class="header-link-bold">
+Search
+                  <span class="icon-[material-symbols--arrow-drop-down] absolute text-lg mt-[3px] -ml-px"></span>
+                </span>
+              </a>
+              <div class="absolute left-0 top-full bg-[#f2f2f2] px-4 shadow js-top-menu-home hidden">
+                <a class="custom-a block py-1 text-black/64 hover:text-black" href="/">Home</a>
+                <a class="custom-a block py-1 font-bold text-black hover:text-black" href="/search">Search</a>
+                <a class="custom-a block py-1 text-black/64 hover:text-black" href="/about">About</a>
+                <a class="custom-a block py-1 text-black/64 hover:text-black" href="/datasets">Datasets</a>
+                <a class="custom-a block py-1 text-black/64 hover:text-black" href="/torrents">Torrents</a>
+                <a class="custom-a block py-1 text-black/64 hover:text-black" href="/llm">LLM data</a>
+                <a class="custom-a block py-1 text-black/64 hover:text-black" href="/mobile">Mobile app</a>
+                <a class="custom-a block py-1 text-black/64 hover:text-black" href="https://annas-blog.org" target="_blank">Anna’s Blog ↗</a>
+                <a class="custom-a block py-1 text-black/64 hover:text-black" href="https://annas-software.org" target="_blank">Anna’s Software ↗</a>
+                <a class="custom-a block py-1 text-black/64 hover:text-black" href="https://translate.annas-software.org" target="_blank">Translate ↗</a>
+              </div>
+              <a href="/donate" class=""><span class="header-link-normal">Donate</span><span class="header-link-bold">Donate</span></a>
+            </div>
+            <form class="header-search hidden sm:flex" action="/search" method="get" role="search">
+              <input class="js-slash-focus rounded" name="q" type="search" placeholder="Title, author, DOI, ISBN, MD5, …" value="" title="Focus: '/' Scroll search results: 'j', 'k'">
+            </form>
+            <div class="header-links header-links-right relative z-10 ml-auto items-center">
+              <!-- <div class="mr-1 bg-[#0095ff] text-white text-xs font-medium px-1 py-0.5 rounded">beta</div> -->
+              <a href="#" aria-expanded="false" onclick="topMenuToggle(event, 'js-top-menu-login')" class="header-link-first  [html.aa-logged-in_&amp;]:hidden">
+                <span class="header-link-normal">
+Log in / Register                  <span class="icon-[material-symbols--arrow-drop-down] absolute text-lg mt-[3px] -ml-px"></span>
+                </span>
+                <span class="header-link-bold">
+Log in / Register                  <span class="icon-[material-symbols--arrow-drop-down] absolute text-lg mt-[3px] -ml-px"></span>
+                </span>
+              </a>
+              <div class="absolute right-0 top-full bg-[#f2f2f2] px-4 shadow js-top-menu-login hidden">
+                <a class="custom-a block py-1 text-black/64 hover:text-black" href="/login">Log in / Register</a>
+                <a class="custom-a block py-1 text-black/64 hover:text-black" href="/account/request">Request books</a>
+                <a class="custom-a block py-1 text-black/64 hover:text-black" href="/account/upload">Upload</a>
+              </div>
+              <a href="#" aria-expanded="false" onclick="topMenuToggle(event, 'js-top-menu-account')" class="header-link-first  [html:not(.aa-logged-in)_&amp;]:hidden" style="margin-right: 8px;">
+                <span class="header-link-normal">
+Account                  <span class="icon-[material-symbols--arrow-drop-down] absolute text-lg mt-[3px] -ml-px"></span>
+                </span>
+                <span class="header-link-bold">
+Account                  <span class="icon-[material-symbols--arrow-drop-down] absolute text-lg mt-[3px] -ml-px"></span>
+                </span>
+              </a>
+              <div class="absolute right-0 top-full bg-[#f2f2f2] px-4 shadow js-top-menu-account hidden">
+                <a class="custom-a block py-1 text-black/64 hover:text-black" href="/account">Account</a>
+                <a class="custom-a block py-1 text-black/64 hover:text-black" href="/account/profile">Public profile</a>
+                <a class="custom-a block py-1 text-black/64 hover:text-black" href="/account/downloaded">Downloaded files</a>
+                <a class="custom-a block py-1 text-black/64 hover:text-black" href="/account/donations">My donations</a>
+                <a class="custom-a block py-1 text-black/64 hover:text-black" href="/account/request">Request books</a>
+                <a class="custom-a block py-1 text-black/64 hover:text-black" href="/account/upload">Upload</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <main class="main">
+
+  <div class="mb-4 p-6 overflow-hidden bg-black/5 break-words rounded">
+    <div class="float-right w-1/4 ml-4 aspect-[0.64] relative">
+      <img class="w-full max-h-full absolute" src="https://static.1lib.sk/covers/books/01/87/47/01874771cf362b30dd574714312a9255.jpg" alt="" referrerpolicy="no-referrer" onerror="this.parentNode.removeChild(this)" loading="lazy" decoding="async">
+      <div class="w-full aspect-[0.85] mt-[7%] bg-gray-300"></div>
+    </div>
+    <div class="text-sm text-gray-500">English [en], pdf, 0.4MB, Book (unknown)</div>
+    <div class="text-3xl font-bold">Steal This Book <a class="custom-a text-xs align-[2px] opacity-80 hover:opacity-100" href="/search?q=Steal%20This%20Book">🔍</a></div>
+    <div class="text-md"></div>
+    <div class="italic">Abbie Hofman <a class="custom-a text-xs align-[2px] opacity-80 hover:opacity-100" href="/search?q=Abbie%20Hofman">🔍</a></div>
+    <div class="mt-4 line-clamp-[5] js-md5-top-box-description"></div>
+    <a href="#" class="mt-4 js-md5-top-box-description-link text-sm hidden" onclick="document.querySelector('.js-md5-top-box-description').classList.remove('line-clamp-[5]'); this.parentNode.removeChild(this); event.preventDefault(); return false;">Read more…</a>
+    <script>
+      (function() {
+        const descriptionEl = document.querySelector('.js-md5-top-box-description');
+        if (descriptionEl.offsetHeight < descriptionEl.scrollHeight) {
+          document.querySelector('.js-md5-top-box-description-link').classList.remove('hidden');
+        }
+      })();
+    </script>
+
+    <div class="mt-4 text-xs flex flex-wrap js-md5-codes-tabs" role="tablist" aria-label="code tabs" aria-multiselectable="true">
+        <a class="rounded-sm flex mb-1 mr-1 pr-1 border border-[#aaa] opacity-60 hover:opacity-80 aria-selected:opacity-100 custom-a js-md5-codes-tabs-tab" href="#" aria-selected="false" id="md5-codes-tab-1" aria-controls="md5-codes-panel-1" tabindex="0" role="tab" aria-expanded="false"><span class="py-0.5 bg-[#aaa] mr-1 px-1">Z-Library</span><span class="py-0.5">23456012</span></a>
+    </div>
+    <div>
+        <div id="md5-codes-panel-1" role="tabpanel" aria-labelledby="md5-codes-tab-1" hidden="hidden" class="text-sm mt-2" aria-hidden="true" aria-expanded="false">
+          <div><strong>Z-Library:</strong>
+23456012 <button class="inline-block font-sans font-normal text-xs button bg-gray-500 hover:bg-gray-600 px-1 py-0.5 rounded-md text-white ml-1 align-[2px]" onclick="if (navigator.clipboard) { navigator.clipboard.writeText('23456012').then(() => { this.setAttribute('aria-selected', 'true'); }); }" aria-selected="false"><span class="icon-[solar--clipboard-bold] [[aria-selected=true]_&amp;]:icon-[solar--clipboard-check-bold] align-[-5px] text-lg"></span> <span class="[[aria-selected=true]_&amp;]:hidden">copy</span><span class="[[aria-selected=false]_&amp;]:hidden">copied!</span></button></div>
+          <!-- TODO:TRANSLATE -->
+<div class="">URL: <a href="https://1lib.sk" rel="noopener noreferrer nofollow">https://1lib.sk</a></div>          <!-- TODO:TRANSLATE -->
+          <!-- TODO:TRANSLATE -->
+          <div>AA: <a href="/search?q=&quot;zlib:23456012&quot;">Search Anna’s Archive for “zlib:23456012”</a></div>
+        </div>
+    </div>
+    <script>
+      (function() {
+        const tabEls = document.querySelectorAll('.js-md5-codes-tabs-tab');
+        for (const el of tabEls) {
+          el.addEventListener('tabOpen', () => {
+            for (otherEl of tabEls) {
+              if (otherEl != el && otherEl.getAttribute('aria-selected') === "true") {
+                document.querySelector('.js-md5-codes-tabs').ariaTablist.close(otherEl);
+              }
+            }
+          })
+        }
+      })();
+    </script>
+  </div>
+
+
+  <div class="flex flex-wrap mb-1 text-black/64" role="tablist" aria-label="file tabs">
+    <button class="mr-4 mb-1 border-b-[3px] border-transparent aria-selected:border-[#0095ff] aria-selected:text-black aria-selected:font-bold js-md5-tab-downloads" aria-selected="true" id="md5-tab-downloads" aria-controls="md5-panel-downloads" tabindex="0" role="tab">Downloads (8)</button>
+      <button class="mr-4 mb-1 border-b-[3px] border-transparent aria-selected:border-[#0095ff] aria-selected:text-black aria-selected:font-bold" aria-selected="false" id="md5-tab-lists" aria-controls="md5-panel-lists" tabindex="-1" role="tab">Lists (<span class="js-md5-tab-lists">0</span>)</button>
+      <button class="mr-4 mb-1 border-b-[3px] border-transparent aria-selected:border-[#0095ff] aria-selected:text-black aria-selected:font-bold" aria-selected="false" id="md5-tab-stats" aria-controls="md5-panel-stats" tabindex="-1" role="tab">Stats (<span class="js-md5-tab-stats">9</span>)</button>
+    <button class="mr-4 mb-1 border-b-[3px] border-transparent aria-selected:border-[#0095ff] aria-selected:text-black aria-selected:font-bold" aria-selected="false" id="md5-tab-details" aria-controls="md5-panel-details" tabindex="-1" role="tab">Technical details</button>
+  </div>
+
+    <script>
+      (function() {
+        const md5 = "01874771cf362b30dd574714312a9255";
+
+        function fetchComments() {
+          fetch("/dyn/md5_reports/" + md5).then((response) => response.ok ? response.text() : 'Error 827151').then((text) => {
+            const reloadNode = document.querySelector(".js-md5-issues-reports");
+            reloadNode.innerHTML = text;
+            window.executeScriptElements(reloadNode);
+          });
+        }
+
+        window.md5ReloadSummary = function() {
+          fetch("/dyn/md5/summary/" + md5).then((response) => response.json()).then((json) => {
+            // document.querySelector(".js-md5-tab-discussion").innerText = 'Discussion (' + (json.comments_count + json.reports_count + json.great_quality_count) + ')';
+            document.querySelector(".js-md5-tab-lists").innerText = json.lists_count;
+            document.querySelector(".js-md5-tab-stats").innerText = json.downloads_total;
+            document.querySelector(".js-md5-button-new-issue-label").innerText = 'Report file issue (' + json.reports_count + ')';
+            document.querySelector(".js-md5-button-great-quality-label").innerText = 'Great file quality (' + json.great_quality_count + ')';
+            document.querySelector(".js-md5-button-new-comment").innerText = 'Add comment (' + json.comments_count + ')';
+            window.md5UserReaction = json.user_reaction;
+            document.querySelector(".js-md5-button-great-quality").classList.toggle("selected", window.md5UserReaction === 2);
+            document.querySelector(".js-md5-button-new-comment").classList.toggle("disabled", window.md5UserReaction !== 2);
+            if (window.md5UserReaction !== 2) {
+              document.querySelector('.js-new-comment').classList.toggle('hidden', true);
+            }
+
+            if (json.comments_count > 0 || json.reports_count > 0) {
+              // document.getElementById('md5-panel-discussion').addEventListener("panelOpen", fetchComments);
+              fetchComments();
+            } else {
+              document.querySelector(".js-md5-issues-reports").classList.add("hidden");
+            }
+
+            if (json.is_member) {
+              document.querySelector('.js-fast-download-no-member-header').classList.add('hidden');
+              if (json.download_still_active) {
+                document.querySelector('.js-fast-download-member-header-valid-for').classList.remove('hidden');
+              } else {
+                if (json.downloads_left) {
+                  const elRemaining = document.querySelector('.js-fast-download-member-header-remaining');
+                  elRemaining.classList.remove('hidden');
+                  elRemaining.innerHTML = elRemaining.innerHTML.replace('XXXXXX', json.downloads_left);
+                  for (const el of document.querySelectorAll('.js-download-link')) {
+                    el.addEventListener("click", function() {
+                      elRemaining.classList.add('hidden');
+                      document.querySelector('.js-fast-download-member-header-valid-for').classList.remove('hidden');
+                    });
+                  }
+                } else {
+                  document.querySelector('.js-fast-download-member-header-no-remaining').classList.remove('hidden');
+                }
+              }
+            }
+          });
+        };
+
+        document.addEventListener("DOMContentLoaded", window.md5ReloadSummary);
+      })();
+    </script>
+
+  <div id="md5-panel-downloads" role="tabpanel" tabindex="0" aria-labelledby="md5-tab-downloads">
+
+      <div class="mb-4">
+        <div class="js-fast-download-no-member-header"><strong>🚀 Fast downloads</strong> Become a <a href="/donate">member</a> to support the long-term preservation of books, papers, and more. To show our gratitude for your support, you get fast downloads. ❤️</div>
+        <div class="hidden js-fast-download-member-header-remaining"><strong>🚀 Fast downloads</strong> You have XXXXXX left today. Thanks for being a member! ❤️</div>
+        <div class="hidden js-fast-download-member-header-no-remaining"><strong>🚀 Fast downloads</strong> You’ve run out of fast downloads for today. Please contact Anna at AnnaArchivist@proton.me if you’re interested in upgrading your membership.</div>
+        <div class="hidden js-fast-download-member-header-valid-for"><strong>🚀 Fast downloads</strong> You downloaded this file recently. Links remain valid for a while.</div>
+
+        <ul class="mb-4">
+            <li>- Option #1: <a href="/fast_download/01874771cf362b30dd574714312a9255/0/0" rel="noopener noreferrer nofollow" class="js-download-link">Fast Partner Server #1</a> (no browser verification required)</li>
+            <li>- Option #2: <a href="/fast_download/01874771cf362b30dd574714312a9255/0/1" rel="noopener noreferrer nofollow" class="js-download-link">Fast Partner Server #2</a> </li>
+            <li>- Option #3: <a href="/fast_download/01874771cf362b30dd574714312a9255/0/2" rel="noopener noreferrer nofollow" class="js-download-link">Fast Partner Server #3</a> </li>
+        </ul>
+      </div>
+
+    <div>
+          <div class="font-bold">🐢 Slow &amp; external downloads</div>
+
+        <ul class="mb-4">
+              <li>- Option #1: <a href="/slow_download/01874771cf362b30dd574714312a9255/0/0" rel="noopener noreferrer nofollow" class="js-download-link">Slow Partner Server #1</a> (might require <a href="/browser_verification">browser verification</a> — unlimited downloads!)</li>
+              <li>- Option #2: <a href="/slow_download/01874771cf362b30dd574714312a9255/0/1" rel="noopener noreferrer nofollow" class="js-download-link">Slow Partner Server #2</a> </li>
+              <li>- Option #3: <a href="/slow_download/01874771cf362b30dd574714312a9255/0/2" rel="noopener noreferrer nofollow" class="js-download-link">Slow Partner Server #3</a> </li>
+              <li>- Option #4: <a href="https://1lib.sk/md5/01874771cf362b30dd574714312a9255" rel="noopener noreferrer nofollow" target="_blank" class="js-download-link">Z-Library</a> </li>
+              <li>- Option #5: <a href="/datasets" rel="noopener noreferrer nofollow" class="js-download-link">Bulk torrent downloads</a> (experts only) <span class="text-sm text-gray-500"><a href="/dyn/small_file/torrents/managed_by_aa/annas_archive_data__aacid/annas_archive_data__aacid__zlib3_files__20230808T131240Z--20230808T131241Z.torrent">file</a></span></li>
+            <li>- Support authors: If you like this and can afford it, consider buying the original, or supporting the authors directly.</li>
+            <li>- Support libraries: If this is available at your local library, consider borrowing it for free there.</li>
+        </ul>
+            <div class="mb-4 text-sm text-gray-500">All download options have the same file, and should be safe to use. That said, always be cautious when downloading files from the internet, especially from sites external to Anna’s Archive. For example, be sure to keep your devices updated.</div>
+
+          <script>
+            (function() {
+              const md5 = "01874771cf362b30dd574714312a9255";
+              for (const el of document.querySelectorAll(".js-download-link")) {
+                // Increase counter when clicked.
+                el.addEventListener("click", function() {
+                  try {
+                    if (window.localStorage['md5_download_counted_' + md5] === "1") {
+                      return;
+                    }
+                    window.localStorage['md5_download_counted_' + md5] = "1";
+                  } catch(e) {
+                    console.error("Error with localStorage: ", e);
+                  }
+                  navigator.sendBeacon("/dyn/downloads/increment/" + md5);
+                });
+              }
+            })();
+          </script>
+    </div>
+
+
+      <div lang="en">
+        <h3 class="font-bold">📂 File quality</h3>
+
+        <p class="mb-4">
+          Help out the community by reporting the quality of this file! 🙌
+        </p>
+
+        <div class="">
+          <button class="custom bg-[#777] hover:bg-[#999] text-white font-bold py-1 px-3 rounded shadow mb-2" onclick="if (localStorage[&quot;aa_logged_in&quot;] !== &quot;1&quot;) { document.querySelector(&quot;.js-discussion-logged-out&quot;).classList.toggle(&quot;hidden&quot;); return; }; document.querySelector(&quot;.js-report-file-issues&quot;).classList.toggle(&quot;hidden&quot;); document.querySelector(&quot;.js-new-comment&quot;).classList.add(&quot;hidden&quot;); document.querySelector(&quot;.js-add-to-list&quot;).classList.add(&quot;hidden&quot;)"><span class="text-[18px] align-text-bottom text-white inline-block icon-[uil--exclamation-triangle]"></span> <span class="js-md5-button-new-issue-label">Report file issue (0)</span></button>
+          
+          <span class="inline-block mb-2"><button class="shadow js-md5-button-great-quality custom bg-[#777] hover:bg-[#999] text-white font-bold py-1 px-3 rounded-l border-r border-[#999] align-bottom [&amp;.selected]:bg-[#555] [&amp;.selected]:pt-[5px] [&amp;.selected]:pb-[3px] [&amp;.selected]:shadow-[inset_0px_-1px_0px_0px_rgba(255,255,255,0.2),_inset_0px_1px_5px_0px_rgba(0,0,0,0.6)]" onclick="if (localStorage[&quot;aa_logged_in&quot;] !== &quot;1&quot;) { document.querySelector(&quot;.js-discussion-logged-out&quot;).classList.toggle(&quot;hidden&quot;); return; }; fetch(&quot;/dyn/reactions/&quot; + (window.md5UserReaction === 2 ? 0 : 2) + &quot;/md5:&quot; + &quot;01874771cf362b30dd574714312a9255&quot;, { method: &quot;PUT&quot; }).then(() => window.md5ReloadSummary())"><span class="text-[21px] align-[-4px] text-white inline-block icon-[material-symbols--star-outline] [button.selected>&amp;]:icon-[material-symbols--star]"></span> <span class="js-md5-button-great-quality-label">Great file quality (0)</span></button><button class="disabled shadow js-md5-button-new-comment custom bg-[#777] hover:bg-[#999] [&amp;.disabled]:opacity-40 [&amp;.disabled]:hover:bg-[#777] [&amp;.disabled]:cursor-auto text-white font-bold py-1 px-3 rounded-r" onclick="if (this.classList.contains(&quot;disabled&quot;)) { return; }; document.querySelector(&quot;.js-new-comment&quot;).classList.toggle(&quot;hidden&quot;); document.querySelector(&quot;.js-report-file-issues&quot;).classList.add(&quot;hidden&quot;); document.querySelector(&quot;.js-add-to-list&quot;).classList.add(&quot;hidden&quot;)">Add comment (0)</button></span>
+        </div>
+
+        <div class="js-discussion-logged-out hidden">Please <a href="/login">log in</a>.</div>
+
+        <form class="js-report-file-issues hidden mb-6" onsubmit="window.submitForm(event, &quot;/dyn/md5_report/&quot; + &quot;01874771cf362b30dd574714312a9255&quot;)">
+          <fieldset>
+            <p class="mb-2">
+              What is wrong with this file?
+            </p>
+            <select name="type" class="bg-black/6.7 px-2 py-1 rounded mb-4 w-full max-w-[400px]" oninput="for (el of document.querySelectorAll('.js-report-file-issues-submenu')) { el.classList.add('hidden'); } document.querySelector('.js-report-file-issues-submenu-' + this.value).classList.remove('hidden')">
+              <option></option>
+                <option value="metadata">Incorrect metadata (e.g. title, description, cover image)</option>
+                <option value="download">Downloading problems (e.g. can’t connect, error message, very slow)</option>
+                <option value="broken">File can’t be opened (e.g. corrupted file, DRM)</option>
+                <option value="pages">Poor quality (e.g. formatting issues, poor scan quality, missing pages)</option>
+                <option value="spam">Spam / file should be removed (e.g. advertising, abusive content)</option>
+                <option value="copyright">Copyright claim</option>
+                <option value="other">Other</option>
+            </select>
+
+            <div class="hidden mb-4 js-report-file-issues-submenu js-report-file-issues-submenu-copyright">
+              <p class="">
+                Please use the <a href="/copyright">DMCA / Copyright claim form</a>.
+              </p>
+            </div>
+
+            <div class="hidden mb-4 js-report-file-issues-submenu js-report-file-issues-submenu-metadata">
+              <p class="mb-4">
+                Please report metadata errors at the source library. If there are multiple source libraries, know that we pull metadata from top to bottom, so the first one might be sufficient.
+              </p>
+
+            </div>
+
+            <div class="hidden mb-4 js-report-file-issues-submenu js-report-file-issues-submenu-download js-report-file-issues-submenu-broken js-report-file-issues-submenu-pages js-report-file-issues-submenu-spam js-report-file-issues-submenu-other">
+              <p class="mb-1">
+                Describe the issue (required)
+              </p>
+              <textarea required="" name="content" class="grow bg-black/6.7 px-2 py-1 mb-4 rounded w-full h-[120px]" placeholder="Issue description"></textarea>
+              <p class="mb-2">
+                MD5 of a better version of this file (if applicable). Fill this in if there is another file that closely matches this file (same edition, same file extension if you can find one), which people should use instead of this file. If you know of a better version of this file outside of Anna’s Archive, then please <a href="/account/upload" target="_blank">upload it</a>.
+              </p>
+              <p class="mb-1">
+                You can get the md5 from the URL, e.g.<br>https://annas-archive.org/md5/<strong>01874771cf362b30dd574714312a9255</strong>
+              </p>
+              <input type="text" name="better_md5" class="grow bg-black/6.7 px-2 py-1 mb-4 rounded w-full" placeholder="01874771cf362b30dd574714312a9255" minlength="32" maxlength="32">
+              <div class="">
+                <button type="submit" class="mr-2 bg-[#777] hover:bg-[#999] text-white font-bold py-1 px-3 rounded shadow">Submit report</button>
+                <span class="js-spinner invisible mb-[-3px] text-xl text-[#555] inline-block icon-[svg-spinners--ring-resize]"></span>
+              </div>
+            </div>
+          </fieldset>
+          <div class="hidden js-success">✅ Thank you for submitting your report. It will be shown on this page, as well as reviewed manually by Anna (until we have a proper moderation system).</div>
+          <div class="hidden js-failure mb-4">❌ Something went wrong. Please reload the page and try again.</div>
+        </form>
+
+        <form class="js-new-comment hidden mb-4" onsubmit="window.submitForm(event, &quot;/dyn/comments/md5:&quot; + &quot;01874771cf362b30dd574714312a9255&quot;)">
+          <fieldset>
+            <p class="mb-1">
+              If this file has great quality, you can discuss anything about it here! If not, please use the “Report file issue” button.
+            </p>
+            <textarea required="" name="content" class="grow bg-black/6.7 px-2 py-1 mb-1 rounded w-full h-20" placeholder="I loved this book!"></textarea>
+            <div class="">
+              <button type="submit" class="mr-2 bg-[#777] hover:bg-[#999] text-white font-bold py-1 px-3 rounded shadow">Leave comment</button>
+              <span class="js-spinner invisible mb-[-3px] text-xl text-[#555] inline-block icon-[svg-spinners--ring-resize]"></span>
+            </div>
+          </fieldset>
+          <div class="hidden js-success">✅ You left a comment. It might take a minute for it to show up.</div>
+          <div class="hidden js-failure mb-4">❌ Something went wrong. Please reload the page and try again.</div>
+        </form>
+
+        <div class="js-md5-issues-reports mt-4 hidden"><span class="mb-[-3px] text-xl text-[#555] inline-block icon-[svg-spinners--ring-resize]"></span></div>
+      </div>
+  </div>
+
+    <div id="md5-panel-lists" role="tabpanel" aria-labelledby="md5-tab-lists" hidden="hidden" aria-hidden="true">
+
+      <div lang="en">
+        <script>
+          document.getElementById('md5-panel-lists').addEventListener("panelOpen", () => {
+            const md5 = "01874771cf362b30dd574714312a9255";
+            fetch("/dyn/lists/md5:" + md5).then((response) => response.ok ? response.text() : 'Error 921857').then((text) => {
+              const reloadNode = document.querySelector(".js-md5-lists-wrapper");
+              reloadNode.innerHTML = text;
+              window.executeScriptElements(reloadNode);
+            });
+          });
+        </script>
+        <div class="js-md5-lists-wrapper"><span class="mb-[-3px] text-xl text-[#555] inline-block icon-[svg-spinners--ring-resize]"></span></div>
+      </div>
+    </div>
+
+    <div id="md5-panel-stats" role="tabpanel" aria-labelledby="md5-tab-stats" hidden="hidden" aria-hidden="true">
+
+      <div lang="en">
+        <p class="mb-4">
+          Total downloads: <span class="js-md5-stats-total-downloads"><span class="mb-[-3px] text-xl text-[#555] inline-block icon-[svg-spinners--ring-resize]"></span></span><br>
+          </p><div class="js-md5-stats-downloads-chart h-[200px]"></div>
+        <p></p>
+        <script>
+          document.getElementById('md5-panel-stats').addEventListener("panelOpen", () => {
+            const md5 = "01874771cf362b30dd574714312a9255";
+            fetch("/dyn/downloads/stats/" + md5).then((response) => response.json()).then((json) => {
+              document.querySelector(".js-md5-stats-total-downloads").innerText = json.total;
+              Plotly.newPlot(document.querySelector(".js-md5-stats-downloads-chart"), [{
+                type: "bar",
+                x: json.timeseries_x.map((t) => new Date(t * 3600000)),
+                y: json.timeseries_y,
+                line: {color: '#0095ff'}
+              }], {
+                margin: {
+                  l: 40,
+                  r: 16,
+                  b: 50,
+                  t: 8,
+                  pad: 0
+                }
+              }, {staticPlot: true});
+            });
+          });
+        </script>
+      </div>
+    </div>
+
+  <div id="md5-panel-details" role="tabpanel" aria-labelledby="md5-tab-details" hidden="hidden" aria-hidden="true">
+      <p class="mb-4">
+        A "file MD5" is a hash that gets computed from the file contents, and is reasonably unique based on that content. All shadow libraries that we have indexed on here primarily use MD5s to identify files.
+      </p>
+
+      <p class="mb-4">
+        A file might appear in multiple shadow libraries. For information about the various datasets that we have compiled, see the <a href="/datasets">Datasets page</a>.
+      </p>
+
+    <p class="mb-4">
+      For information about this particular file, check out its <a href="/db/aarecord/md5:01874771cf362b30dd574714312a9255.json">JSON file</a>.
+    </p>
+  </div>
+</main>
+      <footer class="bg-black/5 text-[#777]" style="box-shadow: 0px 0px 7px rgb(0 0 0 / 30%)">
+        <div class="max-w-[1050px] mx-auto p-[12px] leading-relaxed flex flex-wrap">
+          <div class="mr-4 mb-4" style="flex-grow: 1">
+            <strong class="font-bold text-black">Anna’s Archive</strong><br>
+            <a class="custom-a hover:text-[#333]" href="/">Home</a><br>
+            <a class="custom-a hover:text-[#333]" href="/search">Search</a><br>
+            <a class="custom-a hover:text-[#333]" href="/about">About</a><br>
+            <a class="custom-a hover:text-[#333]" href="/donate">Donate</a><br>
+            <a class="custom-a hover:text-[#333]" href="/account/request">Request books</a><br>
+            <a class="custom-a hover:text-[#333]" href="/account/upload">Upload</a><br>
+            <a class="custom-a hover:text-[#333]" href="/mobile">Mobile app</a><br>
+            <select class="p-1 rounded text-gray-500 mt-1 max-w-[110px]" onchange="handleChangeLang(event)">
+                  <option value="en">🌐 English [en]</option>
+                <option value="ar">العربية [ar]</option>
+                <option value="be">беларуская [be]</option>
+                <option value="bg">български [bg]</option>
+                <option value="bn">বাংলা [bn]</option>
+                <option value="ca">català [ca]</option>
+                <option value="cs">čeština [cs]</option>
+                <option value="de">Deutsch [de]</option>
+                <option value="el">Ελληνικά [el]</option>
+                <option value="en">English [en] ☑️</option>
+                <option value="eo">esperanto [eo]</option>
+                <option value="es">español [es]</option>
+                <option value="fa">فارسی [fa]</option>
+                <option value="fr">français [fr]</option>
+                <option value="gl">galego [gl]</option>
+                <option value="he">עברית [he]</option>
+                <option value="hi">हिन्दी [hi]</option>
+                <option value="hu">magyar [hu]</option>
+                <option value="id">Indonesia [id]</option>
+                <option value="it">italiano [it]</option>
+                <option value="ja">日本語 [ja]</option>
+                <option value="ko">한국어 [ko]</option>
+                <option value="lt">lietuvių [lt]</option>
+                <option value="ml">മലയാളം [ml]</option>
+                <option value="ms">Melayu [ms]</option>
+                <option value="ne">नेपाली [ne]</option>
+                <option value="nl">Nederlands [nl]</option>
+                <option value="no">norsk bokmål (Norge) [no]</option>
+                <option value="or">ଓଡ଼ିଆ [or]</option>
+                <option value="pl">polski [pl]</option>
+                <option value="pt">português [pt]</option>
+                <option value="ro">română [ro]</option>
+                <option value="ru">русский [ru]</option>
+                <option value="sk">slovenčina [sk]</option>
+                <option value="sl">slovenščina [sl]</option>
+                <option value="sq">shqip [sq]</option>
+                <option value="sr">српски [sr]</option>
+                <option value="sv">svenska [sv]</option>
+                <option value="tr">Türkçe [tr]</option>
+                <option value="tw">中文 (繁體) [tw]</option>
+                <option value="uk">українська [uk]</option>
+                <option value="ur">اردو [ur]</option>
+                <option value="vi">Tiếng Việt [vi]</option>
+                <option value="zh">中文 [zh]</option>
+            </select>
+          </div>
+
+          <div class="mr-4 mb-4" style="flex-grow: 1">
+            <strong class="font-bold text-black">Stay in touch</strong><br>
+            <a class="custom-a hover:text-[#333]" href="https://www.reddit.com/r/Annas_Archive">Reddit</a> / <a class="custom-a hover:text-[#333]" href="https://t.me/annasarchiveorg">Telegram</a><!--  / <a class="custom-a hover:text-[#333]" href="/wechat">Unofficial WeChat</a>--><br>
+            <a class="custom-a hover:text-[#333]" href="https://annas-blog.org">Anna’s Blog ↗</a><br>
+            <a class="custom-a hover:text-[#333]" href="https://annas-software.org">Anna’s Software ↗</a><br>
+            <a class="custom-a hover:text-[#333]" href="https://translate.annas-software.org">Translate ↗</a><br>
+            <a class="custom-a hover:text-[#333] break-all" href="mailto:AnnaArchivist@proton.me">AnnaArchivist@proton.me</a><br>
+            <div class="text-xs text-gray-500 mb-1">Don’t email us to <a href="/account/request">request books</a><br>or small (&lt;10k) <a href="/account/upload">uploads</a>.</div>
+            <a class="custom-a hover:text-[#333]" href="/copyright">DMCA / copyright claims</a><br>
+            <a class="custom-a hover:text-[#333]" href="mailto:AnnaDMCA@proton.me">AnnaDMCA@proton.me</a><br>
+          </div>
+
+          <div class="mr-4 mb-4" style="flex-grow: 1">
+            <strong class="font-bold text-black">Advanced</strong><br>
+            <a class="custom-a hover:text-[#333]" href="/datasets">Datasets</a><br>
+            <a class="custom-a hover:text-[#333]" href="/torrents">Torrents</a><br>
+            <a class="custom-a hover:text-[#333]" href="/llm">LLM data</a><br>
+            <a class="custom-a hover:text-[#333]" href="/security">Security</a><br>
+          </div>
+
+          <div style="flex-grow: 1">
+            <strong class="font-bold text-black">Alternatives</strong><br>
+            <a class="custom-a hover:text-[#333] js-annas-archive-org" href="https://annas-archive.org/md5/01874771cf362b30dd574714312a9255">annas-archive.org</a><br>
+            <a class="custom-a hover:text-[#333] js-annas-archive-gs" href="https://annas-archive.gs/md5/01874771cf362b30dd574714312a9255">annas-archive.gs</a><br>
+            <a class="custom-a hover:text-[#333] js-annas-archive-se" href="https://annas-archive.se/md5/01874771cf362b30dd574714312a9255">annas-archive.se</a><br>
+          </div>
+        </div>
+      </footer>
+    <script>
+      (function() {
+        // Possible domains we can encounter:
+        const domainsToReplace = ["annas-" + "archive.org", "annas-" + "archive.gs", "annas-" + "archive.se", "localtest.me:8000", "localtest.me", window.baseDomain];
+        const validDomains = ["annas-" + "archive.org", "annas-" + "archive.gs", "annas-" + "archive.se", "localtest.me:8000", "localtest.me"];
+        // For checking and redirecting if our current host is down (but if Cloudflare still responds).
+        const initialCheckMs = 0;
+        const intervalCheckOtherDomains = 10000;
+        const domainsToNavigateTo = ["annas-" + "archive.org", "annas-" + "archive.gs", "annas-" + "archive.se"];
+        // For testing:
+        // const domainsToNavigateTo = ["localtest.me:8000", "testing_redirects.localtest.me:8000"];
+
+        // const isInvalidDomain = false;
+        // const isInvalidDomain = true;
+        const isInvalidDomain = !validDomains.includes(window.baseDomain);
+        if (isInvalidDomain) {
+          console.log("Invalid domain");
+          // If the domain is invalid, replace window.baseDomain first, in case the domain
+          // is something weird like 'weird.annas-archive.org'.
+          domainsToReplace.unshift(window.baseDomain);
+        }
+
+        // First, set the mirror links at the bottom of the page.
+        const loc = "" + window.location;
+        let currentDomainToReplace = "localtest.me";
+        for (const domain of domainsToReplace) {
+          if (loc.includes(domain)) {
+            currentDomainToReplace = domain;
+            break;
+          }
+        }
+        for (const el of document.querySelectorAll(".js-annas-archive-org")) {
+          el.href = loc.replace(currentDomainToReplace, "annas-" + "archive.org");
+        }
+        for (const el of document.querySelectorAll(".js-annas-archive-gs")) {
+          el.href = loc.replace(currentDomainToReplace, "annas-" + "archive.gs");
+        }
+        for (const el of document.querySelectorAll(".js-annas-archive-se")) {
+          el.href = loc.replace(currentDomainToReplace, "annas-" + "archive.se");
+        }
+
+        // Use the new domain in all links and forms.
+        let areUsingOtherDomain = false;
+        function useOtherDomain(domain) {
+          if (areUsingOtherDomain) {
+            return;
+          }
+          areUsingOtherDomain = true;
+          if (isInvalidDomain) {
+            const newLoc = loc.replace(currentDomainToReplace, domain);
+            if (newLoc !== loc) {
+              window.location = newLoc;
+              return;
+            }
+          }
+          const newOrigin = window.location.origin.replace(currentDomainToReplace, domain);
+          for (const el of document.querySelectorAll("a")) {
+            el.href = el.href.replace(currentDomainToReplace, domain);
+          }
+          for (const el of document.querySelectorAll("form")) {
+            el.action = el.action.replace(currentDomainToReplace, domain);
+          }
+        }
+        // useOtherDomain('annas-archive.org'); // For testing.
+
+        function getRandomString() {
+          return Math.random() + "." + Math.random() + "." + Math.random();
+        }
+
+        // Check if there are other domains that are still up. Use the first one that responds.
+        let foundOtherDomain = false;
+        function checkOtherDomains() {
+          console.log('checkOtherDomains');
+          if (foundOtherDomain) {
+            return;
+          }
+          const otherFetchOptions = { mode: "cors", method: "GET", credentials: "omit", cache: "no-cache", redirect: "error" };
+          for (const domain of domainsToNavigateTo) {
+            if (currentDomainToReplace !== domain) {
+              fetch('//' + domain + '/dyn/up/?' + getRandomString(), otherFetchOptions).then(function(response) {
+                if (foundOtherDomain) {
+                  return;
+                }
+                if (!(response.status >= 500 && response.status <= 599)) {
+                  foundOtherDomain = true;
+                  useOtherDomain(domain);
+                }
+              }).catch(function() {
+                // Ignore.
+              });
+            }
+          }
+        }
+
+        // If we're not on a valid domain, try to go to a valid domain.
+        if (isInvalidDomain) {
+          checkOtherDomains();
+          // Keep checking in case one comes online.
+          setInterval(checkOtherDomains, intervalCheckOtherDomains);
+        } else {
+          // Keep checking the current domain once, to see if it's still up.
+          function checkCurrentDomain() {
+            const currentFetchOptions = { method: "GET", credentials: "same-origin", cache: "no-cache", redirect: "error" };
+            fetch('/dyn/up/?' + getRandomString(), currentFetchOptions).then(function(response) {
+              // Only do something in the case of an actual error code from Cloudflare, not if the users network is bad.
+              if (response.status >= 500 && response.status <= 599) {
+                checkOtherDomains();
+                // Keep checking in case one comes online.
+                setInterval(checkOtherDomains, intervalCheckOtherDomains);
+              }
+              if (response.status === 200) {
+                return response.json().then(function(jsonResponse) {
+                  window.globalUpdateAaLoggedIn(jsonResponse.aa_logged_in);
+                });
+              }
+            }).catch(function() {
+              // Ignore; see above.
+            });
+          }
+          setTimeout(checkCurrentDomain, initialCheckMs);
+        }
+      })();
+    </script>
+    <!-- Cloudflare Web Analytics --><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;a60431b24db04cf2beeef0864f1df5e4&quot;}"></script><!-- End Cloudflare Web Analytics -->
+  
+</body></html>
