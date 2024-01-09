@@ -4,6 +4,10 @@ with import (builtins.fetchTarball {
   sha256 = "0g5yg292ixbv4lilc11fr754ym702a2h833am9hxi3ir5flwb3ah";
 }) {};
 
+let deno_pkgs = import (builtins.fetchTarball("channel:nixos-23.11")) {};
+
+in
+
 stdenv.mkDerivation {
   name = "wesley-notebook";
 
@@ -26,6 +30,7 @@ stdenv.mkDerivation {
     archivebox
     sqlite
     jq
+    deno_pkgs.deno
   ];
   shellHook = ''
     npm ci

@@ -61,7 +61,8 @@ if [[ "$PAGES" ]]; then
 	echo "pushing compiled site..."
 	git push -f -q origin gh-pages > /dev/null
 else
-	rsync -rtp out/site/ hack.wesleyac.com:/var/www/notebook.wesleyac.com/
+	rsync --delete -rtp out/site/ hack.wesleyac.com:/var/www/notebook.wesleyac.com/
+	rsync --delete -rtp out/site/ wesleyac@resilient.nebcorp-hias.com:/notebook.wesleyac.com/
 fi
 
 echo "deployed <3"
