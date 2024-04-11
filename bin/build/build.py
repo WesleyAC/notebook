@@ -1,6 +1,6 @@
-#!/usr/bin/env python3.10
+#!/usr/bin/env python3
 
-import os, subprocess, glob
+import os, subprocess
 
 os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir, os.pardir))
 
@@ -50,7 +50,7 @@ rule minify-css
   command = minify $in > $out
 
 rule copy-file
-  command = mkdir -p `dirname $out` && cp $in $out && deno run --allow-write --allow-read third_party/libresilient/cli/lrcli.js signed-integrity gen-integrity $out --keyfile libresilient-private.json --algorithm SHA-256 --output files > /dev/null
+  command = mkdir -p `dirname $out` && cp $in $out
 
 rule make-markdown-file
   command = mkdir -p `dirname $out` && ./bin/build/strip-front-matter.sh "$in" > "$out"
@@ -82,31 +82,25 @@ try:
                     build_ninja.write(f"build out/tmp/{out_file}.optipng: compress-optipng {in_file}\n")
                     build_ninja.write(f"build out/tmp/{out_file}: compress-pngcrush out/tmp/{out_file}.optipng\n")
                     build_ninja.write(f"build out/tmp/{out_file_webp}: make-webp-png out/tmp/{out_file}\n")
-                    build_ninja.write(f"build out/site/{out_file} | out/site/{out_file}.integrity: copy-file out/tmp/{out_file}\n")
-                    build_ninja.write(f"build out/site/{out_file_webp} | out/site/{out_file_webp}.integrity: copy-file out/tmp/{out_file_webp}\n")
+                    build_ninja.write(f"build out/site/{out_file}: copy-file out/tmp/{out_file}\n")
+                    build_ninja.write(f"build out/site/{out_file_webp}: copy-file out/tmp/{out_file_webp}\n")
                 elif filename.endswith("jpg") or filename.endswith("jpeg"):
                     build_ninja.write(f"build out/tmp/{out_file}: compress-jpg {in_file}\n")
                     build_ninja.write(f"build out/tmp/{out_file_webp}: make-webp-jpg out/tmp/{out_file}\n")
-                    build_ninja.write(f"build out/site/{out_file} | out/site/{out_file}.integrity: copy-file out/tmp/{out_file}\n")
-                    build_ninja.write(f"build out/site/{out_file_webp} | out/site/{out_file_webp}.integrity: copy-file out/tmp/{out_file_webp}\n")
+                    build_ninja.write(f"build out/site/{out_file}: copy-file out/tmp/{out_file}\n")
+                    build_ninja.write(f"build out/site/{out_file_webp}: copy-file out/tmp/{out_file_webp}\n")
                 elif filename.endswith("svg"):
                     build_ninja.write(f"build out/tmp/{out_file}: compress-svgo {in_file}\n")
-                    build_ninja.write(f"build out/site/{out_file} | out/site/{out_file}.integrity: copy-file out/tmp/{out_file}\n")
+                    build_ninja.write(f"build out/site/{out_file}: copy-file out/tmp/{out_file}\n")
                 else:
-                    build_ninja.write(f"build out/site/{out_file} | out/site/{out_file}.integrity: copy-file {in_file}\n")
+                    build_ninja.write(f"build out/site/{out_file}: copy-file {in_file}\n")
 
         for js_file in ["sideline", "titleresize", "instantpage"]:
             build_ninja.write(f"build out/tmp/{js_file}.min.js: minify-js parts/{js_file}.js\n")
-            build_ninja.write(f"build out/site/{js_file}.min.js | out/site/{js_file}.min.js.integrity: copy-file out/tmp/{js_file}.min.js\n")
-
-        libresilient_js = ["libresilient.js", "service-worker.js"]
-        libresilient_js += filter(lambda x: "__tests__" not in x, glob.glob("plugins/**/*.js", root_dir="third_party/libresilient/", recursive=True))
-        for js_file in libresilient_js:
-            build_ninja.write(f"build out/tmp/{js_file}: minify-js third_party/libresilient/{js_file}\n")
-            build_ninja.write(f"build out/site/{js_file} | out/site/{js_file}.integrity: copy-file out/tmp/{js_file}\n")
+            build_ninja.write(f"build out/site/{js_file}.min.js: copy-file out/tmp/{js_file}.min.js\n")
 
         build_ninja.write("build out/tmp/notebook.min.css: minify-css parts/notebook.css\n")
-        build_ninja.write("build out/site/notebook.min.css | out/site/notebook.min.css.integrity: copy-file out/tmp/notebook.min.css\n")
+        build_ninja.write("build out/site/notebook.min.css: copy-file out/tmp/notebook.min.css\n")
 
         for style_file in os.listdir("parts/customstyles/"):
             entry_name = style_file.rsplit(".", 1)[0]
@@ -118,17 +112,17 @@ try:
             custom_css_file = f"out/tmp/{out_file}/custom.css" if os.path.isfile(f"parts/customstyles/{out_file}.css") else ""
             build_ninja.write(f"build out/tmp/{out_file}/index.html: assemble-post entries/{entry} | bin/build/assemble-post.sh bin/build/process-markdown.sh bin/build/rewrite-imgs.sh bin/build/process-html.sh bin/build/fix-sidenote-spacing.sh bin/build/vars.sh parts/template.html parts/return_home.html parts/sidenote_script.html parts/changelog.html {custom_css_file}\n")
             build_ninja.write(f"build out/tmp/{out_file}/index.min.html: minify-html out/tmp/{out_file}/index.html\n")
-            build_ninja.write(f"build out/site/{out_file}/index.html | out/site/{out_file}/index.html.integrity: copy-file out/tmp/{out_file}/index.min.html\n")
+            build_ninja.write(f"build out/site/{out_file}/index.html: copy-file out/tmp/{out_file}/index.min.html\n")
             build_ninja.write(f"build out/site/{out_file}/{out_file}.md: make-markdown-file entries/{entry}\n")
 
         build_ninja.write(f"build out/tmp/index.html out/tmp/atom.xml: assemble-index-atom entries/{' entries/'.join(entry_files)} | bin/build/assemble-index-atom.sh bin/build/get-entry-title.sh bin/build/vars.sh parts/template.html parts/index.html parts/atom.xml\n")
-        build_ninja.write("build out/site/atom.xml | out/site/atom.xml.integrity: copy-file out/tmp/atom.xml\n")
+        build_ninja.write("build out/site/atom.xml: copy-file out/tmp/atom.xml\n")
         build_ninja.write("build out/tmp/index.min.html: minify-html out/tmp/index.html\n")
-        build_ninja.write("build out/site/index.html | out/site/index.html.integrity: copy-file out/tmp/index.min.html\n")
+        build_ninja.write("build out/site/index.html: copy-file out/tmp/index.min.html\n")
 
         build_ninja.write("build out/tmp/404.html: assemble-404 | bin/build/assemble-404.sh bin/build/vars.sh parts/template.html parts/404.html\n")
         build_ninja.write("build out/tmp/404.min.html: minify-html out/tmp/404.html\n")
-        build_ninja.write("build out/site/404.html | out/site/404.html.integrity: copy-file out/tmp/404.min.html\n")
+        build_ninja.write("build out/site/404.html: copy-file out/tmp/404.min.html\n")
 
     process.wait()
 finally:

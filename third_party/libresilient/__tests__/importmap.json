@@ -1,5 +1,0 @@
-{
-  "imports": {
-    "../plugins/simple-plugin/cli.js": "./mocks/simple-plugin.js"
-  }
-}

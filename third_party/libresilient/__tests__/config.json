@@ -1,7 +1,0 @@
-{
-    "plugins": [{
-        "name": "test-plugin"
-    }],
-    "useMimeSniffingLibrary": true,
-    "loggedComponents": ["service-worker", "test-plugin"]
-}
