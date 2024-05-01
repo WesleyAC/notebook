@@ -1,0 +1,23 @@
+{
+    "Status-Code": 200,
+    "Date": "Wed, 01 May 2024 17:01:27 GMT",
+    "Content-Type": "text/html; charset=utf-8",
+    "Connection": "keep-alive",
+    "x-frame-options": "SAMEORIGIN",
+    "x-xss-protection": "1; mode=block",
+    "x-content-type-options": "nosniff",
+    "x-download-options": "noopen",
+    "x-permitted-cross-domain-policies": "none",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "Cache-Control": "max-age=0, private, must-revalidate",
+    "set-cookie": "country=US; domain=.sugru.com; path=/; expires=Thu, 01 May 2025 17:01:26 GMT; secure, sugru.com_production=a3V6ZDI5UnpmSGdJWmVaUVMzMUZaSUxuTTUxMUk4K2xMdlRzb2p2Q29WTUhNeldYcVcyZ0luSVowalJ3ekNGeXRKeHUxbDZRaFJNbVhYRWNmTjVXREliZGNEK2h4RW81TmF5VTZvTmRIeXQ1ODAwdE9JYndIb09oL2pOQ3pHWGhOZWVVWTAzWFBYZS9OUWsxaVZIdjFFWWMyeXllc2JGb2c4cVZSd3ZhY1ZQTkJxTGtzR1JlYlk3RDNCN3VpanZMREVicWxkek51VkEveVYxNy9RK2U4dz09LS1LNnIzMWh3dHorcVZOOVBLcWlwSytBPT0%3D--bbcf85af7725d2742515d5c10790e03fce304a33; domain=.sugru.com; path=/; secure; HttpOnly",
+    "x-request-id": "ecaa65b2b1055b35d556b7935fe2963a",
+    "x-runtime": "0.259328",
+    "strict-transport-security": "max-age=31536000; includeSubDomains",
+    "CF-Cache-Status": "DYNAMIC",
+    "Report-To": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=zCmKmIW%2FfLJYv9hPQNKU71VL8%2BrIDTILoSNuY5QXc77D1ptd7vkapKuY1II6zQWjcR4R1CuGJjs0yit%2BJcBlBk38IBunziplr666TmW7c%2FososkIlCzP58%2BQ6Q%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+    "NEL": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+    "Server": "cloudflare",
+    "CF-RAY": "87d155611c0e431b-EWR",
+    "Content-Encoding": "br"
+}

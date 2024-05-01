@@ -1,0 +1,226 @@
+{
+    "archive_path": "archive/1714582883.771914",
+    "base_url": "sugru.com/what-is-sugru",
+    "basename": "what-is-sugru",
+    "bookmarked_date": "2024-05-01 17:01",
+    "canonical": {
+        "archive_org_path": "https://web.archive.org/web/sugru.com/what-is-sugru",
+        "dom_path": "output.html",
+        "favicon_path": "favicon.ico",
+        "git_path": "git/",
+        "google_favicon_path": "https://www.google.com/s2/favicons?domain=sugru.com",
+        "headers_path": "headers.json",
+        "index_path": "index.html",
+        "media_path": "media/",
+        "mercury_path": "mercury/content.html",
+        "pdf_path": "output.pdf",
+        "readability_path": "readability/content.html",
+        "screenshot_path": "screenshot.png",
+        "singlefile_path": "singlefile.html",
+        "warc_path": "warc/",
+        "wget_path": null
+    },
+    "domain": "sugru.com",
+    "extension": "",
+    "hash": "14Y79ABM3EXGCQGDJ8KJ",
+    "history": {
+        "archive_org": [
+            {
+                "cmd": [
+                    "curl",
+                    "--silent",
+                    "--location",
+                    "--compressed",
+                    "--head",
+                    "--max-time",
+                    "90",
+                    "--user-agent",
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/0.6.2 (+https://github.com/ArchiveBox/ArchiveBox/) curl/curl 7.76.1 (x86_64-pc-linux-gnu)",
+                    "https://web.archive.org/save/https://sugru.com/what-is-sugru"
+                ],
+                "cmd_version": "curl 7.76.1 (x86_64-pc-linux-gnu)",
+                "end_ts": "2024-05-01T17:04:14.454707+00:00",
+                "index_texts": null,
+                "output": "TimeoutExpired: Command '['curl', '--silent', '--location', '--compressed', '--head', '--max-time', '90', '--user-agent', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/0.6.2 (+https://github.com/ArchiveBox/ArchiveBox/) curl/curl 7.76.1 (x86_64-pc-linux-gnu)', 'https://web.archive.org/save/https://sugru.com/what-is-sugru']' timed out after 90 seconds",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1714582883.771914",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-05-01T17:02:44.423174+00:00",
+                "status": "failed"
+            }
+        ],
+        "dom": [
+            {
+                "cmd": [
+                    "chromium-browser",
+                    "--headless",
+                    "--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/{VERSION} (+https://github.com/ArchiveBox/ArchiveBox/)",
+                    "--window-size=1440,2000",
+                    "--timeout=90000",
+                    "--dump-dom",
+                    "https://sugru.com/what-is-sugru"
+                ],
+                "cmd_version": "Chromium 122.0.6261.69",
+                "end_ts": "2024-05-01T17:02:44.404198+00:00",
+                "index_texts": null,
+                "output": "output.html",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1714582883.771914",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-05-01T17:02:41.175886+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "favicon": [
+            {
+                "cmd": [
+                    "curl",
+                    "--silent",
+                    "--location",
+                    "--compressed",
+                    "--max-time",
+                    "90",
+                    "--output",
+                    "favicon.ico",
+                    "--user-agent",
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/0.6.2 (+https://github.com/ArchiveBox/ArchiveBox/) curl/curl 7.76.1 (x86_64-pc-linux-gnu)",
+                    "https://www.google.com/s2/favicons?domain=sugru.com"
+                ],
+                "cmd_version": "curl 7.76.1 (x86_64-pc-linux-gnu)",
+                "end_ts": "2024-05-01T17:01:26.342196+00:00",
+                "index_texts": null,
+                "output": "favicon.ico",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1714582883.771914",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-05-01T17:01:26.019754+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "git": [],
+        "headers": [
+            {
+                "cmd": [
+                    "curl",
+                    "--silent",
+                    "--location",
+                    "--compressed",
+                    "--head",
+                    "--max-time",
+                    "90",
+                    "--user-agent",
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/0.6.2 (+https://github.com/ArchiveBox/ArchiveBox/) curl/curl 7.76.1 (x86_64-pc-linux-gnu)",
+                    "https://sugru.com/what-is-sugru"
+                ],
+                "cmd_version": "curl 7.76.1 (x86_64-pc-linux-gnu)",
+                "end_ts": "2024-05-01T17:01:27.199685+00:00",
+                "index_texts": null,
+                "output": "headers.json",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1714582883.771914",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-05-01T17:01:26.370931+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "media": [],
+        "mercury": [],
+        "pdf": [],
+        "readability": [],
+        "screenshot": [
+            {
+                "cmd": [
+                    "chromium-browser",
+                    "--headless",
+                    "--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/{VERSION} (+https://github.com/ArchiveBox/ArchiveBox/)",
+                    "--window-size=1440,2000",
+                    "--timeout=90000",
+                    "--screenshot",
+                    "https://sugru.com/what-is-sugru"
+                ],
+                "cmd_version": "Chromium 122.0.6261.69",
+                "end_ts": "2024-05-01T17:02:41.157250+00:00",
+                "index_texts": null,
+                "output": "screenshot.png",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1714582883.771914",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-05-01T17:02:37.401973+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "singlefile": [
+            {
+                "cmd": [
+                    "/home/wesleyac/code/notebook/data/archivebox/node_modules/single-file/cli/single-file",
+                    "--browser-executable-path=chromium-browser",
+                    "--browser-args=[\"--headless\", \"--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/{VERSION} (+https://github.com/ArchiveBox/ArchiveBox/)\", \"--window-size=1440,2000\"]",
+                    "https://sugru.com/what-is-sugru",
+                    "singlefile.html"
+                ],
+                "cmd_version": "0.3.31",
+                "end_ts": "2024-05-01T17:02:37.384607+00:00",
+                "index_texts": null,
+                "output": "singlefile.html",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1714582883.771914",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-05-01T17:01:27.239956+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "title": [
+            {
+                "cmd": [
+                    "curl",
+                    "--silent",
+                    "--location",
+                    "--compressed",
+                    "--max-time",
+                    "90",
+                    "--user-agent",
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/0.6.2 (+https://github.com/ArchiveBox/ArchiveBox/) curl/curl 7.76.1 (x86_64-pc-linux-gnu)",
+                    "https://sugru.com/what-is-sugru"
+                ],
+                "cmd_version": "curl 7.76.1 (x86_64-pc-linux-gnu)",
+                "end_ts": "2024-05-01T17:01:26.002605+00:00",
+                "index_texts": null,
+                "output": "Sugru Mouldable Glue\n | Sugru",
+                "pwd": "/home/wesleyac/code/notebook/data/archivebox/archive/1714582883.771914",
+                "schema": "ArchiveResult",
+                "start_ts": "2024-05-01T17:01:24.983538+00:00",
+                "status": "succeeded"
+            }
+        ],
+        "wget": []
+    },
+    "icons": null,
+    "is_archived": true,
+    "is_static": false,
+    "latest": {
+        "archive_org": "TimeoutExpired: Command '['curl', '--silent', '--location', '--compressed', '--head', '--max-time', '90', '--user-agent', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.61 Safari/537.36 ArchiveBox/0.6.2 (+https://github.com/ArchiveBox/ArchiveBox/) curl/curl 7.76.1 (x86_64-pc-linux-gnu)', 'https://web.archive.org/save/https://sugru.com/what-is-sugru']' timed out after 90 seconds",
+        "dom": "output.html",
+        "favicon": "favicon.ico",
+        "git": null,
+        "media": null,
+        "pdf": null,
+        "screenshot": "screenshot.png",
+        "singlefile": "singlefile.html",
+        "title": "Sugru Mouldable Glue\n | Sugru",
+        "warc": null,
+        "wget": null
+    },
+    "link_dir": "/home/wesleyac/code/notebook/data/archivebox/archive/1714582883.771914",
+    "newest_archive_date": "2024-05-01T17:02:44.423174+00:00",
+    "num_failures": 1,
+    "num_outputs": 6,
+    "oldest_archive_date": "2024-05-01T17:01:24.983538+00:00",
+    "path": "/what-is-sugru",
+    "schema": "Link",
+    "scheme": "https",
+    "snapshot_id": "5de437bd-02e4-4c27-8e1e-51e59791e5e8",
+    "sources": [
+        "/home/wesleyac/code/notebook/data/archivebox/sources/1714582883-import.txt"
+    ],
+    "tags": null,
+    "tags_str": "",
+    "timestamp": "1714582883.771914",
+    "title": "Sugru Mouldable Glue\n | Sugru",
+    "updated": "2024-05-01T17:01:24.981663+00:00",
+    "updated_date": "2024-05-01 17:01",
+    "url": "https://sugru.com/what-is-sugru"
+}
