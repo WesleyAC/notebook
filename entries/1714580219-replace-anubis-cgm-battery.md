@@ -32,6 +32,7 @@ The steps:
 A few notes about the process:
 
 * Be careful around water for the first 24 hours, since water can interfere with the Sugru curing process.
+* If you use the Anubis CGM with a Tandem insulin pump, it won't recognize the transmitter after you change the battery. To work around this, change the transmitter ID to some random incorrect transmitter ID, wait for it to tell you it can't find the transmitter, then change the transmitter ID back to the correct ID.
 * The transmitter will be in "deep sleep" mode after you replace the battery, so you will not see the Bluetooth signal. It is awoken from deep sleep by being put into a sensor, although you can also wake it by covering the two metal pads on the bottom with a wet paper towel for five minutes, if you want to confirm that it works before putting it in the sensor.
 
 I hope this was helpful!
