@@ -10,7 +10,7 @@
     "eslint": "^7.32.0",
     "html-minifier": "^4.0.0",
     "svgo": "^2.6.1",
-    "terser": "^5.9.0"
+    "terser": "^5.14.2"
   },
   "dependencies": {
     "@remy/webmention": "^1.4.5"
